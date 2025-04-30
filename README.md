@@ -5,4 +5,5 @@ This repository contains a series of transformations and techniques that aim to 
 | Transformation | Example | Approximate Gas Savings | Source |
 |---|---|---|---|
 | Replace require with custom errors | [example](examples/replace-require-with-custom-errors.md) | verificar | verificar |
-| Replace dynamic arrays with mappings | [example](examples/replace-dynamic-arrays-with-mappings.md) | verificar | "Optimizing Gas Consumption in Ethereum Smart Contracts: Best Practices and Techniques," 2023 IEEE 23rd International Conference on Software Quality, Reliability, and Security Companion (QRS-C) |
+| Replace dynamic arrays with mappings | [example](examples/replace-dynamic-arrays-with-mappings.md) | verificar | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ)
+ |
