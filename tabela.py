@@ -20,6 +20,11 @@ transformations = [
         "Approximate Gas Savings": "verificar",
         "Source": "verificar",
     },
+    {
+        "Transformation": "Refactoring loops with repeated storage calls",
+        "Approximate Gas Savings": "verificar",
+        "Source": "verificar",
+    },
 ]
 
 
