@@ -25,6 +25,16 @@ transformations = [
         "Approximate Gas Savings": "verificar",
         "Source": "verificar",
     },
+    {
+        "Transformation": "Refactoring loops with a constant comparison",
+        "Approximate Gas Savings": "verificar",
+        "Source": "verificar",
+    },
+    {
+        "Transformation": "Refactoring loops with repeated computations",
+        "Approximate Gas Savings": "verificar",
+        "Source": "verificar",
+    }
 ]
 
 
