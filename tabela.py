@@ -39,6 +39,16 @@ transformations = [
         "Transformation": "Struct Packing",
         "Approximate Gas Savings": "verificar",
         "Source": "verificar",
+    },
+    {
+        "Transformation": "State Variable Packing",
+        "Approximate Gas Savings": "verificar",
+        "Source": "verificar",
+    },
+    {
+        "Transformation": "Boolean Packing",
+        "Approximate Gas Savings": "verificar",
+        "Source": "verificar",
     }
 ]
 
