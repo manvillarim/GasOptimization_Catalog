@@ -2,7 +2,7 @@
 
 This repository contains a series of transformations and techniques that aim to optimize gas consumption in solidity smart contracts.
 
-| Transformation | Example | Approximate Gas Savings | Source |
+| Transformation | Example | Proof of Correctness | Source |
 |---|---|---|---|
 | Replace require with custom errors | [example](examples/replace-require-with-custom-errors.md) | verificar | verificar |
 | Refactoring loops with repeated storage calls | [example](examples/refactoring-loops-with-repeated-storage-calls.md) | verificar | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
@@ -28,7 +28,7 @@ This repository contains a series of transformations and techniques that aim to 
 | Combine multiple loops into one | [example](examples/combine-loops.md) | verificar | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
 | Avoid repetitive arithmetic operations in loops | [example](examples/avoid-arithmetic-in-loops.md) | verificar | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
 | Cache storage variables in loops | [example](examples/cache-storage-variables.md) | verificar | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
-| Cache array member variables | [example](examples/cache-member-variables.md) | verificar | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
+| Cache array member variables | [example](examples/cache-member-variables.md) | [Proof](certora/cache-member-variables/cache-member-variables-verification.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
 | Cache array length in loops | [example](examples/cache-array-length.md) | verificar | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
-| Use efficient loop increment (++ instead of +=1) | [example](examples/efficient-loop-increment.md) | verificar | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
+| Use efficient loop increment (++ instead of +=1) | [example](examples/efficient-loop-increment.md) | [Proof](certora/efficient-loop-increment/efficient-loop-increment-verification.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
 | Use mappings instead of arrays for data lists | [example](examples/mappings-vs-arrays.md) | verificar | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
