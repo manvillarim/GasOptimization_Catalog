@@ -1,0 +1,35 @@
+{
+    "CLI_package_name": "",
+    "CLI_version": "",
+    "branch": "main",
+    "certora_ci_client": null,
+    "conf": {
+        "files": [
+            "src/A.sol",
+            "src/Ao.sol"
+        ],
+        "msg": "Verification of effiecient loop incrementation",
+        "optimistic_loop": true,
+        "process": "emv",
+        "prover_version": "master",
+        "rule_sanity": "basic",
+        "send_only": true,
+        "server": "production",
+        "verify": "Ao:../specs/efficientLoop.spec"
+    },
+    "conf_path": "certora/efficient-loop-increment/conf/efficientLoop.conf",
+    "cwd_relative": "certora/efficient-loop-increment/conf",
+    "dirty": true,
+    "group_id": null,
+    "main_spec": "../specs/efficientLoop.spec",
+    "origin": "https://github.com/manvillarim/GasOptimization_Catalog.git",
+    "python_version": "3.13.3",
+    "raw_args": [
+        "/home/manoel/certora_builds/certoraRun.py",
+        "--prover_version",
+        "master",
+        "efficientLoop.conf"
+    ],
+    "revision": "0c4d1519449b9827dedbf663a8ee8ecc4a6e5a5f",
+    "timestamp": "1751046529.116831"
+}
