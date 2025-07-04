@@ -1,3 +1,3 @@
 # Cache Array Length proof
 
-See Certora's result at https://prover.certora.com/output/480394/2b6b0a182e724b509ca87ac97a1d0486
+See Certora's result at https://prover.certora.com/output/480394/d3a8facb9f3546c8817b09a1bd05f813

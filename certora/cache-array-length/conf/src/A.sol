@@ -27,21 +27,5 @@ contract A {
         }
     }
     
-    // Funções para o coupling invariant
-    function getLength() external view returns (uint256) {
-        return numbers.length;
-    }
     
-    function getNumberAt(uint256 i) external view returns (uint256) {
-        require(i < numbers.length, "Index out of bounds");
-        return numbers[i];
-    }
-    
-    function getSum() external view returns (uint256) {
-        uint256 sum = 0;
-        for(uint256 i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
-        }
-        return sum;
-    }
 }

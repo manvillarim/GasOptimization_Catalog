@@ -4,7 +4,8 @@ This transformation caches frequently accessed array members in local variables 
 
 ## Example
 
-### Optimized Cached Array Members
+### Repeated Array Member Access
+
 ```solidity
 contract RepeatedArrayAccess {
     struct User {
@@ -33,8 +34,8 @@ contract RepeatedArrayAccess {
     }
 }
 ```
+### Optimized Cached Array Members
 
-### Repeated Array Member Access
 ```solidity
 contract CachedArrayMembers {
     struct User {
