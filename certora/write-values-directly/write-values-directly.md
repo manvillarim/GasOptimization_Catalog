@@ -1,0 +1,3 @@
+# Write Values Directly Proof
+
+See Certora's result at https://prover.certora.com/output/480394/7b13d19c33d64417bc7f82a5e727c918?anonymousKey=0f1dff23c5abf7aca091203feb47577a6716ca34
