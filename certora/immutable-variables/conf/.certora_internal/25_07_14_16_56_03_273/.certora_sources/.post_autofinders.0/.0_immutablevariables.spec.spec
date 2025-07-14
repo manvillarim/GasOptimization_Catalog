@@ -20,6 +20,7 @@ definition couplingInv() returns bool =
     a.totalSupply == ao.totalSupply &&
     (forall address k. a.balances[k] == ao.balances[k]);
 
+// Função genérica usando sua abordagem
 function gasOptimizationCorrectness(method f, method g) {
     env eA;
     env eAo;
@@ -30,6 +31,7 @@ function gasOptimizationCorrectness(method f, method g) {
     assert couplingInv();
 }
 
+// Todas as regras usam a mesma função genérica
 rule gasOptimizedCorrectnessOfMint(method f, method g)
 filtered {
     f -> f.selector == sig:a.mint(address,uint).selector,

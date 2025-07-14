@@ -1,0 +1,35 @@
+{
+    "CLI_package_name": "",
+    "CLI_version": "",
+    "branch": "main",
+    "certora_ci_client": null,
+    "conf": {
+        "files": [
+            "src/A.sol",
+            "src/Ao.sol"
+        ],
+        "msg": "Verification of effiecient loop incrementation",
+        "optimistic_loop": true,
+        "process": "emv",
+        "prover_version": "master",
+        "rule_sanity": "basic",
+        "send_only": true,
+        "server": "production",
+        "verify": "Ao:../specs/immutablevariables.spec"
+    },
+    "conf_path": "certora/immutable-variables/conf/immutablevariables.conf",
+    "cwd_relative": "certora/immutable-variables/conf",
+    "dirty": true,
+    "group_id": null,
+    "main_spec": "../specs/immutablevariables.spec",
+    "origin": "https://github.com/manvillarim/GasOptimization_Catalog.git",
+    "python_version": "3.13.5",
+    "raw_args": [
+        "/home/manoel/certora_builds/certoraRun.py",
+        "--prover_version",
+        "master",
+        "immutablevariables.conf"
+    ],
+    "revision": "22e0eea4304bc180066a4e1733b55cd4a39c6b6e",
+    "timestamp": "1752522964.017525"
+}
