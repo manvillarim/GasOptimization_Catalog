@@ -1,0 +1,3 @@
+# Reduce Mathematical Expressions Proof
+
+See Certora's result at https://prover.certora.com/output/480394/5c71a1721d5040708f4efe3b388fdc90?anonymousKey=9961b0dc1115634ee74d1e1e75fdcdbbd30b130a
