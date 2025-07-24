@@ -20,6 +20,7 @@ definition couplingInv() returns bool =
     a.totalSupply == ao.totalSupply &&
     (forall address k. a.balances[k] == ao.balances[k]);
 
+
 function gasOptimizationCorrectness(method f, method g) {
     env eA;
     env eAo;
