@@ -1,0 +1,12 @@
+'send_only' is deprecated and is now the default. In CI, use 'wait_for_results none' instead
+Saving last configuration file to .certora_internal/25_07_29_18_13_26_451/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+Creating dir /home/manoel/projeto/GasOptimizationCatalog/certora/calldata-vs-memory/conf/.certora_internal/25_07_29_18_13_26_451/.certora_config
+In /home/manoel/projeto/GasOptimizationCatalog/certora/calldata-vs-memory/specs/calldatamemory.spec, found the imports: []
+copying spec file /home/manoel/projeto/GasOptimizationCatalog/certora/calldata-vs-memory/specs/calldatamemory.spec to /home/manoel/projeto/GasOptimizationCatalog/certora/calldata-vs-memory/conf/.certora_internal/25_07_29_18_13_26_451/.certora_sources/.0_calldatamemory.spec.spec
+writing /home/manoel/projeto/GasOptimizationCatalog/certora/calldata-vs-memory/conf/.certora_internal/25_07_29_18_13_26_451/.certora_verify.json
+Failed to run Certora Prover locally. Please check the errors below for problems in the specifications (.spec files) or the prover_args defined in the .conf file.
+[main] ERROR ALWAYS - Found errors in ../specs/calldatamemory.spec:
+[main] ERROR ALWAYS - Error in spec file (calldatamemory.spec:66:12): Syntax error: unexpected token near `(`
+[main] ERROR ALWAYS - Error in spec file (calldatamemory.spec:238:37): Syntax error: unexpected token near `{`
+build failed
