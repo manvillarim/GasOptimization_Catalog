@@ -2,6 +2,7 @@ using A as a;
 using Ao as ao;
 
 methods {
+    
     function a.registerUser() external;
     function a.removeUser(address) external;
     function a.processTransaction(address, uint256) external;
