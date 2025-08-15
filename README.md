@@ -4,7 +4,7 @@ This repository contains a series of transformations and techniques that aim to 
 
 | Transformation | Example | Proof of Correctness | Source |
 |---|---|---|---|
-| Replace require with custom errors | [example](examples/replace-require-with-custom-errors.md) | verificar | verificar |
+| Replace require with custom errors | [example](examples/replace-require-with-custom-errors.md) | verificar | [source](https://soliditylang.org/blog/2021/04/21/custom-errors/) |
 | Refactoring loops with repeated storage calls | [example](examples/refactoring-loops-with-repeated-storage-calls.md) | verificar | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
 | Refactoring loops with a constant comparison | [example](examples/refactoring-loops-with-a-constant-comparison.md) | verificar | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
 | Refactoring loops with repeated computations | [example](examples/refactoring-loops-with-repeated-computations.md) | verificar | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
