@@ -1,0 +1,133 @@
+using A as a;
+using Ao as ao;
+
+methods {
+    function a.createUser(address, uint256, uint8) external returns (uint256);
+    function ao.createUser(address, uint256, uint8) external returns (uint256);
+    function a.updateUser(uint256, uint256, bool, uint8) external;
+    function ao.updateUser(uint256, uint256, bool, uint8) external;
+    function a.getUserData(uint256) external returns (uint256, bool, uint8, address) envfree;
+    function ao.getUserData(uint256) external returns (uint256, bool, uint8, address) envfree;
+    function a.deactivateUser(uint256) external;
+    function ao.deactivateUser(uint256) external;
+    function a.updateBalance(uint256, uint256) external;
+    function ao.updateBalance(uint256, uint256) external;
+    function a.updateTier(uint256, uint8) external;
+    function ao.updateTier(uint256, uint8) external;
+    function a.getTotalInfo(uint256) external returns (uint256) envfree;
+    function ao.getTotalInfo(uint256) external returns (uint256) envfree;
+    function a.userCount() external returns (uint256) envfree;
+    function ao.userCount() external returns (uint256) envfree;
+    function a.users(uint256) external returns (uint256, bool, uint8, address) envfree;
+    function ao.users(uint256) external returns (address, uint8, bool, uint256) envfree;
+}
+
+function getBalance(uint256 userId, bool isA) returns uint256 {
+    if (isA) {
+        uint256 balance;
+        bool isActive;
+        uint8 tier;
+        address wallet;
+        balance, isActive, tier, wallet = a.getUserData(userId);
+        return balance;
+    } else {
+        uint256 balance;
+        bool isActive;
+        uint8 tier;
+        address wallet;
+        balance, isActive, tier, wallet = ao.getUserData(userId);
+        return balance;
+    }
+}
+
+function getIsActive(uint256 userId, bool isA) returns bool {
+    if (isA) {
+        uint256 balance;
+        bool isActive;
+        uint8 tier;
+        address wallet;
+        balance, isActive, tier, wallet = a.getUserData(userId);
+        return isActive;
+    } else {
+        uint256 balance;
+        bool isActive;
+        uint8 tier;
+        address wallet;
+        balance, isActive, tier, wallet = ao.getUserData(userId);
+        return isActive;
+    }
+}
+
+function getTier(uint256 userId, bool isA) returns uint8 {
+    if (isA) {
+        uint256 balance;
+        bool isActive;
+        uint8 tier;
+        address wallet;
+        balance, isActive, tier, wallet = a.getUserData(userId);
+        return tier;
+    } else {
+        uint256 balance;
+        bool isActive;
+        uint8 tier;
+        address wallet;
+        balance, isActive, tier, wallet = ao.getUserData(userId);
+        return tier;
+    }
+}
+
+function getWallet(uint256 userId, bool isA) returns address {
+    if (isA) {
+        uint256 balance;
+        bool isActive;
+        uint8 tier;
+        address wallet;
+        balance, isActive, tier, wallet = a.getUserData(userId);
+        return wallet;
+    } else {
+        uint256 balance;
+        bool isActive;
+        uint8 tier;
+        address wallet;
+        balance, isActive, tier, wallet = ao.getUserData(userId);
+        return wallet;
+    }
+}
+
+definition couplingInv() returns bool = a.userCount == ao.userCount && (forall uint256 i. (i < a.userCount) => (getBalance(i, true) == getBalance(i, false) && getIsActive(i, true) == getIsActive(i, false) && getTier(i, true) == getTier(i, false) && getWallet(i, true) == getWallet(i, false)));
+
+function gasOptimizationCorrectness(method f, method g) {
+    env eA;
+    env eAo;
+    calldataarg args;
+    require eA == eAo && couplingInv();
+    a.f(eA, args);
+    ao.g(eAo, args);
+    assert couplingInv();
+}
+
+rule gasOptimizedCorrectnessOfcreateUser(method f, method g)
+filtered { f -> f.selector == sig:a.createUser(address, uint256, uint8).selector, g -> g.selector == sig:ao.createUser(address, uint256, uint8).selector } {
+    gasOptimizationCorrectness(f, g);
+}
+
+rule gasOptimizedCorrectnessOfupdateUser(method f, method g)
+filtered { f -> f.selector == sig:a.updateUser(uint256, uint256, bool, uint8).selector, g -> g.selector == sig:ao.updateUser(uint256, uint256, bool, uint8).selector } {
+    gasOptimizationCorrectness(f, g);
+}
+
+rule gasOptimizedCorrectnessOfdeactivateUser(method f, method g)
+filtered { f -> f.selector == sig:a.deactivateUser(uint256).selector, g -> g.selector == sig:ao.deactivateUser(uint256).selector } {
+    gasOptimizationCorrectness(f, g);
+}
+
+rule gasOptimizedCorrectnessOfupdateBalance(method f, method g)
+filtered { f -> f.selector == sig:a.updateBalance(uint256, uint256).selector, g -> g.selector == sig:ao.updateBalance(uint256, uint256).selector } {
+    gasOptimizationCorrectness(f, g);
+}
+
+rule gasOptimizedCorrectnessOfupdateTier(method f, method g)
+filtered { f -> f.selector == sig:a.updateTier(uint256, uint8).selector, g -> g.selector == sig:ao.updateTier(uint256, uint8).selector } {
+    gasOptimizationCorrectness(f, g);
+}
+

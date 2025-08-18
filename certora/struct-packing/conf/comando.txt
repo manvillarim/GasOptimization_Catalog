@@ -1,0 +1,38 @@
+certoraRun.py --prover_version master Example.conf
+
+
+CONF LOCAL
+
+{
+  "files": [
+    "src/ERC4626.sol",
+    "src/tokens/ERC20.sol"
+  ],
+  "verify": "ERC4626:../specs/Example.spec",
+   process: "emv",
+  "link": ["ERC4626:asset=ERC20"],
+  "send_only": true,
+  "rule_sanity": "basic",
+  "loop_iter": "3",
+  "msg": "Verification of ERC4626",
+  "optimistic_loop": true,
+}
+
+
+
+CONF NUVEM
+
+{
+  "files": [
+    "src/ERC4626.sol",
+    "src/tokens/ERC20.sol"
+  ],
+  "verify": "ERC4626:../specs/Example.spec",
+  "link": ["ERC4626:asset=ERC20"],
+  "server": "production",
+  "send_only": true,
+  "rule_sanity": "basic",
+  "loop_iter": "3",
+  "msg": "Verification of ERC4626",
+  "optimistic_loop": true,
+}
