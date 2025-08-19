@@ -38,19 +38,19 @@ contract OptimizedIncrement {
     uint[] public data;
     
     function processData() public {
-        for(uint i = 0; i < data.length; i++) { // More efficient pre-increment
+        for(uint i = 0; i < data.length; ++i) { // More efficient pre-increment
             data[i] = data[i] * 2;
         }
     }
     
     function sumArray() public view returns(uint sum) {
-        for(uint i = 0; i < data.length; i++) { // More efficient pre-increment
+        for(uint i = 0; i < data.length; ++i) { // More efficient pre-increment
             sum += data[i];
         }
     }
     
     function findElement(uint target) public view returns(bool found) {
-        for(uint i = 0; i < data.length; i++) { // More efficient pre-increment
+        for(uint i = 0; i < data.length; ++i) { // More efficient pre-increment
             if(data[i] == target) {
                 found = true;
                 break;
