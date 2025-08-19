@@ -25,8 +25,8 @@ function gasOptimizationCorrectness(method f, method g) {
     calldataarg args;
     require eA == eAo;
     require couplingInvariant();
-    a.f(eA, args);
-    ao.g(eAo, args);
+    f(eA, args);
+    g(eAo, args);
     assert couplingInvariant();
 }
 
