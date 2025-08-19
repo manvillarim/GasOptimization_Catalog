@@ -4,9 +4,9 @@ This repository contains a series of transformations and techniques that aim to 
 
 | Transformation | Example | Proof of Correctness | Source |
 |---|---|---|---|
-| Replace require with custom errors | [example](examples/replace-require-with-custom-errors.md) | verificar | [source](https://soliditylang.org/blog/2021/04/21/custom-errors/) |
-| Refactoring loops with repeated storage calls | [example](examples/refactoring-loops-with-repeated-storage-calls.md) | verificar | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
-| Refactoring loops with a constant comparison | [example](examples/refactoring-loops-with-a-constant-comparison.md) | verificar | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
+| Replace require with custom errors | [example](examples/replace-require-with-custom-errors.md) | [Proof](certora/replace-require-with-custom-errors/replace-require-with-custom-errors.md) | [source](https://soliditylang.org/blog/2021/04/21/custom-errors/) |
+| Refactoring loops with repeated storage calls | [example](examples/refactoring-loops-with-repeated-storage-calls.md) | [Proof](certora/refactoring-loops-with-repeated-storage-calls/refactoring-loops-with-repeated-storage-calls.md) | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
+| Refactoring loops with a constant comparison | [example](examples/refactoring-loops-with-a-constant-comparison.md) | [Proof](certora/refactoring-loops-with-a-constant-comparison/refactoring-loops-with-a-constant-comparison.md) | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
 | Refactoring loops with repeated computations | [example](examples/refactoring-loops-with-repeated-computations.md) | [Proof](certora/refactoring-loops-with-repeated-computations/refactoring-loops-with-repeated-computations.md) | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
 | Struct Packing | [example](examples/struct-packing.md) |[Proof](certora/struct-packing/struct-packing.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
 | State Variable Packing | [example](examples/state-variable-packing.md) | [Proof](certora/state-variable-packing/state-variable-packing.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
