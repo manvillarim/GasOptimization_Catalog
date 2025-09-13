@@ -1,0 +1,32 @@
+Saving last configuration file to .certora_internal/25_09_13_10_09_57_431/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+Creating dir /home/manoel/projeto/GasOptimizationCatalog/case-study/conf/.certora_internal/25_09_13_10_09_57_431/.certora_config
+In /home/manoel/projeto/GasOptimizationCatalog/case-study/specs/casestudy.spec, found the imports: []
+copying spec file /home/manoel/projeto/GasOptimizationCatalog/case-study/specs/casestudy.spec to /home/manoel/projeto/GasOptimizationCatalog/case-study/conf/.certora_internal/25_09_13_10_09_57_431/.certora_sources/.0_casestudy.spec.spec
+writing /home/manoel/projeto/GasOptimizationCatalog/case-study/conf/.certora_internal/25_09_13_10_09_57_431/.certora_verify.json
+
+building file aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/UserConfiguration.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/25_09_13_10_09_57_431/.certora_config/version_check_solc.stdout, .certora_internal/25_09_13_10_09_57_431/.certora_config/version_check_solc.stderr
+Exitcode 0
+Solc run solc --version time: 0.0125
+Running cmd solc -o ".certora_internal/25_09_13_10_09_57_431/.certora_config/UserConfiguration.sol_0/" --overwrite --allow-paths ".",. --standard-json
+stdout, stderr = .certora_internal/25_09_13_10_09_57_431/.certora_config/UserConfiguration.sol_0.standard.stdout.json, .certora_internal/25_09_13_10_09_57_431/.certora_config/UserConfiguration.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/25_09_13_10_09_57_431/.certora_config/UserConfiguration.sol_0/" --overwrite --allow-paths ".",. --standard-json time: 0.0707
+reading standard json data from .certora_internal/25_09_13_10_09_57_431/.certora_config/UserConfiguration.sol_0.standard.stdout.json
+collecting worklist for /home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/UserConfiguration.sol
+Processing dependencies from file /home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/UserConfiguration.sol
+available keys: dict_keys(['/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/ReserveConfiguration.sol', '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/UserConfiguration.sol', '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/helpers/Errors.sol', '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/types/DataTypes.sol'])
+Adding internal link ref /home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/ReserveConfiguration.sol to worklist
+Processing dependencies from file /home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/ReserveConfiguration.sol
+available keys: dict_keys(['/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/ReserveConfiguration.sol', '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/UserConfiguration.sol', '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/helpers/Errors.sol', '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/types/DataTypes.sol'])
+Contracts in UserConfiguration.sol_0 (file aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/UserConfiguration.sol): ['UserConfiguration']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587200, '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/ReserveConfiguration.sol:ReserveConfiguration'), (274184521717934524641157099916833587201, '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/UserConfiguration.sol:UserConfiguration')]
+Working on contract ReserveConfiguration
+Working on contract ReserveConfiguration
+Working on contract UserConfiguration
+Working on contract UserConfiguration
+For contracts of primary UserConfigurationOptimized
+finding primary contract address of /home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/UserConfiguration.sol:UserConfigurationOptimized in [(274184521717934524641157099916833587200, '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/ReserveConfiguration.sol:ReserveConfiguration'), (274184521717934524641157099916833587201, '/home/manoel/projeto/GasOptimizationCatalog/case-study/conf/aave-v3-origin-liquidation-gas-fixes-main/aave-v3-origin-liquidation-gas-fixes-main/src/contracts/protocol/libraries/configuration/UserConfiguration.sol:UserConfiguration')]
+build failed
