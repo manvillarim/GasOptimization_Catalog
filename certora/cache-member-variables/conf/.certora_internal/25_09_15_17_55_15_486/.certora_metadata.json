@@ -1,0 +1,32 @@
+{
+    "CLI_package_name": "",
+    "CLI_version": "",
+    "branch": "main",
+    "certora_ci_client": null,
+    "conf": {
+        "files": [
+            "src/A.sol",
+            "src/Ao.sol"
+        ],
+        "msg": "Verification of effiecient loop incrementation",
+        "optimistic_loop": true,
+        "process": "emv",
+        "rule_sanity": "basic",
+        "send_only": true,
+        "server": "production",
+        "verify": "Ao:../specs/cachestorage.spec"
+    },
+    "conf_path": "certora/cache-member-variables/conf/cachestorage.conf",
+    "cwd_relative": "certora/cache-member-variables/conf",
+    "dirty": true,
+    "group_id": null,
+    "main_spec": "../specs/cachestorage.spec",
+    "origin": "https://github.com/manvillarim/GasOptimization_Catalog.git",
+    "python_version": "3.13.7",
+    "raw_args": [
+        "/home/manoel/certora_builds/certoraRun.py",
+        "cachestorage.conf"
+    ],
+    "revision": "ab36711650e0d2ec8df229029ff805f0a36901d1",
+    "timestamp": "1757969716.006065"
+}
