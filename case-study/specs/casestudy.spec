@@ -65,7 +65,7 @@ methods {
     function getStream(uint256) external returns (address, address, uint256, address, uint256, uint256, uint256, uint256) envfree => aao.collectorOptimized.getStream(calldataarg);
 }
 
-// Ghost variables para estado interno
+// Ghost for internal state
 ghost mapping(address => mapping(uint256 => bool)) userConfigCollateral_original;
 ghost mapping(address => mapping(uint256 => bool)) userConfigCollateral_optimized;
 ghost mapping(address => mapping(uint256 => bool)) userConfigBorrowing_original;
