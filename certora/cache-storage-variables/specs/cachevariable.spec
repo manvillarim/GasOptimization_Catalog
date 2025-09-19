@@ -17,7 +17,6 @@ methods {
     function ao.getNumbersLength() external returns (uint) envfree;
 }
 
-
 definition couplingInv() returns bool =
     a.total == ao.total &&       
     a.count == ao.count &&       

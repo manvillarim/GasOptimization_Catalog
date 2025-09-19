@@ -1,0 +1,18 @@
+'send_only' is deprecated and is now the default. In CI, use 'wait_for_results none' instead
+Saving last configuration file to .certora_internal/25_09_19_16_32_59_676/run.conf
+Incompatible package certora-cli version 7.25.3 with the latest version 8.1.1. Please upgrade by running:
+pip install certora-cli --upgrade
+or
+pip3 install certora-cli --upgrade
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+Creating dir /home/manoel/projeto/GasOptimizationCatalog/certora/mappings-vs-arrays/conf/.certora_internal/25_09_19_16_32_59_676/.certora_config
+In /home/manoel/projeto/GasOptimizationCatalog/certora/mappings-vs-arrays/specs/mappingarray.spec, found the imports: []
+copying spec file /home/manoel/projeto/GasOptimizationCatalog/certora/mappings-vs-arrays/specs/mappingarray.spec to /home/manoel/projeto/GasOptimizationCatalog/certora/mappings-vs-arrays/conf/.certora_internal/25_09_19_16_32_59_676/.certora_sources/.0_mappingarray.spec.spec
+writing /home/manoel/projeto/GasOptimizationCatalog/certora/mappings-vs-arrays/conf/.certora_internal/25_09_19_16_32_59_676/.certora_verify.json
+Failed to run Certora Prover locally. Please check the errors below for problems in the specifications (.spec files) or the prover_args defined in the .conf file.
+[main] ERROR ALWAYS - Found errors in ../specs/mappingarray.spec:
+[main] ERROR ALWAYS - Error in spec file (mappingarray.spec:46:1): Syntax error: unexpected token near `struct`
+[main] ERROR ALWAYS - Error in spec file (mappingarray.spec:159:44): Syntax error: unexpected token near `at`
+[main] ERROR ALWAYS - Error in spec file (mappingarray.spec:300:13): `sum` is a reserved CVL keyword and cannot be used here. Starting with Prover version 7.23 this is a reserved word in CVL. See https://docs.certora.com/en/latest/docs/prover/changelog/prover_changelog.html for more details
+[main] ERROR ALWAYS - Error in spec file (mappingarray.spec:306:18): Syntax error: unexpected token near `i`
+build failed
