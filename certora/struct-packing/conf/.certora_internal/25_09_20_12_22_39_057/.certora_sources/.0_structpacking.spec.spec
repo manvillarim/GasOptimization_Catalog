@@ -22,67 +22,47 @@ methods {
     function ao.users(uint256) external returns (address, uint8, bool, uint256) envfree;
 }
 
-definition couplingInv() returns bool =
+definition couplingInv() returns bool = 
     a.userCount == ao.userCount &&
-    (forall uint256 i. i < a.userCount => (
-        a.users[i].balance == ao.users[i].balance &&
-        a.users[i].isActive == ao.users[i].isActive &&
-        a.users[i].tier == ao.users[i].tier &&
-        a.users[i].wallet == ao.users[i].wallet
-    ));
+    a.UserData.balance == ao.UserData.balance &&
+    a.UserData.isActive == ao.UserData.isActive &&
+    a.UserData.tier == ao.UserData.tier &&
+    a.UserData.wallet == ao.UserData.wallet &&
+    
+    (forall uint256 i. (a.users[i] == ao.users[i]));
 
 function gasOptimizationCorrectness(method f, method g) {
     env eA;
     env eAo;
     calldataarg args;
-    
-    require eA.msg.sender == eAo.msg.sender;
-    require eA.msg.value == eAo.msg.value;
-    require eA.block.timestamp == eAo.block.timestamp;
-    require couplingInv();
-    
+    require eA == eAo && basicCouplingInv();
     a.f(eA, args);
     ao.g(eAo, args);
-    
-    assert couplingInv();
+    assert basicCouplingInv();
 }
 
 rule gasOptimizedCorrectnessOfcreateUser(method f, method g)
-filtered { 
-    f -> f.selector == sig:a.createUser(address, uint256, uint8).selector, 
-    g -> g.selector == sig:ao.createUser(address, uint256, uint8).selector 
-} {
+filtered { f -> f.selector == sig:a.createUser(address, uint256, uint8).selector, g -> g.selector == sig:ao.createUser(address, uint256, uint8).selector } {
     gasOptimizationCorrectness(f, g);
 }
 
 rule gasOptimizedCorrectnessOfupdateUser(method f, method g)
-filtered { 
-    f -> f.selector == sig:a.updateUser(uint256, uint256, bool, uint8).selector, 
-    g -> g.selector == sig:ao.updateUser(uint256, uint256, bool, uint8).selector 
-} {
+filtered { f -> f.selector == sig:a.updateUser(uint256, uint256, bool, uint8).selector, g -> g.selector == sig:ao.updateUser(uint256, uint256, bool, uint8).selector } {
     gasOptimizationCorrectness(f, g);
 }
 
 rule gasOptimizedCorrectnessOfdeactivateUser(method f, method g)
-filtered { 
-    f -> f.selector == sig:a.deactivateUser(uint256).selector, 
-    g -> g.selector == sig:ao.deactivateUser(uint256).selector 
-} {
+filtered { f -> f.selector == sig:a.deactivateUser(uint256).selector, g -> g.selector == sig:ao.deactivateUser(uint256).selector } {
     gasOptimizationCorrectness(f, g);
 }
 
 rule gasOptimizedCorrectnessOfupdateBalance(method f, method g)
-filtered { 
-    f -> f.selector == sig:a.updateBalance(uint256, uint256).selector, 
-    g -> g.selector == sig:ao.updateBalance(uint256, uint256).selector 
-} {
+filtered { f -> f.selector == sig:a.updateBalance(uint256, uint256).selector, g -> g.selector == sig:ao.updateBalance(uint256, uint256).selector } {
     gasOptimizationCorrectness(f, g);
 }
 
 rule gasOptimizedCorrectnessOfupdateTier(method f, method g)
-filtered { 
-    f -> f.selector == sig:a.updateTier(uint256, uint8).selector, 
-    g -> g.selector == sig:ao.updateTier(uint256, uint8).selector 
-} {
+filtered { f -> f.selector == sig:a.updateTier(uint256, uint8).selector, g -> g.selector == sig:ao.updateTier(uint256, uint8).selector } {
     gasOptimizationCorrectness(f, g);
 }
+
