@@ -1,0 +1,60 @@
+{
+	"assertMessages": {},
+	"rules": {
+		"envfreeFuncsStaticCheck": {
+			"FAIL": [],
+			"SANITY_FAIL": [],
+			"SUCCESS": [
+				"A.getValue()",
+				"getValue()"
+			],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfDecrementValue": {
+			"FAIL": [
+				"A.decrementValue()-Ao.modifyValue(uint8,uint256)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfDivideValue": {
+			"FAIL": [
+				"A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfIncrementValue": {
+			"FAIL": [
+				"A.incrementValue()-Ao.modifyValue(uint8,uint256)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfMultiplyValue": {
+			"FAIL": [
+				"A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfSetValue": {
+			"FAIL": [
+				"A.setValue(uint256)-Ao.modifyValue(uint8,uint256)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		}
+	}
+}

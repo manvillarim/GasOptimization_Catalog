@@ -1,0 +1,15 @@
+{
+	RegisteredRule(rule=gasOptimizedCorrectnessOfSetValue, ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=null, isCounted=true): true,
+	RegisteredRule(rule=gasOptimizedCorrectnessOfIncrementValue, ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=null, isCounted=true): true,
+	RegisteredRule(rule=gasOptimizedCorrectnessOfDecrementValue, ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=null, isCounted=true): true,
+	RegisteredRule(rule=gasOptimizedCorrectnessOfMultiplyValue, ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=null, isCounted=true): true,
+	RegisteredRule(rule=gasOptimizedCorrectnessOfDivideValue, ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=null, isCounted=true): true,
+	RegisteredRule(rule=envfreeFuncsStaticCheck, ruleType=spec.cvlast.SpecType$Group$StaticEnvFree@860ad929, parentCVLDeclarationId=null, isCounted=true): true,
+	RegisteredRule(rule=A.getValue(), ruleType=Static(contractFunction=A.getValue() returns (uint256)), parentCVLDeclarationId=envfreeFuncsStaticCheck, isCounted=true): true,
+	RegisteredRule(rule=getValue(), ruleType=Static(contractFunction=Ao.getValue() returns (uint256)), parentCVLDeclarationId=envfreeFuncsStaticCheck, isCounted=true): true,
+	RegisteredRule(rule=A.divideValue(uint256)-Ao.modifyValue(uint8,uint256), ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=A-Ao, isCounted=true): true,
+	RegisteredRule(rule=A.incrementValue()-Ao.modifyValue(uint8,uint256), ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=A-Ao, isCounted=true): true,
+	RegisteredRule(rule=A.setValue(uint256)-Ao.modifyValue(uint8,uint256), ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=A-Ao, isCounted=true): true,
+	RegisteredRule(rule=A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256), ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=A-Ao, isCounted=true): true,
+	RegisteredRule(rule=A.decrementValue()-Ao.modifyValue(uint8,uint256), ruleType=spec.cvlast.SpecType$Single$FromUser$SpecFile@5436ad87, parentCVLDeclarationId=A-Ao, isCounted=true): true
+}

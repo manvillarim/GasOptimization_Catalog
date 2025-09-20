@@ -1,0 +1,35 @@
+{
+    "CLI_package_name": "",
+    "CLI_version": "",
+    "branch": "main",
+    "certora_ci_client": null,
+    "conf": {
+        "files": [
+            "src/A.sol",
+            "src/Ao.sol"
+        ],
+        "msg": "Verification of effiecient loop incrementation",
+        "optimistic_loop": true,
+        "process": "emv",
+        "prover_version": "master",
+        "rule_sanity": "basic",
+        "send_only": true,
+        "server": "production",
+        "verify": "Ao:../specs/mappingarray.spec"
+    },
+    "conf_path": "certora/mappings-vs-arrays/conf/mappingarray.conf",
+    "cwd_relative": "certora/mappings-vs-arrays/conf",
+    "dirty": true,
+    "group_id": null,
+    "main_spec": "../specs/mappingarray.spec",
+    "origin": "https://github.com/manvillarim/GasOptimization_Catalog.git",
+    "python_version": "3.13.7",
+    "raw_args": [
+        "/home/manoel/certora_builds/certoraRun.py",
+        "--prover_version",
+        "master",
+        "mappingarray.conf"
+    ],
+    "revision": "e5ce5e94adcac61a694ec1fa91b9eaf0afac6ba7",
+    "timestamp": "1758317021.530746"
+}

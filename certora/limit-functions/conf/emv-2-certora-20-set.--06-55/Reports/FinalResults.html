@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<a name='PageTop'><h2>Certora Prover results for contract</h2></a>
+<a href='#AvailableContracts'>Go to available contracts listing</a>
+<h3>Results for main:</h3>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-success">
+<td><a href='#envfreeFuncsStaticCheck'>envfreeFuncsStaticCheck</a></td><td>&#128077;</td><td>0</td><td>            Success(All passed!<br/>
+)<br/></td><td>no local variables</td></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfIncrementValue'>gasOptimizedCorrectnessOfIncrementValue</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 5) - specs/limitfunctions.spec line 30<br/>            Success(Violated for: <br/>
+A.incrementValue()-Ao.modifyValue(uint8,uint256)<br/>
+)<br/></td><td>no local variables</td></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfDivideValue'>gasOptimizedCorrectnessOfDivideValue</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 2) - specs/limitfunctions.spec line 30<br/>            Success(Violated for: <br/>
+A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)<br/>
+)<br/></td><td>no local variables</td></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfMultiplyValue'>gasOptimizedCorrectnessOfMultiplyValue</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 3) - specs/limitfunctions.spec line 30<br/>            Success(Violated for: <br/>
+A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)<br/>
+)<br/></td><td>no local variables</td></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfSetValue'>gasOptimizedCorrectnessOfSetValue</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 4) - specs/limitfunctions.spec line 30<br/>            Success(Violated for: <br/>
+A.setValue(uint256)-Ao.modifyValue(uint8,uint256)<br/>
+)<br/></td><td>no local variables</td></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfDecrementValue'>gasOptimizedCorrectnessOfDecrementValue</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 1) - specs/limitfunctions.spec line 30<br/>            Success(Violated for: <br/>
+A.decrementValue()-Ao.modifyValue(uint8,uint256)<br/>
+)<br/></td><td>no local variables</td></tr>
+</table>
+<br/>
+<a name='envfreeFuncsStaticCheck'>
+<h3>Results for envfreeFuncsStaticCheck:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-success">
+<td><a href='#A.getValue()'>A.getValue()</a></td><td>&#128077;</td><td>0</td><td>Success(Envfree method A.getValue() returns (uint256) is OK)<br/></td><td>no local variables</td></tr>
+<tr class="table-success">
+<td><a href='#getValue()'>getValue()</a></td><td>&#128077;</td><td>0</td><td>Success(Envfree method Ao.getValue() returns (uint256) is OK)<br/></td><td>no local variables</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfIncrementValue'>
+<h3>Results for gasOptimizedCorrectnessOfIncrementValue:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.incrementValue()-Ao.modifyValue(uint8,uint256)'>A.incrementValue()-Ao.modifyValue(uint8,uint256)</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 5) - specs/limitfunctions.spec line 30<br/></td><td>A=A (0x2711)<br>Ao=Ao (0x2712)<br>ecrecover=ecrecover (1)<br>f.contract=A (0x2711)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=false<br>f.isView=false<br>f.numberOfArguments=0<br>f.selector=0x3bfd7fd3<br>g.contract=Ao (0x2712)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=false<br>g.isView=false<br>g.numberOfArguments=2<br>g.selector=0x2d947a67<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfDivideValue'>
+<h3>Results for gasOptimizedCorrectnessOfDivideValue:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)'>A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 2) - specs/limitfunctions.spec line 30<br/></td><td>A=A (0x2710)<br>Ao=Ao (0x2711)<br>ecrecover=ecrecover (1)<br>f.contract=A (0x2710)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=false<br>f.isView=false<br>f.numberOfArguments=1<br>f.selector=0x853ec960<br>g.contract=Ao (0x2711)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=false<br>g.isView=false<br>g.numberOfArguments=2<br>g.selector=0x2d947a67<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfMultiplyValue'>
+<h3>Results for gasOptimizedCorrectnessOfMultiplyValue:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)'>A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 3) - specs/limitfunctions.spec line 30<br/></td><td>A=A (0x2711)<br>Ao=Ao (0x2712)<br>ecrecover=ecrecover (1)<br>f.contract=A (0x2711)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=false<br>f.isView=false<br>f.numberOfArguments=1<br>f.selector=0xd1fe0115<br>g.contract=Ao (0x2712)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=false<br>g.isView=false<br>g.numberOfArguments=2<br>g.selector=0x2d947a67<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfSetValue'>
+<h3>Results for gasOptimizedCorrectnessOfSetValue:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.setValue(uint256)-Ao.modifyValue(uint8,uint256)'>A.setValue(uint256)-Ao.modifyValue(uint8,uint256)</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 4) - specs/limitfunctions.spec line 30<br/></td><td>A=A (0x2711)<br>Ao=Ao (0x2712)<br>ecrecover=ecrecover (1)<br>f.contract=A (0x2711)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=false<br>f.isView=false<br>f.numberOfArguments=1<br>f.selector=0x55241077<br>g.contract=Ao (0x2712)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=false<br>g.isView=false<br>g.numberOfArguments=2<br>g.selector=0x2d947a67<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfDecrementValue'>
+<h3>Results for gasOptimizedCorrectnessOfDecrementValue:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.decrementValue()-Ao.modifyValue(uint8,uint256)'>A.decrementValue()-Ao.modifyValue(uint8,uint256)</a></td><td>&#128078;</td><td>2</td><td>Assert message: couplingInv() (uid 1) - specs/limitfunctions.spec line 30<br/></td><td>A=A (0x2711)<br>Ao=Ao (0x2712)<br>ecrecover=ecrecover (1)<br>f.contract=A (0x2711)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=false<br>f.isView=false<br>f.numberOfArguments=0<br>f.selector=0x16b78191<br>g.contract=Ao (0x2712)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=false<br>g.isView=false<br>g.numberOfArguments=2<br>g.selector=0x2d947a67<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='AvailableContracts'><h2>Available contracts</h2></a>
+<table class="table table-bordered table-hover">
+<tr><th>Name</th><th>Address</th><th>Pre-state</th><th colspan='2'>Methods</th></tr>
+<tr>
+<td>A</td>
+<td>ce4604a0000000000000000000000001</td>
+<td>{}</td>
+<td>divideValue(uint256) /*(853ec960)*/ <br/>decrementValue() /*(16b78191)*/ <br/>incrementValue() /*(3bfd7fd3)*/ <br/>multiplyValue(uint256) /*(d1fe0115)*/ <br/>getValue() returns (uint256) /*(20965255)*/ <br/>setValue(uint256) /*(55241077)*/ </td><td><br/><br/><br/><br/><br/></td>
+</tr>
+<tr>
+<td>Ao</td>
+<td>ce4604a0000000000000000000000003</td>
+<td>{}</td>
+<td>getValue() returns (uint256) /*(20965255)*/ <br/>modifyValue(Ao.Operation,uint256) /*(2d947a67)*/ </td><td><br/></td>
+</tr>

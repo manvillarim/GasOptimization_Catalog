@@ -1,0 +1,1389 @@
+Reports in /home/manoel/projeto/GasOptimizationCatalog/certora/limit-functions/conf/emv-2-certora-20-set.--06-55/Reports
+Start Sat Sep 20 06:55:46 BRT 2025
+[ForkJoinPool-1-worker-1] WARN ALWAYS - Syntax warning in spec file limitfunctions.spec:8:5: Method declaration for A.setValue(uint256) is neither `envfree`, `optional`, nor summarized, so it has no effect.
+[ForkJoinPool-1-worker-1] WARN ALWAYS - Syntax warning in spec file limitfunctions.spec:9:5: Method declaration for A.incrementValue() is neither `envfree`, `optional`, nor summarized, so it has no effect.
+[ForkJoinPool-1-worker-1] WARN ALWAYS - Syntax warning in spec file limitfunctions.spec:10:5: Method declaration for A.decrementValue() is neither `envfree`, `optional`, nor summarized, so it has no effect.
+[ForkJoinPool-1-worker-1] WARN ALWAYS - Syntax warning in spec file limitfunctions.spec:11:5: Method declaration for A.multiplyValue(uint256) is neither `envfree`, `optional`, nor summarized, so it has no effect.
+[ForkJoinPool-1-worker-1] WARN ALWAYS - Syntax warning in spec file limitfunctions.spec:12:5: Method declaration for A.divideValue(uint256) is neither `envfree`, `optional`, nor summarized, so it has no effect.
+[ForkJoinPool-1-worker-1] WARN ALWAYS - Syntax warning in spec file limitfunctions.spec:14:5: Method declaration for Ao.modifyValue(Ao.Operation, uint256) is neither `envfree`, `optional`, nor summarized, so it has no effect.
+The scene contains 2 contracts:
+A : 0xce4604a0000000000000000000000001,
+Ao : 0xce4604a0000000000000000000000003
+Running initial transformations
+Has CVL checks.
+Checking CVL specs/limitfunctions.spec for contract Ao
+Unrolling loops 1 time, unwinding condition is assumed
+Checking rule gasOptimizedCorrectnessOfSetValue (1 out of 6)...
+Checking rule envfreeFuncsStaticCheck (6 out of 6)...
+Checking rule gasOptimizedCorrectnessOfMultiplyValue (4 out of 6)...
+Checking rule gasOptimizedCorrectnessOfIncrementValue (2 out of 6)...
+Checking rule gasOptimizedCorrectnessOfDivideValue (5 out of 6)...
+Checking rule gasOptimizedCorrectnessOfDecrementValue (3 out of 6)...
+Result for envfreeFuncsStaticCheck: envfreeFuncsStaticCheck: A.getValue(): SUCCESS
+getValue(): SUCCESS
+Starting to run on rule gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)
+Starting to run on rule gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)
+Starting to run on rule gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)
+Starting to run on rule gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)
+Starting to run on rule gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)
+[ForkJoinPool-1-worker-9] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-3] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-1] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-4] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-2] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-1] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-2] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-4] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-9] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-3] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[pool-2-thread-14] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "cvc4" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCVC4or5(SimpleFormulaChecker.kt:347)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleCVC4or5(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invokeSuspend(SimpleFormulaChecker.kt:221)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-11] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-13] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "cvc4" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCVC4or5(SimpleFormulaChecker.kt:347)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleCVC4or5(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invokeSuspend(SimpleFormulaChecker.kt:221)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-5] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-3] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-6] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-4] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-3] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "cvc4" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCVC4or5(SimpleFormulaChecker.kt:347)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleCVC4or5(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invokeSuspend(SimpleFormulaChecker.kt:221)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-2] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "cvc4" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCVC4or5(SimpleFormulaChecker.kt:347)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleCVC4or5(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invokeSuspend(SimpleFormulaChecker.kt:221)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-3] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "cvc4" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCVC4or5(SimpleFormulaChecker.kt:347)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleCVC4or5(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invokeSuspend(SimpleFormulaChecker.kt:221)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-8] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-5] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-2] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-14] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-13] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "yices-smt2" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleYices(SimpleFormulaChecker.kt:398)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleYices(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invokeSuspend(SimpleFormulaChecker.kt:232)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$3.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+[pool-2-thread-8] WARN SMT_SMTFORMULACHECKERRESULT - solver process died; query: gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)
+java.io.IOException: Cannot run program "cvc4" (in directory "."): error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at smtlibutils.algorithms.SubProcessInteraction.runCommand(SubProcessInteraction.kt:34)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.startProcess(InteractingCmdProcessor.kt:202)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:207)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor.<init>(InteractingCmdProcessor.kt:172)
+	at smtlibutils.cmdprocessor.InteractingCmdProcessor$Companion.fromCommand(InteractingCmdProcessor.kt:247)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand(ExtraCommandsCmdProcessor.kt:70)
+	at smtlibutils.cmdprocessor.ExtraCommandsCmdProcessor$Companion.fromCommand$default(ExtraCommandsCmdProcessor.kt:61)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo(SmtQueryProcessor.kt:280)
+	at smtlibutils.cmdprocessor.SmtQueryProcessor$Companion.fromSolverInstanceInfo$default(SmtQueryProcessor.kt:272)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCheckerFromSolverInstanceInfo(SimpleFormulaChecker.kt:160)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.singleCVC4or5(SimpleFormulaChecker.kt:347)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion.access$singleCVC4or5(SimpleFormulaChecker.kt:150)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invokeSuspend(SimpleFormulaChecker.kt:221)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at smtlibutils.cmdprocessor.SimpleFormulaChecker$Companion$singleCheckerSpawnerFromSolverInfoOrNull$2.invoke(SimpleFormulaChecker.kt)
+	at verifier.Executable.exec(Executable.kt:212)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invokeSuspend(LExpVcChecker.kt:236)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at verifier.LExpVcChecker$raceSolvers$resultInfo$1$1$1$2.invoke(LExpVcChecker.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:89)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:151)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:46)
+	at kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:74)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invokeSuspend(RpcRace.kt:109)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2$finish$1.invoke(RpcRace.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:78)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:167)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at parallel.coroutines.RpcRaceKt$rpcRace$2$results$1$2.invokeSuspend(RpcRace.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: error=2, Arquivo ou diretório inexistente
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 40 more
+Total time for gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256): 0 seconds ; Split time: 0 seconds ; Number of problems: 1 ; Solver time : 0 seconds
+Total time for gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256): 0 seconds ; Split time: 0 seconds ; Number of problems: 1 ; Solver time : 0 seconds
+Total time for gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256): 0 seconds ; Split time: 0 seconds ; Number of problems: 1 ; Solver time : 0 seconds
+Total time for gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256): 0 seconds ; Split time: 0 seconds ; Number of problems: 1 ; Solver time : 0 seconds
+Total time for gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256): 0 seconds ; Split time: 0 seconds ; Number of problems: 1 ; Solver time : 0 seconds
+[ForkJoinPool-1-worker-16] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-4] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-11] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-6] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+[ForkJoinPool-1-worker-7] WARN UI - Rewritten return edges should converge to a single edge from 1_0_0_1_0_1 but got [] - trying anyway
+Violated: gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)
+Violated: gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)
+Violated: gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)
+Violated: gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)
+gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256): A property is violated
+gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256): A property is violated
+gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256): A property is violated
+Violated: gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)
+gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256): A property is violated
+gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256): A property is violated
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON24:int, exp=eA.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON24:int, exp=eA.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON24:int, exp=eA.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON34:int, exp=eAo.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON24:int, exp=eA.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON34:int, exp=eAo.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON24:int, exp=eA.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON34:int, exp=eAo.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON34:int, exp=eAo.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON34:int, exp=eAo.msg.sender)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON52:int, exp=eA.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON52:int, exp=eA.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON53:int, exp=eAo.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON52:int, exp=eA.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON53:int, exp=eAo.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON52:int, exp=eA.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON53:int, exp=eAo.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON53:int, exp=eAo.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON52:int, exp=eA.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON26:int, exp=eA.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON53:int, exp=eAo.msg.value)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON26:int, exp=eA.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON36:int, exp=eAo.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON26:int, exp=eA.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON26:int, exp=eA.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON36:int, exp=eAo.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON36:int, exp=eAo.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON26:int, exp=eA.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON36:int, exp=eAo.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON36:int, exp=eAo.tx.origin)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON27:int, exp=eA.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON27:int, exp=eA.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON37:int, exp=eAo.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON37:int, exp=eAo.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON27:int, exp=eA.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON37:int, exp=eAo.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON27:int, exp=eA.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON37:int, exp=eAo.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON27:int, exp=eA.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON28:int, exp=eA.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON28:int, exp=eA.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON38:int, exp=eAo.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON37:int, exp=eAo.block.basefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON38:int, exp=eAo.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON28:int, exp=eA.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON38:int, exp=eAo.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON28:int, exp=eA.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON38:int, exp=eAo.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON29:int, exp=eA.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON39:int, exp=eAo.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON29:int, exp=eA.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON39:int, exp=eAo.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON29:int, exp=eA.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON28:int, exp=eA.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON39:int, exp=eAo.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON30:int, exp=eA.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON38:int, exp=eAo.block.blobbasefee)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON40:int, exp=eAo.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON30:int, exp=eA.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON29:int, exp=eA.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON40:int, exp=eAo.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON39:int, exp=eAo.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON30:int, exp=eA.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON31:int, exp=eA.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON40:int, exp=eAo.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON41:int, exp=eAo.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON31:int, exp=eA.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON41:int, exp=eAo.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON30:int, exp=eA.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON29:int, exp=eA.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON40:int, exp=eAo.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON39:int, exp=eAo.block.coinbase)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON32:int, exp=eA.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON42:int, exp=eAo.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON32:int, exp=eA.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON42:int, exp=eAo.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON31:int, exp=eA.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON41:int, exp=eAo.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON33:int, exp=eA.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON43:int, exp=eAo.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON31:int, exp=eA.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON33:int, exp=eA.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON41:int, exp=eAo.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON43:int, exp=eAo.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON32:int, exp=eA.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON42:int, exp=eAo.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON30:int, exp=eA.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON40:int, exp=eAo.block.difficulty)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON32:int, exp=eA.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON42:int, exp=eAo.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON33:int, exp=eA.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON43:int, exp=eAo.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON31:int, exp=eA.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON33:int, exp=eA.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON41:int, exp=eAo.block.gaslimit)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON43:int, exp=eAo.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON32:int, exp=eA.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON42:int, exp=eAo.block.number)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON33:int, exp=eA.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON43:int, exp=eAo.block.timestamp)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON99!!16:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON99!!16:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON99!!16:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON99!!16:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON99!!16:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!9:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!9:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!9:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!9:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!9:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON94:bool, exp=eA == eAo)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON94:bool, exp=eA == eAo)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON94:bool, exp=eA == eAo)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON94:bool, exp=eA == eAo)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON94:bool, exp=eA == eAo)) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON99!!194:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=R74:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-16] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!198:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON99!!74:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-4] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!197:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-11] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!195:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=R167:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-6] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!195:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=R74:bv256, exp=A.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN COMMON - Got a non-constant, non-variable operand (Operand(out=CANON103!!197:bv256, exp=Ao.getValue())) that is not in the builderState. Failed to construct its complete syntax-tree
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!21:int and CANON1!!50:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!21:int and CANON1!!50:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!21:int and CANON1!!50:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!50:int and CANON1!!97:int
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!21:int and CANON1!!50:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName f.contract given to two symbols: CANON2!!22:int and CANON2!!99:int
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!21:int and CANON1!!50:int
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!50:int and CANON1!!95:int
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!50:int and CANON1!!93:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName f.isPure given to two symbols: CANON3!!47:bool and CANON3!!94:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName f.contract given to two symbols: CANON2!!22:int and CANON2!!97:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName f.isView given to two symbols: CANON4!!48:bool and CANON4!!95:bool
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!50:int and CANON1!!96:int
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName f.isPure given to two symbols: CANON3!!47:bool and CANON3!!92:bool
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName f.contract given to two symbols: CANON2!!22:int and CANON2!!98:int
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName f.isView given to two symbols: CANON4!!48:bool and CANON4!!93:bool
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName f.isPure given to two symbols: CANON3!!47:bool and CANON3!!93:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName f.isPayable given to two symbols: CANON5!!49:bool and CANON5!!94:bool
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName f.isView given to two symbols: CANON4!!48:bool and CANON4!!94:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName f.isFallback given to two symbols: CANON6!!51:bool and CANON6!!96:bool
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName f.isPayable given to two symbols: CANON5!!49:bool and CANON5!!95:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!27:int and CANON7!!53:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName f.isFallback given to two symbols: CANON6!!51:bool and CANON6!!97:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!53:int and CANON7!!99:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!27:int and CANON7!!53:int
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!28:int and CANON8!!57:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!28:int and CANON8!!57:int
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName g.contract given to two symbols: CANON9!!105:int and CANON9!!29:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName g.contract given to two symbols: CANON9!!106:int and CANON9!!29:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName f.numberOfArguments given to two symbols: CANON1!!50:int and CANON1!!97:int
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!37:int and CANON!!46:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName f.contract given to two symbols: CANON2!!22:int and CANON2!!99:int
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!46:int and CANON!!91:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName f.isPure given to two symbols: CANON3!!47:bool and CANON3!!94:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName g.isView given to two symbols: CANON11!!101:bool and CANON11!!55:bool
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName f.isView given to two symbols: CANON4!!48:bool and CANON4!!95:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName g.isPayable given to two symbols: CANON12!!102:bool and CANON12!!56:bool
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName f.isPayable given to two symbols: CANON5!!49:bool and CANON5!!96:bool
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName f.isPayable given to two symbols: CANON5!!49:bool and CANON5!!96:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName g.isFallback given to two symbols: CANON13!!104:bool and CANON13!!58:bool
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName f.isFallback given to two symbols: CANON6!!51:bool and CANON6!!98:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName f.contract given to two symbols: CANON2!!22:int and CANON2!!95:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!27:int and CANON7!!53:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName f.isFallback given to two symbols: CANON6!!51:bool and CANON6!!98:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName f.isPure given to two symbols: CANON3!!47:bool and CANON3!!90:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName g.isPure given to two symbols: CANON10!!54:bool and CANON10!!100:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName f.isView given to two symbols: CANON4!!48:bool and CANON4!!91:bool
+[ForkJoinPool-1-worker-6] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!57:int and CANON8!!103:int
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName f.isPayable given to two symbols: CANON5!!49:bool and CANON5!!92:bool
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!37:int and CANON!!46:int
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName f.isFallback given to two symbols: CANON6!!51:bool and CANON6!!94:bool
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!27:int and CANON7!!53:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!46:int and CANON!!92:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!28:int and CANON8!!57:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!28:int and CANON8!!57:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName g.contract given to two symbols: CANON9!!107:int and CANON9!!29:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName g.contract given to two symbols: CANON9!!107:int and CANON9!!29:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName g.isView given to two symbols: CANON11!!102:bool and CANON11!!55:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!27:int and CANON7!!53:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!37:int and CANON!!46:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName g.isPayable given to two symbols: CANON12!!103:bool and CANON12!!56:bool
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!46:int and CANON!!93:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName g.isFallback given to two symbols: CANON13!!105:bool and CANON13!!58:bool
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName g.isView given to two symbols: CANON11!!103:bool and CANON11!!55:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!53:int and CANON7!!97:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName g.isPayable given to two symbols: CANON12!!104:bool and CANON12!!56:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!28:int and CANON8!!57:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName g.isFallback given to two symbols: CANON13!!106:bool and CANON13!!58:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName g.contract given to two symbols: CANON9!!103:int and CANON9!!29:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!37:int and CANON!!46:int
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!53:int and CANON7!!100:int
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!37:int and CANON!!46:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!53:int and CANON7!!101:int
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!46:int and CANON!!89:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName g.isPure given to two symbols: CANON10!!54:bool and CANON10!!102:bool
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName f.selector given to two symbols: CANON!!46:int and CANON!!93:int
+[ForkJoinPool-1-worker-4] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!57:int and CANON8!!105:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName g.isView given to two symbols: CANON11!!103:bool and CANON11!!55:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName g.isPure given to two symbols: CANON10!!54:bool and CANON10!!98:bool
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName g.isPayable given to two symbols: CANON12!!104:bool and CANON12!!56:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName g.isView given to two symbols: CANON11!!55:bool and CANON11!!99:bool
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName g.isPure given to two symbols: CANON10!!54:bool and CANON10!!101:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName g.isPayable given to two symbols: CANON12!!100:bool and CANON12!!56:bool
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName g.isFallback given to two symbols: CANON13!!106:bool and CANON13!!58:bool
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName g.isFallback given to two symbols: CANON13!!102:bool and CANON13!!58:bool
+[ForkJoinPool-1-worker-11] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!57:int and CANON8!!104:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName g.selector given to two symbols: CANON7!!53:int and CANON7!!101:int
+[ForkJoinPool-1-worker-16] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!57:int and CANON8!!101:int
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName g.isPure given to two symbols: CANON10!!54:bool and CANON10!!102:bool
+[ForkJoinPool-1-worker-7] WARN CALLTRACE - displayName g.numberOfArguments given to two symbols: CANON8!!57:int and CANON8!!105:int
+received `signalSkip` for rule gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous
+received `signalSkip` for rule gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous
+received `signalSkip` for rule gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous
+received `signalSkip` for rule gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous
+received `signalSkip` for rule gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous
+[ForkJoinPool-1-worker-11] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-11] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-11] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-11] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-11] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+Result for gasOptimizedCorrectnessOfIncrementValue: gasOptimizedCorrectnessOfIncrementValue: A.incrementValue()-Ao.modifyValue(uint8,uint256): FAIL: couplingInv() (uid 5) - specs/limitfunctions.spec line 30
+[ForkJoinPool-1-worker-13] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-13] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-13] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-13] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-13] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+Result for gasOptimizedCorrectnessOfDecrementValue: gasOptimizedCorrectnessOfDecrementValue: A.decrementValue()-Ao.modifyValue(uint8,uint256): FAIL: couplingInv() (uid 1) - specs/limitfunctions.spec line 30
+[ForkJoinPool-1-worker-6] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-6] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-6] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-6] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-6] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+Result for gasOptimizedCorrectnessOfSetValue: gasOptimizedCorrectnessOfSetValue: A.setValue(uint256)-Ao.modifyValue(uint8,uint256): FAIL: couplingInv() (uid 4) - specs/limitfunctions.spec line 30
+[ForkJoinPool-1-worker-4] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-4] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-4] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-4] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-4] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+Result for gasOptimizedCorrectnessOfMultiplyValue: gasOptimizedCorrectnessOfMultiplyValue: A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256): FAIL: couplingInv() (uid 3) - specs/limitfunctions.spec line 30
+[ForkJoinPool-1-worker-7] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfSetValue-A-Ao-A.setValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-7] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDecrementValue-A-Ao-A.decrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-7] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfDivideValue-A-Ao-A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-7] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfIncrementValue-A-Ao-A.incrementValue()-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+[ForkJoinPool-1-worker-7] WARN REPORT_UTILS - if any child is a rule-sanity child, then all (non-skipped) children must be rule sanity children; instead got these children: [(gasOptimizedCorrectnessOfMultiplyValue-A-Ao-A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)-rule_not_vacuous, SANITY), (null, VIOLATED_ASSERT)]
+Result for gasOptimizedCorrectnessOfDivideValue: gasOptimizedCorrectnessOfDivideValue: A.divideValue(uint256)-Ao.modifyValue(uint8,uint256): FAIL: couplingInv() (uid 2) - specs/limitfunctions.spec line 30
+Results for envfreeFuncsStaticCheck:
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+|Rule name                               |Verified     |Time (sec)|Description                                                 |Local vars                                        |
+|----------------------------------------|-------------|----------|------------------------------------------------------------|--------------------------------------------------|
+|A.getValue()                            |Not violated |0         |                                                            |no local variables                                |
+|getValue()                              |Not violated |0         |                                                            |no local variables                                |
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+
+Results for gasOptimizedCorrectnessOfIncrementValue:
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+|Rule name                               |Verified     |Time (sec)|Description                                                 |Local vars                                        |
+|----------------------------------------|-------------|----------|------------------------------------------------------------|--------------------------------------------------|
+|A.incrementValue()-Ao.modifyValue(uint8,|Violated     |2         |Assert message: couplingInv() (uid 5) -                     |A=A (0x2711)                                      |
+|uint256)                                |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2712)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2711)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=0                             |
+|                                        |             |          |                                                            |f.selector=0x3bfd7fd3                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2712)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+
+Results for gasOptimizedCorrectnessOfDivideValue:
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+|Rule name                               |Verified     |Time (sec)|Description                                                 |Local vars                                        |
+|----------------------------------------|-------------|----------|------------------------------------------------------------|--------------------------------------------------|
+|A.divideValue(uint256)-Ao.modifyValue(ui|Violated     |2         |Assert message: couplingInv() (uid 2) -                     |A=A (0x2710)                                      |
+|nt8,uint256)                            |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2711)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2710)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=1                             |
+|                                        |             |          |                                                            |f.selector=0x853ec960                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2711)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+
+Results for gasOptimizedCorrectnessOfMultiplyValue:
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+|Rule name                               |Verified     |Time (sec)|Description                                                 |Local vars                                        |
+|----------------------------------------|-------------|----------|------------------------------------------------------------|--------------------------------------------------|
+|A.multiplyValue(uint256)-Ao.modifyValue(|Violated     |2         |Assert message: couplingInv() (uid 3) -                     |A=A (0x2711)                                      |
+|uint8,uint256)                          |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2712)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2711)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=1                             |
+|                                        |             |          |                                                            |f.selector=0xd1fe0115                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2712)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+
+Results for gasOptimizedCorrectnessOfSetValue:
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+|Rule name                               |Verified     |Time (sec)|Description                                                 |Local vars                                        |
+|----------------------------------------|-------------|----------|------------------------------------------------------------|--------------------------------------------------|
+|A.setValue(uint256)-Ao.modifyValue(uint8|Violated     |2         |Assert message: couplingInv() (uid 4) -                     |A=A (0x2711)                                      |
+|,uint256)                               |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2712)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2711)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=1                             |
+|                                        |             |          |                                                            |f.selector=0x55241077                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2712)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+
+Results for gasOptimizedCorrectnessOfDecrementValue:
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+|Rule name                               |Verified     |Time (sec)|Description                                                 |Local vars                                        |
+|----------------------------------------|-------------|----------|------------------------------------------------------------|--------------------------------------------------|
+|A.decrementValue()-Ao.modifyValue(uint8,|Violated     |2         |Assert message: couplingInv() (uid 1) -                     |A=A (0x2711)                                      |
+|uint256)                                |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2712)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2711)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=0                             |
+|                                        |             |          |                                                            |f.selector=0x16b78191                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2712)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+
+Results for all:
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+|Rule name                               |Verified     |Time (sec)|Description                                                 |Local vars                                        |
+|----------------------------------------|-------------|----------|------------------------------------------------------------|--------------------------------------------------|
+|envfreeFuncsStaticCheck                 |Not violated |0         |                                                            |no local variables                                |
+|A.divideValue(uint256)-Ao.modifyValue(ui|Violated     |2         |Assert message: couplingInv() (uid 2) -                     |A=A (0x2710)                                      |
+|nt8,uint256)                            |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2711)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2710)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=1                             |
+|                                        |             |          |                                                            |f.selector=0x853ec960                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2711)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+|A.multiplyValue(uint256)-Ao.modifyValue(|Violated     |2         |Assert message: couplingInv() (uid 3) -                     |A=A (0x2711)                                      |
+|uint8,uint256)                          |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2712)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2711)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=1                             |
+|                                        |             |          |                                                            |f.selector=0xd1fe0115                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2712)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+|A.incrementValue()-Ao.modifyValue(uint8,|Violated     |2         |Assert message: couplingInv() (uid 5) -                     |A=A (0x2711)                                      |
+|uint256)                                |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2712)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2711)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=0                             |
+|                                        |             |          |                                                            |f.selector=0x3bfd7fd3                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2712)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+|gasOptimizedCorrectnessOfIncrementValue |Violated     |2         |Assert message: couplingInv() (uid 5) -                     |no local variables                                |
+|                                        |             |          |specs/limitfunctions.spec line 30                           |                                                  |
+|gasOptimizedCorrectnessOfDivideValue    |Violated     |2         |Assert message: couplingInv() (uid 2) -                     |no local variables                                |
+|                                        |             |          |specs/limitfunctions.spec line 30                           |                                                  |
+|A.setValue(uint256)-Ao.modifyValue(uint8|Violated     |2         |Assert message: couplingInv() (uid 4) -                     |A=A (0x2711)                                      |
+|,uint256)                               |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2712)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2711)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=1                             |
+|                                        |             |          |                                                            |f.selector=0x55241077                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2712)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+|gasOptimizedCorrectnessOfMultiplyValue  |Violated     |2         |Assert message: couplingInv() (uid 3) -                     |no local variables                                |
+|                                        |             |          |specs/limitfunctions.spec line 30                           |                                                  |
+|A.decrementValue()-Ao.modifyValue(uint8,|Violated     |2         |Assert message: couplingInv() (uid 1) -                     |A=A (0x2711)                                      |
+|uint256)                                |             |          |specs/limitfunctions.spec line 30                           |Ao=Ao (0x2712)                                    |
+|                                        |             |          |                                                            |ecrecover=ecrecover (1)                           |
+|                                        |             |          |                                                            |f.contract=A (0x2711)                             |
+|                                        |             |          |                                                            |f.isFallback=false                                |
+|                                        |             |          |                                                            |f.isPayable=false                                 |
+|                                        |             |          |                                                            |f.isPure=false                                    |
+|                                        |             |          |                                                            |f.isView=false                                    |
+|                                        |             |          |                                                            |f.numberOfArguments=0                             |
+|                                        |             |          |                                                            |f.selector=0x16b78191                             |
+|                                        |             |          |                                                            |g.contract=Ao (0x2712)                            |
+|                                        |             |          |                                                            |g.isFallback=false                                |
+|                                        |             |          |                                                            |g.isPayable=false                                 |
+|                                        |             |          |                                                            |g.isPure=false                                    |
+|                                        |             |          |                                                            |g.isView=false                                    |
+|                                        |             |          |                                                            |g.numberOfArguments=2                             |
+|                                        |             |          |                                                            |g.selector=0x2d947a67                             |
+|                                        |             |          |                                                            |identity=identity (4)                             |
+|                                        |             |          |                                                            |sha256=sha256 (2)                                 |
+|gasOptimizedCorrectnessOfSetValue       |Violated     |2         |Assert message: couplingInv() (uid 4) -                     |no local variables                                |
+|                                        |             |          |specs/limitfunctions.spec line 30                           |                                                  |
+|gasOptimizedCorrectnessOfDecrementValue |Violated     |2         |Assert message: couplingInv() (uid 1) -                     |no local variables                                |
+|                                        |             |          |specs/limitfunctions.spec line 30                           |                                                  |
+*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+
+Failures summary:
+Failed on A.divideValue(uint256)-Ao.modifyValue(uint8,uint256):
+Assert message: couplingInv() (uid 2) - specs/limitfunctions.spec line 30
+
+
+Failed on A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256):
+Assert message: couplingInv() (uid 3) - specs/limitfunctions.spec line 30
+
+
+Failed on A.incrementValue()-Ao.modifyValue(uint8,uint256):
+Assert message: couplingInv() (uid 5) - specs/limitfunctions.spec line 30
+
+
+Failed on gasOptimizedCorrectnessOfIncrementValue:
+Assert message: couplingInv() (uid 5) - specs/limitfunctions.spec line 30
+Violated for: 
+A.incrementValue()-Ao.modifyValue(uint8,uint256)
+
+Failed on gasOptimizedCorrectnessOfDivideValue:
+Assert message: couplingInv() (uid 2) - specs/limitfunctions.spec line 30
+Violated for: 
+A.divideValue(uint256)-Ao.modifyValue(uint8,uint256)
+
+Failed on A.setValue(uint256)-Ao.modifyValue(uint8,uint256):
+Assert message: couplingInv() (uid 4) - specs/limitfunctions.spec line 30
+
+
+Failed on gasOptimizedCorrectnessOfMultiplyValue:
+Assert message: couplingInv() (uid 3) - specs/limitfunctions.spec line 30
+Violated for: 
+A.multiplyValue(uint256)-Ao.modifyValue(uint8,uint256)
+
+Failed on A.decrementValue()-Ao.modifyValue(uint8,uint256):
+Assert message: couplingInv() (uid 1) - specs/limitfunctions.spec line 30
+
+
+Failed on gasOptimizedCorrectnessOfSetValue:
+Assert message: couplingInv() (uid 4) - specs/limitfunctions.spec line 30
+Violated for: 
+A.setValue(uint256)-Ao.modifyValue(uint8,uint256)
+
+Failed on gasOptimizedCorrectnessOfDecrementValue:
+Assert message: couplingInv() (uid 1) - specs/limitfunctions.spec line 30
+Violated for: 
+A.decrementValue()-Ao.modifyValue(uint8,uint256)
+
+
+Duration 8526, RuleCheckResultsStats: numTotal = 5; numVerified = 0; numViolated = 5; numTimeout = 0; numError = 0
+Done 0m
+Event reporter: all events were sent without errors
+Reports in file:///home/manoel/projeto/GasOptimizationCatalog/certora/limit-functions/conf/emv-2-certora-20-set.--06-55/Reports
+Final report in emv-2-certora-20-set.--06-55/Reports/FinalResults.html

@@ -1,3 +1,3 @@
 # Avoid Arithmetic in Loops Proof
 
-See Certora's result at https://prover.certora.com/output/480394/ddf5d57f21fe4c0484e71870b55786b6?anonymousKey=7af6855a8683424005ecdbe6aa0de2f3882fab80
+See Certora's result at https://prover.certora.com/output/480394/c7d046554b49436280aeabc5ce07b078?anonymousKey=dd7e51c008f17cb6afe55696467193c49bf54fe3
