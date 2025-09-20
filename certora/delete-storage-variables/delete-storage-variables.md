@@ -1,3 +1,3 @@
 # Delete Storage Variables Proof
 
-See Certora's result at https://prover.certora.com/output/480394/e076ab877394486bb0302d93385e1d20?anonymousKey=80c58f3501cd6a7776477068a061fc5817207b2e
+See Certora's result at https://prover.certora.com/output/480394/8e2f578146b14ef78278c434bacc3eb7?anonymousKey=2c07dc59c7c1859fa1b62eacd57c8ba390a6c3e1
