@@ -1,1 +1,0 @@
-java -jar $CERTORA/emv.jar -assumeUnwindCond -ruleSanityChecks basic -buildDirectory .certora_internal/25_09_19_22_01_22_663
