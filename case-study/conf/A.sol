@@ -31,179 +31,126 @@ contract A {
     RewardsDistributor public rewardsDistributor;
     Collector public collector;
     
-    // State variables
-    mapping(address => DataTypes.ReserveData) public reservesData;
-    mapping(uint256 => address) public reservesList;
-    mapping(uint8 => DataTypes.EModeCategory) public eModeCategories;
-    mapping(address => DataTypes.UserConfigurationMap) public usersConfig;
+    /// RewardsController methods
+    function getUserAccruedRewards(address user, address reward) external view returns (uint256) {
+        return rewardsDistributor.getUserAccruedRewards(user, reward);
+    }
     
-    // SupplyLogic functions
-    function executeWithdraw(
+    function getAllUserRewards(address[] calldata assets, address user) external view returns (address[] memory, uint256[] memory) {
+        return rewardsDistributor.getAllUserRewards(assets, user);
+    }
+    
+    function getRewardsList() external view returns (address[] memory) {
+        return rewardsDistributor.getRewardsList();
+    }
+    
+    function getUserAssetIndex(address user, address asset, address reward) external view returns (uint256) {
+        return rewardsDistributor.getUserAssetIndex(user, asset, reward);
+    }
+    /*function configureAssets(RewardsDataTypes.RewardsConfigInput[] memory config) public {
+        rewardsController.configureAssets(config);
+    }
+
+    function handleAction(address user, uint256 totalSupply, uint256 userBalance) public {
+        rewardsController.handleAction(user, totalSupply, userBalance);
+    }
+
+    function claimAllRewardsOnBehalf(
+        address[] calldata assets,
         address user,
-        DataTypes.ExecuteWithdrawParams memory params
-    ) external returns (uint256) {
-        DataTypes.UserConfigurationMap storage userConfig = usersConfig[user];
-        return SupplyLogic.executeWithdraw(
-            reservesData,
-            reservesList,
-            eModeCategories,
-            userConfig,
-            params
-        );
+        address to
+    ) public returns (address[] memory rewardsList, uint256[] memory claimedAmounts) {
+        return rewardsController.claimAllRewardsOnBehalf(assets, user, to);
     }
-    
-    function executeFinalizeTransfer(
-        DataTypes.FinalizeTransferParams memory params
-    ) external {
-        SupplyLogic.executeFinalizeTransfer(
-            reservesData,
-            reservesList,
-            eModeCategories,
-            usersConfig,
-            params
-        );
+
+    function claimAllRewards(
+        address[] calldata assets,
+        address to
+    ) public returns (address[] memory rewardsList, uint256[] memory claimedAmounts) {
+        return rewardsController.claimAllRewards(assets, to);
     }
-    
-    // BorrowLogic functions
-    function executeBorrow(
-        address user,
-        DataTypes.ExecuteBorrowParams memory params
-    ) external {
-        DataTypes.UserConfigurationMap storage userConfig = usersConfig[user];
-        BorrowLogic.executeBorrow(
-            reservesData,
-            reservesList,
-            eModeCategories,
-            userConfig,
-            params
-        );
+
+    function claimAllRewardsToSelf(
+        address[] calldata assets
+    ) public returns (address[] memory rewardsList, uint256[] memory claimedAmounts) {
+        return rewardsController.claimAllRewardsToSelf(assets);
     }
-    
-    function executeRepay(
-        address user,
-        DataTypes.ExecuteRepayParams memory params
-    ) external returns (uint256) {
-        DataTypes.UserConfigurationMap storage userConfig = usersConfig[user];
-        return BorrowLogic.executeRepay(
-            reservesData,
-            reservesList,
-            userConfig,
-            params
-        );
-    }
-    
-    // ValidationLogic function
-    function validateLiquidationCall(
-        address user,
-        address collateralAsset,
-        address debtAsset,
-        DataTypes.ValidateLiquidationCallParams memory params
-    ) external view {
-        DataTypes.UserConfigurationMap storage userConfig = usersConfig[user];
-        DataTypes.ReserveData storage collateralReserve = reservesData[collateralAsset];
-        DataTypes.ReserveData storage debtReserve = reservesData[debtAsset];
-        
-        ValidationLogic.validateLiquidationCall(
-            userConfig,
-            collateralReserve,
-            debtReserve,
-            params
-        );
-    }
-    
-    // GenericLogic functions
-    function calculateUserAccountData(
-        DataTypes.CalculateUserAccountDataParams memory params
-    ) external view returns (uint256, uint256, uint256, uint256, uint256, bool) {
-        return GenericLogic.calculateUserAccountData(
-            reservesData,
-            reservesList,
-            eModeCategories,
-            params
-        );
-    }
-    
-    function calculateAvailableBorrows(
-        uint256 totalCollateralInBaseCurrency,
-        uint256 totalDebtInBaseCurrency,
-        uint256 ltv
-    ) external pure returns (uint256) {
-        return GenericLogic.calculateAvailableBorrows(
-            totalCollateralInBaseCurrency,
-            totalDebtInBaseCurrency,
-            ltv
-        );
-    }
-    
-    // ReserveLogic function
-    function cumulateToLiquidityIndex(
+
+    // RewardsDistributor methods
+    function setEmissionPerSecond(
         address asset,
-        uint256 totalLiquidity,
-        uint256 amount
-    ) external returns (uint256) {
-        DataTypes.ReserveData storage reserve = reservesData[asset];
-        return ReserveLogic.cumulateToLiquidityIndex(
-            reserve,
-            totalLiquidity,
-            amount
+        address[] calldata rewards,
+        uint88[] calldata newEmissionsPerSecond
+    ) public {
+        rewardsDistributor.setEmissionPerSecond(asset, rewards, newEmissionsPerSecond);
+    }
+
+    function getUserAccruedRewards(address user, address reward) public view returns (uint256) {
+        return rewardsDistributor.getUserAccruedRewards(user, reward);
+    }
+    
+    function getUserRewards(
+        address[] calldata assets,
+        address user,
+        address reward
+    ) public view returns (uint256) {
+        return rewardsDistributor.getUserRewards(assets, user, reward);
+    }
+
+    function getRewardsByAsset(address asset) public view returns (address[] memory) {
+        return rewardsDistributor.getRewardsByAsset(asset);
+    }
+
+    function getRewardsList() public view returns (address[] memory) {
+        return rewardsDistributor.getRewardsList();
+    }
+
+    function getAllUserRewards(
+        address[] calldata assets,
+        address user
+    ) public view returns (address[] memory, uint256[] memory) {
+        return rewardsDistributor.getAllUserRewards(assets, user);
+    }
+
+    // SupplyLogic methods
+
+    // BorrowLogic methods
+
+    // ReserveLogic methods
+
+    // ValidationLogic methods
+    mapping(address => DataTypes.ReserveData) public reservesData_A;
+    mapping(uint256 => address) public reservesList_A;
+    mapping(uint8 => DataTypes.EModeCategory) public eModeCategories_A;
+    DataTypes.UserConfigurationMap public userConfig_A;
+    address public user_A;
+    uint8 public userEModeCategory_A;
+    uint256 public reservesCount_A;
+    address public oracle_A;
+
+    function validateHealthFactor() public view returns (uint256 healthFactor, bool hasZeroLtvCollateral) {
+        return ValidationLogic.validateHealthFactor(
+            reservesData_A,
+            reservesList_A,
+            eModeCategories_A,
+            userConfig_A,
+            user_A,
+            userEModeCategory_A,
+            reservesCount_A,
+            oracle_A
         );
     }
-    
-    // CalldataLogic functions
-    function decodeSupplyParams(
-        bytes32 args
-    ) external view returns (address, uint256, uint16) {
-        return CalldataLogic.decodeSupplyParams(reservesList, args);
-    }
-    
-    function decodeSupplyWithPermitParams(
-        bytes32 args
-    ) external view returns (address, uint256, uint16, uint256, uint8) {
-        return CalldataLogic.decodeSupplyWithPermitParams(reservesList, args);
-    }
-    
-    function decodeWithdrawParams(
-        bytes32 args
-    ) external view returns (address, uint256) {
-        return CalldataLogic.decodeWithdrawParams(reservesList, args);
-    }
-    
-    function decodeBorrowParams(
-        bytes32 args
-    ) external view returns (address, uint256, uint256, uint16) {
-        return CalldataLogic.decodeBorrowParams(reservesList, args);
-    }
-    
-    function decodeRepayParams(
-        bytes32 args
-    ) external view returns (address, uint256, uint256) {
-        return CalldataLogic.decodeRepayParams(reservesList, args);
-    }
-    
-    function decodeRepayWithPermitParams(
-        bytes32 args
-    ) external view returns (address, uint256, uint256, uint256, uint8) {
-        return CalldataLogic.decodeRepayWithPermitParams(reservesList, args);
-    }
-    
-    function decodeSetUserUseReserveAsCollateralParams(
-        bytes32 args
-    ) external view returns (address, bool) {
-        return CalldataLogic.decodeSetUserUseReserveAsCollateralParams(reservesList, args);
-    }
-    
-    function decodeLiquidationCallParams(
-        bytes32 args1,
-        bytes32 args2
-    ) external view returns (address, address, address, uint256, bool) {
-        return CalldataLogic.decodeLiquidationCallParams(reservesList, args1, args2);
-    }
-    
-    // MathUtils function
-    function calculateLinearInterest(
-        uint256 rate,
-        uint40 lastUpdateTimestamp
-    ) external view returns (uint256) {
+    // GenericLogic methods
+
+    // CalldataLogic methods
+
+    // UserConfiguration methods
+
+    // MathUtils methods
+    uint256 public rate;
+    uint40 public lastUpdateTimestamp;
+
+    function calculateLinearInterest() public view returns (uint256) {
         return MathUtils.calculateLinearInterest(rate, lastUpdateTimestamp);
-    }
+    }*/
 }
