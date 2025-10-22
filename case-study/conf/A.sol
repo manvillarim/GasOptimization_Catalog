@@ -2,7 +2,7 @@
 pragma solidity ^0.8.10;
 
 // Libraries - Originals
-import {SupplyLogic} from "./aave-v3-origin/src/contracts/protocol/libraries/logic/SupplyLogic.sol";
+import {SupplyLogic} from "../aave-v3-origin/src/contracts/protocol/libraries/logic/SupplyLogic.sol";
 import {BorrowLogic} from "./aave-v3-origin/src/contracts/protocol/libraries/logic/BorrowLogic.sol";
 import {ReserveLogic} from "./aave-v3-origin/src/contracts/protocol/libraries/logic/ReserveLogic.sol";
 import {ValidationLogic} from "./aave-v3-origin/src/contracts/protocol/libraries/logic/ValidationLogic.sol";
