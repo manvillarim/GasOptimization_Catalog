@@ -1,7 +1,7 @@
 # CASE STUDY
 
-RewardsDistributor: https://prover.certora.com/output/480394/eb8552794d944ee29fa601ac6d8c63ff?anonymousKey=a37f74af1b9eb92b6a8a29b8a32574dbf77dd49e
+RewardsDistributor: https://prover.certora.com/output/480394/54d4312de8d84c518d2339b46ba41506?anonymousKey=a39d77304062cdfd34c786ce2e485218e8d2cf25
 
 Collector: https://prover.certora.com/output/480394/f40bf6a007a74fb18bc8c9167043837a?anonymousKey=db4e6ca3efbae75ae51ccc79db03b8ecd2eeb8b6
 
-PoolAddressesProviderRegistry: https://prover.certora.com/output/480394/fb0dcc95f6ca4dd087ffab7265f15bac?anonymousKey=e6a317c7bc4bd1e30034909fa1d227f029534e5a
+PoolAddressesProviderRegistry: https://prover.certora.com/output/480394/d87051e80a894e639fcc127e3089b67f?anonymousKey=7ca009a9861092717d5f6af000e6ea4471b50534
