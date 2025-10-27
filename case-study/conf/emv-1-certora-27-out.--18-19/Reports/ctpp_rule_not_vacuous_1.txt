@@ -1,0 +1,863 @@
+Calltrace Debug Information
+[StorageTitleInstance, 1964847774] Global State
+    [StorageTitleInstance, 50887587] Balances
+        [BalanceValueInstance, 568072425] 0x453a.balance: 0
+        [BalanceValueInstance, 1423053564] CollectorOptimized (0x4539).balance: 0x2297
+        [BalanceValueInstance, 1212633914] CollectorOriginal (0x4538).balance: 0x985
+    [StorageTitleInstance, 139652338] Ghosts State
+        [GhostValueInstance, 1225307713] ghost_a_nextStreamId: 0
+        [GhostValueInstance, 227088494] ghost_ao_nextStreamId: 0
+[LabelInstance, 2133148774] Setup
+    [LabelInstance, 1611596300] multi contract setup
+    [LabelInstance, 1815677682] rule parameters setup
+    [LabelInstance, 691418483] contract address vars initialized
+    [LabelInstance, 2087014983] setup read tracking instrumentation
+    [LabelInstance, 1684156581] last storage initialize
+    [LabelInstance, 1076418625] assuming contracts in scene with non-empty bytecode have EXTCODESIZE larger than zero
+    [LabelInstance, 1487794330] assuming address(0).code has no code deployed
+    [LabelInstance, 244086434] assumptions about contracts' addresses
+    [LabelInstance, 2073987278] assumptions about static addresses
+    [LabelInstance, 2113056044] establish addresses of precompiled contracts
+    [LabelInstance, 1248635688] assumptions about uniqueness of contracts' addresses
+    [LabelInstance, 658042273] static links
+    [LabelInstance, 686807408] record starting nonces
+    [LabelInstance, 1084005004] cloned contracts have no balances
+    [LabelInstance, 1862683740] Linked immutable setup
+    [LabelInstance, 255058424] Constrain immutables
+    [LabelInstance, 1505856823] establish equivalence of extension and base contract immutables
+[LabelInstance, 2100114553] gasOptimizationCorrectness(f, g)
+    [CVLFunc, 546628396] 1 ; gasOptimizationCorrectness ; []; [] ; {} : [] 
+        gasOptimizationCorrectness()
+        [LabelInstance, 817429223] env eA
+        [LabelInstance, 1699045874] env eAo
+        [LabelInstance, 1902059487] calldataarg args
+        [LabelInstance, 1985285979] require eA.msg.sender == eAo.msg.sender
+        [LabelInstance, 30256308] require eA.msg.value == eAo.msg.value
+        [LabelInstance, 1338574734] require eA.block.timestamp == eAo.block.timestamp
+        [LabelInstance, 1180784719] require eA.block.number == eAo.block.number
+        [LabelInstance, 412137487] require ghost_a_nextStreamId == ghost_ao_nextStreamId && (forall uint256 i. i < 53 => ghost_a_gap[i] == ghost_ao_gap[i]) && (forall uint256 streamId. ghost_a_streams_sender[streamId] == ghost_ao_streams_sender[streamId] && ghost_a_streams_recipient[streamId] == ghost_ao_streams_recipient[streamId] && ghost_a_streams_deposit[streamId] == ghost_ao_streams_deposit[streamId] && ghost_a_streams_tokenAddress[streamId] == ghost_ao_streams_tokenAddress[streamId] && ghost_a_streams_startTime[streamId] == ghost_ao_streams_startTime[streamId] && ghost_a_streams_stopTime[streamId] == ghost_ao_streams_stopTime[streamId] && ghost_a_streams_remainingBalance[streamId] == ghost_ao_streams_remainingBalance[streamId] && ghost_a_streams_ratePerSecond[streamId] == ghost_ao_streams_ratePerSecond[streamId] && ghost_a_streams_isEntity[streamId] == ghost_ao_streams_isEntity[streamId]) && (forall bytes32 role. (forall address account. ghost_a_roles_hasRole[role][account] == ghost_ao_roles_hasRole[role][account])) && (forall bytes32 role. ghost_a_roles_adminRole[role] == ghost_ao_roles_adminRole[role])
+            [CVLExpInstance, 1960058789] Ghost read: ghost_a_nextStreamId ↪ 0
+            [CVLExpInstance, 1940292550] Ghost read: ghost_ao_nextStreamId ↪ 0
+        [LabelInstance, 1070141149] require forall address token. ghostTransferSuccess[token] == ghostTransferSuccess[token]
+        [LabelInstance, 570722795] require forall address token. ghostTransferFromSuccess[token] == ghostTransferFromSuccess[token]
+        [LabelInstance, 1987679033] initialStorageA = lastStorage
+            [StorageTitleInstance, 830903939] initialStorageA
+                [StorageTitleInstance, 1187957128] Balances
+                    [BalanceValueInstance, 1082346347] 0x453a.balance: 0
+                    [BalanceValueInstance, 2061101081] CollectorOptimized (0x4539).balance: 0x2297
+                    [BalanceValueInstance, 2146327375] CollectorOriginal (0x4538).balance: 0x985
+                [StorageTitleInstance, 1339842483] Ghosts State
+                    [GhostValueInstance, 366906672] ghost_a_nextStreamId: 0
+                    [GhostValueInstance, 552744626] ghost_ao_nextStreamId: 0
+        [LabelInstance, 768292288] initialStorageAo = lastStorage
+            [StorageTitleInstance, 13092365] initialStorageAo
+                [StorageTitleInstance, 1636920360] Balances
+                    [BalanceValueInstance, 1357349134] 0x453a.balance: 0
+                    [BalanceValueInstance, 611769319] CollectorOptimized (0x4539).balance: 0x2297
+                    [BalanceValueInstance, 440374986] CollectorOriginal (0x4538).balance: 0x985
+                [StorageTitleInstance, 1881491849] Ghosts State
+                    [GhostValueInstance, 480659826] ghost_a_nextStreamId: 0
+                    [GhostValueInstance, 236785890] ghost_ao_nextStreamId: 0
+        [LabelInstance, 1752321581] CollectorOriginal.f(eA, args) at initialStorageA
+            [StorageTitleInstance, 851520427] initialStorageA
+                [StorageTitleInstance, 478284120] Balances
+                    [BalanceValueInstance, 2055114794] 0x453a.balance: 0
+                    [BalanceValueInstance, 8895086] CollectorOptimized (0x4539).balance: 0x2297
+                    [BalanceValueInstance, 1000359334] CollectorOriginal (0x4538).balance: 0x985
+                [StorageTitleInstance, 929317699] Ghosts State
+                    [GhostValueInstance, 957708869] ghost_a_nextStreamId: 0
+                    [GhostValueInstance, 83686339] ghost_ao_nextStreamId: 0
+            [External, 1028131727] CollectorOriginal.isFundsAdmin()
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=4, value=tacCalldatabufCANON1@2:bv256)])
+                [TransferInstance, 673392958] sender: 0x453a; receiver: CollectorOriginal (0x4538); transferred amount: 0
+                    # snippet WithLocSym 1923262823 ;
+                       loc sym:  R66:bv256
+                     value sym:  R177:bv256
+                [Load, 989247789] Load from CollectorOriginal.[raw storage address] CollectorOriginal (0x4538) ↪ 1
+                [Start, 1500985179] Evaluate branch condition
+                [Start, 605965193] Evaluate branch condition
+                [Start, 356904173] Evaluate branch condition
+                [Internal, 452268217] (internal) AccessControlUpgradeable.hasRole(account=0x2be5)
+                    [Internal, 2052600147] (internal) AccessControlUpgradeable._getAccessControlStorage()
+                    [StorageTitleInstance, 743210898] Global State
+                        [StorageTitleInstance, 383048818] Balances
+                            [BalanceValueInstance, 605447881] 0x453a.balance: 0
+                            [BalanceValueInstance, 528423345] CollectorOptimized (0x4539).balance: 0x2297
+                            [BalanceValueInstance, 1350587683] CollectorOriginal (0x4538).balance: 0x985
+                        [StorageTitleInstance, 1619473421] Ghosts State
+                            [GhostValueInstance, 1999644410] ghost_a_nextStreamId: 0
+                            [GhostValueInstance, 283446076] ghost_ao_nextStreamId: 0
+                    [NonSpecificDeclInstance, 1109290318] Declare $
+                        # snippet WithLocSym -523823784 ;
+                           loc sym:  R187:(uninterp) skey
+                         value sym:  R189:bv256
+                    [Load, 467668572] Load from CollectorOriginal.[raw storage address] 0x2737 ↪ 0
+                [StorageTitleInstance, 1829895212] Global State
+                    [StorageTitleInstance, 1435874905] Balances
+                        [BalanceValueInstance, 1691403704] 0x453a.balance: 0
+                        [BalanceValueInstance, 2136581520] CollectorOptimized (0x4539).balance: 0x2297
+                        [BalanceValueInstance, 499898059] CollectorOriginal (0x4538).balance: 0x985
+                    [StorageTitleInstance, 1704238165] Ghosts State
+                        [GhostValueInstance, 118192218] ghost_a_nextStreamId: 0
+                        [GhostValueInstance, 894187534] ghost_ao_nextStreamId: 0
+                [Return, 1995628002] Return
+        [LabelInstance, 935694685] CollectorOptimized.g(eAo, args) at initialStorageAo
+            [StorageTitleInstance, 1808856663] initialStorageAo
+                [StorageTitleInstance, 1065889643] Balances
+                    [BalanceValueInstance, 1601566901] 0x453a.balance: 0
+                    [BalanceValueInstance, 1143068031] CollectorOptimized (0x4539).balance: 0x2297
+                    [BalanceValueInstance, 674226658] CollectorOriginal (0x4538).balance: 0x985
+                [StorageTitleInstance, 1453486331] Ghosts State
+                    [GhostValueInstance, 643992266] ghost_a_nextStreamId: 0
+                    [GhostValueInstance, 1814182228] ghost_ao_nextStreamId: 0
+            [External, 1003873731] CollectorOptimized.isFundsAdmin()
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=4, value=tacCalldatabufCANON1@3:bv256)])
+                [TransferInstance, 2117435370] sender: 0x453a; receiver: CollectorOptimized (0x4539); transferred amount: 0
+                    # snippet WithLocSym -1377102147 ;
+                       loc sym:  R79:bv256
+                     value sym:  R205:bv256
+                [Load, 1286839868] Load from CollectorOptimized.[raw storage address] CollectorOptimized (0x4539) ↪ 1
+                [Start, 824637031] Evaluate branch condition
+                [Start, 633988733] Evaluate branch condition
+                [Start, 1893078785] Evaluate branch condition
+                [Internal, 549725529] (internal) AccessControlUpgradeable.hasRole(account=0x2be5)
+                    [Internal, 651655912] (internal) AccessControlUpgradeable._getAccessControlStorage()
+                    [StorageTitleInstance, 1288149569] Global State
+                        [StorageTitleInstance, 208265927] Balances
+                            [BalanceValueInstance, 226947326] 0x453a.balance: 0
+                            [BalanceValueInstance, 278649756] CollectorOptimized (0x4539).balance: 0x2297
+                            [BalanceValueInstance, 1627278940] CollectorOriginal (0x4538).balance: 0x985
+                        [StorageTitleInstance, 591591262] Ghosts State
+                            [GhostValueInstance, 435811016] ghost_a_nextStreamId: 0
+                            [GhostValueInstance, 1475386704] ghost_ao_nextStreamId: 0
+                    [NonSpecificDeclInstance, 1164879196] Declare $
+                        # snippet WithLocSym -2000609688 ;
+                           loc sym:  R215:(uninterp) skey
+                         value sym:  R217:bv256
+                    [Load, 1906459304] Load from CollectorOptimized.[raw storage address] 0x2737 ↪ 0
+                [StorageTitleInstance, 664502758] Global State
+                    [StorageTitleInstance, 1959957080] Balances
+                        [BalanceValueInstance, 1143377371] 0x453a.balance: 0
+                        [BalanceValueInstance, 661795061] CollectorOptimized (0x4539).balance: 0x2297
+                        [BalanceValueInstance, 1553793356] CollectorOriginal (0x4538).balance: 0x985
+                    [StorageTitleInstance, 1019021525] Ghosts State
+                        [GhostValueInstance, 1283785420] ghost_a_nextStreamId: 0
+                        [GhostValueInstance, 2051438129] ghost_ao_nextStreamId: 0
+                [Return, 1323671380] Return
+        [LabelInstance, 441114109] assert ghost_a_nextStreamId == ghost_ao_nextStreamId && (forall uint256 i. i < 53 => ghost_a_gap[i] == ghost_ao_gap[i]) && (forall uint256 streamId. ghost_a_streams_sender[streamId] == ghost_ao_streams_sender[streamId] && ghost_a_streams_recipient[streamId] == ghost_ao_streams_recipient[streamId] && ghost_a_streams_deposit[streamId] == ghost_ao_streams_deposit[streamId] && ghost_a_streams_tokenAddress[streamId] == ghost_ao_streams_tokenAddress[streamId] && ghost_a_streams_startTime[streamId] == ghost_ao_streams_startTime[streamId] && ghost_a_streams_stopTime[streamId] == ghost_ao_streams_stopTime[streamId] && ghost_a_streams_remainingBalance[streamId] == ghost_ao_streams_remainingBalance[streamId] && ghost_a_streams_ratePerSecond[streamId] == ghost_ao_streams_ratePerSecond[streamId] && ghost_a_streams_isEntity[streamId] == ghost_ao_streams_isEntity[streamId]) && (forall bytes32 role. (forall address account. ghost_a_roles_hasRole[role][account] == ghost_ao_roles_hasRole[role][account])) && (forall bytes32 role. ghost_a_roles_adminRole[role] == ghost_ao_roles_adminRole[role])
+            [CVLExpInstance, 2117943066] Ghost read: ghost_a_nextStreamId ↪ 0
+            [CVLExpInstance, 922958098] Ghost read: ghost_ao_nextStreamId ↪ 0
+[LabelInstance, 1442713497] assert false
+    [StorageTitleInstance, 429364718] Global State
+        [StorageTitleInstance, 247835689] Balances
+            [BalanceValueInstance, 547409738] 0x453a.balance: 0
+            [BalanceValueInstance, 92773888] CollectorOptimized (0x4539).balance: 0x2297
+            [BalanceValueInstance, 546980795] CollectorOriginal (0x4538).balance: 0x985
+        [StorageTitleInstance, 52234085] Ghosts State
+            [GhostValueInstance, 627131091] ghost_a_nextStreamId: 0
+            [GhostValueInstance, 472891361] ghost_ao_nextStreamId: 0
+    -------- CVL model begin ------------
+    -- type: bool --
+    CANON11!!162                                  ~~>  true
+       cvl                 : true
+       cvl.display         : g.isView
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON11!!234                                  ~~>  true
+       cvl                 : true
+       cvl.display         : g.isView
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON350!!461                                 ~~>  true
+       cvl                 : true
+    CANON347!!459                                 ~~>  true
+       cvl                 : true
+    CANON4!!155                                   ~~>  true
+       cvl                 : true
+       cvl.display         : f.isView
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON4!!226                                   ~~>  true
+       cvl                 : true
+       cvl.display         : f.isView
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON12!!163                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isPayable
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON12!!235                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isPayable
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON343!!457                                 ~~>  true
+       cvl                 : true
+    CANON5!!156                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isPayable
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON5!!227                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isPayable
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON164                                      ~~>  true
+       cvl                 : true
+    CANON167                                      ~~>  true
+       cvl                 : true
+    CANON174                                      ~~>  true
+       cvl                 : true
+    CANON179                                      ~~>  true
+       cvl                 : true
+    CANON182                                      ~~>  true
+       cvl                 : true
+    CANON185                                      ~~>  true
+       cvl                 : true
+    CANON188                                      ~~>  true
+       cvl                 : true
+    CANON192                                      ~~>  true
+       cvl                 : true
+    CANON195                                      ~~>  true
+       cvl                 : true
+    CANON13!!165                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isFallback
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON13!!237                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isFallback
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON6!!158                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isFallback
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON6!!229                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isFallback
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON340!!455                                 ~~>  true
+       cvl                 : true
+    CANON337!!453                                 ~~>  true
+       cvl                 : true
+    CANON10!!161                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isPure
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON10!!233                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isPure
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON3!!154                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isPure
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON3!!225                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isPure
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    -- type: int --
+    CANON81!!56                                   ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON!!153                                    ~~>                                                         0xf501148c
+       cvl                 : true
+       cvl.display         : f.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON!!224                                    ~~>                                                         0xf501148c
+       cvl                 : true
+       cvl.display         : f.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON9!!166                                   ~~>                                                             0x4539
+       cvl                 : true
+       cvl.display         : g
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON9!!238                                   ~~>                                                             0x4539
+       cvl                 : true
+       cvl.display         : g.contract
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON1!!70                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : f.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON2!!71                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : f.contract
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON7!!76                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : g.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON8!!77                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : g.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON9!!78                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : g.contract
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON140                                      ~~>                                                             0x453a
+       cvl                 : true
+       cvl.display         : eA.msg.sender
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, sender])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON141                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.msg.value
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, value])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON142                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.tx.origin
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[tx, origin])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON143                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.basefee
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, basefee])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON144                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.blobbasefee
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, blobbasefee])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON145                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.coinbase
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, coinbase])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON146                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.difficulty
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, difficulty])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON147                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.gaslimit
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, gaslimit])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON148                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.number
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, number])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON149                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.timestamp
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, timestamp])
+       cvl.def.site        : Function(range=Collector.spec:366:5)
+    CANON150                                      ~~>                                                             0x453a
+       cvl                 : true
+       cvl.display         : eAo.msg.sender
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, sender])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON151                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.msg.value
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, value])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON152                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.tx.origin
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[tx, origin])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON153                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.basefee
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, basefee])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON154                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.blobbasefee
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, blobbasefee])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON155                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.coinbase
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, coinbase])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON156                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.difficulty
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, difficulty])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON157                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.gaslimit
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, gaslimit])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON158                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.number
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, number])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON159                                      ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.timestamp
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, timestamp])
+       cvl.def.site        : Function(range=Collector.spec:367:5)
+    CANON107!!264                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON107!!268                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON107!!298                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON107!!326                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON107!!333                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON107!!337                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON107!!373                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON107!!396                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON107!!411                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON107!!447                                 ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.ghost           : NoValue
+       cvl.type            : uint256
+    CANON1!!157                                   ~~>                                                                0x1
+       cvl                 : true
+       cvl.display         : f.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON1!!228                                   ~~>                                                                0x1
+       cvl                 : true
+       cvl.display         : f.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON!!84                                     ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : f.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON107!!8                                   ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.type            : uint256
+    CANON2!!159                                   ~~>                                                             0x4538
+       cvl                 : true
+       cvl.display         : f
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON2!!230                                   ~~>                                                             0x4538
+       cvl                 : true
+       cvl.display         : f.contract
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:452:44)
+    CANON7!!160                                   ~~>                                                         0xf501148c
+       cvl                 : true
+       cvl.display         : g.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON7!!232                                   ~~>                                                         0xf501148c
+       cvl                 : true
+       cvl.display         : g.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON81!!263                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON81!!267                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON81!!297                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON81!!325                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON81!!332                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON81!!336                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON81!!372                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON81!!383                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON81!!410                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.type            : uint256
+    CANON81!!446                                  ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.ghost           : NoValue
+       cvl.type            : uint256
+    CANON8!!164                                   ~~>                                                                0x1
+       cvl                 : true
+       cvl.display         : g.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    CANON8!!236                                   ~~>                                                                0x1
+       cvl                 : true
+       cvl.display         : g.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:452:54)
+    -- type: bv256 --
+    CANON259                                      ~~>                                                               0x24
+       cvl                 : true
+       cvl.display         : args.length
+       cvl.type            : uint256
+       cvl.def.site        : Function(range=Collector.spec:368:5)
+    -- type: bytemap --
+    CANON262havocme32083                          ~~> {[x:bv256] ->
+  Ite(
+    x:bv256 == 0x4
+    0x2be5
+    0x0
+  )
+}
+       cvl                 : true
+       cvl.display         : args
+       cvl.type            : calldataarg
+       cvl.def.site        : Function(range=Collector.spec:368:5)
+    -------- CVL model end --------------
+    -------- TAC model begin ------------
+      OK_4_0_0_0_0_0:bool  -->                                                              false
+      CANON32!!33:bv256  -->                                                                0x0
+      CANON11!!162:bool  -->                                                               true
+      CANON11!!234:bool  -->                                                               true
+      CANON32!!347:bv256  -->                                                                0x0
+      CANON32!!421:bv256  -->                                                                0x0
+      tacCalldatabufCANON0@2:bv256  -->                                                                0x0
+      tacCalldatabufCANON0@3:bv256  -->                                                                0x0
+      tacCalldatabufCANON1@2:bv256  -->                                                             0x2be5
+      tacCalldatabufCANON1@3:bv256  -->                                                             0x2be5
+      CANON81!!56:int  -->                                                                0x0
+      CANON36!!35:bv256  -->                                                                0x0
+       CANON!!153:int  -->                                                         0xf501148c
+       CANON!!224:int  -->                                                         0xf501148c
+      from_skey:ghostmap((uninterp) skey->bv256)  -->                                          {[x:bv256] ->
+  x:bv256
+}
+      CANON350!!461:bool  -->                                                               true
+      tacM0x40!!0:bv256  -->                                                                0x0
+      tacM0x40!!1:bv256  -->                                                                0x0
+      CANON347!!459:bool  -->                                                               true
+      CANON4!!155:bool  -->                                                               true
+      CANON4!!226:bool  -->                                                               true
+      CANON9!!166:int  -->                                                             0x4539
+      CANON9!!238:int  -->                                                             0x4539
+      to_skey:ghostmap(bv256->(uninterp) skey)  -->                                          {[x:bv256] ->
+  x:bv256
+}
+       CANON1!!70:int  -->                                                                0x0
+       CANON2!!71:int  -->                                                                0x0
+       CANON7!!76:int  -->                                                                0x0
+       CANON8!!77:int  -->                                                                0x0
+       CANON9!!78:int  -->                                                                0x0
+      CANON12!!163:bool  -->                                                              false
+      CANON12!!235:bool  -->                                                              false
+      sklm!certora__i_3115800!callId0!51:bv256  -->                                                              0x704
+      ReachabilityCertora0_0_0_0_0_0:bool  -->                                                               true
+      CANON46!!40:bv256  -->                                                                0x0
+      ReachabilityCertora0_0_0_2_0_2:bool  -->                                                               true
+      CANON17!!339:bv256  -->                                                                0x0
+      CANON17!!413:bv256  -->                                                                0x0
+      ReachabilityCertora0_0_0_3_0_4:bool  -->                                                               true
+      CANON46!!354:bv256  -->                                                                0x0
+      CANON46!!428:bv256  -->                                                                0x0
+      ReachabilityCertora1_0_0_1_0_1:bool  -->                                                               true
+      CANON343!!457:bool  -->                                                               true
+      CANON67!!365:bv256  -->                                                                0x0
+      CANON67!!439:bv256  -->                                                                0x0
+      ReachabilityCertora2_0_0_1_0_3:bool  -->                                                               true
+      sklm!certora__role_3516892!callId0!55:bv256  -->                                                              0x1c1
+      CANON5!!156:bool  -->                                                              false
+      CANON5!!227:bool  -->                                                              false
+         CANON140:int  -->                                                             0x453a
+         CANON141:int  -->                                                                0x0
+         CANON142:int  -->                                                                0x0
+         CANON143:int  -->                                                                0x0
+         CANON144:int  -->                                                                0x0
+         CANON145:int  -->                                                                0x0
+         CANON146:int  -->                                                                0x0
+         CANON147:int  -->                                                                0x0
+         CANON148:int  -->                                                                0x0
+         CANON149:int  -->                                                                0x0
+         CANON150:int  -->                                                             0x453a
+         CANON151:int  -->                                                                0x0
+         CANON152:int  -->                                                                0x0
+         CANON153:int  -->                                                                0x0
+         CANON154:int  -->                                                                0x0
+         CANON155:int  -->                                                                0x0
+         CANON156:int  -->                                                                0x0
+         CANON157:int  -->                                                                0x0
+         CANON158:int  -->                                                                0x0
+         CANON159:int  -->                                                                0x0
+        CANON164:bool  -->                                                               true
+        CANON167:bool  -->                                                               true
+        CANON174:bool  -->                                                               true
+        CANON179:bool  -->                                                               true
+        CANON182:bool  -->                                                               true
+        CANON185:bool  -->                                                               true
+        CANON188:bool  -->                                                               true
+        CANON192:bool  -->                                                               true
+        CANON195:bool  -->                                                               true
+       CANON259:bv256  -->                                                               0x24
+       CANON269:bv256  -->                                                                0x0
+       CANON307:bv256  -->                                                                0x0
+      CANON107!!264:int  -->                                                                0x0
+      CANON107!!268:int  -->                                                                0x0
+      CANON107!!298:int  -->                                                                0x0
+      CANON107!!326:int  -->                                                                0x0
+      CANON107!!333:int  -->                                                                0x0
+      CANON107!!337:int  -->                                                                0x0
+      CANON107!!373:int  -->                                                                0x0
+      CANON107!!396:int  -->                                                                0x0
+      CANON107!!411:int  -->                                                                0x0
+      CANON107!!447:int  -->                                                                0x0
+      ReachabilityCertora3_0_0_1_0_5:bool  -->                                                               true
+      ReachabilityCertora4_0_0_0_0_0:bool  -->                                                               true
+      CANON13!!165:bool  -->                                                              false
+      CANON13!!237:bool  -->                                                              false
+      CANON71!!367:bv256  -->                                                                0x0
+      CANON71!!441:bv256  -->                                                                0x0
+      tacCalldatabuf@2:bytemap  --> {[arg0:bv256] ->
+  Ite(
+    LAnd(Ge(arg0:bv256 0x0) LNot(Le(0x24 arg0:bv256)) Eq(arg0:bv256 0x4))
+    0x2be5
+    0x0
+  )
+}
+      tacCalldatabuf@3:bytemap  --> {[arg0:bv256] ->
+  Ite(
+    LAnd(Ge(arg0:bv256 0x0) LNot(Le(0x24 arg0:bv256)) Eq(arg0:bv256 0x4))
+    0x2be5
+    0x0
+  )
+}
+             R2:bv256  -->                                                                0x1
+             R3:bv256  -->                                                                0x1
+            R66:bv256  -->                                                             0x4538
+            R67:bv256  -->                                                                0x1
+            R68:bv256  -->                                                                0x2
+            R69:bv256  -->                                                                0x4
+            R79:bv256  -->                                                             0x4539
+      CANON1!!157:int  -->                                                                0x1
+      CANON1!!228:int  -->                                                                0x1
+            B151:bool  -->                                                               true
+            B255:bool  -->                                                               true
+            B256:bool  -->                                                               true
+            B257:bool  -->                                                               true
+            B258:bool  -->                                                               true
+            B259:bool  -->                                                               true
+            B260:bool  -->                                                               true
+            B454:bool  -->                                                               true
+            B456:bool  -->                                                               true
+            B458:bool  -->                                                               true
+            B460:bool  -->                                                               true
+            B462:bool  -->                                                              false
+             I240:int  -->                                                             0x453a
+             I242:int  -->                                                             0x453a
+             I243:int  -->                                                                0x0
+             I244:int  -->                                                                0x0
+             I246:int  -->                                                                0x0
+             I248:int  -->                                                                0x0
+             I250:int  -->                                                                0x0
+             I252:int  -->                                                                0x0
+             I253:int  -->                                                                0x0
+             I254:int  -->                                                                0x0
+             I451:int  -->                                                                0x0
+             I452:int  -->                                                                0x0
+           R145:bv256  -->                                                                0x1
+           R146:bv256  -->                                                                0x1
+           R148:bv256  -->                                                                0x1
+           R149:bv256  -->                                                                0x1
+           R169:bv256  -->                                                             0x453a
+           R171:bv256  -->                                                                0x0
+           R174:bv256  -->                                                              0x985
+           R176:bv256  -->                                                              0x985
+           R177:bv256  -->                                                                0x1
+           R179:bv256  -->  0x2dd7bc7dec4dceedda775e58dd541e08a116c6c53815c0bd028192f7b626800
+           R180:bv256  -->  0x2dd7bc7dec4dceedda775e58dd541e08a116c6c53815c0bd028192f7b626800
+      R181:(uninterp) skey  -->                                                             0x2711
+      R187:(uninterp) skey  -->                                                             0x2737
+           R189:bv256  -->                                                                0x0
+           R192:bv256  -->                                                                0x0
+           R197:bv256  -->                                                             0x453a
+           R199:bv256  -->                                                                0x0
+           R202:bv256  -->                                                             0x2297
+           R204:bv256  -->                                                             0x2297
+           R205:bv256  -->                                                                0x1
+           R207:bv256  -->  0x2dd7bc7dec4dceedda775e58dd541e08a116c6c53815c0bd028192f7b626800
+           R208:bv256  -->  0x2dd7bc7dec4dceedda775e58dd541e08a116c6c53815c0bd028192f7b626800
+      R209:(uninterp) skey  -->                                                             0x2711
+      R215:(uninterp) skey  -->                                                             0x2737
+           R217:bv256  -->                                                                0x0
+           R220:bv256  -->                                                                0x0
+           R375:bv256  -->                                                                0x0
+           R376:bv256  -->                                                             0x2be5
+           R449:bv256  -->                                                                0x0
+           R450:bv256  -->                                                             0x2be5
+      lastHasThrown!!167:bool  -->                                                              false
+      lastHasThrown!!193:bool  -->                                                              false
+      lastHasThrown!!195:bool  -->                                                              false
+      lastHasThrown!!221:bool  -->                                                              false
+      CANON6!!158:bool  -->                                                              false
+      CANON6!!229:bool  -->                                                              false
+        CANON!!84:int  -->                                                                0x0
+      sklm!certora__account_3416815!callId0!53:bv256  -->                        0x10000000000000000000000000000000000000000
+      CANON107!!8:int  -->                                                                0x0
+      lastReverted!!194:bool  -->                                                              false
+      lastReverted!!222:bool  -->                                                              false
+      CANON15!!25:bv256  -->                                                                0x0
+      CANON17!!26:bv256  -->                                                                0x0
+      CANON340!!455:bool  -->                                                               true
+      CANON67!!50:bv256  -->                                                                0x0
+      CANON69!!51:bv256  -->                                                                0x0
+      CANON2!!159:int  -->                                                             0x4538
+      CANON2!!230:int  -->                                                             0x4538
+      CANON337!!453:bool  -->                                                               true
+      CANON69!!366:bv256  -->                                                                0x0
+      CANON69!!440:bv256  -->                                                                0x0
+      sklm!certora__role_3316812!callId0!54:bv256  -->                                                              0x8ea
+      CANON7!!160:int  -->                                                         0xf501148c
+      CANON7!!232:int  -->                                                         0xf501148c
+      CANON262havocme32083:bytemap  -->   {[x:bv256] ->
+  Ite(
+    x:bv256 == 0x4
+    0x2be5
+    0x0
+  )
+}
+      CANON10!!161:bool  -->                                                              false
+      CANON10!!233:bool  -->                                                              false
+      CANON71!!52:bv256  -->                                                                0x0
+      CANON15!!338:bv256  -->                                                                0x0
+      CANON15!!412:bv256  -->                                                                0x0
+      CANON81!!263:int  -->                                                                0x0
+      CANON81!!267:int  -->                                                                0x0
+      CANON81!!297:int  -->                                                                0x0
+      CANON81!!325:int  -->                                                                0x0
+      CANON81!!332:int  -->                                                                0x0
+      CANON81!!336:int  -->                                                                0x0
+      CANON81!!372:int  -->                                                                0x0
+      CANON81!!383:int  -->                                                                0x0
+      CANON81!!410:int  -->                                                                0x0
+      CANON81!!446:int  -->                                                                0x0
+      OK_0_0_0_0_0_0:bool  -->                                                              false
+      CANON36!!349:bv256  -->                                                                0x0
+      CANON36!!423:bv256  -->                                                                0x0
+      OK_0_0_0_2_0_2:bool  -->                                                              false
+      OK_0_0_0_3_0_4:bool  -->                                                              false
+      OK_1_0_0_1_0_1:bool  -->                                                              false
+      CANON3!!154:bool  -->                                                              false
+      CANON3!!225:bool  -->                                                              false
+      tacSighash!!82:bv256  -->                                                         0xf501148c
+      tacSighash!!83:bv256  -->                                                         0xf501148c
+      OK_2_0_0_1_0_3:bool  -->                                                              false
+      CANON8!!164:int  -->                                                                0x1
+      CANON8!!236:int  -->                                                                0x1
+      OK_3_0_0_1_0_5:bool  -->                                                              false
+      sklm!certora__streamId_3215915!callId0!52:bv256  -->                                                             0x20ad
+    -------- TAC model end --------------
+    
