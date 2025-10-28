@@ -1,0 +1,1516 @@
+Calltrace Debug Information
+[StorageTitleInstance, 239903996] Global State
+    [StorageTitleInstance, 62434139] Storage State
+        [StorageTitleInstance, 1019747385] CollectorOptimized
+            [StorageStateValueInstance, 676911728] _nextStreamId: 0x7251
+            [StorageStateValueInstance, 1138286787] _streams[0x7251].deposit: 0
+            [StorageStateValueInstance, 92043664] _streams[0x7251].isEntity: false
+            [StorageStateValueInstance, 2041152722] _streams[0x7251].ratePerSecond: 0
+            [StorageStateValueInstance, 390875853] _streams[0x7251].recipient: 0
+            [StorageStateValueInstance, 320241183] _streams[0x7251].remainingBalance: 0
+            [StorageStateValueInstance, 1967142164] _streams[0x7251].sender: 0
+            [StorageStateValueInstance, 1081782394] _streams[0x7251].startTime: 0
+            [StorageStateValueInstance, 898990234] _streams[0x7251].stopTime: 0
+            [StorageStateValueInstance, 366212785] _streams[0x7251].tokenAddress: 0
+        [StorageTitleInstance, 1640991114] CollectorOriginal
+            [StorageStateValueInstance, 1956842665] _nextStreamId: 0x7251
+            [StorageStateValueInstance, 1831584759] _streams[0x7251].deposit: 0
+            [StorageStateValueInstance, 1741149853] _streams[0x7251].isEntity: false
+            [StorageStateValueInstance, 2061078582] _streams[0x7251].ratePerSecond: 0
+            [StorageStateValueInstance, 376642944] _streams[0x7251].recipient: 0
+            [StorageStateValueInstance, 628379842] _streams[0x7251].remainingBalance: 0
+            [StorageStateValueInstance, 2094930383] _streams[0x7251].sender: 0
+            [StorageStateValueInstance, 1244692034] _streams[0x7251].startTime: 0
+            [StorageStateValueInstance, 1143076249] _streams[0x7251].stopTime: 0
+            [StorageStateValueInstance, 1129602975] _streams[0x7251].tokenAddress: 0
+    [StorageTitleInstance, 1330128475] Balances
+        [BalanceValueInstance, 105087902] 0xffffffffffffffffffffffffffffffffffffed10.balance: 0x489b
+        [BalanceValueInstance, 1292182514] CollectorOptimized (0x2a5a).balance: 0x489c
+        [BalanceValueInstance, 743187818] CollectorOriginal (0x2a59).balance: 0x489c
+    [StorageTitleInstance, 574141510] Ghosts State
+        [GhostValueInstance, 956140780] ghost_a_nextStreamId: 0x7251
+        [GhostValueInstance, 1552097970] ghost_a_streams_deposit[0x7251]: <?>
+        [GhostValueInstance, 287914813] ghost_a_streams_isEntity[0x7251]: <?>
+        [GhostValueInstance, 1993619418] ghost_a_streams_ratePerSecond[0x7251]: <?>
+        [GhostValueInstance, 580542208] ghost_a_streams_recipient[0x7251]: <?>
+        [GhostValueInstance, 1732869971] ghost_a_streams_remainingBalance[0x7251]: <?>
+        [GhostValueInstance, 1063342164] ghost_a_streams_sender[0x7251]: <?>
+        [GhostValueInstance, 1750911621] ghost_a_streams_startTime[0x7251]: <?>
+        [GhostValueInstance, 416213713] ghost_a_streams_stopTime[0x7251]: <?>
+        [GhostValueInstance, 877772156] ghost_a_streams_tokenAddress[0x7251]: <?>
+        [GhostValueInstance, 17279058] ghost_ao_nextStreamId: 0x7251
+        [GhostValueInstance, 251744789] ghost_ao_streams_deposit[0x7251]: <?>
+        [GhostValueInstance, 1626782022] ghost_ao_streams_isEntity[0x7251]: <?>
+        [GhostValueInstance, 1509245561] ghost_ao_streams_ratePerSecond[0x7251]: <?>
+        [GhostValueInstance, 1695298605] ghost_ao_streams_recipient[0x7251]: <?>
+        [GhostValueInstance, 1612202851] ghost_ao_streams_remainingBalance[0x7251]: <?>
+        [GhostValueInstance, 896662191] ghost_ao_streams_sender[0x7251]: <?>
+        [GhostValueInstance, 1180995826] ghost_ao_streams_startTime[0x7251]: <?>
+        [GhostValueInstance, 1112373583] ghost_ao_streams_stopTime[0x7251]: <?>
+        [GhostValueInstance, 1626089790] ghost_ao_streams_tokenAddress[0x7251]: <?>
+[LabelInstance, 1525814030] Setup
+    [LabelInstance, 955513762] multi contract setup
+    [LabelInstance, 291334898] rule parameters setup
+    [LabelInstance, 276366398] contract address vars initialized
+    [LabelInstance, 1524174684] setup read tracking instrumentation
+    [LabelInstance, 2110837070] last storage initialize
+    [LabelInstance, 127942396] assuming contracts in scene with non-empty bytecode have EXTCODESIZE larger than zero
+    [LabelInstance, 1595966146] assuming address(0).code has no code deployed
+    [LabelInstance, 1301398933] assumptions about contracts' addresses
+    [LabelInstance, 917518280] assumptions about static addresses
+    [LabelInstance, 811710524] establish addresses of precompiled contracts
+    [LabelInstance, 1795951200] assumptions about uniqueness of contracts' addresses
+    [LabelInstance, 678610937] static links
+    [LabelInstance, 533445448] record starting nonces
+    [LabelInstance, 584470741] cloned contracts have no balances
+    [LabelInstance, 687997413] Linked immutable setup
+    [LabelInstance, 401692211] Constrain immutables
+    [LabelInstance, 1428340350] establish equivalence of extension and base contract immutables
+[LabelInstance, 1172442359] gasOptimizationCorrectness(f, g)
+    [CVLFunc, 2086019207] 1 ; gasOptimizationCorrectness ; []; [] ; {} : [] 
+        gasOptimizationCorrectness()
+        [LabelInstance, 1636545008] env eA
+        [LabelInstance, 563749617] env eAo
+        [LabelInstance, 1951008641] calldataarg args
+        [LabelInstance, 961893271] require eA.msg.sender == eAo.msg.sender
+        [LabelInstance, 91058556] require eA.msg.value == eAo.msg.value
+        [LabelInstance, 1972389514] require eA.block.timestamp == eAo.block.timestamp
+        [LabelInstance, 1363288502] require eA.block.number == eAo.block.number
+        [LabelInstance, 1117260258] require a._nextStreamId == ao._nextStreamId && (forall uint256 streamId. ghost_a_streams_recipient[streamId] == ghost_ao_streams_recipient[streamId] && ghost_a_streams_deposit[streamId] == ghost_ao_streams_deposit[streamId] && ghost_a_streams_tokenAddress[streamId] == ghost_ao_streams_tokenAddress[streamId] && ghost_a_streams_startTime[streamId] == ghost_ao_streams_startTime[streamId] && ghost_a_streams_stopTime[streamId] == ghost_ao_streams_stopTime[streamId] && ghost_a_streams_remainingBalance[streamId] == ghost_ao_streams_remainingBalance[streamId] && ghost_a_streams_ratePerSecond[streamId] == ghost_ao_streams_ratePerSecond[streamId] && ghost_a_streams_isEntity[streamId] == ghost_ao_streams_isEntity[streamId])
+                # snippet DirectStorageLoad 141406926 ;
+                 disp. path:  _nextStreamId
+                  value sym:  CANON64!!34:bv256
+                # local storage change 141406926
+            [Load, 747664988] Load from CollectorOriginal._nextStreamId ↪ 0x7251
+                # snippet DirectStorageLoad -419504759 ;
+                 disp. path:  _nextStreamId
+                  value sym:  CANON67!!35:bv256
+                # local storage change -419504759
+            [Load, 1531171154] Load from CollectorOptimized._nextStreamId ↪ 0x7251
+        [LabelInstance, 457970717] require forall address token. ghostTransferSuccess[token] == ghostTransferSuccess[token]
+        [LabelInstance, 421120399] require forall address token. ghostTransferFromSuccess[token] == ghostTransferFromSuccess[token]
+        [LabelInstance, 907312742] CollectorOriginal.f(eA, args)
+            [External, 1931014327] CollectorOriginal.createStream()
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=4, value=tacCalldatabufCANON1@2:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=36, value=tacCalldatabufCANON2@2:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=68, value=tacCalldatabufCANON3@2:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=100, value=tacCalldatabufCANON4@2:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=132, value=tacCalldatabufCANON5@2:bv256)])
+                [TransferInstance, 135265845] sender: 0xffffffffffffffffffffffffffffffffffffed10; receiver: CollectorOriginal (0x2a59); transferred amount: 0
+                    # snippet WithLocSym 1000665344 ;
+                       loc sym:  R55:bv256
+                     value sym:  R107:bv256
+                [Load, 1603083018] Load from CollectorOriginal.[raw storage address] CollectorOriginal (0x2a59) ↪ 1
+                [Start, 1258269139] Evaluate branch condition
+                [Start, 2119595379] Evaluate branch condition
+                [Start, 165663450] Evaluate branch condition
+                [Start, 1044237728] Evaluate branch condition
+                [Internal, 154884741] (internal) Collector._onlyFundsAdmin()
+                    [Internal, 1141590844] (internal) AccessControlUpgradeable.hasRole(account=0xffffffffffffffffffffffffffffffffffffed10)
+                        [Internal, 867506277] (internal) AccessControlUpgradeable._getAccessControlStorage()
+                        [StorageTitleInstance, 1672840062] Global State
+                            [StorageTitleInstance, 814289663] Storage State
+                                [StorageTitleInstance, 776338809] CollectorOptimized
+                                    [StorageStateValueInstance, 900251364] _nextStreamId: 0x7251
+                                    [StorageStateValueInstance, 2060023132] _streams[0x7251].deposit: 0
+                                    [StorageStateValueInstance, 36670992] _streams[0x7251].isEntity: false
+                                    [StorageStateValueInstance, 58721561] _streams[0x7251].ratePerSecond: 0
+                                    [StorageStateValueInstance, 1932514323] _streams[0x7251].recipient: 0
+                                    [StorageStateValueInstance, 1115499711] _streams[0x7251].remainingBalance: 0
+                                    [StorageStateValueInstance, 1021081070] _streams[0x7251].sender: 0
+                                    [StorageStateValueInstance, 1073153953] _streams[0x7251].startTime: 0
+                                    [StorageStateValueInstance, 846578432] _streams[0x7251].stopTime: 0
+                                    [StorageStateValueInstance, 432408869] _streams[0x7251].tokenAddress: 0
+                                [StorageTitleInstance, 1189768438] CollectorOriginal
+                                    [StorageStateValueInstance, 1101508997] _nextStreamId: 0x7251
+                                    [StorageStateValueInstance, 1565923186] _streams[0x7251].deposit: 0
+                                    [StorageStateValueInstance, 1953538780] _streams[0x7251].isEntity: false
+                                    [StorageStateValueInstance, 1634270584] _streams[0x7251].ratePerSecond: 0
+                                    [StorageStateValueInstance, 490689353] _streams[0x7251].recipient: 0
+                                    [StorageStateValueInstance, 1891576347] _streams[0x7251].remainingBalance: 0
+                                    [StorageStateValueInstance, 19402898] _streams[0x7251].sender: 0
+                                    [StorageStateValueInstance, 655208178] _streams[0x7251].startTime: 0
+                                    [StorageStateValueInstance, 1087308865] _streams[0x7251].stopTime: 0
+                                    [StorageStateValueInstance, 1227424177] _streams[0x7251].tokenAddress: 0
+                            [StorageTitleInstance, 147076230] Balances
+                                [BalanceValueInstance, 1114923346] 0xffffffffffffffffffffffffffffffffffffed10.balance: 0x489b
+                                [BalanceValueInstance, 2049017937] CollectorOptimized (0x2a5a).balance: 0x489c
+                                [BalanceValueInstance, 2072263213] CollectorOriginal (0x2a59).balance: 0x489c
+                            [StorageTitleInstance, 1380798943] Ghosts State
+                                [GhostValueInstance, 869450805] ghost_a_nextStreamId: 0x7251
+                                [GhostValueInstance, 1162322206] ghost_a_streams_deposit[0x7251]: <?>
+                                [GhostValueInstance, 524861129] ghost_a_streams_isEntity[0x7251]: <?>
+                                [GhostValueInstance, 657704790] ghost_a_streams_ratePerSecond[0x7251]: <?>
+                                [GhostValueInstance, 40197353] ghost_a_streams_recipient[0x7251]: <?>
+                                [GhostValueInstance, 2060604138] ghost_a_streams_remainingBalance[0x7251]: <?>
+                                [GhostValueInstance, 548803983] ghost_a_streams_sender[0x7251]: <?>
+                                [GhostValueInstance, 419856312] ghost_a_streams_startTime[0x7251]: <?>
+                                [GhostValueInstance, 825027173] ghost_a_streams_stopTime[0x7251]: <?>
+                                [GhostValueInstance, 1501674408] ghost_a_streams_tokenAddress[0x7251]: <?>
+                                [GhostValueInstance, 1233897338] ghost_ao_nextStreamId: 0x7251
+                                [GhostValueInstance, 1666878028] ghost_ao_streams_deposit[0x7251]: <?>
+                                [GhostValueInstance, 905132928] ghost_ao_streams_isEntity[0x7251]: <?>
+                                [GhostValueInstance, 1643874925] ghost_ao_streams_ratePerSecond[0x7251]: <?>
+                                [GhostValueInstance, 1985753407] ghost_ao_streams_recipient[0x7251]: <?>
+                                [GhostValueInstance, 1105448274] ghost_ao_streams_remainingBalance[0x7251]: <?>
+                                [GhostValueInstance, 1843450325] ghost_ao_streams_sender[0x7251]: <?>
+                                [GhostValueInstance, 1349883622] ghost_ao_streams_startTime[0x7251]: <?>
+                                [GhostValueInstance, 1203208222] ghost_ao_streams_stopTime[0x7251]: <?>
+                                [GhostValueInstance, 409033959] ghost_ao_streams_tokenAddress[0x7251]: <?>
+                        [NonSpecificDeclInstance, 1935951943] Declare $
+                            # snippet WithLocSym 1847120394 ;
+                               loc sym:  R117:(uninterp) skey
+                             value sym:  R119:bv256
+                        [Load, 257565291] Load from CollectorOriginal.[raw storage address] 0xa527 ↪ 1
+                    [StorageTitleInstance, 1947661550] Global State
+                        [StorageTitleInstance, 1719802095] Storage State
+                            [StorageTitleInstance, 938820104] CollectorOptimized
+                                [StorageStateValueInstance, 1776449511] _nextStreamId: 0x7251
+                                [StorageStateValueInstance, 714100657] _streams[0x7251].deposit: 0
+                                [StorageStateValueInstance, 1554218860] _streams[0x7251].isEntity: false
+                                [StorageStateValueInstance, 1104905202] _streams[0x7251].ratePerSecond: 0
+                                [StorageStateValueInstance, 1006410081] _streams[0x7251].recipient: 0
+                                [StorageStateValueInstance, 322548840] _streams[0x7251].remainingBalance: 0
+                                [StorageStateValueInstance, 1420226940] _streams[0x7251].sender: 0
+                                [StorageStateValueInstance, 1241463817] _streams[0x7251].startTime: 0
+                                [StorageStateValueInstance, 370643910] _streams[0x7251].stopTime: 0
+                                [StorageStateValueInstance, 1213460376] _streams[0x7251].tokenAddress: 0
+                            [StorageTitleInstance, 731765503] CollectorOriginal
+                                [StorageStateValueInstance, 456303857] _nextStreamId: 0x7251
+                                [StorageStateValueInstance, 831622642] _streams[0x7251].deposit: 0
+                                [StorageStateValueInstance, 1718193015] _streams[0x7251].isEntity: false
+                                [StorageStateValueInstance, 593952615] _streams[0x7251].ratePerSecond: 0
+                                [StorageStateValueInstance, 771609302] _streams[0x7251].recipient: 0
+                                [StorageStateValueInstance, 280900742] _streams[0x7251].remainingBalance: 0
+                                [StorageStateValueInstance, 975579093] _streams[0x7251].sender: 0
+                                [StorageStateValueInstance, 774863409] _streams[0x7251].startTime: 0
+                                [StorageStateValueInstance, 1837590080] _streams[0x7251].stopTime: 0
+                                [StorageStateValueInstance, 217871730] _streams[0x7251].tokenAddress: 0
+                        [StorageTitleInstance, 133161911] Balances
+                            [BalanceValueInstance, 1388638089] 0xffffffffffffffffffffffffffffffffffffed10.balance: 0x489b
+                            [BalanceValueInstance, 69674743] CollectorOptimized (0x2a5a).balance: 0x489c
+                            [BalanceValueInstance, 1805616356] CollectorOriginal (0x2a59).balance: 0x489c
+                        [StorageTitleInstance, 320151675] Ghosts State
+                            [GhostValueInstance, 1717058871] ghost_a_nextStreamId: 0x7251
+                            [GhostValueInstance, 1542827925] ghost_a_streams_deposit[0x7251]: <?>
+                            [GhostValueInstance, 1289402539] ghost_a_streams_isEntity[0x7251]: <?>
+                            [GhostValueInstance, 1987465139] ghost_a_streams_ratePerSecond[0x7251]: <?>
+                            [GhostValueInstance, 1373664719] ghost_a_streams_recipient[0x7251]: <?>
+                            [GhostValueInstance, 664793441] ghost_a_streams_remainingBalance[0x7251]: <?>
+                            [GhostValueInstance, 1050221273] ghost_a_streams_sender[0x7251]: <?>
+                            [GhostValueInstance, 2052510062] ghost_a_streams_startTime[0x7251]: <?>
+                            [GhostValueInstance, 675978726] ghost_a_streams_stopTime[0x7251]: <?>
+                            [GhostValueInstance, 1879471479] ghost_a_streams_tokenAddress[0x7251]: <?>
+                            [GhostValueInstance, 104851068] ghost_ao_nextStreamId: 0x7251
+                            [GhostValueInstance, 1244568180] ghost_ao_streams_deposit[0x7251]: <?>
+                            [GhostValueInstance, 922192762] ghost_ao_streams_isEntity[0x7251]: <?>
+                            [GhostValueInstance, 1964637470] ghost_ao_streams_ratePerSecond[0x7251]: <?>
+                            [GhostValueInstance, 216852935] ghost_ao_streams_recipient[0x7251]: <?>
+                            [GhostValueInstance, 850341652] ghost_ao_streams_remainingBalance[0x7251]: <?>
+                            [GhostValueInstance, 940166752] ghost_ao_streams_sender[0x7251]: <?>
+                            [GhostValueInstance, 46278002] ghost_ao_streams_startTime[0x7251]: <?>
+                            [GhostValueInstance, 1762346556] ghost_ao_streams_stopTime[0x7251]: <?>
+                            [GhostValueInstance, 571933574] ghost_ao_streams_tokenAddress[0x7251]: <?>
+                [StorageTitleInstance, 1419490154] Global State
+                    [StorageTitleInstance, 1205990718] Storage State
+                        [StorageTitleInstance, 1952997720] CollectorOptimized
+                            [StorageStateValueInstance, 1861830496] _nextStreamId: 0x7251
+                            [StorageStateValueInstance, 1743825206] _streams[0x7251].deposit: 0
+                            [StorageStateValueInstance, 804317427] _streams[0x7251].isEntity: false
+                            [StorageStateValueInstance, 405090036] _streams[0x7251].ratePerSecond: 0
+                            [StorageStateValueInstance, 1011071191] _streams[0x7251].recipient: 0
+                            [StorageStateValueInstance, 1578639216] _streams[0x7251].remainingBalance: 0
+                            [StorageStateValueInstance, 1980220208] _streams[0x7251].sender: 0
+                            [StorageStateValueInstance, 1206129034] _streams[0x7251].startTime: 0
+                            [StorageStateValueInstance, 1715506337] _streams[0x7251].stopTime: 0
+                            [StorageStateValueInstance, 2025712774] _streams[0x7251].tokenAddress: 0
+                        [StorageTitleInstance, 820752098] CollectorOriginal
+                            [StorageStateValueInstance, 1466208564] _nextStreamId: 0x7251
+                            [StorageStateValueInstance, 899889917] _streams[0x7251].deposit: 0
+                            [StorageStateValueInstance, 577579283] _streams[0x7251].isEntity: false
+                            [StorageStateValueInstance, 1327243010] _streams[0x7251].ratePerSecond: 0
+                            [StorageStateValueInstance, 1015204580] _streams[0x7251].recipient: 0
+                            [StorageStateValueInstance, 274361179] _streams[0x7251].remainingBalance: 0
+                            [StorageStateValueInstance, 1538584050] _streams[0x7251].sender: 0
+                            [StorageStateValueInstance, 1962872201] _streams[0x7251].startTime: 0
+                            [StorageStateValueInstance, 1577069592] _streams[0x7251].stopTime: 0
+                            [StorageStateValueInstance, 490964016] _streams[0x7251].tokenAddress: 0
+                    [StorageTitleInstance, 1633956119] Balances
+                        [BalanceValueInstance, 1845226487] 0xffffffffffffffffffffffffffffffffffffed10.balance: 0x489b
+                        [BalanceValueInstance, 843344572] CollectorOptimized (0x2a5a).balance: 0x489c
+                        [BalanceValueInstance, 866589376] CollectorOriginal (0x2a59).balance: 0x489c
+                    [StorageTitleInstance, 1930131754] Ghosts State
+                        [GhostValueInstance, 1092452591] ghost_a_nextStreamId: 0x7251
+                        [GhostValueInstance, 1352467450] ghost_a_streams_deposit[0x7251]: <?>
+                        [GhostValueInstance, 1541890611] ghost_a_streams_isEntity[0x7251]: <?>
+                        [GhostValueInstance, 1930265164] ghost_a_streams_ratePerSecond[0x7251]: <?>
+                        [GhostValueInstance, 1580887610] ghost_a_streams_recipient[0x7251]: <?>
+                        [GhostValueInstance, 1711289556] ghost_a_streams_remainingBalance[0x7251]: <?>
+                        [GhostValueInstance, 110503133] ghost_a_streams_sender[0x7251]: <?>
+                        [GhostValueInstance, 429312417] ghost_a_streams_startTime[0x7251]: <?>
+                        [GhostValueInstance, 340799255] ghost_a_streams_stopTime[0x7251]: <?>
+                        [GhostValueInstance, 1930502109] ghost_a_streams_tokenAddress[0x7251]: <?>
+                        [GhostValueInstance, 1150713262] ghost_ao_nextStreamId: 0x7251
+                        [GhostValueInstance, 1801617244] ghost_ao_streams_deposit[0x7251]: <?>
+                        [GhostValueInstance, 2128600496] ghost_ao_streams_isEntity[0x7251]: <?>
+                        [GhostValueInstance, 88853057] ghost_ao_streams_ratePerSecond[0x7251]: <?>
+                        [GhostValueInstance, 1917303883] ghost_ao_streams_recipient[0x7251]: <?>
+                        [GhostValueInstance, 170374592] ghost_ao_streams_remainingBalance[0x7251]: <?>
+                        [GhostValueInstance, 177589097] ghost_ao_streams_sender[0x7251]: <?>
+                        [GhostValueInstance, 1373049272] ghost_ao_streams_startTime[0x7251]: <?>
+                        [GhostValueInstance, 507337261] ghost_ao_streams_stopTime[0x7251]: <?>
+                        [GhostValueInstance, 688088479] ghost_ao_streams_tokenAddress[0x7251]: <?>
+                [Start, 225000789] Evaluate branch condition
+                [Start, 1692055441] Evaluate branch condition
+                [Start, 281179413] Evaluate branch condition
+                [Start, 576701711] Evaluate branch condition
+                [Start, 1721288580] Evaluate branch condition
+                [Start, 1473217273] Evaluate branch condition
+                [Start, 1420177352] Evaluate branch condition
+                [NonSpecificDeclInstance, 143523822] Declare vars
+                [Start, 671722908] Evaluate branch condition
+                [LocalAssignmentInstance, 58337838] vars.duration  ↪  2
+                [Start, 1715969510] Evaluate branch condition
+                [Start, 30571599] Evaluate branch condition
+                [Start, 1683117220] Evaluate branch condition
+                [LocalAssignmentInstance, 917191002] vars.ratePerSecond  ↪  1
+                [LabelInstance, 1826175684] Apply hook load val := CollectorOriginal._nextStreamId
+                    [LabelInstance, 2121995028] With parameters:
+                        [LabelInstance, 150642443] val = ?
+                    [CVLExpInstance, 1744049831] Ghost read: ghost_a_nextStreamId ↪ 0x7251
+                    # snippet LoadSnippet 806928214 ;
+                     disp. path:  _nextStreamId
+                      value sym:  CANON64!!34:bv256
+                    # local storage change 806928214
+                [Load, 1121849223] Load from CollectorOriginal._nextStreamId ↪ 0x7251
+                [LocalAssignmentInstance, 1687902075] streamId  ↪  0x7251
+                [LabelInstance, 944082468] Apply hook store CollectorOriginal._streams[KEY uint256 streamId].deposit := newValue (old: oldValue)
+                    [LabelInstance, 2143544997] With parameters:
+                        [LabelInstance, 1305701613] newValue = 0x2
+                        [LabelInstance, 1942866595] oldValue = 0x0
+                        [LabelInstance, 1743609424] streamId = 0x7251
+                    [CVLExpInstance, 133917382] Ghost assignment: ghost_a_streams_deposit[0x7251] = 2
+                    # snippet StoreSnippet 570204788 ;
+                     disp. path:  _streams[k = CANON64!!34:bv256].deposit
+                      value sym:  R345:bv256
+                    # local storage change 570204788
+                [Store, 426171574] Store at CollectorOriginal._streams[0x7251].deposit ↪ 2
+                [LabelInstance, 2039505941] Apply hook store CollectorOriginal._streams[KEY uint256 streamId].ratePerSecond := newValue (old: oldValue)
+                    [LabelInstance, 35393315] With parameters:
+                        [LabelInstance, 1405888275] newValue = 0x1
+                        [LabelInstance, 2086716080] oldValue = 0x0
+                        [LabelInstance, 111849957] streamId = 0x7251
+                    [CVLExpInstance, 1680720644] Ghost assignment: ghost_a_streams_ratePerSecond[0x7251] = 1
+                    # snippet StoreSnippet -834250292 ;
+                     disp. path:  _streams[k = CANON64!!34:bv256].ratePerSecond
+                      value sym:  R131:bv256
+                    # local storage change -834250292
+                [Store, 1458279469] Store at CollectorOriginal._streams[0x7251].ratePerSecond ↪ 1
+                [LabelInstance, 753187074] Apply hook store CollectorOriginal._streams[KEY uint256 streamId].remainingBalance := newValue (old: oldValue)
+                    [LabelInstance, 2140279010] With parameters:
+                        [LabelInstance, 1965939191] newValue = 0x2
+                        [LabelInstance, 2146263427] oldValue = 0x0
+                        [LabelInstance, 1984494549] streamId = 0x7251
+                    [CVLExpInstance, 422764798] Ghost assignment: ghost_a_streams_remainingBalance[0x7251] = 2
+                    # snippet StoreSnippet 1579380700 ;
+                     disp. path:  _streams[k = CANON64!!34:bv256].remainingBalance
+                      value sym:  R345:bv256
+                    # local storage change 1579380700
+                [Store, 46882894] Store at CollectorOriginal._streams[0x7251].remainingBalance ↪ 2
+                [LabelInstance, 381614317] Apply hook store CollectorOriginal._streams[KEY uint256 streamId].startTime := newValue (old: oldValue)
+                    [LabelInstance, 655962044] With parameters:
+                        [LabelInstance, 698490545] newValue = 0x1
+                        [LabelInstance, 1882374875] oldValue = 0x0
+                        [LabelInstance, 287974816] streamId = 0x7251
+                    [CVLExpInstance, 2132839670] Ghost assignment: ghost_a_streams_startTime[0x7251] = 1
+                    # snippet StoreSnippet -1054767389 ;
+                     disp. path:  _streams[k = CANON64!!34:bv256].startTime
+                      value sym:  R347:bv256
+                    # local storage change -1054767389
+                [Store, 1179533877] Store at CollectorOriginal._streams[0x7251].startTime ↪ 1
+                [LabelInstance, 546075709] Apply hook store CollectorOriginal._streams[KEY uint256 streamId].stopTime := newValue (old: oldValue)
+                    [LabelInstance, 1623933609] With parameters:
+                        [LabelInstance, 469181818] newValue = 0x3
+                        [LabelInstance, 798786523] oldValue = 0x0
+                        [LabelInstance, 1819420553] streamId = 0x7251
+                    [CVLExpInstance, 1444347556] Ghost assignment: ghost_a_streams_stopTime[0x7251] = 3
+                    # snippet StoreSnippet 1968440098 ;
+                     disp. path:  _streams[k = CANON64!!34:bv256].stopTime
+                      value sym:  R348:bv256
+                    # local storage change 1968440098
+                [Store, 1961414121] Store at CollectorOriginal._streams[0x7251].stopTime ↪ 3
+                [LabelInstance, 1059130100] Apply hook store CollectorOriginal._streams[KEY uint256 streamId].recipient := newValue (old: oldValue)
+                    [LabelInstance, 1116880118] With parameters:
+                        [LabelInstance, 588253662] newValue = 0x1
+                        [LabelInstance, 287641552] oldValue = 0x0
+                        [LabelInstance, 652525994] streamId = 0x7251
+                    [CVLExpInstance, 1967275020] Ghost assignment: ghost_a_streams_recipient[0x7251] = ecrecover (1)
+                    # snippet StoreSnippet 869648047 ;
+                     disp. path:  _streams[k = CANON64!!34:bv256].recipient
+                      value sym:  R344:bv256
+                    # local storage change 869648047
+                [Store, 1455392131] Store at CollectorOriginal._streams[0x7251].recipient ↪ ecrecover (1)
+                [LabelInstance, 1868389131] Apply hook store CollectorOriginal._streams[KEY uint256 streamId].sender := newValue (old: oldValue)
+                    [LabelInstance, 1874083547] With parameters:
+                        [LabelInstance, 200465789] newValue = 0x2a59
+                        [LabelInstance, 567005725] oldValue = 0x0
+                        [LabelInstance, 608911404] streamId = 0x7251
+                    [CVLExpInstance, 1783099544] Ghost assignment: ghost_a_streams_sender[0x7251] = CollectorOriginal (0x2a59)
+                    # snippet StoreSnippet -1679887014 ;
+                     disp. path:  _streams[k = CANON64!!34:bv256].sender
+                      value sym:  R55:bv256
+                    # local storage change -1679887014
+                [Store, 2009317784] Store at CollectorOriginal._streams[0x7251].sender ↪ CollectorOriginal (0x2a59)
+                [LabelInstance, 141012551] Apply hook store CollectorOriginal._streams[KEY uint256 streamId].tokenAddress := newValue (old: oldValue)
+                    [LabelInstance, 1993594183] With parameters:
+                        [LabelInstance, 600123445] newValue = 0x0
+                        [LabelInstance, 1248064212] oldValue = 0x0
+                        [LabelInstance, 2143512649] streamId = 0x7251
+                    [CVLExpInstance, 391312155] Ghost assignment: ghost_a_streams_tokenAddress[0x7251] = 0
+                    # snippet StoreSnippet 606495887 ;
+                     disp. path:  _streams[k = CANON64!!34:bv256].tokenAddress
+                      value sym:  R346:bv256
+                    # local storage change 606495887
+                [Store, 492627268] Store at CollectorOriginal._streams[0x7251].tokenAddress ↪ 0
+                [LabelInstance, 1216102761] Apply hook store CollectorOriginal._streams[KEY uint256 streamId].isEntity := newValue (old: oldValue)
+                    [LabelInstance, 748288271] With parameters:
+                        [LabelInstance, 743640492] newValue = 0x1
+                        [LabelInstance, 1457499047] oldValue = 0x0
+                        [LabelInstance, 2088951580] streamId = 0x7251
+                    [CVLExpInstance, 531628034] Ghost assignment: ghost_a_streams_isEntity[0x7251] = true
+                    # snippet StoreSnippet -1635859413 ;
+                     disp. path:  _streams[k = CANON64!!34:bv256].isEntity
+                      value sym:  0x1
+                    # local storage change -1635859413
+                [Store, 733630517] Store at CollectorOriginal._streams[0x7251].isEntity ↪ true
+                [LabelInstance, 9651318] Apply hook load val := CollectorOriginal._nextStreamId
+                    [LabelInstance, 1786974535] With parameters:
+                        [LabelInstance, 1974250501] val = ?
+                    [CVLExpInstance, 208560509] Ghost read: ghost_a_nextStreamId ↪ 0x7251
+                    # snippet LoadSnippet -1657336306 ;
+                     disp. path:  _nextStreamId
+                      value sym:  CANON64!!34:bv256
+                    # local storage change -1657336306
+                [Load, 381957234] Load from CollectorOriginal._nextStreamId ↪ 0x7251
+                [Start, 1681852100] Evaluate branch condition
+                [LabelInstance, 1961050818] Apply hook store CollectorOriginal._nextStreamId := newValue (old: oldValue)
+                    [LabelInstance, 192520362] With parameters:
+                        [LabelInstance, 1017737747] newValue = 0x7252
+                        [LabelInstance, 540826212] oldValue = 0x7251
+                    [CVLExpInstance, 1319627251] Ghost assignment: ghost_a_nextStreamId = 0x7252
+                    # snippet StoreSnippet 1613357182 ;
+                     disp. path:  _nextStreamId
+                      value sym:  R194:bv256
+                    # local storage change 1613357182
+                [Store, 144538749] Store at CollectorOriginal._nextStreamId ↪ 0x7252
+                [Return, 2144583319] Return
+        [LabelInstance, 1031681139] CollectorOptimized.g(eAo, args)
+            [External, 1281866334] CollectorOptimized.createStream()
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=4, value=tacCalldatabufCANON1@3:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=36, value=tacCalldatabufCANON2@3:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=68, value=tacCalldatabufCANON3@3:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=100, value=tacCalldatabufCANON4@3:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=132, value=tacCalldatabufCANON5@3:bv256)])
+                [TransferInstance, 796547387] sender: 0xffffffffffffffffffffffffffffffffffffed10; receiver: CollectorOptimized (0x2a5a); transferred amount: 0
+                    # snippet WithLocSym 2002566465 ;
+                       loc sym:  R68:bv256
+                     value sym:  R212:bv256
+                [Load, 1296006469] Load from CollectorOptimized.[raw storage address] CollectorOptimized (0x2a5a) ↪ 1
+                [Start, 28181821] Evaluate branch condition
+                [Start, 1886059036] Evaluate branch condition
+                [Start, 220513963] Evaluate branch condition
+                [Start, 994531103] Evaluate branch condition
+                [Internal, 1253128871] (internal) Collector._onlyFundsAdmin()
+                    [Internal, 1831638007] (internal) AccessControlUpgradeable.hasRole(account=0xffffffffffffffffffffffffffffffffffffed10)
+                        [Internal, 1184239975] (internal) AccessControlUpgradeable._getAccessControlStorage()
+                        [StorageTitleInstance, 1198020869] Global State
+                            [StorageTitleInstance, 80684877] Storage State
+                                [StorageTitleInstance, 225820424] CollectorOptimized
+                                    [StorageStateValueInstance, 2065599208] _nextStreamId: 0x7251
+                                    [StorageStateValueInstance, 2117817599] _streams[0x7251].deposit: 0
+                                    [StorageStateValueInstance, 62124346] _streams[0x7251].isEntity: false
+                                    [StorageStateValueInstance, 597595067] _streams[0x7251].ratePerSecond: 0
+                                    [StorageStateValueInstance, 743970026] _streams[0x7251].recipient: 0
+                                    [StorageStateValueInstance, 148910386] _streams[0x7251].remainingBalance: 0
+                                    [StorageStateValueInstance, 348535605] _streams[0x7251].sender: 0
+                                    [StorageStateValueInstance, 1125278045] _streams[0x7251].startTime: 0
+                                    [StorageStateValueInstance, 797037201] _streams[0x7251].stopTime: 0
+                                    [StorageStateValueInstance, 643899378] _streams[0x7251].tokenAddress: 0
+                                [StorageTitleInstance, 64718744] CollectorOriginal
+                                    [StorageStateValueInstance, 1393759799] _nextStreamId: 0x7252 (changed)
+                                    [StorageStateValueInstance, 1915175838] _streams[0x7251].deposit: 2 (changed)
+                                    [StorageStateValueInstance, 1545030823] _streams[0x7251].isEntity: true (changed)
+                                    [StorageStateValueInstance, 53471226] _streams[0x7251].ratePerSecond: 1 (changed)
+                                    [StorageStateValueInstance, 1220999942] _streams[0x7251].recipient: ecrecover (1) (changed)
+                                    [StorageStateValueInstance, 3500595] _streams[0x7251].remainingBalance: 2 (changed)
+                                    [StorageStateValueInstance, 1721855206] _streams[0x7251].sender: CollectorOriginal (0x2a59) (changed)
+                                    [StorageStateValueInstance, 441276415] _streams[0x7251].startTime: 1 (changed)
+                                    [StorageStateValueInstance, 1705804155] _streams[0x7251].stopTime: 3 (changed)
+                                    [StorageStateValueInstance, 1315113743] _streams[0x7251].tokenAddress: 0 (changed)
+                            [StorageTitleInstance, 591960185] Balances
+                                [BalanceValueInstance, 1405800768] 0xffffffffffffffffffffffffffffffffffffed10.balance: 0x489b
+                                [BalanceValueInstance, 1391211803] CollectorOptimized (0x2a5a).balance: 0x489c
+                                [BalanceValueInstance, 75593530] CollectorOriginal (0x2a59).balance: 0x489c
+                            [StorageTitleInstance, 1676520579] Ghosts State
+                                [GhostValueInstance, 1713906031] ghost_a_nextStreamId: 0x7252 (changed)
+                                [GhostValueInstance, 1432323164] ghost_a_streams_deposit[0x7251]: 2 (changed)
+                                [GhostValueInstance, 1516769642] ghost_a_streams_isEntity[0x7251]: true (changed)
+                                [GhostValueInstance, 1416570640] ghost_a_streams_ratePerSecond[0x7251]: 1 (changed)
+                                [GhostValueInstance, 1936410539] ghost_a_streams_recipient[0x7251]: ecrecover (1) (changed)
+                                [GhostValueInstance, 1522483454] ghost_a_streams_remainingBalance[0x7251]: 2 (changed)
+                                [GhostValueInstance, 1078389122] ghost_a_streams_sender[0x7251]: CollectorOriginal (0x2a59) (changed)
+                                [GhostValueInstance, 1841041725] ghost_a_streams_startTime[0x7251]: 1 (changed)
+                                [GhostValueInstance, 1145259326] ghost_a_streams_stopTime[0x7251]: 3 (changed)
+                                [GhostValueInstance, 1683703288] ghost_a_streams_tokenAddress[0x7251]: 0 (changed)
+                                [GhostValueInstance, 321301000] ghost_ao_nextStreamId: 0x7251
+                                [GhostValueInstance, 505312424] ghost_ao_streams_deposit[0x7251]: <?>
+                                [GhostValueInstance, 1076541664] ghost_ao_streams_isEntity[0x7251]: <?>
+                                [GhostValueInstance, 2120241560] ghost_ao_streams_ratePerSecond[0x7251]: <?>
+                                [GhostValueInstance, 1487983286] ghost_ao_streams_recipient[0x7251]: <?>
+                                [GhostValueInstance, 895899196] ghost_ao_streams_remainingBalance[0x7251]: <?>
+                                [GhostValueInstance, 538838472] ghost_ao_streams_sender[0x7251]: <?>
+                                [GhostValueInstance, 1544449218] ghost_ao_streams_startTime[0x7251]: <?>
+                                [GhostValueInstance, 49619095] ghost_ao_streams_stopTime[0x7251]: <?>
+                                [GhostValueInstance, 86331715] ghost_ao_streams_tokenAddress[0x7251]: <?>
+                        [NonSpecificDeclInstance, 1430598762] Declare $
+                            # snippet WithLocSym -1198159312 ;
+                               loc sym:  R222:(uninterp) skey
+                             value sym:  R224:bv256
+                        [Load, 2046966396] Load from CollectorOptimized.[raw storage address] 0xa527 ↪ 1
+                    [StorageTitleInstance, 1373129779] Global State
+                        [StorageTitleInstance, 2128130050] Storage State
+                            [StorageTitleInstance, 46284247] CollectorOptimized
+                                [StorageStateValueInstance, 1777870377] _nextStreamId: 0x7251
+                                [StorageStateValueInstance, 2052212465] _streams[0x7251].deposit: 0
+                                [StorageStateValueInstance, 1102164249] _streams[0x7251].isEntity: false
+                                [StorageStateValueInstance, 1376649341] _streams[0x7251].ratePerSecond: 0
+                                [StorageStateValueInstance, 2054139259] _streams[0x7251].recipient: 0
+                                [StorageStateValueInstance, 316807433] _streams[0x7251].remainingBalance: 0
+                                [StorageStateValueInstance, 1586977589] _streams[0x7251].sender: 0
+                                [StorageStateValueInstance, 2092479858] _streams[0x7251].startTime: 0
+                                [StorageStateValueInstance, 2067516395] _streams[0x7251].stopTime: 0
+                                [StorageStateValueInstance, 2031333332] _streams[0x7251].tokenAddress: 0
+                            [StorageTitleInstance, 498666800] CollectorOriginal
+                                [StorageStateValueInstance, 605239504] _nextStreamId: 0x7252
+                                [StorageStateValueInstance, 22207274] _streams[0x7251].deposit: 2
+                                [StorageStateValueInstance, 1700506075] _streams[0x7251].isEntity: true
+                                [StorageStateValueInstance, 811526349] _streams[0x7251].ratePerSecond: 1
+                                [StorageStateValueInstance, 230065070] _streams[0x7251].recipient: ecrecover (1)
+                                [StorageStateValueInstance, 438993593] _streams[0x7251].remainingBalance: 2
+                                [StorageStateValueInstance, 570942806] _streams[0x7251].sender: CollectorOriginal (0x2a59)
+                                [StorageStateValueInstance, 1708685659] _streams[0x7251].startTime: 1
+                                [StorageStateValueInstance, 1556757949] _streams[0x7251].stopTime: 3
+                                [StorageStateValueInstance, 314262487] _streams[0x7251].tokenAddress: 0
+                        [StorageTitleInstance, 260782467] Balances
+                            [BalanceValueInstance, 700418952] 0xffffffffffffffffffffffffffffffffffffed10.balance: 0x489b
+                            [BalanceValueInstance, 613776599] CollectorOptimized (0x2a5a).balance: 0x489c
+                            [BalanceValueInstance, 1828202089] CollectorOriginal (0x2a59).balance: 0x489c
+                        [StorageTitleInstance, 988372308] Ghosts State
+                            [GhostValueInstance, 1876910666] ghost_a_nextStreamId: 0x7252
+                            [GhostValueInstance, 1612961954] ghost_a_streams_deposit[0x7251]: 2
+                            [GhostValueInstance, 1304781217] ghost_a_streams_isEntity[0x7251]: true
+                            [GhostValueInstance, 1026983600] ghost_a_streams_ratePerSecond[0x7251]: 1
+                            [GhostValueInstance, 695172718] ghost_a_streams_recipient[0x7251]: ecrecover (1)
+                            [GhostValueInstance, 1467434281] ghost_a_streams_remainingBalance[0x7251]: 2
+                            [GhostValueInstance, 827977231] ghost_a_streams_sender[0x7251]: CollectorOriginal (0x2a59)
+                            [GhostValueInstance, 953417106] ghost_a_streams_startTime[0x7251]: 1
+                            [GhostValueInstance, 1788700904] ghost_a_streams_stopTime[0x7251]: 3
+                            [GhostValueInstance, 120465055] ghost_a_streams_tokenAddress[0x7251]: 0
+                            [GhostValueInstance, 2038012387] ghost_ao_nextStreamId: 0x7251
+                            [GhostValueInstance, 1591854131] ghost_ao_streams_deposit[0x7251]: <?>
+                            [GhostValueInstance, 1597648175] ghost_ao_streams_isEntity[0x7251]: <?>
+                            [GhostValueInstance, 693564041] ghost_ao_streams_ratePerSecond[0x7251]: <?>
+                            [GhostValueInstance, 475386049] ghost_ao_streams_recipient[0x7251]: <?>
+                            [GhostValueInstance, 1279610660] ghost_ao_streams_remainingBalance[0x7251]: <?>
+                            [GhostValueInstance, 1108889814] ghost_ao_streams_sender[0x7251]: <?>
+                            [GhostValueInstance, 1556361382] ghost_ao_streams_startTime[0x7251]: <?>
+                            [GhostValueInstance, 1856315431] ghost_ao_streams_stopTime[0x7251]: <?>
+                            [GhostValueInstance, 142573240] ghost_ao_streams_tokenAddress[0x7251]: <?>
+                [StorageTitleInstance, 148967809] Global State
+                    [StorageTitleInstance, 1969045819] Storage State
+                        [StorageTitleInstance, 851375023] CollectorOptimized
+                            [StorageStateValueInstance, 1095221758] _nextStreamId: 0x7251
+                            [StorageStateValueInstance, 1101708622] _streams[0x7251].deposit: 0
+                            [StorageStateValueInstance, 1583442137] _streams[0x7251].isEntity: false
+                            [StorageStateValueInstance, 461884209] _streams[0x7251].ratePerSecond: 0
+                            [StorageStateValueInstance, 1689297294] _streams[0x7251].recipient: 0
+                            [StorageStateValueInstance, 1885614235] _streams[0x7251].remainingBalance: 0
+                            [StorageStateValueInstance, 622246382] _streams[0x7251].sender: 0
+                            [StorageStateValueInstance, 7151678] _streams[0x7251].startTime: 0
+                            [StorageStateValueInstance, 1638948204] _streams[0x7251].stopTime: 0
+                            [StorageStateValueInstance, 805390633] _streams[0x7251].tokenAddress: 0
+                        [StorageTitleInstance, 541609742] CollectorOriginal
+                            [StorageStateValueInstance, 1238235113] _nextStreamId: 0x7252
+                            [StorageStateValueInstance, 720734337] _streams[0x7251].deposit: 2
+                            [StorageStateValueInstance, 268948727] _streams[0x7251].isEntity: true
+                            [StorageStateValueInstance, 1918228934] _streams[0x7251].ratePerSecond: 1
+                            [StorageStateValueInstance, 1417747162] _streams[0x7251].recipient: ecrecover (1)
+                            [StorageStateValueInstance, 1379283275] _streams[0x7251].remainingBalance: 2
+                            [StorageStateValueInstance, 2092492694] _streams[0x7251].sender: CollectorOriginal (0x2a59)
+                            [StorageStateValueInstance, 553617966] _streams[0x7251].startTime: 1
+                            [StorageStateValueInstance, 2087981857] _streams[0x7251].stopTime: 3
+                            [StorageStateValueInstance, 531356045] _streams[0x7251].tokenAddress: 0
+                    [StorageTitleInstance, 605297081] Balances
+                        [BalanceValueInstance, 2019973615] 0xffffffffffffffffffffffffffffffffffffed10.balance: 0x489b
+                        [BalanceValueInstance, 618111193] CollectorOptimized (0x2a5a).balance: 0x489c
+                        [BalanceValueInstance, 1701933695] CollectorOriginal (0x2a59).balance: 0x489c
+                    [StorageTitleInstance, 1638688441] Ghosts State
+                        [GhostValueInstance, 726659650] ghost_a_nextStreamId: 0x7252
+                        [GhostValueInstance, 839343770] ghost_a_streams_deposit[0x7251]: 2
+                        [GhostValueInstance, 1552625711] ghost_a_streams_isEntity[0x7251]: true
+                        [GhostValueInstance, 1586498729] ghost_a_streams_ratePerSecond[0x7251]: 1
+                        [GhostValueInstance, 177809627] ghost_a_streams_recipient[0x7251]: ecrecover (1)
+                        [GhostValueInstance, 39998620] ghost_a_streams_remainingBalance[0x7251]: 2
+                        [GhostValueInstance, 124589751] ghost_a_streams_sender[0x7251]: CollectorOriginal (0x2a59)
+                        [GhostValueInstance, 1506191287] ghost_a_streams_startTime[0x7251]: 1
+                        [GhostValueInstance, 450528164] ghost_a_streams_stopTime[0x7251]: 3
+                        [GhostValueInstance, 168616663] ghost_a_streams_tokenAddress[0x7251]: 0
+                        [GhostValueInstance, 1706788239] ghost_ao_nextStreamId: 0x7251
+                        [GhostValueInstance, 153910672] ghost_ao_streams_deposit[0x7251]: <?>
+                        [GhostValueInstance, 1201998002] ghost_ao_streams_isEntity[0x7251]: <?>
+                        [GhostValueInstance, 710037707] ghost_ao_streams_ratePerSecond[0x7251]: <?>
+                        [GhostValueInstance, 335298547] ghost_ao_streams_recipient[0x7251]: <?>
+                        [GhostValueInstance, 2044068065] ghost_ao_streams_remainingBalance[0x7251]: <?>
+                        [GhostValueInstance, 383346673] ghost_ao_streams_sender[0x7251]: <?>
+                        [GhostValueInstance, 783661545] ghost_ao_streams_startTime[0x7251]: <?>
+                        [GhostValueInstance, 1547962475] ghost_ao_streams_stopTime[0x7251]: <?>
+                        [GhostValueInstance, 366795274] ghost_ao_streams_tokenAddress[0x7251]: <?>
+                [Start, 1223152047] Evaluate branch condition
+                [Start, 1268663211] Evaluate branch condition
+                [Start, 937758179] Evaluate branch condition
+                [Start, 1142594975] Evaluate branch condition
+                [Start, 847664666] Evaluate branch condition
+                [Start, 188537082] Evaluate branch condition
+                [Start, 338253419] Evaluate branch condition
+                [Start, 72337172] Evaluate branch condition
+                [LocalAssignmentInstance, 83453697] duration  ↪  2
+                [Start, 1768920172] Evaluate branch condition
+                [Start, 933956900] Evaluate branch condition
+                [Start, 1294343074] Evaluate branch condition
+                [Start, 36220008] Evaluate branch condition
+                [LocalAssignmentInstance, 401708213] ratePerSecond  ↪  1
+                [LabelInstance, 2019326274] Apply hook load val := CollectorOptimized._nextStreamId
+                    [LabelInstance, 89818848] With parameters:
+                        [LabelInstance, 1112945103] val = ?
+                    [CVLExpInstance, 1503215884] Ghost read: ghost_ao_nextStreamId ↪ 0x7251
+                    # snippet LoadSnippet 7511551 ;
+                     disp. path:  _nextStreamId
+                      value sym:  CANON67!!35:bv256
+                    # local storage change 7511551
+                [Load, 1117041940] Load from CollectorOptimized._nextStreamId ↪ 0x7251
+                [Start, 329795104] Evaluate branch condition
+                [LabelInstance, 1610859987] Apply hook store CollectorOptimized._nextStreamId := newValue (old: oldValue)
+                    [LabelInstance, 1929472510] With parameters:
+                        [LabelInstance, 341462687] newValue = 0x7252
+                        [LabelInstance, 1158845298] oldValue = 0x7251
+                    [CVLExpInstance, 1002568542] Ghost assignment: ghost_ao_nextStreamId = 0x7252
+                    # snippet StoreSnippet 1174637743 ;
+                     disp. path:  _nextStreamId
+                      value sym:  R238:bv256
+                    # local storage change 1174637743
+                [Store, 1140271937] Store at CollectorOptimized._nextStreamId ↪ 0x7252
+                [LocalAssignmentInstance, 85965590] streamId  ↪  0x7251
+                [LabelInstance, 1422336452] Apply hook store CollectorOptimized._streams[KEY uint256 streamId].deposit := newValue (old: oldValue)
+                    [LabelInstance, 1625828105] With parameters:
+                        [LabelInstance, 448772470] newValue = 0x2
+                        [LabelInstance, 1644197436] oldValue = 0x0
+                        [LabelInstance, 254063289] streamId = 0x7251
+                    [CVLExpInstance, 775254071] Ghost assignment: ghost_ao_streams_deposit[0x7251] = 2
+                    # snippet StoreSnippet 11962932 ;
+                     disp. path:  _streams[k = CANON67!!35:bv256].deposit
+                      value sym:  R356:bv256
+                    # local storage change 11962932
+                [Store, 1235617934] Store at CollectorOptimized._streams[0x7251].deposit ↪ 2
+                [LabelInstance, 678835728] Apply hook store CollectorOptimized._streams[KEY uint256 streamId].ratePerSecond := newValue (old: oldValue)
+                    [LabelInstance, 40757469] With parameters:
+                        [LabelInstance, 123507823] newValue = 0x1
+                        [LabelInstance, 2118590066] oldValue = 0x0
+                        [LabelInstance, 1738039580] streamId = 0x7251
+                    [CVLExpInstance, 182339122] Ghost assignment: ghost_ao_streams_ratePerSecond[0x7251] = 1
+                    # snippet StoreSnippet -451298041 ;
+                     disp. path:  _streams[k = CANON67!!35:bv256].ratePerSecond
+                      value sym:  R235:bv256
+                    # local storage change -451298041
+                [Store, 1765954794] Store at CollectorOptimized._streams[0x7251].ratePerSecond ↪ 1
+                [LabelInstance, 800088894] Apply hook store CollectorOptimized._streams[KEY uint256 streamId].remainingBalance := newValue (old: oldValue)
+                    [LabelInstance, 193230677] With parameters:
+                        [LabelInstance, 1939038145] newValue = 0x2
+                        [LabelInstance, 135114845] oldValue = 0x0
+                        [LabelInstance, 604539889] streamId = 0x7251
+                    [CVLExpInstance, 211713786] Ghost assignment: ghost_ao_streams_remainingBalance[0x7251] = 2
+                    # snippet StoreSnippet 1021138844 ;
+                     disp. path:  _streams[k = CANON67!!35:bv256].remainingBalance
+                      value sym:  R356:bv256
+                    # local storage change 1021138844
+                [Store, 1696220671] Store at CollectorOptimized._streams[0x7251].remainingBalance ↪ 2
+                [LabelInstance, 15765081] Apply hook store CollectorOptimized._streams[KEY uint256 streamId].startTime := newValue (old: oldValue)
+                    [LabelInstance, 1615317685] With parameters:
+                        [LabelInstance, 533791209] newValue = 0x1
+                        [LabelInstance, 684956241] oldValue = 0x0
+                        [LabelInstance, 743787348] streamId = 0x7251
+                    [CVLExpInstance, 1914252809] Ghost assignment: ghost_ao_streams_startTime[0x7251] = 1
+                    # snippet StoreSnippet -1613009245 ;
+                     disp. path:  _streams[k = CANON67!!35:bv256].startTime
+                      value sym:  R358:bv256
+                    # local storage change -1613009245
+                [Store, 1708173290] Store at CollectorOptimized._streams[0x7251].startTime ↪ 1
+                [LabelInstance, 1374005267] Apply hook store CollectorOptimized._streams[KEY uint256 streamId].stopTime := newValue (old: oldValue)
+                    [LabelInstance, 1475106448] With parameters:
+                        [LabelInstance, 1824408322] newValue = 0x3
+                        [LabelInstance, 204555912] oldValue = 0x0
+                        [LabelInstance, 1885913645] streamId = 0x7251
+                    [CVLExpInstance, 1166361190] Ghost assignment: ghost_ao_streams_stopTime[0x7251] = 3
+                    # snippet StoreSnippet 1410198242 ;
+                     disp. path:  _streams[k = CANON67!!35:bv256].stopTime
+                      value sym:  R359:bv256
+                    # local storage change 1410198242
+                [Store, 1530769287] Store at CollectorOptimized._streams[0x7251].stopTime ↪ 3
+                [LabelInstance, 1564391278] Apply hook store CollectorOptimized._streams[KEY uint256 streamId].recipient := newValue (old: oldValue)
+                    [LabelInstance, 1802600270] With parameters:
+                        [LabelInstance, 67667508] newValue = 0x1
+                        [LabelInstance, 847204517] oldValue = 0x0
+                        [LabelInstance, 449975363] streamId = 0x7251
+                    [CVLExpInstance, 2050593624] Ghost assignment: ghost_ao_streams_recipient[0x7251] = ecrecover (1)
+                    # snippet StoreSnippet 311406191 ;
+                     disp. path:  _streams[k = CANON67!!35:bv256].recipient
+                      value sym:  R355:bv256
+                    # local storage change 311406191
+                [Store, 977306381] Store at CollectorOptimized._streams[0x7251].recipient ↪ ecrecover (1)
+                [LabelInstance, 1920075416] Apply hook store CollectorOptimized._streams[KEY uint256 streamId].sender := newValue (old: oldValue)
+                    [LabelInstance, 2022204569] With parameters:
+                        [LabelInstance, 1318951811] newValue = 0x2a5a
+                        [LabelInstance, 1895510454] oldValue = 0x0
+                        [LabelInstance, 316649463] streamId = 0x7251
+                    [CVLExpInstance, 692632985] Ghost assignment: ghost_ao_streams_sender[0x7251] = CollectorOptimized (0x2a5a)
+                    # snippet StoreSnippet 2114096728 ;
+                     disp. path:  _streams[k = CANON67!!35:bv256].sender
+                      value sym:  R68:bv256
+                    # local storage change 2114096728
+                [Store, 187394736] Store at CollectorOptimized._streams[0x7251].sender ↪ CollectorOptimized (0x2a5a)
+                [LabelInstance, 578063586] Apply hook store CollectorOptimized._streams[KEY uint256 streamId].tokenAddress := newValue (old: oldValue)
+                    [LabelInstance, 1304112972] With parameters:
+                        [LabelInstance, 569632535] newValue = 0x0
+                        [LabelInstance, 1901950835] oldValue = 0x0
+                        [LabelInstance, 2001266214] streamId = 0x7251
+                    [CVLExpInstance, 1671263948] Ghost assignment: ghost_ao_streams_tokenAddress[0x7251] = 0
+                    # snippet StoreSnippet 48254031 ;
+                     disp. path:  _streams[k = CANON67!!35:bv256].tokenAddress
+                      value sym:  R357:bv256
+                    # local storage change 48254031
+                [Store, 1575550711] Store at CollectorOptimized._streams[0x7251].tokenAddress ↪ 0
+                [LabelInstance, 1192557782] Apply hook store CollectorOptimized._streams[KEY uint256 streamId].isEntity := newValue (old: oldValue)
+                    [LabelInstance, 2010995652] With parameters:
+                        [LabelInstance, 2147383525] newValue = 0x1
+                        [LabelInstance, 1710964395] oldValue = 0x0
+                        [LabelInstance, 99196046] streamId = 0x7251
+                    [CVLExpInstance, 418899084] Ghost assignment: ghost_ao_streams_isEntity[0x7251] = true
+                    # snippet StoreSnippet 1184733195 ;
+                     disp. path:  _streams[k = CANON67!!35:bv256].isEntity
+                      value sym:  0x1
+                    # local storage change 1184733195
+                [Store, 348294695] Store at CollectorOptimized._streams[0x7251].isEntity ↪ true
+                [Return, 686875762] Return
+        [LabelInstance, 1639186446] assert a._nextStreamId == ao._nextStreamId && (forall uint256 streamId. ghost_a_streams_recipient[streamId] == ghost_ao_streams_recipient[streamId] && ghost_a_streams_deposit[streamId] == ghost_ao_streams_deposit[streamId] && ghost_a_streams_tokenAddress[streamId] == ghost_ao_streams_tokenAddress[streamId] && ghost_a_streams_startTime[streamId] == ghost_ao_streams_startTime[streamId] && ghost_a_streams_stopTime[streamId] == ghost_ao_streams_stopTime[streamId] && ghost_a_streams_remainingBalance[streamId] == ghost_ao_streams_remainingBalance[streamId] && ghost_a_streams_ratePerSecond[streamId] == ghost_ao_streams_ratePerSecond[streamId] && ghost_a_streams_isEntity[streamId] == ghost_ao_streams_isEntity[streamId])
+                # snippet DirectStorageLoad -1606692677 ;
+                 disp. path:  _nextStreamId
+                  value sym:  CANON64!!196:bv256
+                # local storage change -1606692677
+            [Load, 1187011376] Load from CollectorOriginal._nextStreamId ↪ 0x7252
+                # snippet DirectStorageLoad -1274095459 ;
+                 disp. path:  _nextStreamId
+                  value sym:  CANON67!!240:bv256
+                # local storage change -1274095459
+            [Load, 1181959801] Load from CollectorOptimized._nextStreamId ↪ 0x7252
+[LabelInstance, 1762654641] assert false
+    [StorageTitleInstance, 679096558] Global State
+        [StorageTitleInstance, 1822942986] Storage State
+            [StorageTitleInstance, 817570921] CollectorOptimized
+                [StorageStateValueInstance, 644846014] _nextStreamId: 0x7252 (changed)
+                [StorageStateValueInstance, 1609246941] _streams[0x7251].deposit: 2 (changed)
+                [StorageStateValueInstance, 203885469] _streams[0x7251].isEntity: true (changed)
+                [StorageStateValueInstance, 1700199964] _streams[0x7251].ratePerSecond: 1 (changed)
+                [StorageStateValueInstance, 1072587113] _streams[0x7251].recipient: ecrecover (1) (changed)
+                [StorageStateValueInstance, 960830345] _streams[0x7251].remainingBalance: 2 (changed)
+                [StorageStateValueInstance, 218797279] _streams[0x7251].sender: CollectorOptimized (0x2a5a) (changed)
+                [StorageStateValueInstance, 1610497404] _streams[0x7251].startTime: 1 (changed)
+                [StorageStateValueInstance, 332917443] _streams[0x7251].stopTime: 3 (changed)
+                [StorageStateValueInstance, 48177763] _streams[0x7251].tokenAddress: 0 (changed)
+            [StorageTitleInstance, 1537929867] CollectorOriginal
+                [StorageStateValueInstance, 1972449631] _nextStreamId: 0x7252
+                [StorageStateValueInstance, 1505512668] _streams[0x7251].deposit: 2
+                [StorageStateValueInstance, 571187634] _streams[0x7251].isEntity: true
+                [StorageStateValueInstance, 775496146] _streams[0x7251].ratePerSecond: 1
+                [StorageStateValueInstance, 1390339715] _streams[0x7251].recipient: ecrecover (1)
+                [StorageStateValueInstance, 1765776040] _streams[0x7251].remainingBalance: 2
+                [StorageStateValueInstance, 382115852] _streams[0x7251].sender: CollectorOriginal (0x2a59)
+                [StorageStateValueInstance, 1905669303] _streams[0x7251].startTime: 1
+                [StorageStateValueInstance, 1423523576] _streams[0x7251].stopTime: 3
+                [StorageStateValueInstance, 1101399057] _streams[0x7251].tokenAddress: 0
+        [StorageTitleInstance, 1656953577] Balances
+            [BalanceValueInstance, 582003082] 0xffffffffffffffffffffffffffffffffffffed10.balance: 0x489b
+            [BalanceValueInstance, 1057193434] CollectorOptimized (0x2a5a).balance: 0x489c
+            [BalanceValueInstance, 1316249767] CollectorOriginal (0x2a59).balance: 0x489c
+        [StorageTitleInstance, 874131410] Ghosts State
+            [GhostValueInstance, 323038242] ghost_a_nextStreamId: 0x7252
+            [GhostValueInstance, 923303485] ghost_a_streams_deposit[0x7251]: 2
+            [GhostValueInstance, 1519669539] ghost_a_streams_isEntity[0x7251]: true
+            [GhostValueInstance, 1058378012] ghost_a_streams_ratePerSecond[0x7251]: 1
+            [GhostValueInstance, 632261344] ghost_a_streams_recipient[0x7251]: ecrecover (1)
+            [GhostValueInstance, 1361244670] ghost_a_streams_remainingBalance[0x7251]: 2
+            [GhostValueInstance, 692567984] ghost_a_streams_sender[0x7251]: CollectorOriginal (0x2a59)
+            [GhostValueInstance, 977880821] ghost_a_streams_startTime[0x7251]: 1
+            [GhostValueInstance, 1667773398] ghost_a_streams_stopTime[0x7251]: 3
+            [GhostValueInstance, 620987204] ghost_a_streams_tokenAddress[0x7251]: 0
+            [GhostValueInstance, 825033323] ghost_ao_nextStreamId: 0x7252 (changed)
+            [GhostValueInstance, 1092846677] ghost_ao_streams_deposit[0x7251]: 2 (changed)
+            [GhostValueInstance, 1668802852] ghost_ao_streams_isEntity[0x7251]: true (changed)
+            [GhostValueInstance, 1515675565] ghost_ao_streams_ratePerSecond[0x7251]: 1 (changed)
+            [GhostValueInstance, 61878486] ghost_ao_streams_recipient[0x7251]: ecrecover (1) (changed)
+            [GhostValueInstance, 1584139737] ghost_ao_streams_remainingBalance[0x7251]: 2 (changed)
+            [GhostValueInstance, 42922489] ghost_ao_streams_sender[0x7251]: CollectorOptimized (0x2a5a) (changed)
+            [GhostValueInstance, 1657044018] ghost_ao_streams_startTime[0x7251]: 1 (changed)
+            [GhostValueInstance, 1626392124] ghost_ao_streams_stopTime[0x7251]: 3 (changed)
+            [GhostValueInstance, 1590431038] ghost_ao_streams_tokenAddress[0x7251]: 0 (changed)
+    -------- CVL model begin ------------
+    -- type: bool --
+    CANON11!!312                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isView
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON4!!304                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isView
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON274!!366                                 ~~>  true
+       cvl                 : true
+    CANON3!!81                                    ~~> false
+       cvl                 : true
+       cvl.display         : f.isPure
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON4!!82                                    ~~> false
+       cvl                 : true
+       cvl.display         : f.isView
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON5!!83                                    ~~> false
+       cvl                 : true
+       cvl.display         : f.isPayable
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON6!!85                                    ~~> false
+       cvl                 : true
+       cvl.display         : f.isFallback
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON12!!313                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isPayable
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON5!!305                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isPayable
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON138                                      ~~>  true
+       cvl                 : true
+    CANON179                                      ~~>  true
+       cvl                 : true
+    CANON225                                      ~~>  true
+       cvl                 : true
+    CANON13!!315                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isFallback
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON271!!364                                 ~~>  true
+       cvl                 : true
+    CANON6!!307                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isFallback
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON10!!88                                   ~~> false
+       cvl                 : true
+       cvl.display         : g.isPure
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON11!!89                                   ~~> false
+       cvl                 : true
+       cvl.display         : g.isView
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON12!!90                                   ~~> false
+       cvl                 : true
+       cvl.display         : g.isPayable
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON13!!92                                   ~~> false
+       cvl                 : true
+       cvl.display         : g.isFallback
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON48                                       ~~>  true
+       cvl                 : true
+    CANON51                                       ~~>  true
+       cvl                 : true
+    CANON58                                       ~~>  true
+       cvl                 : true
+    CANON63                                       ~~>  true
+       cvl                 : true
+    CANON70                                       ~~>  true
+       cvl                 : true
+    CANON89                                       ~~>  true
+       cvl                 : true
+    CANON10!!311                                  ~~> false
+       cvl                 : true
+       cvl.display         : g.isPure
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON3!!303                                   ~~> false
+       cvl                 : true
+       cvl.display         : f.isPure
+       cvl.type            : bool
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    -- type: int --
+    CANON!!302                                    ~~>                                                         0xcc1b4bf6
+       cvl                 : true
+       cvl.display         : f.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON9!!316                                   ~~>                                                             0x2a5a
+       cvl                 : true
+       cvl.display         : g.contract
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON1!!59                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : f.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON1!!84                                    ~~>                                                                0x5
+       cvl                 : true
+       cvl.display         : f.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON2!!60                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : f.contract
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON2!!86                                    ~~>                                                             0x2a59
+       cvl                 : true
+       cvl.display         : f
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON7!!65                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : g.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON7!!87                                    ~~>                                                         0xcc1b4bf6
+       cvl                 : true
+       cvl.display         : g.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON8!!66                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : g.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON8!!91                                    ~~>                                                                0x5
+       cvl                 : true
+       cvl.display         : g.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON9!!67                                    ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : g.contract
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON9!!93                                    ~~>                                                             0x2a5a
+       cvl                 : true
+       cvl.display         : g
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON136!!197                                 ~~>                                                             0x7252
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.ghost           : NoValue
+       cvl.type            : uint256
+    CANON1!!306                                   ~~>                                                                0x5
+       cvl                 : true
+       cvl.display         : f.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON!!71                                     ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : f.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON!!80                                     ~~>                                                         0xcc1b4bf6
+       cvl                 : true
+       cvl.display         : f.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON136!!6                                   ~~>                                                             0x7251
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.ghost           : NoValue
+       cvl.type            : uint256
+    CANON24                                       ~~>                         0xffffffffffffffffffffffffffffffffffffed10
+       cvl                 : true
+       cvl.display         : eA.msg.sender
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, sender])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON25                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.msg.value
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, value])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON26                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.tx.origin
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[tx, origin])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON27                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.basefee
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, basefee])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON28                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.blobbasefee
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, blobbasefee])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON29                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.coinbase
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, coinbase])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON30                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.difficulty
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, difficulty])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON31                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.gaslimit
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, gaslimit])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON32                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.number
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, number])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON33                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eA.block.timestamp
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, timestamp])
+       cvl.def.site        : Function(range=Collector.spec:267:5)
+    CANON34                                       ~~>                         0xffffffffffffffffffffffffffffffffffffed10
+       cvl                 : true
+       cvl.display         : eAo.msg.sender
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, sender])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON35                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.msg.value
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, value])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON36                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.tx.origin
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[tx, origin])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON37                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.basefee
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, basefee])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON38                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.blobbasefee
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, blobbasefee])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON39                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.coinbase
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, coinbase])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON40                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.difficulty
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, difficulty])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON41                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.gaslimit
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, gaslimit])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON42                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.number
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, number])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON43                                       ~~>                                                                0x0
+       cvl                 : true
+       cvl.display         : eAo.block.timestamp
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, timestamp])
+       cvl.def.site        : Function(range=Collector.spec:268:5)
+    CANON2!!308                                   ~~>                                                             0x2a59
+       cvl                 : true
+       cvl.display         : f.contract
+       cvl.type            : address
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+       cvl.def.site        : Rule(range=Collector.spec:305:44)
+    CANON7!!310                                   ~~>                                                         0xcc1b4bf6
+       cvl                 : true
+       cvl.display         : g.selector
+       cvl.type            : uint32
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    CANON223!!18                                  ~~>                                                             0x7251
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.ghost           : NoValue
+       cvl.type            : uint256
+    CANON223!!241                                 ~~>                                                             0x7252
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.ghost           : NoValue
+       cvl.type            : uint256
+    CANON8!!314                                   ~~>                                                                0x5
+       cvl                 : true
+       cvl.display         : g.numberOfArguments
+       cvl.type            : uint256
+       cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+       cvl.def.site        : Rule(range=Collector.spec:305:54)
+    -- type: bv256 --
+    CANON181                                      ~~>                                                             0x7252
+       cvl                 : true
+       cvl.display         : ghost_a_nextStreamId
+       cvl.ghost           : NoValue
+       cvl.type            : uint256
+    CANON227                                      ~~>                                                             0x7252
+       cvl                 : true
+       cvl.display         : ghost_ao_nextStreamId
+       cvl.ghost           : NoValue
+       cvl.type            : uint256
+    CANON94                                       ~~>                                                               0xa4
+       cvl                 : true
+       cvl.display         : args.length
+       cvl.type            : uint256
+       cvl.def.site        : Function(range=Collector.spec:269:5)
+    -- type: bytemap --
+    CANON97havocme26523                           ~~> {[x:bv256] ->
+  Ite(
+    x:bv256 == 0x84
+    0x3
+    Ite(
+      x:bv256 == 0x64
+      0x1
+      Ite(
+        x:bv256 == 0x24
+        0x2
+        Ite(
+          x:bv256 == 0x4
+          0x1
+          0x0
+        )
+      )
+    )
+  )
+}
+       cvl                 : true
+       cvl.display         : args
+       cvl.type            : calldataarg
+       cvl.def.site        : Function(range=Collector.spec:269:5)
+    -------- CVL model end --------------
+    -------- TAC model begin ------------
+      OK_4_0_0_0_0_0:bool  -->                                                              false
+      CANON11!!312:bool  -->                                                              false
+      tacCalldatabufCANON0@2:bv256  -->                                                                0x0
+      tacCalldatabufCANON0@3:bv256  -->                                                                0x0
+      tacCalldatabufCANON1@2:bv256  -->                                                                0x1
+      tacCalldatabufCANON1@3:bv256  -->                                                                0x1
+      tacCalldatabufCANON2@2:bv256  -->                                                                0x2
+      tacCalldatabufCANON2@3:bv256  -->                                                                0x2
+      tacCalldatabufCANON3@2:bv256  -->                                                                0x0
+      tacCalldatabufCANON3@3:bv256  -->                                                                0x0
+      tacCalldatabufCANON4@2:bv256  -->                                                                0x1
+      tacCalldatabufCANON4@3:bv256  -->                                                                0x1
+      tacCalldatabufCANON5@2:bv256  -->                                                                0x3
+      tacCalldatabufCANON5@3:bv256  -->                                                                0x3
+       CANON!!302:int  -->                                                         0xcc1b4bf6
+      from_skey:ghostmap((uninterp) skey->bv256)  -->                                          {[x:bv256] ->
+  x:bv256
+}
+      tacM0x40!!0:bv256  -->                                                                0x0
+      tacM0x40!!1:bv256  -->                                                                0x0
+      CANON4!!304:bool  -->                                                              false
+      CANON274!!366:bool  -->                                                               true
+      CANON9!!316:int  -->                                                             0x2a5a
+      to_skey:ghostmap(bv256->(uninterp) skey)  -->                                          {[x:bv256] ->
+  x:bv256
+}
+       CANON1!!59:int  -->                                                                0x0
+       CANON1!!84:int  -->                                                                0x5
+       CANON2!!60:int  -->                                                                0x0
+       CANON2!!86:int  -->                                                             0x2a59
+      CANON3!!81:bool  -->                                                              false
+      CANON4!!82:bool  -->                                                              false
+      CANON5!!83:bool  -->                                                              false
+      CANON6!!85:bool  -->                                                              false
+       CANON7!!65:int  -->                                                                0x0
+       CANON7!!87:int  -->                                                         0xcc1b4bf6
+       CANON8!!66:int  -->                                                                0x0
+       CANON8!!91:int  -->                                                                0x5
+       CANON9!!67:int  -->                                                                0x0
+       CANON9!!93:int  -->                                                             0x2a5a
+      CANON12!!313:bool  -->                                                              false
+      ReachabilityCertora0_0_0_0_0_0:bool  -->                                                               true
+      ReachabilityCertora0_0_0_2_0_2:bool  -->                                                               true
+      ReachabilityCertora0_0_0_3_0_4:bool  -->                                                               true
+      ReachabilityCertora1_0_0_1_0_1:bool  -->                                                               true
+      CANON67!!240:bv256  -->                                                             0x7252
+      ReachabilityCertora2_0_0_1_0_3:bool  -->                                                               true
+      CANON5!!305:bool  -->                                                              false
+        CANON138:bool  -->                                                               true
+         CANON143:int  -->                                                                0x2
+         CANON147:int  -->                                                                0x1
+         CANON151:int  -->                                                                0x2
+         CANON155:int  -->                                                                0x1
+         CANON159:int  -->                                                                0x3
+         CANON163:int  -->                                                                0x1
+         CANON167:int  -->                                                             0x2a59
+         CANON172:int  -->                                                                0x0
+        CANON176:bool  -->                                                               true
+        CANON179:bool  -->                                                               true
+       CANON181:bv256  -->                                                             0x7252
+       CANON187:bv256  -->                                                                0x0
+        CANON225:bool  -->                                                               true
+       CANON227:bv256  -->                                                             0x7252
+         CANON232:int  -->                                                                0x2
+         CANON236:int  -->                                                                0x1
+         CANON240:int  -->                                                                0x2
+         CANON244:int  -->                                                                0x1
+         CANON248:int  -->                                                                0x3
+         CANON252:int  -->                                                                0x1
+         CANON256:int  -->                                                             0x2a5a
+         CANON261:int  -->                                                                0x0
+        CANON265:bool  -->                                                               true
+      CANON136!!197:int  -->                                                             0x7252
+      ReachabilityCertora3_0_0_1_0_5:bool  -->                                                               true
+      ReachabilityCertora4_0_0_0_0_0:bool  -->                                                               true
+      CANON13!!315:bool  -->                                                              false
+      tacCalldatabuf@2:bytemap  --> {[arg0:bv256] ->
+  Ite(
+    LAnd(Ge(arg0:bv256 0x0) LNot(Le(0xa4 arg0:bv256)))
+    Ite(
+      arg0:bv256 == 0x84
+      0x3
+      Ite(
+        arg0:bv256 == 0x64
+        0x1
+        Ite(
+          arg0:bv256 == 0x24
+          0x2
+          Ite(
+            arg0:bv256 == 0x4
+            0x1
+            0x0
+          )
+        )
+      )
+    )
+    0x0
+  )
+}
+      tacCalldatabuf@3:bytemap  --> {[arg0:bv256] ->
+  Ite(
+    LAnd(Ge(arg0:bv256 0x0) LNot(Le(0xa4 arg0:bv256)))
+    Ite(
+      arg0:bv256 == 0x84
+      0x3
+      Ite(
+        arg0:bv256 == 0x64
+        0x1
+        Ite(
+          arg0:bv256 == 0x24
+          0x2
+          Ite(
+            arg0:bv256 == 0x4
+            0x1
+            0x0
+          )
+        )
+      )
+    )
+    0x0
+  )
+}
+             R2:bv256  -->                                                                0x1
+             R3:bv256  -->                                                                0x1
+             B78:bool  -->                                                               true
+            R55:bv256  -->                                                             0x2a59
+            R56:bv256  -->                                                                0x1
+            R57:bv256  -->                                                                0x2
+            R58:bv256  -->                                                                0x4
+            R68:bv256  -->                                                             0x2a5a
+            R72:bv256  -->                                                                0x1
+            R73:bv256  -->                                                                0x1
+            R75:bv256  -->                                                                0x1
+            R76:bv256  -->                                                                0x1
+            R95:bv256  -->                         0xffffffffffffffffffffffffffffffffffffed10
+            R97:bv256  -->                                                                0x0
+            R98:bv256  -->                         0xffffffffffffffffffffffffffffffffffffed10
+      sklm!certora__streamId_2314843!callId0!14:bv256  -->                                                             0x420b
+      CANON1!!306:int  -->                                                                0x5
+            B335:bool  -->                                                               true
+            B336:bool  -->                                                               true
+            B337:bool  -->                                                               true
+            B365:bool  -->                                                               true
+            B367:bool  -->                                                              false
+             I134:int  -->                                                             0x7251
+             I144:int  -->                                                             0x7251
+             I150:int  -->                                                             0x7251
+             I156:int  -->                                                             0x7251
+             I162:int  -->                                                             0x7251
+             I168:int  -->                                                             0x7251
+             I174:int  -->                                                             0x7251
+             I180:int  -->                                                             0x7251
+             I186:int  -->                                                             0x7251
+             I190:int  -->                                                             0x7251
+             I193:int  -->                                                             0x7251
+             I237:int  -->                                                             0x7251
+             I251:int  -->                                                             0x7251
+             I257:int  -->                                                             0x7251
+             I263:int  -->                                                             0x7251
+             I269:int  -->                                                             0x7251
+             I275:int  -->                                                             0x7251
+             I281:int  -->                                                             0x7251
+             I287:int  -->                                                             0x7251
+             I293:int  -->                                                             0x7251
+             I297:int  -->                                                             0x7251
+             I318:int  -->                         0xffffffffffffffffffffffffffffffffffffed10
+             I320:int  -->                         0xffffffffffffffffffffffffffffffffffffed10
+             I321:int  -->                                                                0x0
+             I322:int  -->                                                                0x0
+             I324:int  -->                                                                0x0
+             I326:int  -->                                                                0x0
+             I328:int  -->                                                                0x0
+             I330:int  -->                                                                0x0
+           R100:bv256  -->                                                             0x489b
+           R103:bv256  -->                                                             0x489c
+           R105:bv256  -->                                                             0x489c
+           R107:bv256  -->                                                                0x1
+           R109:bv256  -->  0x2dd7bc7dec4dceedda775e58dd541e08a116c6c53815c0bd028192f7b626800
+           R110:bv256  -->  0x2dd7bc7dec4dceedda775e58dd541e08a116c6c53815c0bd028192f7b626800
+      R111:(uninterp) skey  -->                                                             0x2711
+      R117:(uninterp) skey  -->                                                             0xa527
+           R119:bv256  -->                                                                0x1
+           R127:bv256  -->                                                                0x2
+           R130:bv256  -->                                                                0x0
+           R131:bv256  -->                                                                0x1
+           R138:bv256  -->                                                               0x36
+      R139:(uninterp) skey  -->                                                             0x309f
+           R142:bv256  -->                                                                0x0
+      R147:(uninterp) skey  -->                                                             0x30a0
+           R148:bv256  -->                                                                0x0
+      R153:(uninterp) skey  -->                                                             0x30a1
+           R154:bv256  -->                                                                0x0
+      R159:(uninterp) skey  -->                                                             0x30a2
+           R160:bv256  -->                                                                0x0
+      R165:(uninterp) skey  -->                                                             0x30a3
+           R166:bv256  -->                                                                0x0
+      R170:(uninterp) skey  -->                                                             0x30a4
+           R172:bv256  -->                                                                0x0
+      R176:(uninterp) skey  -->                                                             0x30a5
+           R178:bv256  -->                                                                0x0
+      R182:(uninterp) skey  -->                                                             0x30a6
+           R184:bv256  -->                                                                0x0
+           R188:bv256  -->                                                                0x0
+           R194:bv256  -->                                                             0x7252
+           R201:bv256  -->                         0xffffffffffffffffffffffffffffffffffffed10
+           R203:bv256  -->                                                                0x0
+           R204:bv256  -->                         0xffffffffffffffffffffffffffffffffffffed10
+           R206:bv256  -->                                                             0x489b
+           R209:bv256  -->                                                             0x489c
+           R211:bv256  -->                                                             0x489c
+           R212:bv256  -->                                                                0x1
+           R214:bv256  -->  0x2dd7bc7dec4dceedda775e58dd541e08a116c6c53815c0bd028192f7b626800
+           R215:bv256  -->  0x2dd7bc7dec4dceedda775e58dd541e08a116c6c53815c0bd028192f7b626800
+      R216:(uninterp) skey  -->                                                             0x2711
+      R222:(uninterp) skey  -->                                                             0xa527
+           R224:bv256  -->                                                                0x1
+           R232:bv256  -->                                                                0x2
+           R234:bv256  -->                                                                0x0
+           R235:bv256  -->                                                                0x1
+           R238:bv256  -->                                                             0x7252
+           R245:bv256  -->                                                               0x36
+      R246:(uninterp) skey  -->                                                             0x309f
+           R249:bv256  -->                                                                0x0
+      R254:(uninterp) skey  -->                                                             0x30a0
+           R255:bv256  -->                                                                0x0
+      R260:(uninterp) skey  -->                                                             0x30a1
+           R261:bv256  -->                                                                0x0
+      R266:(uninterp) skey  -->                                                             0x30a2
+           R267:bv256  -->                                                                0x0
+      R272:(uninterp) skey  -->                                                             0x30a3
+           R273:bv256  -->                                                                0x0
+      R277:(uninterp) skey  -->                                                             0x30a4
+           R279:bv256  -->                                                                0x0
+      R283:(uninterp) skey  -->                                                             0x30a5
+           R285:bv256  -->                                                                0x0
+      R289:(uninterp) skey  -->                                                             0x30a6
+           R291:bv256  -->                                                                0x0
+           R295:bv256  -->                                                                0x0
+           R343:bv256  -->                                                                0x0
+           R344:bv256  -->                                                                0x1
+           R345:bv256  -->                                                                0x2
+           R346:bv256  -->                                                                0x0
+           R347:bv256  -->                                                                0x1
+           R348:bv256  -->                                                                0x3
+           R354:bv256  -->                                                                0x0
+           R355:bv256  -->                                                                0x1
+           R356:bv256  -->                                                                0x2
+           R357:bv256  -->                                                                0x0
+           R358:bv256  -->                                                                0x1
+           R359:bv256  -->                                                                0x3
+      lastHasThrown!!198:bool  -->                                                              false
+      lastHasThrown!!200:bool  -->                                                              false
+      lastHasThrown!!299:bool  -->                                                              false
+      CANON271!!364:bool  -->                                                               true
+      CANON97havocme26523:bytemap  --> {[x:bv256] ->
+  Ite(
+    x:bv256 == 0x84
+    0x3
+    Ite(
+      x:bv256 == 0x64
+      0x1
+      Ite(
+        x:bv256 == 0x24
+        0x2
+        Ite(
+          x:bv256 == 0x4
+          0x1
+          0x0
+        )
+      )
+    )
+  )
+}
+      CANON6!!307:bool  -->                                                              false
+        CANON!!71:int  -->                                                                0x0
+        CANON!!80:int  -->                                                         0xcc1b4bf6
+      CANON10!!88:bool  -->                                                              false
+      CANON11!!89:bool  -->                                                              false
+      lastReverted!!199:bool  -->                                                              false
+      lastReverted!!300:bool  -->                                                              false
+      CANON12!!90:bool  -->                                                              false
+      CANON13!!92:bool  -->                                                              false
+      CANON136!!6:int  -->                                                             0x7251
+          CANON24:int  -->                         0xffffffffffffffffffffffffffffffffffffed10
+          CANON25:int  -->                                                                0x0
+          CANON26:int  -->                                                                0x0
+          CANON27:int  -->                                                                0x0
+          CANON28:int  -->                                                                0x0
+          CANON29:int  -->                                                                0x0
+          CANON30:int  -->                                                                0x0
+          CANON31:int  -->                                                                0x0
+          CANON32:int  -->                                                                0x0
+          CANON33:int  -->                                                                0x0
+          CANON34:int  -->                         0xffffffffffffffffffffffffffffffffffffed10
+          CANON35:int  -->                                                                0x0
+          CANON36:int  -->                                                                0x0
+          CANON37:int  -->                                                                0x0
+          CANON38:int  -->                                                                0x0
+          CANON39:int  -->                                                                0x0
+          CANON40:int  -->                                                                0x0
+          CANON41:int  -->                                                                0x0
+          CANON42:int  -->                                                                0x0
+          CANON43:int  -->                                                                0x0
+         CANON48:bool  -->                                                               true
+         CANON51:bool  -->                                                               true
+         CANON58:bool  -->                                                               true
+         CANON63:bool  -->                                                               true
+         CANON70:bool  -->                                                               true
+         CANON89:bool  -->                                                               true
+        CANON94:bv256  -->                                                               0xa4
+        CANON99:bv256  -->                                                                0x0
+      CANON64!!34:bv256  -->                                                             0x7251
+      CANON67!!35:bv256  -->                                                             0x7251
+      CANON64!!196:bv256  -->                                                             0x7252
+      CANON2!!308:int  -->                                                             0x2a59
+      CANON7!!310:int  -->                                                         0xcc1b4bf6
+      CANON223!!18:int  -->                                                             0x7251
+      CANON10!!311:bool  -->                                                              false
+      OK_0_0_0_0_0_0:bool  -->                                                              false
+      lastHasThrown!!94:bool  -->                                                              false
+      OK_0_0_0_2_0_2:bool  -->                                                              false
+      OK_0_0_0_3_0_4:bool  -->                                                              false
+      CANON223!!241:int  -->                                                             0x7252
+      OK_1_0_0_1_0_1:bool  -->                                                              false
+      CANON3!!303:bool  -->                                                              false
+      tacSighash!!69:bv256  -->                                                         0xcc1b4bf6
+      tacSighash!!70:bv256  -->                                                         0xcc1b4bf6
+      OK_2_0_0_1_0_3:bool  -->                                                              false
+      CANON8!!314:int  -->                                                                0x5
+      OK_3_0_0_1_0_5:bool  -->                                                              false
+    -------- TAC model end --------------
+    
