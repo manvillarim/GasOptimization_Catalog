@@ -4,7 +4,7 @@ This repository contains a series of transformations and techniques that aim to 
 
 | Transformation | Definition | Proof of Correctness | Source |
 |---|---|---|---|
-| Replace require with custom errors | [definition](definition/solidity_transformações-1.pdf) | [Proof](certora/replace-require-with-custom-errors/replace-require-with-custom-errors.md) | [source](https://soliditylang.org/blog/2021/04/21/custom-errors/) |
+| Replace require with custom errors | [definition](definition/solidity_transformações-1.pdf) | [Proof](certora/replace-require-with-custom-errors/replace-require-with-custom-errors.md) | Original |
 | Refactoring loops with repeated storage calls | [definition](definition/solidity_transformações-2.pdf) | [Proof](certora/refactoring-loops-with-repeated-storage-calls/refactoring-loops-with-repeated-storage-calls.md) | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
 | Refactoring loops with a constant comparison | [definition](definition/solidity_transformações-3.pdf) | [Proof](certora/refactoring-loops-with-a-constant-comparison/refactoring-loops-with-a-constant-comparison.md) | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
 | Refactoring loops with repeated computations | [definition](definition/solidity_transformações-4.pdf) | [Proof](certora/refactoring-loops-with-repeated-computations/refactoring-loops-with-repeated-computations.md) | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
@@ -32,4 +32,6 @@ This repository contains a series of transformations and techniques that aim to 
 | Cache array length in loops | [definition](definition/solidity_transformações-26.pdf) | [Proof](certora/cache-array-length/cache-array-length.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
 | Use efficient loop increment (++ instead of +=1) | [definition](definition/solidity_transformações-27.pdf) | [Proof](certora/efficient-loop-increment/efficient-loop-increment-verification.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
 | Use mappings instead of arrays for data lists | [definition](definition/solidity_transformações-28.pdf) | [Proof](certora/mappings-vs-arrays/mappings-vs-arrays.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
-| Use unchecked arithmetic for validated operations  | [definition](definition/solidity_transformações-29.pdf) | [Proof](certora/unchecked/unchecked.md) | [source](https://medium.com/coinmonks/unchecked-in-solidity-b5f2cc47532b) |
+| Use unchecked arithmetic for validated operations  | [definition](definition/solidity_transformações-29.pdf) | [Proof](certora/unchecked/unchecked.md) | Original |
+| Redundant Control Flow Removal (Continue)  | [definition](definition/solidity_transformações-30.pdf) | [Proof](certora/continue/continue.md) | Original |
+| Redundant Control Flow Removal (Break to Early Return)  | [definition](definition/solidity_transformações-31.pdf) | [Proof](certora/break/break.md) | Original |
