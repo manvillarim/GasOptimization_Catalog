@@ -145,15 +145,13 @@ contract Collector is AccessControlUpgradeable, ReentrancyGuardUpgradeable, ICol
 
     if (block.timestamp <= startTime) return 0;
     if (block.timestamp < stopTime) {
-      // Unchecked Arithmetic: block.timestamp > startTime is guaranteed
-      unchecked {
+
         return block.timestamp - startTime;
-      }
+
     }
-    // Unchecked Arithmetic: stopTime > startTime is guaranteed by createStream validation
-    unchecked {
+
       return stopTime - startTime;
-    }
+
   }
 
   /// @inheritdoc ICollector
@@ -262,11 +260,9 @@ contract Collector is AccessControlUpgradeable, ReentrancyGuardUpgradeable, ICol
 
     uint256 ratePerSecond = deposit / duration;
 
-    /* Create and store the stream object. */
-    // Unchecked Arithmetic: _nextStreamId will never realistically overflow
-    unchecked {
+
       streamId = _nextStreamId++;
-    }
+      
     // Rule 0.6: Struct Packing - fields in optimized order
     _streams[streamId] = Stream({
       sender: address(this),
