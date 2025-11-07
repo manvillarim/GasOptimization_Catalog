@@ -26,6 +26,7 @@ contract Ao {
     
     // Add a new value
     function addValue(uint256 _value) external returns (uint256 index) {
+        require(size < type(uint256).max, "Size overflow");
         index = size;
         values[size] = _value;
         size++;
@@ -114,6 +115,7 @@ contract Ao {
     
     // Batch add values
     function batchAdd(uint256[] calldata _values) external {
+        require(size + _values.length <= type(uint256).max, "Size overflow");cd 
         for (uint256 i = 0; i < _values.length; i++) {
             values[size] = _values[i];
             size++;

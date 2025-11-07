@@ -1,3 +1,3 @@
 # Avoid Zero Initialization proof
 
-See Certora's result at https://prover.certora.com/output/480394/6d422db72ed149dca761483c398ecd05?anonymousKey=f8fe806070b13017fb3585cdca0beeeeb48ca874
+See Certora's result at https://prover.certora.com/output/480394/80430f112e464b4a91e1def68a5df756?anonymousKey=1627aeefab9d92cbe4efcb7642eba483b7b14b7e

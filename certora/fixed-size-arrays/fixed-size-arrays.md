@@ -1,3 +1,3 @@
 #  Use fixed-size arrays instead of dynamic arrays Proof
 
-See Certora's result at https://prover.certora.com/output/480394/545fa6e4823d486e819524d4154b5ef1?anonymousKey=1490c6ba88b126ad948650360dd51b95a06c1dcb
+See Certora's result at https://prover.certora.com/output/480394/2f226d2dec29485594ff220959c94960?anonymousKey=6effa442643984d4c669181f16d2b13eb332cbc7

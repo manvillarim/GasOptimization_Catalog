@@ -1,3 +1,3 @@
 # State Variable Packing Proof
 
-See Certora's result at https://prover.certora.com/output/480394/bf2f46e7e59e49108ce293fdacc3c748?anonymousKey=1f760b116a8d8e65bf9528b65b74808a6f660fb9
+See Certora's result at https://prover.certora.com/output/480394/5827c8f8ed8840eeb96279c57f4b7465?anonymousKey=d76f68ba1326a80b51a22a8efc08cff76078ddce

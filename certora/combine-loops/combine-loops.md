@@ -1,3 +1,3 @@
 # Combine multiple loops into one Proof
 
-See Certora's result at https://prover.certora.com/output/480394/34008da72e5f4068ae3cf82ff84d216d?anonymousKey=c1de36da742f622b10f244426e028bd2ae17155f
+See Certora's result at https://prover.certora.com/output/480394/13c4dc665db842d8835f4a64bf76c532?anonymousKey=41f883b30a4d0b5b766e1e451460060dcac5462e

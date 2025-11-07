@@ -1,3 +1,3 @@
 # Limit Functions Proof
 
-See Certora's result at https://prover.certora.com/output/480394/207ab8cb643545048387b14b46c4024c?anonymousKey=ab54c5f50c2b2fee937608e58fabcf23a91a995a
+See Certora's result at https://prover.certora.com/output/480394/ab8e812b4ea84251981d4409023e1353?anonymousKey=48cb12edff2635f5e40c376361b3a971a524ffad
