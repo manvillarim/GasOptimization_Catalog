@@ -4,7 +4,7 @@ This repository contains a series of transformations and techniques that aim to 
 
 To view the AAVE V3 case study, click [here](case-study/CASESTUDY.md).
 
-| Transformation | Definition | Proof of Correctness | Source |
+| Transformation | Definition | CVL Specification | Source |
 |---|---|---|---|
 | Replace require with custom errors | [definition](definition/solidity_transformações-1.pdf) | [Proof](certora/replace-require-with-custom-errors/replace-require-with-custom-errors.md) | Original |
 | Refactoring loops with repeated storage calls | [definition](definition/solidity_transformações-2.pdf) | [Proof](certora/refactoring-loops-with-repeated-storage-calls/refactoring-loops-with-repeated-storage-calls.md) | [source](https://www.cs.toronto.edu/~fanl/papers/gas-brain21.pdf) |
