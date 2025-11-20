@@ -35,4 +35,4 @@ To view the AAVE V3 case study, click [here](case-study/CASESTUDY.md).
 | Use mappings instead of arrays for data lists | [definition](definition/solidity_transformações-27.pdf) | [Spec](certora/mappings-vs-arrays/mappings-vs-arrays.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
 | Use unchecked arithmetic for validated operations  | [definition](definition/solidity_transformações-28.pdf) | [Spec](certora/unchecked/unchecked.md) | Original |
 | Use Bytes instead of Strings  | [definition](definition/solidity_transformações-29.pdf) | [Spec](certora/bytes-strings/bytes.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984?casa_token=sUZr-rcNR6EAAAAA:O7umjAqgUcAn7MeBgEQyHAVLXswsqWxqWRApNnohmvrftoqDah-WVghsCu1jV3ZHdCU5Bb4EXsQ) |
-| Make Constructors Payable | [definition](definition/solidity_transformações-30.pdf) | [Spec](certora/contructor/constructor.md) | Original |
+| Make Constructors Payable | [definition](definition/solidity_transformações-30.pdf) | [Spec](certora/constructor/constructor.md) | Original |
