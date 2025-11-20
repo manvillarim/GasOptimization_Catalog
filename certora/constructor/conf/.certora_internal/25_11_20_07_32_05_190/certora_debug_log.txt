@@ -1,0 +1,12 @@
+'send_only' is deprecated and is now the default. In CI, use 'wait_for_results none' instead
+Saving last configuration file to .certora_internal/25_11_20_07_32_05_190/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+Creating dir /home/manoel/projeto/GasOptimizationCatalog/certora/constructor/conf/.certora_internal/25_11_20_07_32_05_190/.certora_config
+In /home/manoel/projeto/GasOptimizationCatalog/certora/constructor/specs/constructor.spec, found the imports: []
+copying spec file /home/manoel/projeto/GasOptimizationCatalog/certora/constructor/specs/constructor.spec to /home/manoel/projeto/GasOptimizationCatalog/certora/constructor/conf/.certora_internal/25_11_20_07_32_05_190/.certora_sources/.0_constructor.spec.spec
+writing /home/manoel/projeto/GasOptimizationCatalog/certora/constructor/conf/.certora_internal/25_11_20_07_32_05_190/.certora_verify.json
+Failed to run Certora Prover locally. Please check the errors below for problems in the specifications (.spec files) or the prover_args defined in the .conf file.
+[main] ERROR ALWAYS - Found errors in ../specs/constructor.spec:
+[main] ERROR ALWAYS - Error in spec file (constructor.spec:1:13): Since CVL 2, `using` statements must end with `;`
+[main] ERROR ALWAYS - Error in spec file (constructor.spec:2:15): Since CVL 2, `using` statements must end with `;`
+build failed

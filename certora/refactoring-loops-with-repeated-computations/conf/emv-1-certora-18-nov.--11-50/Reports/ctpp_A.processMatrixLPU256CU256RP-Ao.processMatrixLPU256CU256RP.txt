@@ -1,0 +1,1086 @@
+Calltrace Debug Information
+[StorageTitleInstance, 777045617] Global State
+    [StorageTitleInstance, 1484536937] Storage State
+        [StorageTitleInstance, 741155541] A
+            [StorageStateValueInstance, 570514927] baseReward: 0
+            [StorageStateValueInstance, 172651664] limit: 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff (MAX_UINT256)
+            [StorageStateValueInstance, 871145156] multiplier: 0
+            [StorageStateValueInstance, 1989290470] penalties: 0
+            [StorageStateValueInstance, 1582623998] price: 1
+            [StorageStateValueInstance, 132382032] rewards: 0
+            [StorageStateValueInstance, 1353603542] taxRate: 0
+            [StorageStateValueInstance, 932484924] tokens: 0
+            [StorageStateValueInstance, 1314827820] totalSupply: 0
+        [StorageTitleInstance, 1448072138] Ao
+            [StorageStateValueInstance, 1947029564] baseReward: 0
+            [StorageStateValueInstance, 1731396854] limit: 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff (MAX_UINT256)
+            [StorageStateValueInstance, 1554508274] multiplier: 0
+            [StorageStateValueInstance, 1952358447] penalties: 0
+            [StorageStateValueInstance, 1791787560] price: 1
+            [StorageStateValueInstance, 354893619] rewards: 0
+            [StorageStateValueInstance, 1982639132] taxRate: 0
+            [StorageStateValueInstance, 2003973422] tokens: 0
+            [StorageStateValueInstance, 2032219178] totalSupply: 0
+    [StorageTitleInstance, 1439908506] Balances
+        [BalanceValueInstance, 1175210096] 0x2973.balance: 0x1c08
+        [BalanceValueInstance, 548523738] A (0x277a).balance: 0x25fd
+        [BalanceValueInstance, 1346453122] Ao (0x277b).balance: 0x1c08
+[LabelInstance, 1000535507] Setup
+    [LabelInstance, 357251939] multi contract setup
+    [LabelInstance, 1277669990] rule parameters setup
+    [LabelInstance, 414588673] contract address vars initialized
+    [LabelInstance, 873889193] setup read tracking instrumentation
+    [LabelInstance, 2018170987] last storage initialize
+    [LabelInstance, 160424326] assuming contracts in scene with non-empty bytecode have EXTCODESIZE larger than zero
+    [LabelInstance, 311375792] assuming address(0).code has no code deployed
+    [LabelInstance, 521100050] assumptions about contracts' addresses
+    [LabelInstance, 81243628] assumptions about static addresses
+    [LabelInstance, 1128037619] establish addresses of precompiled contracts
+    [LabelInstance, 677765523] assumptions about uniqueness of contracts' addresses
+    [LabelInstance, 1305995334] static links
+    [LabelInstance, 1960215773] record starting nonces
+    [LabelInstance, 1412281680] cloned contracts have no balances
+    [LabelInstance, 1405333311] Linked immutable setup
+    [LabelInstance, 556071129] Constrain immutables
+    [LabelInstance, 1628729420] establish equivalence of extension and base contract immutables
+[LabelInstance, 1487588875] gasOptimizationCorrectness(f, g)
+    [CVLFunc, 280684612] 1 ; gasOptimizationCorrectness ; []; [] ; {} : [] 
+        gasOptimizationCorrectness()
+        [LabelInstance, 1920445497] env eA
+        [LabelInstance, 1635080405] env eAo
+        [LabelInstance, 1359134141] calldataarg args
+        [LabelInstance, 8045444] require eA == eAo && (a.limit == ao.limit && a.price == ao.price && a.baseReward == ao.baseReward && a.multiplier == ao.multiplier && a.taxRate == ao.taxRate && a.totalSupply == ao.totalSupply && a.tokens.length == ao.tokens.length && (forall uint256 i. i < a.tokens.length => a.tokens[i] == ao.tokens[i]) && a.rewards.length == ao.rewards.length && (forall uint256 i. i < a.rewards.length => a.rewards[i] == ao.rewards[i]) && a.penalties.length == ao.penalties.length && (forall uint256 i. i < a.penalties.length => a.penalties[i] == ao.penalties[i]))
+                # snippet DirectStorageLoad 1772166340 ;
+                 disp. path:  limit
+                  value sym:  CANON96!!44:bv256
+                # local storage change 1772166340
+            [Load, 1327735254] Load from A.limit ↪ 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff (MAX_UINT256)
+                # snippet DirectStorageLoad 1211255391 ;
+                 disp. path:  limit
+                  value sym:  CANON99!!45:bv256
+                # local storage change 1211255391
+            [Load, 73136919] Load from Ao.limit ↪ 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff (MAX_UINT256)
+                # snippet DirectStorageLoad -23122830 ;
+                 disp. path:  price
+                  value sym:  CANON103!!5:bv256
+                # local storage change -23122830
+            [Load, 1089487220] Load from A.price ↪ 1
+                # snippet DirectStorageLoad -1121889357 ;
+                 disp. path:  price
+                  value sym:  CANON106!!6:bv256
+                # local storage change -1121889357
+            [Load, 381733901] Load from Ao.price ↪ 1
+                # snippet DirectStorageLoad 1289845051 ;
+                 disp. path:  baseReward
+                  value sym:  CANON111!!7:bv256
+                # local storage change 1289845051
+            [Load, 1145041426] Load from A.baseReward ↪ 0
+                # snippet DirectStorageLoad 191078684 ;
+                 disp. path:  baseReward
+                  value sym:  CANON114!!8:bv256
+                # local storage change 191078684
+            [Load, 526854849] Load from Ao.baseReward ↪ 0
+                # snippet DirectStorageLoad -1713249696 ;
+                 disp. path:  multiplier
+                  value sym:  CANON119!!9:bv256
+                # local storage change -1713249696
+            [Load, 1566454712] Load from A.multiplier ↪ 0
+                # snippet DirectStorageLoad 2036236813 ;
+                 disp. path:  multiplier
+                  value sym:  CANON122!!10:bv256
+                # local storage change 2036236813
+            [Load, 1307454650] Load from Ao.multiplier ↪ 0
+                # snippet DirectStorageLoad -1900581829 ;
+                 disp. path:  taxRate
+                  value sym:  CANON127!!11:bv256
+                # local storage change -1900581829
+            [Load, 1987770487] Load from A.taxRate ↪ 0
+                # snippet DirectStorageLoad 2001658273 ;
+                 disp. path:  taxRate
+                  value sym:  CANON130!!12:bv256
+                # local storage change 2001658273
+            [Load, 1349383515] Load from Ao.taxRate ↪ 0
+                # snippet DirectStorageLoad 1063757496 ;
+                 disp. path:  totalSupply
+                  value sym:  CANON135!!13:bv256
+                # local storage change 1063757496
+            [Load, 2088951581] Load from A.totalSupply ↪ 0
+                # snippet DirectStorageLoad 502846739 ;
+                 disp. path:  totalSupply
+                  value sym:  CANON138!!14:bv256
+                # local storage change 502846739
+            [Load, 1085650891] Load from Ao.totalSupply ↪ 0
+                # snippet DirectStorageLoad -938353996 ;
+                 disp. path:  tokens
+                  value sym:  CANON143!!15:bv256
+                # local storage change -938353996
+            [Load, 1630357226] Load from A.tokens ↪ 0
+                # snippet DirectStorageLoad -1499264689 ;
+                 disp. path:  tokens
+                  value sym:  CANON146!!16:bv256
+                # local storage change -1499264689
+            [Load, 1582670009] Load from Ao.tokens ↪ 0
+                # snippet DirectStorageLoad -1395151412 ;
+                 disp. path:  rewards
+                  value sym:  CANON158!!21:bv256
+                # local storage change -1395151412
+            [Load, 885388889] Load from A.rewards ↪ 0
+                # snippet DirectStorageLoad -1787878382 ;
+                 disp. path:  rewards
+                  value sym:  CANON161!!22:bv256
+                # local storage change -1787878382
+            [Load, 1495471333] Load from Ao.rewards ↪ 0
+                # snippet DirectStorageLoad 2084981388 ;
+                 disp. path:  penalties
+                  value sym:  CANON173!!27:bv256
+                # local storage change 2084981388
+            [Load, 1379009341] Load from A.penalties ↪ 0
+                # snippet DirectStorageLoad 1524070791 ;
+                 disp. path:  penalties
+                  value sym:  CANON176!!28:bv256
+                # local storage change 1524070791
+            [Load, 554770858] Load from Ao.penalties ↪ 0
+        [LabelInstance, 981302511] A.f@withrevert(eA, args)
+            [External, 2067321721] A.processMatrix()
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=4, value=tacCalldatabufCANON1@2:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=36, value=tacCalldatabufCANON2@2:bv256)])
+                [TransferInstance, 1481573206] sender: 0x2973; receiver: A (0x277a); transferred amount: 0
+                    # snippet WithLocSym 1113364697 ;
+                       loc sym:  R59:bv256
+                     value sym:  R102:bv256
+                [Load, 1270220003] Load from A.[raw storage address] A (0x277a) ↪ 1
+                [Start, 1349083159] Evaluate branch condition
+                [Start, 911012518] Evaluate branch condition
+                [Start, 963485037] Loop at A.sol: line: 89: for (uint256 i = 0; i < rows; i++) {
+                [Return, 876632464] Return
+        [LabelInstance, 1388758713] a_reverted = lastReverted
+        [LabelInstance, 1513373398] Ao.g@withrevert(eAo, args)
+            [External, 1990942434] Ao.processMatrix()
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=4, value=tacCalldatabufCANON1@3:bv256)])
+                    -> call data movement CalldataScalars(scalars=[Scalar(byteOffset=36, value=tacCalldatabufCANON2@3:bv256)])
+                [TransferInstance, 1479669126] sender: 0x2973; receiver: Ao (0x277b); transferred amount: 0
+                    # snippet WithLocSym 141135412 ;
+                       loc sym:  R46:bv256
+                     value sym:  R118:bv256
+                [Load, 1017512759] Load from Ao.[raw storage address] Ao (0x277b) ↪ 1
+                [Start, 1201621243] Evaluate branch condition
+                [Start, 1802453668] Evaluate branch condition
+                [LocalAssignmentInstance, 1009063818] incrementAmount  ↪  0
+                    # snippet LoadSnippet 1477290491 ;
+                     disp. path:  baseReward
+                      value sym:  CANON114!!302:bv256
+                    # local storage change 1477290491
+                [Load, 815137922] Load from Ao.baseReward ↪ 0
+                    # snippet LoadSnippet -1291341184 ;
+                     disp. path:  multiplier
+                      value sym:  CANON122!!303:bv256
+                    # local storage change -1291341184
+                [Load, 225663739] Load from Ao.multiplier ↪ 0
+                    # snippet LoadSnippet -534851451 ;
+                     disp. path:  price
+                      value sym:  CANON106!!301:bv256
+                    # local storage change -534851451
+                [Load, 471356307] Load from Ao.price ↪ 1
+                    # snippet LoadSnippet -1226113425 ;
+                     disp. path:  limit
+                      value sym:  CANON99!!300:bv256
+                    # local storage change -1226113425
+                [Load, 135634653] Load from Ao.limit ↪ 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff (MAX_UINT256)
+                [Start, 145176905] Evaluate branch condition
+                [RevertCauseHeaderInstance, 1804537349] Why did this call revert?
+            [Revert, 444806892] Revert
+    [LabelInstance, 1976607311] ao_reverted = lastReverted
+    [LabelInstance, 1661821204] assert a_reverted == ao_reverted
+        [StorageTitleInstance, 358812537] Global State
+            [StorageTitleInstance, 383019887] Storage State
+                [StorageTitleInstance, 1717985568] A
+                    [StorageStateValueInstance, 1860942137] baseReward: 0
+                    [StorageStateValueInstance, 1675513694] limit: 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff (MAX_UINT256)
+                    [StorageStateValueInstance, 1449451353] multiplier: 0
+                    [StorageStateValueInstance, 64936916] penalties: 0
+                    [StorageStateValueInstance, 818911463] price: 1
+                    [StorageStateValueInstance, 570070303] rewards: 0
+                    [StorageStateValueInstance, 1360271470] taxRate: 0
+                    [StorageStateValueInstance, 610363875] tokens: 0
+                    [StorageStateValueInstance, 1755694376] totalSupply: 0
+                [StorageTitleInstance, 486729550] Ao
+                    [StorageStateValueInstance, 1814322152] baseReward: 0
+                    [StorageStateValueInstance, 1126504958] limit: 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff (MAX_UINT256)
+                    [StorageStateValueInstance, 91162679] multiplier: 0
+                    [StorageStateValueInstance, 257795907] penalties: 0
+                    [StorageStateValueInstance, 1097352795] price: 1
+                    [StorageStateValueInstance, 711548257] rewards: 0
+                    [StorageStateValueInstance, 1463469739] taxRate: 0
+                    [StorageStateValueInstance, 901715120] tokens: 0
+                    [StorageStateValueInstance, 912705218] totalSupply: 0
+            [StorageTitleInstance, 1451497274] Balances
+                [BalanceValueInstance, 1460309215] 0x2973.balance: 0x1c08
+                [BalanceValueInstance, 442308634] A (0x277a).balance: 0x25fd
+                [BalanceValueInstance, 437095749] Ao (0x277b).balance: 0x1c08
+        -------- CVL model begin ------------
+        -- type: bool --
+        CANON11!!131                                  ~~> false
+           cvl                 : true
+           cvl.display         : g.isView
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON350!!423                                 ~~> false
+           cvl                 : true
+        CANON363!!436                                 ~~> false
+           cvl                 : true
+        CANON4!!123                                   ~~> false
+           cvl                 : true
+           cvl.display         : f.isView
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON384!!451                                 ~~> false
+           cvl                 : true
+        CANON339!!412                                 ~~> false
+           cvl                 : true
+        CANON368!!438                                 ~~> false
+           cvl                 : true
+        CANON3!!74                                    ~~> false
+           cvl                 : true
+           cvl.display         : f.isPure
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON4!!75                                    ~~> false
+           cvl                 : true
+           cvl.display         : f.isView
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON5!!76                                    ~~> false
+           cvl                 : true
+           cvl.display         : f.isPayable
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON6!!78                                    ~~> false
+           cvl                 : true
+           cvl.display         : f.isFallback
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON12!!132                                  ~~> false
+           cvl                 : true
+           cvl.display         : g.isPayable
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON322!!395                                 ~~> false
+           cvl                 : true
+        CANON351!!424                                 ~~> false
+           cvl                 : true
+        CANON327!!400                                 ~~> false
+           cvl                 : true
+        CANON356!!429                                 ~~> false
+           cvl                 : true
+        CANON5!!124                                   ~~> false
+           cvl                 : true
+           cvl.display         : f.isPayable
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON385!!452                                 ~~> false
+           cvl                 : true
+        CANON101                                      ~~>  true
+           cvl                 : true
+        CANON108                                      ~~>  true
+           cvl                 : true
+        CANON109                                      ~~>  true
+           cvl                 : true
+        CANON116                                      ~~>  true
+           cvl                 : true
+        CANON117                                      ~~>  true
+           cvl                 : true
+        CANON124                                      ~~>  true
+           cvl                 : true
+        CANON125                                      ~~>  true
+           cvl                 : true
+        CANON132                                      ~~>  true
+           cvl                 : true
+        CANON133                                      ~~>  true
+           cvl                 : true
+        CANON140                                      ~~>  true
+           cvl                 : true
+        CANON141                                      ~~>  true
+           cvl                 : true
+        CANON148                                      ~~>  true
+           cvl                 : true
+        CANON149                                      ~~>  true
+           cvl                 : true
+        CANON156                                      ~~>  true
+           cvl                 : true
+        CANON163                                      ~~>  true
+           cvl                 : true
+        CANON164                                      ~~>  true
+           cvl                 : true
+        CANON171                                      ~~>  true
+           cvl                 : true
+        CANON178                                      ~~>  true
+           cvl                 : true
+        CANON179                                      ~~>  true
+           cvl                 : true
+        CANON186                                      ~~>  true
+           cvl                 : true
+        CANON187                                      ~~>  true
+           cvl                 : true
+        CANON255                                      ~~> false
+           cvl                 : true
+           cvl.display         : a_reverted
+           cvl.type            : bool
+           cvl.def.site        : Function(range=loopscomputations.spec:41:5)
+        CANON319                                      ~~>  true
+           cvl                 : true
+           cvl.display         : ao_reverted
+           cvl.type            : bool
+           cvl.def.site        : Function(range=loopscomputations.spec:44:5)
+        CANON13!!134                                  ~~> false
+           cvl                 : true
+           cvl.display         : g.isFallback
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON344!!417                                 ~~> false
+           cvl                 : true
+        CANON373!!443                                 ~~> false
+           cvl                 : true
+        CANON357!!430                                 ~~> false
+           cvl                 : true
+        CANON6!!126                                   ~~> false
+           cvl                 : true
+           cvl.display         : f.isFallback
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON10!!81                                   ~~> false
+           cvl                 : true
+           cvl.display         : g.isPure
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON11!!82                                   ~~> false
+           cvl                 : true
+           cvl.display         : g.isView
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isView])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON12!!83                                   ~~> false
+           cvl                 : true
+           cvl.display         : g.isPayable
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPayable])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON13!!85                                   ~~> false
+           cvl                 : true
+           cvl.display         : g.isFallback
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isFallback])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON48                                       ~~>  true
+           cvl                 : true
+        CANON53                                       ~~>  true
+           cvl                 : true
+        CANON58                                       ~~>  true
+           cvl                 : true
+        CANON63                                       ~~>  true
+           cvl                 : true
+        CANON68                                       ~~>  true
+           cvl                 : true
+        CANON73                                       ~~>  true
+           cvl                 : true
+        CANON78                                       ~~>  true
+           cvl                 : true
+        CANON83                                       ~~>  true
+           cvl                 : true
+        CANON88                                       ~~>  true
+           cvl                 : true
+        CANON93                                       ~~>  true
+           cvl                 : true
+        CANON94                                       ~~>  true
+           cvl                 : true
+        CANON332!!405                                 ~~> false
+           cvl                 : true
+        CANON390!!454                                 ~~> false
+           cvl                 : true
+        CANON345!!418                                 ~~> false
+           cvl                 : true
+        CANON374!!444                                 ~~> false
+           cvl                 : true
+        CANON379!!446                                 ~~> false
+           cvl                 : true
+        CANON10!!130                                  ~~> false
+           cvl                 : true
+           cvl.display         : g.isPure
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON333!!406                                 ~~> false
+           cvl                 : true
+        CANON362!!435                                 ~~> false
+           cvl                 : true
+        CANON3!!122                                   ~~> false
+           cvl                 : true
+           cvl.display         : f.isPure
+           cvl.type            : bool
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[isPure])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON338!!411                                 ~~> false
+           cvl                 : true
+        -- type: int --
+        CANON!!121                                    ~~>                                                         0x8a1e2dc7
+           cvl                 : true
+           cvl.display         : f.selector
+           cvl.type            : uint32
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON9!!135                                   ~~>                                                             0x277b
+           cvl                 : true
+           cvl.display         : g.contract
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON1!!50                                    ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : f.numberOfArguments
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON1!!77                                    ~~>                                                                0x2
+           cvl                 : true
+           cvl.display         : f.numberOfArguments
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON2!!51                                    ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : f.contract
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON2!!79                                    ~~>                                                             0x277a
+           cvl                 : true
+           cvl.display         : f
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON7!!56                                    ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : g.selector
+           cvl.type            : uint32
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON7!!80                                    ~~>                                                         0x8a1e2dc7
+           cvl                 : true
+           cvl.display         : g.selector
+           cvl.type            : uint32
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON8!!57                                    ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : g.numberOfArguments
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON8!!84                                    ~~>                                                                0x2
+           cvl                 : true
+           cvl.display         : g.numberOfArguments
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON9!!58                                    ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : g.contract
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON9!!86                                    ~~>                                                             0x277b
+           cvl                 : true
+           cvl.display         : g
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON1!!125                                   ~~>                                                                0x2
+           cvl                 : true
+           cvl.display         : f.numberOfArguments
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON!!64                                     ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : f.selector
+           cvl.type            : uint32
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON!!73                                     ~~>                                                         0x8a1e2dc7
+           cvl                 : true
+           cvl.display         : f.selector
+           cvl.type            : uint32
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON24                                       ~~>                                                             0x2973
+           cvl                 : true
+           cvl.display         : eA.msg.sender
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, sender])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON25                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eA.msg.value
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, value])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON26                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eA.tx.origin
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[tx, origin])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON27                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eA.block.basefee
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, basefee])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON28                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eA.block.blobbasefee
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, blobbasefee])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON29                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eA.block.coinbase
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, coinbase])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON30                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eA.block.difficulty
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, difficulty])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON31                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eA.block.gaslimit
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, gaslimit])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON32                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eA.block.number
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, number])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON33                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eA.block.timestamp
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, timestamp])
+           cvl.def.site        : Function(range=loopscomputations.spec:34:5)
+        CANON34                                       ~~>                                                             0x2973
+           cvl                 : true
+           cvl.display         : eAo.msg.sender
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, sender])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON35                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eAo.msg.value
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[msg, value])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON36                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eAo.tx.origin
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[tx, origin])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON37                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eAo.block.basefee
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, basefee])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON38                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eAo.block.blobbasefee
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, blobbasefee])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON39                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eAo.block.coinbase
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, coinbase])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON40                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eAo.block.difficulty
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, difficulty])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON41                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eAo.block.gaslimit
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, gaslimit])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON42                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eAo.block.number
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, number])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON43                                       ~~>                                                                0x0
+           cvl                 : true
+           cvl.display         : eAo.block.timestamp
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=env, fields=[block, timestamp])
+           cvl.def.site        : Function(range=loopscomputations.spec:35:5)
+        CANON2!!127                                   ~~>                                                             0x277a
+           cvl                 : true
+           cvl.display         : f.contract
+           cvl.type            : address
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[contract])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:45)
+        CANON7!!129                                   ~~>                                                         0x8a1e2dc7
+           cvl                 : true
+           cvl.display         : g.selector
+           cvl.type            : uint32
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[selector])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        CANON8!!133                                   ~~>                                                                0x2
+           cvl                 : true
+           cvl.display         : g.numberOfArguments
+           cvl.type            : uint256
+           cvl.struct.path     : CVLStructPathNode(rootStructType=method, fields=[numberOfArguments])
+           cvl.def.site        : Rule(range=loopscomputations.spec:75:55)
+        -- type: bv256 --
+        CANON190                                      ~~>                                                               0x44
+           cvl                 : true
+           cvl.display         : args.length
+           cvl.type            : uint256
+           cvl.def.site        : Function(range=loopscomputations.spec:36:5)
+        -- type: bytemap --
+        CANON193havocme14179                          ~~> {[x:bv256] ->
+  0x0
+}
+           cvl                 : true
+           cvl.display         : args
+           cvl.type            : calldataarg
+           cvl.def.site        : Function(range=loopscomputations.spec:36:5)
+        -------- CVL model end --------------
+        -------- TAC model begin ------------
+          CANON158!!21:bv256  -->                                                                0x0
+          CANON11!!131:bool  -->                                                              false
+          OK_2507_1017_0_3_0_24:bool  -->                                                               true
+          sklm!certora__i_26825!callId0!5:bv256  -->                                                                0x0
+          tacCalldatabufCANON0@2:bv256  -->                                                                0x0
+          tacCalldatabufCANON0@3:bv256  -->                                                                0x0
+          tacCalldatabufCANON1@2:bv256  -->                                                                0x0
+          tacCalldatabufCANON1@3:bv256  -->                                                                0x0
+          tacCalldatabufCANON2@2:bv256  -->                                                                0x0
+          tacCalldatabufCANON2@3:bv256  -->                                                                0x0
+           CANON!!121:int  -->                                                         0x8a1e2dc7
+          ReachabilityCertora12_1024_0_3_0_13:bool  -->                                                              false
+          from_skey:ghostmap((uninterp) skey->bv256)  -->                                          {[x:bv256] ->
+  x:bv256
+}
+          CANON350!!423:bool  -->                                                              false
+          ReachabilityCertora3759_1010_0_3_0_27:bool  -->                                                              false
+          tacM0x40!!0:bv256  -->                                                                0x0
+          tacM0x40!!1:bv256  -->                                                                0x0
+          OK_6_0_0_1_0_18:bool  -->                                                              false
+          CANON363!!436:bool  -->                                                              false
+          CANON130!!276:bv256  -->                                                                0x0
+          CANON130!!304:bv256  -->                                                                0x0
+          CANON130!!367:bv256  -->                                                                0x0
+          CANON130!!391:bv256  -->                                                                0x0
+          CANON122!!275:bv256  -->                                                                0x0
+          CANON122!!303:bv256  -->                                                                0x0
+          CANON122!!366:bv256  -->                                                                0x0
+          CANON122!!390:bv256  -->                                                                0x0
+          CANON4!!123:bool  -->                                                              false
+          CANON384!!451:bool  -->                                                              false
+          CANON114!!274:bv256  -->                                                                0x0
+          ReachabilityCertora3797_1012_1_2_0_34:bool  -->                                                              false
+          CANON114!!302:bv256  -->                                                                0x0
+          CANON114!!365:bv256  -->                                                                0x0
+          CANON114!!389:bv256  -->                                                                0x0
+          CANON339!!412:bool  -->                                                              false
+          CANON106!!273:bv256  -->                                                                0x0
+          CANON106!!301:bv256  -->                                                                0x1
+          CANON106!!364:bv256  -->                                                                0x1
+          CANON106!!388:bv256  -->                                                                0x1
+          ReachabilityCertora2361_1018_0_3_0_15:bool  -->                                                              false
+          CANON143!!256:bv256  -->                                                                0x0
+          CANON143!!284:bv256  -->                                                                0x0
+          CANON143!!347:bv256  -->                                                                0x0
+          CANON143!!372:bv256  -->                                                                0x0
+          CANON368!!438:bool  -->                                                              false
+          CANON135!!264:bv256  -->                                                                0x0
+          CANON135!!292:bv256  -->                                                                0x0
+          CANON135!!355:bv256  -->                                                                0x0
+          CANON135!!380:bv256  -->                                                                0x0
+          CANON127!!263:bv256  -->                                                                0x0
+          CANON127!!291:bv256  -->                                                                0x0
+          CANON127!!354:bv256  -->                                                                0x0
+          CANON127!!379:bv256  -->                                                                0x0
+          CANON9!!135:int  -->                                                             0x277b
+          OK_2466_1020_0_2_0_5:bool  -->                                                              false
+          CANON119!!262:bv256  -->                                                                0x0
+          CANON119!!290:bv256  -->                                                                0x0
+          CANON119!!353:bv256  -->                                                                0x0
+          CANON119!!378:bv256  -->                                                                0x0
+          to_skey:ghostmap(bv256->(uninterp) skey)  -->                                          {[x:bv256] ->
+  x:bv256
+}
+          OK_5_0_0_1_0_10:bool  -->                                                              false
+           CANON1!!50:int  -->                                                                0x0
+           CANON1!!77:int  -->                                                                0x2
+          CANON161!!22:bv256  -->                                                                0x0
+          ReachabilityCertora2458_1017_0_3_0_25:bool  -->                                                              false
+           CANON2!!51:int  -->                                                                0x0
+           CANON2!!79:int  -->                                                             0x277a
+          CANON3!!74:bool  -->                                                              false
+          CANON4!!75:bool  -->                                                              false
+          CANON5!!76:bool  -->                                                              false
+          CANON6!!78:bool  -->                                                              false
+           CANON7!!56:int  -->                                                                0x0
+           CANON7!!80:int  -->                                                         0x8a1e2dc7
+           CANON8!!57:int  -->                                                                0x0
+           CANON8!!84:int  -->                                                                0x2
+           CANON9!!58:int  -->                                                                0x0
+           CANON9!!86:int  -->                                                             0x277b
+          CANON12!!132:bool  -->                                                              false
+          ReachabilityCertora0_0_0_0_0_0:bool  -->                                                               true
+          ReachabilityCertora2275_1019_0_2_0_3347:bool  -->                                                              false
+          ReachabilityCertora0_0_0_2_0_2:bool  -->                                                               true
+          CANON322!!395:bool  -->                                                              false
+          ReachabilityCertora3886_1014_0_2_0_37:bool  -->                                                              false
+          CANON351!!424:bool  -->                                                              false
+          ReachabilityCertora2385_1018_0_3_0_23:bool  -->                                                              false
+          ReachabilityCertora1_0_0_1_0_1:bool  -->                                                               true
+          CANON96!!44:bv256  --> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+          CANON327!!400:bool  -->                                                              false
+          CANON96!!259:bv256  -->                                                                0x0
+          CANON96!!287:bv256  --> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+          CANON96!!350:bv256  --> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+          CANON96!!375:bv256  --> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+          CANON99!!45:bv256  --> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+          CANON356!!429:bool  -->                                                              false
+          ReachabilityCertora2_0_0_1_0_7:bool  -->                                                               true
+          CANON5!!124:bool  -->                                                              false
+          CANON385!!452:bool  -->                                                              false
+            CANON101:bool  -->                                                               true
+            CANON108:bool  -->                                                               true
+            CANON109:bool  -->                                                               true
+            CANON116:bool  -->                                                               true
+            CANON117:bool  -->                                                               true
+            CANON124:bool  -->                                                               true
+            CANON125:bool  -->                                                               true
+            CANON132:bool  -->                                                               true
+            CANON133:bool  -->                                                               true
+            CANON140:bool  -->                                                               true
+            CANON141:bool  -->                                                               true
+            CANON148:bool  -->                                                               true
+            CANON149:bool  -->                                                               true
+            CANON156:bool  -->                                                               true
+            CANON163:bool  -->                                                               true
+            CANON164:bool  -->                                                               true
+            CANON171:bool  -->                                                               true
+            CANON178:bool  -->                                                               true
+            CANON179:bool  -->                                                               true
+            CANON186:bool  -->                                                               true
+            CANON187:bool  -->                                                               true
+           CANON190:bv256  -->                                                               0x44
+           CANON224:bv256  -->                                                                0x0
+            CANON255:bool  -->                                                              false
+           CANON288:bv256  -->                                                                0x0
+            CANON319:bool  -->                                                               true
+          ReachabilityCertora3688_1012_0_2_0_32:bool  -->                                                              false
+          ReachabilityCertora12_1024_0_2_0_4:bool  -->                                                              false
+          ReachabilityCertora3_0_0_1_0_8:bool  -->                                                              false
+          CANON122!!10:bv256  -->                                                                0x0
+          CANON173!!258:bv256  -->                                                                0x0
+          CANON173!!286:bv256  -->                                                                0x0
+          CANON173!!349:bv256  -->                                                                0x0
+          CANON173!!374:bv256  -->                                                                0x0
+          ReachabilityCertora4_0_0_1_0_9:bool  -->                                                               true
+          CANON127!!11:bv256  -->                                                                0x0
+          CANON173!!27:bv256  -->                                                                0x0
+          ReachabilityCertora15_1024_0_2_2_3:bool  -->                                                               true
+          OK_2535_1019_0_3_0_16:bool  -->                                                               true
+          OK_2452_1019_0_2_0_28:bool  -->                                                               true
+          ReachabilityCertora2521_1018_0_3_0_22:bool  -->                                                              false
+          CANON176!!28:bv256  -->                                                                0x0
+          CANON13!!134:bool  -->                                                              false
+          ReachabilityCertora2466_1020_0_2_0_5:bool  -->                                                               true
+          ReachabilityCertora2348_1018_0_2_0_31:bool  -->                                                              false
+          ReachabilityCertora2265_1020_0_2_0_6:bool  -->                                                              false
+          tacCalldatabuf@2:bytemap  -->                                              {[x:bv256] ->
+  0x0
+}
+          tacCalldatabuf@3:bytemap  -->                                              {[x:bv256] ->
+  0x0
+}
+          OK_2438_1018_0_2_0_30:bool  -->                                                               true
+          ReachabilityCertora2507_1017_0_3_0_24:bool  -->                                                              false
+                 R2:bv256  -->                                                                0x1
+                 R3:bv256  -->                                                                0x1
+                 B71:bool  -->                                                               true
+                  I95:int  -->                                                             0x1c08
+                  I98:int  -->                                                             0x25fd
+                R46:bv256  -->                                                             0x277b
+                R47:bv256  -->                                                                0x1
+                R48:bv256  -->                                                                0x2
+                R49:bv256  -->                                                                0x4
+                R59:bv256  -->                                                             0x277a
+                R65:bv256  -->                                                                0x1
+                R66:bv256  -->                                                                0x1
+                R68:bv256  -->                                                                0x1
+                R69:bv256  -->                                                                0x1
+                R90:bv256  -->                                                                0x0
+                R91:bv256  -->                                                             0x2973
+                R94:bv256  -->                                                             0x1c08
+                R97:bv256  -->                                                             0x25fd
+          CANON344!!417:bool  -->                                                              false
+          CANON1!!125:int  -->                                                                0x2
+          CANON111!!261:bv256  -->                                                                0x0
+          CANON111!!289:bv256  -->                                                                0x0
+          CANON111!!352:bv256  -->                                                                0x0
+          CANON111!!377:bv256  -->                                                                0x0
+                B103:bool  -->                                                               true
+                B119:bool  -->                                                               true
+                B204:bool  -->                                                               true
+                B209:bool  -->                                                               true
+                B214:bool  -->                                                               true
+                B393:bool  -->                                                              false
+                B394:bool  -->                                                               true
+                B437:bool  -->                                                              false
+                B445:bool  -->                                                              false
+                B453:bool  -->                                                              false
+                B464:bool  -->                                                               true
+                B471:bool  -->                                                               true
+                B473:bool  -->                                                              false
+                B476:bool  -->                                                              false
+                B482:bool  -->                                                              false
+                B487:bool  -->                                                              false
+                B489:bool  -->                                                              false
+                B492:bool  -->                                                              false
+                B502:bool  -->                                                              false
+                B531:bool  -->                                                              false
+                B541:bool  -->                                                              false
+                B549:bool  -->                                                              false
+                 I112:int  -->                                                             0x1c08
+                 I115:int  -->                                                             0x1c08
+                 I137:int  -->                                                             0x2973
+                 I139:int  -->                                                             0x2973
+                 I141:int  -->                                                                0x0
+                 I143:int  -->                                                                0x0
+                 I145:int  -->                                                                0x0
+                 I147:int  -->                                                                0x0
+                 I149:int  -->                                                                0x0
+                 I151:int  -->                                                                0x0
+                 I153:int  -->                                                                0x0
+                 I155:int  -->                                                                0x0
+                 I157:int  -->                                                                0x0
+                 I159:int  -->                                                                0x0
+                 I161:int  -->                                                                0x0
+                 I163:int  -->                                                                0x0
+                 I165:int  -->                                                                0x0
+                 I167:int  -->                                                                0x0
+                 I169:int  -->                                                                0x0
+                 I171:int  -->                                                                0x0
+                 I173:int  -->                                                                0x0
+                 I175:int  -->                                                                0x0
+          CANON373!!443:bool  -->                                                              false
+               R100:bv256  -->                                                             0x25fd
+               R102:bv256  -->                                                                0x1
+               R107:bv256  -->                                                                0x0
+               R108:bv256  -->                                                             0x2973
+               R111:bv256  -->                                                             0x1c08
+               R114:bv256  -->                                                             0x1c08
+               R117:bv256  -->                                                             0x1c08
+               R118:bv256  -->                                                                0x1
+               R248:bv256  -->                                                                0x0
+               R249:bv256  -->                                                                0x0
+               R250:bv256  -->                                                                0x0
+               R339:bv256  -->                                                                0x0
+               R340:bv256  -->                                                                0x0
+               R341:bv256  -->                                                                0x0
+               R469:bv256  -->                                                                0x0
+               R470:bv256  -->                                                                0x0
+               R474:bv256  -->                                                                0x2
+               R481:bv256  -->                                                                0x0
+               R485:bv256  -->                                                                0x0
+               R490:bv256  -->                                                                0x1
+               R494:bv256  -->                                                                0x0
+               R497:bv256  -->                                                                0x0
+          R499:(uninterp) skey  -->                                                                0x9
+               R501:bv256  -->                                                                0x1
+               R507:bv256  -->                                                                0x0
+               R510:bv256  -->                                                                0x0
+               R516:bv256  -->                                                                0x0
+               R523:bv256  -->                                                                0x0
+               R535:bv256  -->                                                                0x0
+               R544:bv256  -->                                                                0x0
+          R546:(uninterp) skey  -->                                                                0x8
+               R548:bv256  -->                                                                0x1
+          CANON103!!260:bv256  -->                                                                0x0
+          CANON103!!288:bv256  -->                                                                0x1
+          CANON103!!351:bv256  -->                                                                0x1
+          CANON103!!376:bv256  -->                                                                0x1
+          lastHasThrown!!104:bool  -->                                                              false
+          lastHasThrown!!455:bool  -->                                                              false
+          lastHasThrown!!458:bool  -->                                                              false
+          lastHasThrown!!460:bool  -->                                                              false
+          lastHasThrown!!483:bool  -->                                                              false
+          lastHasThrown!!504:bool  -->                                                              false
+          lastHasThrown!!512:bool  -->                                                              false
+          lastHasThrown!!514:bool  -->                                                              false
+          lastHasThrown!!533:bool  -->                                                              false
+          lastHasThrown!!542:bool  -->                                                              false
+          CANON357!!430:bool  -->                                                              false
+          CANON161!!270:bv256  -->                                                                0x0
+          CANON161!!298:bv256  -->                                                                0x0
+          CANON161!!361:bv256  -->                                                                0x0
+          CANON161!!385:bv256  -->                                                                0x0
+          CANON6!!126:bool  -->                                                              false
+          OK_10_0_0_2_0_3328:bool  -->                                                               true
+          CANON130!!12:bv256  -->                                                                0x0
+          ReachabilityCertora2375_1019_0_3_0_17:bool  -->                                                              false
+          CANON158!!257:bv256  -->                                                                0x0
+          CANON158!!285:bv256  -->                                                                0x0
+          CANON158!!348:bv256  -->                                                                0x0
+          CANON158!!373:bv256  -->                                                                0x0
+            CANON!!64:int  -->                                                                0x0
+            CANON!!73:int  -->                                                         0x8a1e2dc7
+          CANON135!!13:bv256  -->                                                                0x0
+          ReachabilityCertora15_1024_0_2_2_3345:bool  -->                                                               true
+          ReachabilityCertora10_0_0_2_0_3328:bool  -->                                                              false
+          ReachabilityCertora2275_1019_0_2_0_29:bool  -->                                                              false
+          ReachabilityCertora2353_1018_0_3_0_14:bool  -->                                                               true
+          CANON138!!14:bv256  -->                                                                0x0
+          CANON10!!81:bool  -->                                                              false
+          CANON103!!5:bv256  -->                                                                0x1
+          CANON106!!6:bv256  -->                                                                0x1
+          CANON11!!82:bool  -->                                                              false
+          CANON111!!7:bv256  -->                                                                0x0
+          CANON114!!8:bv256  -->                                                                0x0
+          lastReverted!!456:bool  -->                                                               true
+          lastReverted!!457:bool  -->                                                              false
+          lastReverted!!459:bool  -->                                                               true
+          lastReverted!!461:bool  -->                                                               true
+          lastReverted!!462:bool  -->                                                               true
+          lastReverted!!484:bool  -->                                                               true
+          lastReverted!!505:bool  -->                                                              false
+          lastReverted!!513:bool  -->                                                              false
+          lastReverted!!515:bool  -->                                                               true
+          lastReverted!!534:bool  -->                                                               true
+          lastReverted!!543:bool  -->                                                               true
+          CANON119!!9:bv256  -->                                                                0x0
+          CANON12!!83:bool  -->                                                              false
+          ReachabilityCertora2385_1018_0_3_0_3355:bool  -->                                                              false
+          CANON13!!85:bool  -->                                                              false
+          ReachabilityCertora9_0_0_1_0_21:bool  -->                                                               true
+          ReachabilityCertora3767_1010_0_3_0_26:bool  -->                                                              false
+          sklm!certora__i_37171!callId0!6:bv256  -->                                                                0x0
+              CANON24:int  -->                                                             0x2973
+              CANON25:int  -->                                                                0x0
+              CANON26:int  -->                                                                0x0
+              CANON27:int  -->                                                                0x0
+              CANON28:int  -->                                                                0x0
+              CANON29:int  -->                                                                0x0
+              CANON30:int  -->                                                                0x0
+              CANON31:int  -->                                                                0x0
+              CANON32:int  -->                                                                0x0
+              CANON33:int  -->                                                                0x0
+              CANON34:int  -->                                                             0x2973
+              CANON35:int  -->                                                                0x0
+              CANON36:int  -->                                                                0x0
+              CANON37:int  -->                                                                0x0
+              CANON38:int  -->                                                                0x0
+              CANON39:int  -->                                                                0x0
+              CANON40:int  -->                                                                0x0
+              CANON41:int  -->                                                                0x0
+              CANON42:int  -->                                                                0x0
+              CANON43:int  -->                                                                0x0
+             CANON48:bool  -->                                                               true
+             CANON53:bool  -->                                                               true
+             CANON58:bool  -->                                                               true
+             CANON63:bool  -->                                                               true
+             CANON68:bool  -->                                                               true
+             CANON73:bool  -->                                                               true
+             CANON78:bool  -->                                                               true
+             CANON83:bool  -->                                                               true
+             CANON88:bool  -->                                                               true
+             CANON93:bool  -->                                                               true
+             CANON94:bool  -->                                                               true
+          ReachabilityCertora0_0_0_3_0_11:bool  -->                                                               true
+          CANON332!!405:bool  -->                                                              false
+          ReachabilityCertora8_0_0_1_0_20:bool  -->                                                              false
+          CANON390!!454:bool  -->                                                              false
+          CANON345!!418:bool  -->                                                              false
+          CANON2!!127:int  -->                                                             0x277a
+          ReachabilityCertora3680_1011_0_2_0_39:bool  -->                                                              false
+          ReachabilityCertora15_1024_0_3_2_12:bool  -->                                                               true
+          CANON374!!444:bool  -->                                                              false
+          ReachabilityCertora3878_1014_0_2_0_36:bool  -->                                                              false
+          CANON7!!129:int  -->                                                         0x8a1e2dc7
+          ReachabilityCertora2375_1019_0_3_0_3354:bool  -->                                                              false
+          CANON379!!446:bool  -->                                                              false
+          CANON146!!269:bv256  -->                                                                0x0
+          CANON146!!297:bv256  -->                                                                0x0
+          CANON146!!360:bv256  -->                                                                0x0
+          CANON146!!384:bv256  -->                                                                0x0
+          ReachabilityCertora3688_1011_0_2_0_38:bool  -->                                                              false
+          CANON138!!277:bv256  -->                                                                0x0
+          CANON138!!305:bv256  -->                                                                0x0
+          CANON138!!368:bv256  -->                                                                0x0
+          CANON138!!392:bv256  -->                                                                0x0
+          ReachabilityCertora7_0_0_1_0_19:bool  -->                                                               true
+          CANON143!!15:bv256  -->                                                                0x0
+          CANON146!!16:bv256  -->                                                                0x0
+          sklm!certora__i_16418!callId0!4:bv256  -->                                                             0x4819
+          CANON193havocme14179:bytemap  -->                                              {[x:bv256] ->
+  0x0
+}
+          CANON10!!130:bool  -->                                                              false
+          ReachabilityCertora2535_1019_0_3_0_16:bool  -->                                                              false
+          ReachabilityCertora6_0_0_1_0_18:bool  -->                                                               true
+          ReachabilityCertora2452_1019_0_2_0_28:bool  -->                                                              false
+          OK_0_0_0_0_0_0:bool  -->                                                              false
+          lastHasThrown!!87:bool  -->                                                              false
+          OK_0_0_0_2_0_2:bool  -->                                                              false
+          CANON333!!406:bool  -->                                                              false
+          OK_9_0_0_1_0_21:bool  -->                                                              false
+          CANON362!!435:bool  -->                                                              false
+          ReachabilityCertora5_0_0_1_0_10:bool  -->                                                               true
+          OK_1_0_0_1_0_1:bool  -->                                                              false
+          CANON3!!122:bool  -->                                                              false
+          ReachabilityCertora2438_1018_0_2_0_30:bool  -->                                                              false
+          CANON338!!411:bool  -->                                                              false
+          OK_0_0_0_3_0_11:bool  -->                                                              false
+          CANON99!!272:bv256  -->                                                                0x0
+          CANON99!!300:bv256  --> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+          CANON99!!363:bv256  --> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+          CANON99!!387:bv256  --> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+          tacSighash!!62:bv256  -->                                                         0x8a1e2dc7
+          tacSighash!!63:bv256  -->                                                         0x8a1e2dc7
+          OK_2_0_0_1_0_7:bool  -->                                                              false
+          ReachabilityCertora2361_1018_0_3_0_3353:bool  -->                                                              false
+          CANON8!!133:int  -->                                                                0x2
+          ReachabilityCertora2265_1020_0_2_0_3346:bool  -->                                                              false
+          CANON176!!271:bv256  -->                                                                0x0
+          CANON176!!299:bv256  -->                                                                0x0
+          CANON176!!362:bv256  -->                                                                0x0
+          CANON176!!386:bv256  -->                                                                0x0
+          OK_2521_1018_0_3_0_22:bool  -->                                                               true
+        -------- TAC model end --------------
+        

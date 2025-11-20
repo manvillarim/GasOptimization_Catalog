@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<a name='PageTop'><h2>Certora Prover results for contract</h2></a>
+<a href='#AvailableContracts'>Go to available contracts listing</a>
+<h3>Results for main:</h3>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfGetUserName'>gasOptimizedCorrectnessOfGetUserName</a></td><td>&#128078;</td><td>2</td><td>Assert message: a_reverted == ao_reverted (uid 4) - specs/bytes.spec line 30<br/>            Success(Violated for: <br/>
+A.getUserName(address)-Ao.getUserName(address)<br/>
+)<br/></td><td>no local variables</td></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfSetUserName'>gasOptimizedCorrectnessOfSetUserName</a></td><td>&#128078;</td><td>2</td><td>Assert message: a_reverted == ao_reverted (uid 2) - specs/bytes.spec line 30<br/>            Success(Violated for: <br/>
+A.setUserName(address,string)-Ao.setUserName(address,bytes32)<br/>
+)<br/></td><td>no local variables</td></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfAddName'>gasOptimizedCorrectnessOfAddName</a></td><td>&#128078;</td><td>2</td><td>Assert message: a_reverted == ao_reverted (uid 1) - specs/bytes.spec line 30<br/>            Success(Violated for: <br/>
+A.addName(string)-Ao.addName(bytes32)<br/>
+)<br/></td><td>no local variables</td></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfGetNameAt'>gasOptimizedCorrectnessOfGetNameAt</a></td><td>&#128078;</td><td>2</td><td>Assert message: a_reverted == ao_reverted (uid 3) - specs/bytes.spec line 30<br/>            Success(Violated for: <br/>
+A.getNameAt(uint256)-Ao.getNameAt(uint256)<br/>
+)<br/></td><td>no local variables</td></tr>
+<tr class="table-danger">
+<td><a href='#gasOptimizedCorrectnessOfCompareNames'>gasOptimizedCorrectnessOfCompareNames</a></td><td>&#128078;</td><td>1</td><td>Assert message: a_reverted == ao_reverted (uid 5) - specs/bytes.spec line 30<br/>            Success(Violated for: <br/>
+A.compareNames(string,string)-Ao.compareNames(bytes32,bytes32)<br/>
+)<br/></td><td>no local variables</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfGetUserName'>
+<h3>Results for gasOptimizedCorrectnessOfGetUserName:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.getUserName(address)-Ao.getUserName(address)'>A.getUserName(address)-Ao.getUserName(address)</a></td><td>&#128078;</td><td>2</td><td>Assert message: a_reverted == ao_reverted (uid 4) - specs/bytes.spec line 30<br/></td><td>A=A (0x2c6c)<br>Ao=Ao (0x2c6d)<br>ecrecover=ecrecover (1)<br>f.contract=A (0x2c6c)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=false<br>f.isView=true<br>f.numberOfArguments=1<br>f.selector=0xd84f55ee<br>g.contract=Ao (0x2c6d)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=false<br>g.isView=true<br>g.numberOfArguments=1<br>g.selector=0xd84f55ee<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfSetUserName'>
+<h3>Results for gasOptimizedCorrectnessOfSetUserName:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.setUserName(address,string)-Ao.setUserName(address,bytes32)'>A.setUserName(address,string)-Ao.setUserName(address,bytes32)</a></td><td>&#128078;</td><td>2</td><td>Assert message: a_reverted == ao_reverted (uid 2) - specs/bytes.spec line 30<br/></td><td>A=A (0x2bc6)<br>Ao=Ao (0x2bc7)<br>ecrecover=ecrecover (1)<br>f.contract=A (0x2bc6)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=false<br>f.isView=false<br>f.numberOfArguments=2<br>f.selector=0xf8f22e15<br>g.contract=Ao (0x2bc7)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=false<br>g.isView=false<br>g.numberOfArguments=2<br>g.selector=0x667e805<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfAddName'>
+<h3>Results for gasOptimizedCorrectnessOfAddName:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.addName(string)-Ao.addName(bytes32)'>A.addName(string)-Ao.addName(bytes32)</a></td><td>&#128078;</td><td>2</td><td>Assert message: a_reverted == ao_reverted (uid 1) - specs/bytes.spec line 30<br/></td><td>A=A (0xffffffffffffffffffffffffffffffffffffffff)<br>Ao=Ao (0x2711)<br>ecrecover=ecrecover (1)<br>f.contract=A (0xffffffffffffffffffffffffffffffffffffffff)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=false<br>f.isView=false<br>f.numberOfArguments=1<br>f.selector=0x11456b47<br>g.contract=Ao (0x2711)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=false<br>g.isView=false<br>g.numberOfArguments=1<br>g.selector=0x77e84a8<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfGetNameAt'>
+<h3>Results for gasOptimizedCorrectnessOfGetNameAt:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.getNameAt(uint256)-Ao.getNameAt(uint256)'>A.getNameAt(uint256)-Ao.getNameAt(uint256)</a></td><td>&#128078;</td><td>2</td><td>Assert message: a_reverted == ao_reverted (uid 3) - specs/bytes.spec line 30<br/></td><td>A=A (0x3f9d)<br>Ao=Ao (0x3f9c)<br>ecrecover=ecrecover (1)<br>f.contract=A (0x3f9d)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=false<br>f.isView=true<br>f.numberOfArguments=1<br>f.selector=0x1a696839<br>g.contract=Ao (0x3f9c)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=false<br>g.isView=true<br>g.numberOfArguments=1<br>g.selector=0x1a696839<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='gasOptimizedCorrectnessOfCompareNames'>
+<h3>Results for gasOptimizedCorrectnessOfCompareNames:</h3>
+<a href='#PageTop'>Go back to top</a>
+</a>
+<table class="table table-bordered table-hover">
+<tr class="thead-light">
+<th><a href='' target='_blank'>Rule name</a></th><th>Result</th><th>Time (seconds)</th><th>Details</th><th>Local variables</th></tr>
+<tr class="table-danger">
+<td><a href='#A.compareNames(string,string)-Ao.compareNames(bytes32,bytes32)'>A.compareNames(string,string)-Ao.compareNames(bytes32,bytes32)</a></td><td>&#128078;</td><td>1</td><td>Assert message: a_reverted == ao_reverted (uid 5) - specs/bytes.spec line 30<br/></td><td>A=A (0x2856)<br>Ao=Ao (0x2857)<br>ecrecover=ecrecover (1)<br>f.contract=A (0x2856)<br>f.isFallback=false<br>f.isPayable=false<br>f.isPure=true<br>f.isView=true<br>f.numberOfArguments=2<br>f.selector=0x323a0428<br>g.contract=Ao (0x2857)<br>g.isFallback=false<br>g.isPayable=false<br>g.isPure=true<br>g.isView=true<br>g.numberOfArguments=2<br>g.selector=0xe8666703<br>identity=identity (4)<br>sha256=sha256 (2)</td></tr>
+</table>
+<br/>
+<a name='AvailableContracts'><h2>Available contracts</h2></a>
+<table class="table table-bordered table-hover">
+<tr><th>Name</th><th>Address</th><th>Pre-state</th><th colspan='2'>Methods</th></tr>
+<tr>
+<td>A</td>
+<td>ce4604a0000000000000000000000001</td>
+<td>{}</td>
+<td>names(uint256) returns (string) /*(4622ab03)*/ <br/>addName(string) /*(11456b47)*/ <br/>compareNames(string,string) returns (bool) /*(323a0428)*/ <br/>getUserName(address) returns (string) /*(d84f55ee)*/ <br/>setUserName(address,string) /*(f8f22e15)*/ <br/>userNames(address) returns (string) /*(7f281635)*/ <br/>getNameAt(uint256) returns (string) /*(1a696839)*/ </td><td><br/><br/><br/><br/><br/><br/></td>
+</tr>
+<tr>
+<td>Ao</td>
+<td>ce4604a0000000000000000000000003</td>
+<td>{}</td>
+<td>compareNames(bytes32,bytes32) returns (bool) /*(e8666703)*/ <br/>names(uint256) returns (bytes32) /*(4622ab03)*/ <br/>setUserName(address,bytes32) /*(0667e805)*/ <br/>addName(bytes32) /*(077e84a8)*/ <br/>getUserName(address) returns (bytes32) /*(d84f55ee)*/ <br/>userNames(address) returns (bytes32) /*(7f281635)*/ <br/>getNameAt(uint256) returns (bytes32) /*(1a696839)*/ </td><td><br/><br/><br/><br/><br/><br/></td>
+</tr>

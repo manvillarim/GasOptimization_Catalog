@@ -1,0 +1,34 @@
+{
+    "CLI_package_name": "",
+    "CLI_version": "",
+    "branch": "main",
+    "certora_ci_client": null,
+    "conf": {
+        "files": [
+            "src/A.sol",
+            "src/Ao.sol"
+        ],
+        "optimistic_loop": true,
+        "process": "emv",
+        "prover_version": "master",
+        "rule_sanity": "basic",
+        "send_only": true,
+        "server": "production",
+        "verify": "Ao:../specs/bytes.spec"
+    },
+    "conf_path": "certora/bytes32-strings/conf/bytes.conf",
+    "cwd_relative": "certora/bytes32-strings/conf",
+    "dirty": true,
+    "group_id": null,
+    "main_spec": "../specs/bytes.spec",
+    "origin": "https://github.com/manvillarim/GasOptimization_Catalog.git",
+    "python_version": "3.14.0",
+    "raw_args": [
+        "/home/manoel/certora_builds/certoraRun.py",
+        "--prover_version",
+        "master",
+        "bytes.conf"
+    ],
+    "revision": "4789ab66275a066ef303c68e7432ad9393790520",
+    "timestamp": "1763506091.371417"
+}

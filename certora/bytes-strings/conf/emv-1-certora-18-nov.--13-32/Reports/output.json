@@ -1,0 +1,50 @@
+{
+	"assertMessages": {},
+	"rules": {
+		"gasOptimizedCorrectnessOfAddName": {
+			"FAIL": [
+				"A.addName(string)-Ao.addName(bytes32)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfCompareNames": {
+			"FAIL": [
+				"A.compareNames(string,string)-Ao.compareNames(bytes32,bytes32)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfGetNameAt": {
+			"FAIL": [
+				"A.getNameAt(uint256)-Ao.getNameAt(uint256)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfGetUserName": {
+			"FAIL": [
+				"A.getUserName(address)-Ao.getUserName(address)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfSetUserName": {
+			"FAIL": [
+				"A.setUserName(address,string)-Ao.setUserName(address,bytes32)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		}
+	}
+}

@@ -1,0 +1,3136 @@
+{
+    "A_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "applyPenalties",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "penaltyFactor"
+                        ],
+                        "returns": [],
+                        "sighash": "8c25b4eb",
+                        "sourceBytes": {
+                            "begin": 2036,
+                            "size": 396
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "baseReward",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "76ad03bc",
+                        "sourceBytes": {
+                            "begin": 223,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "calculateRewards",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "3e50de30",
+                        "sourceBytes": {
+                            "begin": 1578,
+                            "size": 401
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "_limit",
+                            "_price",
+                            "_baseReward",
+                            "_multiplier",
+                            "_taxRate"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 483,
+                            "size": 286
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "distributeTokens",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "9ab1b484",
+                        "sourceBytes": {
+                            "begin": 1256,
+                            "size": 261
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getPenaltiesLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "efb420d0",
+                        "sourceBytes": {
+                            "begin": 4250,
+                            "size": 102
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getPenaltiesSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d7786f21",
+                        "sourceBytes": {
+                            "begin": 3829,
+                            "size": 170
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getRewardsLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d7da1dee",
+                        "sourceBytes": {
+                            "begin": 4142,
+                            "size": 98
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getRewardsSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8332a2ff",
+                        "sourceBytes": {
+                            "begin": 3655,
+                            "size": 164
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getTokensLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b0c26ecf",
+                        "sourceBytes": {
+                            "begin": 4036,
+                            "size": 96
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getTokensSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "112f7dff",
+                        "sourceBytes": {
+                            "begin": 3484,
+                            "size": 161
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "initializeArrays",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "size"
+                        ],
+                        "returns": [],
+                        "sighash": "1548b7bd",
+                        "sourceBytes": {
+                            "begin": 828,
+                            "size": 365
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "limit",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a4d66daf",
+                        "sourceBytes": {
+                            "begin": 171,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "multiplier",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1b3ed722",
+                        "sourceBytes": {
+                            "begin": 254,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "penalties",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "6352a8a6",
+                        "sourceBytes": {
+                            "begin": 134,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "price",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a035b1fe",
+                        "sourceBytes": {
+                            "begin": 197,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "processMatrix",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "rows",
+                            "cols"
+                        ],
+                        "returns": [],
+                        "sighash": "8a1e2dc7",
+                        "sourceBytes": {
+                            "begin": 2996,
+                            "size": 431
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "rewards",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "f301af42",
+                        "sourceBytes": {
+                            "begin": 104,
+                            "size": 24
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "taxRate",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "771a3a1d",
+                        "sourceBytes": {
+                            "begin": 285,
+                            "size": 22
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "tokens",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "4f64b2be",
+                        "sourceBytes": {
+                            "begin": 75,
+                            "size": 23
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 313,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "updateTokensConditional",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "applyBonus"
+                        ],
+                        "returns": [],
+                        "sighash": "7c342992",
+                        "sourceBytes": {
+                            "begin": 2492,
+                            "size": 447
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    }
+                ],
+                "bytecode": "608060405234801561000f575f80fd5b5060043610610135575f3560e01c80638332a2ff116100b6578063a4d66daf1161007a578063a4d66daf146102ef578063b0c26ecf1461030d578063d7786f211461032b578063d7da1dee14610349578063efb420d014610367578063f301af421461038557610135565b80638332a2ff146102715780638a1e2dc71461028f5780638c25b4eb146102ab5780639ab1b484146102c7578063a035b1fe146102d157610135565b80634f64b2be116100fd5780634f64b2be146101b95780636352a8a6146101e957806376ad03bc14610219578063771a3a1d146102375780637c3429921461025557610135565b8063112f7dff146101395780631548b7bd1461015757806318160ddd146101735780631b3ed722146101915780633e50de30146101af575b5f80fd5b6101416103b5565b60405161014e9190610cd1565b60405180910390f35b610171600480360381019061016c9190610d18565b610424565b005b61017b6105c0565b6040516101889190610cd1565b60405180910390f35b6101996105c6565b6040516101a69190610cd1565b60405180910390f35b6101b76105cc565b005b6101d360048036038101906101ce9190610d18565b610733565b6040516101e09190610cd1565b60405180910390f35b61020360048036038101906101fe9190610d18565b610752565b6040516102109190610cd1565b60405180910390f35b610221610772565b60405161022e9190610cd1565b60405180910390f35b61023f610778565b60405161024c9190610cd1565b60405180910390f35b61026f600480360381019061026a9190610d78565b61077e565b005b61027961085d565b6040516102869190610cd1565b60405180910390f35b6102a960048036038101906102a49190610da3565b6108ce565b005b6102c560048036038101906102c09190610d18565b6109a7565b005b6102cf610ad6565b005b6102d9610b93565b6040516102e69190610cd1565b60405180910390f35b6102f7610b99565b6040516103049190610cd1565b60405180910390f35b610315610b9f565b6040516103229190610cd1565b60405180910390f35b610333610baa565b6040516103409190610cd1565b60405180910390f35b610351610c1b565b60405161035e9190610cd1565b60405180910390f35b61036f610c27565b60405161037c9190610cd1565b60405180910390f35b61039f600480360381019061039a9190610d18565b610c33565b6040516103ac9190610cd1565b60405180910390f35b5f805f90505b5f80549050811015610420575f81815481106103da576103d9610de1565b5b905f5260205f200154826103ee9190610e3b565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000065280806001019150506103bb565b5090565b8067ffffffffffffffff81111561043e5761043d610e6e565b5b60405190808252806020026020018201604052801561046c5781602001602082028036833780820191505090505b505f9080519060200190610481929190610c53565b508067ffffffffffffffff81111561049c5761049b610e6e565b5b6040519080825280602002602001820160405280156104ca5781602001602082028036833780820191505090505b50600190805190602001906104e0929190610c53565b508067ffffffffffffffff8111156104fb576104fa610e6e565b5b6040519080825280602002602001820160405280156105295781602001602082028036833780820191505090505b506002908051906020019061053f929190610c53565b505f5b818110156105bc5760645f828154811061055f5761055e610de1565b5b905f5260205f200181905550600a6001828154811061058157610580610de1565b5b905f5260205f2001819055506005600282815481106105a3576105a2610de1565b5b905f5260205f2001819055508080600101915050610542565b5050565b60085481565b60065481565b5f6001805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000002525f5b818110156106f8576006546005546106129190610e9b565b6001828154811061062657610625610de1565b5b905f5260205f20015f82825461063c9190610e3b565b9250508190555060646008546106529190610f09565b6001828154811061066657610665610de1565b5b905f5260205f20015f82825461067c9190610e3b565b925050819055506103e86007546001838154811061069d5761069c610de1565b5b905f5260205f2001546106b09190610e9b565b6106ba9190610f09565b600182815481106106ce576106cd610de1565b5b905f5260205f20015f8282546106e49190610f39565b9250508190555080806001019150506105fa565b507f6d1c76d614228b523baa4dcd9539e2c713b54ff4ab3ff2d1627e7f6cd32be442816040516107289190610cd1565b60405180910390a150565b5f8181548110610741575f80fd5b905f5260205f20015f915090505481565b60028181548110610761575f80fd5b905f5260205f20015f915090505481565b60055481565b60075481565b5f80805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000004525f5b8181101561085857821561080a5760026006546005546107cb9190610e9b565b6107d59190610e9b565b5f82815481106107e8576107e7610de1565b5b905f5260205f20015f8282546107fe9190610e3b565b9250508190555061084b565b60065460055461081a9190610e9b565b5f828154811061082d5761082c610de1565b5b905f5260205f20015f8282546108439190610e3b565b925050819055505b80806001019150506107ab565b505050565b5f805f90505b6001805490508110156108ca576001818154811061088457610883610de1565b5b905f5260205f200154826108989190610e3b565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000007528080600101915050610863565b5090565b5f5b828110156109a2575f5b82811015610994575f8184846108f09190610e9b565b6108fa9190610e3b565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000009525f80549050811015610986576005546006546004546003546109419190610e3b565b61094b9190610e9b565b6109559190610f09565b5f828154811061096857610967610de1565b5b905f5260205f20015f82825461097e9190610e3b565b925050819055505b5080806001019150506108da565b5080806001019150506108d0565b505050565b5f6002805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003525f5b81811015610a9a575f60016006546109ed9190610e3b565b846004546003546109fe9190610e9b565b610a089190610e9b565b610a129190610f09565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000005526103e88160028481548110610a4f57610a4e610de1565b5b905f5260205f200154610a629190610e9b565b610a6c9190610f09565b60028381548110610a8057610a7f610de1565b5b905f5260205f2001819055505080806001019150506109d5565b507f1bd825983047570327799156163a9794dfd3fc39f95bd32fbb8d70e06ea3096481604051610aca9190610cd1565b60405180910390a15050565b5f80805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001525f5b81811015610b5857600454600354610b1b9190610e9b565b5f8281548110610b2e57610b2d610de1565b5b905f5260205f20015f828254610b449190610e3b565b925050819055508080600101915050610b03565b507ff9f09f023fbfb7bdeb798aa50802e70859bc440481c704717e1030095c13e78281604051610b889190610cd1565b60405180910390a150565b60045481565b60035481565b5f8080549050905090565b5f805f90505b600280549050811015610c175760028181548110610bd157610bd0610de1565b5b905f5260205f20015482610be59190610e3b565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000008528080600101915050610bb0565b5090565b5f600180549050905090565b5f600280549050905090565b60018181548110610c42575f80fd5b905f5260205f20015f915090505481565b828054828255905f5260205f20908101928215610c8d579160200282015b82811115610c8c578251825591602001919060010190610c71565b5b509050610c9a9190610c9e565b5090565b5b80821115610cb5575f815f905550600101610c9f565b5090565b5f819050919050565b610ccb81610cb9565b82525050565b5f602082019050610ce45f830184610cc2565b92915050565b5f80fd5b610cf781610cb9565b8114610d01575f80fd5b50565b5f81359050610d1281610cee565b92915050565b5f60208284031215610d2d57610d2c610cea565b5b5f610d3a84828501610d04565b91505092915050565b5f8115159050919050565b610d5781610d43565b8114610d61575f80fd5b50565b5f81359050610d7281610d4e565b92915050565b5f60208284031215610d8d57610d8c610cea565b5b5f610d9a84828501610d64565b91505092915050565b5f8060408385031215610db957610db8610cea565b5b5f610dc685828601610d04565b9250506020610dd785828601610d04565b9150509250929050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f610e4582610cb9565b9150610e5083610cb9565b9250828201905080821115610e6857610e67610e0e565b5b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b5f610ea582610cb9565b9150610eb083610cb9565b9250828202610ebe81610cb9565b91508282048414831517610ed557610ed4610e0e565b5b5092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f610f1382610cb9565b9150610f1e83610cb9565b925082610f2e57610f2d610edc565b5b828204905092915050565b5f610f4382610cb9565b9150610f4e83610cb9565b9250828203905081811115610f6657610f65610e0e565b5b9291505056fea2646970667358221220b6509ecebe33e2b07be1db5b619fbf69cb9078381b166e94b0d6a2f305e408cc64736f6c634300081a0033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.8.26",
+                "constructorBytecode": "608060405234801561000f575f80fd5b506040516110c53803806110c58339818101604052810190610031919061009f565b8460038190555083600481905550826005819055508160068190555080600781905550620f42406008819055505050505050610116565b5f80fd5b5f819050919050565b61007e8161006c565b8114610088575f80fd5b50565b5f8151905061009981610075565b92915050565b5f805f805f60a086880312156100b8576100b7610068565b5b5f6100c58882890161008b565b95505060206100d68882890161008b565b94505060406100e78882890161008b565b93505060606100f88882890161008b565b92505060806101098882890161008b565b9150509295509295909350565b610fa2806101235f395ff3fe608060405234801561000f575f80fd5b5060043610610135575f3560e01c80638332a2ff116100b6578063a4d66daf1161007a578063a4d66daf146102ef578063b0c26ecf1461030d578063d7786f211461032b578063d7da1dee14610349578063efb420d014610367578063f301af421461038557610135565b80638332a2ff146102715780638a1e2dc71461028f5780638c25b4eb146102ab5780639ab1b484146102c7578063a035b1fe146102d157610135565b80634f64b2be116100fd5780634f64b2be146101b95780636352a8a6146101e957806376ad03bc14610219578063771a3a1d146102375780637c3429921461025557610135565b8063112f7dff146101395780631548b7bd1461015757806318160ddd146101735780631b3ed722146101915780633e50de30146101af575b5f80fd5b6101416103b5565b60405161014e9190610cd1565b60405180910390f35b610171600480360381019061016c9190610d18565b610424565b005b61017b6105c0565b6040516101889190610cd1565b60405180910390f35b6101996105c6565b6040516101a69190610cd1565b60405180910390f35b6101b76105cc565b005b6101d360048036038101906101ce9190610d18565b610733565b6040516101e09190610cd1565b60405180910390f35b61020360048036038101906101fe9190610d18565b610752565b6040516102109190610cd1565b60405180910390f35b610221610772565b60405161022e9190610cd1565b60405180910390f35b61023f610778565b60405161024c9190610cd1565b60405180910390f35b61026f600480360381019061026a9190610d78565b61077e565b005b61027961085d565b6040516102869190610cd1565b60405180910390f35b6102a960048036038101906102a49190610da3565b6108ce565b005b6102c560048036038101906102c09190610d18565b6109a7565b005b6102cf610ad6565b005b6102d9610b93565b6040516102e69190610cd1565b60405180910390f35b6102f7610b99565b6040516103049190610cd1565b60405180910390f35b610315610b9f565b6040516103229190610cd1565b60405180910390f35b610333610baa565b6040516103409190610cd1565b60405180910390f35b610351610c1b565b60405161035e9190610cd1565b60405180910390f35b61036f610c27565b60405161037c9190610cd1565b60405180910390f35b61039f600480360381019061039a9190610d18565b610c33565b6040516103ac9190610cd1565b60405180910390f35b5f805f90505b5f80549050811015610420575f81815481106103da576103d9610de1565b5b905f5260205f200154826103ee9190610e3b565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000065280806001019150506103bb565b5090565b8067ffffffffffffffff81111561043e5761043d610e6e565b5b60405190808252806020026020018201604052801561046c5781602001602082028036833780820191505090505b505f9080519060200190610481929190610c53565b508067ffffffffffffffff81111561049c5761049b610e6e565b5b6040519080825280602002602001820160405280156104ca5781602001602082028036833780820191505090505b50600190805190602001906104e0929190610c53565b508067ffffffffffffffff8111156104fb576104fa610e6e565b5b6040519080825280602002602001820160405280156105295781602001602082028036833780820191505090505b506002908051906020019061053f929190610c53565b505f5b818110156105bc5760645f828154811061055f5761055e610de1565b5b905f5260205f200181905550600a6001828154811061058157610580610de1565b5b905f5260205f2001819055506005600282815481106105a3576105a2610de1565b5b905f5260205f2001819055508080600101915050610542565b5050565b60085481565b60065481565b5f6001805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000002525f5b818110156106f8576006546005546106129190610e9b565b6001828154811061062657610625610de1565b5b905f5260205f20015f82825461063c9190610e3b565b9250508190555060646008546106529190610f09565b6001828154811061066657610665610de1565b5b905f5260205f20015f82825461067c9190610e3b565b925050819055506103e86007546001838154811061069d5761069c610de1565b5b905f5260205f2001546106b09190610e9b565b6106ba9190610f09565b600182815481106106ce576106cd610de1565b5b905f5260205f20015f8282546106e49190610f39565b9250508190555080806001019150506105fa565b507f6d1c76d614228b523baa4dcd9539e2c713b54ff4ab3ff2d1627e7f6cd32be442816040516107289190610cd1565b60405180910390a150565b5f8181548110610741575f80fd5b905f5260205f20015f915090505481565b60028181548110610761575f80fd5b905f5260205f20015f915090505481565b60055481565b60075481565b5f80805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000004525f5b8181101561085857821561080a5760026006546005546107cb9190610e9b565b6107d59190610e9b565b5f82815481106107e8576107e7610de1565b5b905f5260205f20015f8282546107fe9190610e3b565b9250508190555061084b565b60065460055461081a9190610e9b565b5f828154811061082d5761082c610de1565b5b905f5260205f20015f8282546108439190610e3b565b925050819055505b80806001019150506107ab565b505050565b5f805f90505b6001805490508110156108ca576001818154811061088457610883610de1565b5b905f5260205f200154826108989190610e3b565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000007528080600101915050610863565b5090565b5f5b828110156109a2575f5b82811015610994575f8184846108f09190610e9b565b6108fa9190610e3b565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000009525f80549050811015610986576005546006546004546003546109419190610e3b565b61094b9190610e9b565b6109559190610f09565b5f828154811061096857610967610de1565b5b905f5260205f20015f82825461097e9190610e3b565b925050819055505b5080806001019150506108da565b5080806001019150506108d0565b505050565b5f6002805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003525f5b81811015610a9a575f60016006546109ed9190610e3b565b846004546003546109fe9190610e9b565b610a089190610e9b565b610a129190610f09565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000005526103e88160028481548110610a4f57610a4e610de1565b5b905f5260205f200154610a629190610e9b565b610a6c9190610f09565b60028381548110610a8057610a7f610de1565b5b905f5260205f2001819055505080806001019150506109d5565b507f1bd825983047570327799156163a9794dfd3fc39f95bd32fbb8d70e06ea3096481604051610aca9190610cd1565b60405180910390a15050565b5f80805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001525f5b81811015610b5857600454600354610b1b9190610e9b565b5f8281548110610b2e57610b2d610de1565b5b905f5260205f20015f828254610b449190610e3b565b925050819055508080600101915050610b03565b507ff9f09f023fbfb7bdeb798aa50802e70859bc440481c704717e1030095c13e78281604051610b889190610cd1565b60405180910390a150565b60045481565b60035481565b5f8080549050905090565b5f805f90505b600280549050811015610c175760028181548110610bd157610bd0610de1565b5b905f5260205f20015482610be59190610e3b565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000008528080600101915050610bb0565b5090565b5f600180549050905090565b5f600280549050905090565b60018181548110610c42575f80fd5b905f5260205f20015f915090505481565b828054828255905f5260205f20908101928215610c8d579160200282015b82811115610c8c578251825591602001919060010190610c71565b5b509050610c9a9190610c9e565b5090565b5b80821115610cb5575f815f905550600101610c9f565b5090565b5f819050919050565b610ccb81610cb9565b82525050565b5f602082019050610ce45f830184610cc2565b92915050565b5f80fd5b610cf781610cb9565b8114610d01575f80fd5b50565b5f81359050610d1281610cee565b92915050565b5f60208284031215610d2d57610d2c610cea565b5b5f610d3a84828501610d04565b91505092915050565b5f8115159050919050565b610d5781610d43565b8114610d61575f80fd5b50565b5f81359050610d7281610d4e565b92915050565b5f60208284031215610d8d57610d8c610cea565b5b5f610d9a84828501610d64565b91505092915050565b5f8060408385031215610db957610db8610cea565b5b5f610dc685828601610d04565b9250506020610dd785828601610d04565b9150509250929050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f610e4582610cb9565b9150610e5083610cb9565b9250828201905080821115610e6857610e67610e0e565b5b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b5f610ea582610cb9565b9150610eb083610cb9565b9250828202610ebe81610cb9565b91508282048414831517610ed557610ed4610e0e565b5b5092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f610f1382610cb9565b9150610f1e83610cb9565b925082610f2e57610f2d610edc565b5b828204905092915050565b5f610f4382610cb9565b9150610f4e83610cb9565b9250828203905081811115610f6657610f65610e0e565b5b9291505056fea2646970667358221220b6509ecebe33e2b07be1db5b619fbf69cb9078381b166e94b0d6a2f305e408cc64736f6c634300081a0033",
+                "constructorSrcmap": "58:5253:0:-:0;;;483:286;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;605:6;597:5;:14;;;;629:6;621:5;:14;;;;658:11;645:10;:24;;;;692:11;679:10;:24;;;;723:8;713:7;:18;;;;755:7;741:11;:21;;;;483:286;;;;;58:5253;;88:117:1;197:1;194;187:12;334:77;371:7;400:5;389:16;;334:77;;;:::o;417:122::-;490:24;508:5;490:24;:::i;:::-;483:5;480:35;470:63;;529:1;526;519:12;470:63;417:122;:::o;545:143::-;602:5;633:6;627:13;618:22;;649:33;676:5;649:33;:::i;:::-;545:143;;;;:::o;694:977::-;800:6;808;816;824;832;881:3;869:9;860:7;856:23;852:33;849:120;;;888:79;;:::i;:::-;849:120;1008:1;1033:64;1089:7;1080:6;1069:9;1065:22;1033:64;:::i;:::-;1023:74;;979:128;1146:2;1172:64;1228:7;1219:6;1208:9;1204:22;1172:64;:::i;:::-;1162:74;;1117:129;1285:2;1311:64;1367:7;1358:6;1347:9;1343:22;1311:64;:::i;:::-;1301:74;;1256:129;1424:2;1450:64;1506:7;1497:6;1486:9;1482:22;1450:64;:::i;:::-;1440:74;;1395:129;1563:3;1590:64;1646:7;1637:6;1626:9;1622:22;1590:64;:::i;:::-;1580:74;;1534:130;694:977;;;;;;;;:::o;58:5253:0:-;;;;;;;",
+                "extensionContracts": [],
+                "file": "conf/src/A.sol",
+                "immutables": [],
+                "internalFunctions": {},
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "length",
+                        "sourceLoc": {
+                            "begin": "1303",
+                            "len": "30",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "length",
+                        "sourceLoc": {
+                            "begin": "1625",
+                            "len": "31",
+                            "source": "0"
+                        }
+                    },
+                    "3": {
+                        "lhs": "length",
+                        "sourceLoc": {
+                            "begin": "2102",
+                            "len": "33",
+                            "source": "0"
+                        }
+                    },
+                    "4": {
+                        "lhs": "length",
+                        "sourceLoc": {
+                            "begin": "2561",
+                            "len": "30",
+                            "source": "0"
+                        }
+                    },
+                    "5": {
+                        "lhs": "adjustment",
+                        "sourceLoc": {
+                            "begin": "2242",
+                            "len": "71",
+                            "source": "0"
+                        }
+                    },
+                    "6": {
+                        "lhs": "sum",
+                        "sourceLoc": {
+                            "begin": "3612",
+                            "len": "16",
+                            "source": "0"
+                        }
+                    },
+                    "7": {
+                        "lhs": "sum",
+                        "sourceLoc": {
+                            "begin": "3785",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "8": {
+                        "lhs": "sum",
+                        "sourceLoc": {
+                            "begin": "3963",
+                            "len": "19",
+                            "source": "0"
+                        }
+                    },
+                    "9": {
+                        "lhs": "index",
+                        "sourceLoc": {
+                            "begin": "3225",
+                            "len": "28",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "_limit",
+                            "_price",
+                            "_baseReward",
+                            "_multiplier",
+                            "_taxRate"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 483,
+                            "size": 286
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "distributeTokens",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "9ab1b484",
+                        "sourceBytes": {
+                            "begin": 1256,
+                            "size": 261
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "updateTokensConditional",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "applyBonus"
+                        ],
+                        "returns": [],
+                        "sighash": "7c342992",
+                        "sourceBytes": {
+                            "begin": 2492,
+                            "size": 447
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "taxRate",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "771a3a1d",
+                        "sourceBytes": {
+                            "begin": 285,
+                            "size": 22
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getPenaltiesSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d7786f21",
+                        "sourceBytes": {
+                            "begin": 3829,
+                            "size": 170
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "multiplier",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1b3ed722",
+                        "sourceBytes": {
+                            "begin": 254,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "penalties",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "6352a8a6",
+                        "sourceBytes": {
+                            "begin": 134,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "limit",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a4d66daf",
+                        "sourceBytes": {
+                            "begin": 171,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "calculateRewards",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "3e50de30",
+                        "sourceBytes": {
+                            "begin": 1578,
+                            "size": 401
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "baseReward",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "76ad03bc",
+                        "sourceBytes": {
+                            "begin": 223,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "initializeArrays",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "size"
+                        ],
+                        "returns": [],
+                        "sighash": "1548b7bd",
+                        "sourceBytes": {
+                            "begin": 828,
+                            "size": 365
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "tokens",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "4f64b2be",
+                        "sourceBytes": {
+                            "begin": 75,
+                            "size": 23
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "rewards",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "f301af42",
+                        "sourceBytes": {
+                            "begin": 104,
+                            "size": 24
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "processMatrix",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "rows",
+                            "cols"
+                        ],
+                        "returns": [],
+                        "sighash": "8a1e2dc7",
+                        "sourceBytes": {
+                            "begin": 2996,
+                            "size": 431
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getTokensLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b0c26ecf",
+                        "sourceBytes": {
+                            "begin": 4036,
+                            "size": 96
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getPenaltiesLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "efb420d0",
+                        "sourceBytes": {
+                            "begin": 4250,
+                            "size": 102
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 313,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "applyPenalties",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [
+                            "penaltyFactor"
+                        ],
+                        "returns": [],
+                        "sighash": "8c25b4eb",
+                        "sourceBytes": {
+                            "begin": 2036,
+                            "size": 396
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getTokensSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "112f7dff",
+                        "sourceBytes": {
+                            "begin": 3484,
+                            "size": 161
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getRewardsLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d7da1dee",
+                        "sourceBytes": {
+                            "begin": 4142,
+                            "size": 98
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "price",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a035b1fe",
+                        "sourceBytes": {
+                            "begin": 197,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "A",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getRewardsSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/A.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8332a2ff",
+                        "sourceBytes": {
+                            "begin": 3655,
+                            "size": 164
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    }
+                ],
+                "name": "A",
+                "original_file": "conf/src/A.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 58,
+                    "size": 4296
+                },
+                "srcmap": "58:5253:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4129:265;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;828:365;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;313:26;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;254:25;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1685:508;;;:::i;:::-;;75:23;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;134:26;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;223:25;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;285:22;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;2924:554;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;4404:268;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;3535:537;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;2250:614;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;1256:368;;;:::i;:::-;;197:20;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;171;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;4993:96;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;4682:274;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;5099:98;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;5207:102;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;104:24;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;4129:265;4176:11;4204:9;4216:1;4204:13;;4199:189;4223:6;:13;;;;4219:1;:17;4199:189;;;4264:6;4271:1;4264:9;;;;;;;;:::i;:::-;;;;;;;;;;4257:16;;;;;:::i;:::-;;;4373:3;4306:66;4299:78;4238:3;;;;;;;4199:189;;;;4129:265;:::o;828:365::-;910:4;896:19;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;887:6;:28;;;;;;;;;;;;:::i;:::-;;949:4;935:19;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;925:7;:29;;;;;;;;;;;;:::i;:::-;;990:4;976:19;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;964:9;:31;;;;;;;;;;;;:::i;:::-;;1058:9;1053:134;1077:4;1073:1;:8;1053:134;;;1114:3;1102:6;1109:1;1102:9;;;;;;;;:::i;:::-;;;;;;;;;:15;;;;1144:2;1131:7;1139:1;1131:10;;;;;;;;:::i;:::-;;;;;;;;;:15;;;;1175:1;1160:9;1170:1;1160:12;;;;;;;;:::i;:::-;;;;;;;;;:16;;;;1083:3;;;;;;;1053:134;;;;828:365;:::o;313:26::-;;;;:::o;254:25::-;;;;:::o;1685:508::-;1732:14;1749:7;:14;;;;1732:31;;1863:6;1796:66;1789:81;1885:9;1880:266;1904:6;1900:1;:10;1880:266;;;2021:10;;2008;;:23;;;;:::i;:::-;1994:7;2002:1;1994:10;;;;;;;;:::i;:::-;;;;;;;;;;:37;;;;;;;:::i;:::-;;;;;;;;2074:3;2060:11;;:17;;;;:::i;:::-;2045:7;2053:1;2045:10;;;;;;;;:::i;:::-;;;;;;;;;;:33;;;;;;;:::i;:::-;;;;;;;;2131:4;2120:7;;2107;2115:1;2107:10;;;;;;;;:::i;:::-;;;;;;;;;;:20;;;;:::i;:::-;2106:29;;;;:::i;:::-;2092:7;2100:1;2092:10;;;;;;;;:::i;:::-;;;;;;;;;;:43;;;;;;;:::i;:::-;;;;;;;;1912:3;;;;;;;1880:266;;;;2160:26;2179:6;2160:26;;;;;;:::i;:::-;;;;;;;;1722:471;1685:508::o;75:23::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;134:26::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;223:25::-;;;;:::o;285:22::-;;;;:::o;2924:554::-;2993:14;3010:6;:13;;;;2993:30;;3123:6;3056:66;3049:81;3145:9;3140:332;3164:6;3160:1;:10;3140:332;;;3195:10;3191:271;;;3265:1;3252:10;;3239;;:23;;;;:::i;:::-;:27;;;;:::i;:::-;3225:6;3232:1;3225:9;;;;;;;;:::i;:::-;;;;;;;;;;:42;;;;;;;:::i;:::-;;;;;;;;3191:271;;;3382:10;;3369;;:23;;;;:::i;:::-;3355:6;3362:1;3355:9;;;;;;;;:::i;:::-;;;;;;;;;;:38;;;;;;;:::i;:::-;;;;;;;;3191:271;3172:3;;;;;;;3140:332;;;;2983:495;2924:554;:::o;4404:268::-;4452:11;4480:9;4492:1;4480:13;;4475:191;4499:7;:14;;;;4495:1;:18;4475:191;;;4541:7;4549:1;4541:10;;;;;;;;:::i;:::-;;;;;;;;;;4534:17;;;;;:::i;:::-;;;4651:3;4584:66;4577:78;4515:3;;;;;;;4475:191;;;;4404:268;:::o;3535:537::-;3610:9;3605:461;3629:4;3625:1;:8;3605:461;;;3659:9;3654:402;3678:4;3674:1;:8;3654:402;;;3764:13;3791:1;3784:4;3780:1;:8;;;;:::i;:::-;:12;;;;:::i;:::-;3764:28;;3892:5;3825:66;3818:80;3928:6;:13;;;;3920:5;:21;3916:126;;;4013:10;;4000;;3991:5;;3983;;:13;;;;:::i;:::-;3982:28;;;;:::i;:::-;:41;;;;:::i;:::-;3965:6;3972:5;3965:13;;;;;;;;:::i;:::-;;;;;;;;;;:58;;;;;;;:::i;:::-;;;;;;;;3916:126;3689:367;3684:3;;;;;;;3654:402;;;;3635:3;;;;;;;3605:461;;;;3535:537;;:::o;2250:614::-;2316:14;2333:9;:16;;;;2316:33;;2449:6;2382:66;2375:81;2471:9;2466:353;2490:6;2486:1;:10;2466:353;;;2563:18;2632:1;2619:10;;:14;;;;:::i;:::-;2601:13;2593:5;;2585;;:13;;;;:::i;:::-;:29;;;;:::i;:::-;2584:50;;;;:::i;:::-;2563:71;;2734:10;2667:66;2660:85;2804:4;2790:10;2775:9;2785:1;2775:12;;;;;;;;:::i;:::-;;;;;;;;;;:25;;;;:::i;:::-;2774:34;;;;:::i;:::-;2759:9;2769:1;2759:12;;;;;;;;:::i;:::-;;;;;;;;;:49;;;;2503:316;2498:3;;;;;;;2466:353;;;;2833:24;2850:6;2833:24;;;;;;:::i;:::-;;;;;;;;2306:558;2250:614;:::o;1256:368::-;1303:14;1320:6;:13;;;;1303:30;;1433:6;1366:66;1359:81;1455:9;1450:132;1474:6;1470:1;:10;1450:132;;;1522:5;;1514;;:13;;;;:::i;:::-;1501:6;1508:1;1501:9;;;;;;;;:::i;:::-;;;;;;;;;;:26;;;;;;;:::i;:::-;;;;;;;;1482:3;;;;;;;1450:132;;;;1596:21;1610:6;1596:21;;;;;;:::i;:::-;;;;;;;;1293:331;1256:368::o;197:20::-;;;;:::o;171:::-;;;;:::o;4993:96::-;5043:7;5069:6;:13;;;;5062:20;;4993:96;:::o;4682:274::-;4732:11;4760:9;4772:1;4760:13;;4755:195;4779:9;:16;;;;4775:1;:20;4755:195;;;4823:9;4833:1;4823:12;;;;;;;;:::i;:::-;;;;;;;;;;4816:19;;;;;:::i;:::-;;;4935:3;4868:66;4861:78;4797:3;;;;;;;4755:195;;;;4682:274;:::o;5099:98::-;5150:7;5176;:14;;;;5169:21;;5099:98;:::o;5207:102::-;5260:7;5286:9;:16;;;;5279:23;;5207:102;:::o;104:24::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;7:77:1:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o;523:117::-;632:1;629;622:12;769:122;842:24;860:5;842:24;:::i;:::-;835:5;832:35;822:63;;881:1;878;871:12;822:63;769:122;:::o;897:139::-;943:5;981:6;968:20;959:29;;997:33;1024:5;997:33;:::i;:::-;897:139;;;;:::o;1042:329::-;1101:6;1150:2;1138:9;1129:7;1125:23;1121:32;1118:119;;;1156:79;;:::i;:::-;1118:119;1276:1;1301:53;1346:7;1337:6;1326:9;1322:22;1301:53;:::i;:::-;1291:63;;1247:117;1042:329;;;;:::o;1377:90::-;1411:7;1454:5;1447:13;1440:21;1429:32;;1377:90;;;:::o;1473:116::-;1543:21;1558:5;1543:21;:::i;:::-;1536:5;1533:32;1523:60;;1579:1;1576;1569:12;1523:60;1473:116;:::o;1595:133::-;1638:5;1676:6;1663:20;1654:29;;1692:30;1716:5;1692:30;:::i;:::-;1595:133;;;;:::o;1734:323::-;1790:6;1839:2;1827:9;1818:7;1814:23;1810:32;1807:119;;;1845:79;;:::i;:::-;1807:119;1965:1;1990:50;2032:7;2023:6;2012:9;2008:22;1990:50;:::i;:::-;1980:60;;1936:114;1734:323;;;;:::o;2063:474::-;2131:6;2139;2188:2;2176:9;2167:7;2163:23;2159:32;2156:119;;;2194:79;;:::i;:::-;2156:119;2314:1;2339:53;2384:7;2375:6;2364:9;2360:22;2339:53;:::i;:::-;2329:63;;2285:117;2441:2;2467:53;2512:7;2503:6;2492:9;2488:22;2467:53;:::i;:::-;2457:63;;2412:118;2063:474;;;;;:::o;2543:180::-;2591:77;2588:1;2581:88;2688:4;2685:1;2678:15;2712:4;2709:1;2702:15;2729:180;2777:77;2774:1;2767:88;2874:4;2871:1;2864:15;2898:4;2895:1;2888:15;2915:191;2955:3;2974:20;2992:1;2974:20;:::i;:::-;2969:25;;3008:20;3026:1;3008:20;:::i;:::-;3003:25;;3051:1;3048;3044:9;3037:16;;3072:3;3069:1;3066:10;3063:36;;;3079:18;;:::i;:::-;3063:36;2915:191;;;;:::o;3112:180::-;3160:77;3157:1;3150:88;3257:4;3254:1;3247:15;3281:4;3278:1;3271:15;3298:410;3338:7;3361:20;3379:1;3361:20;:::i;:::-;3356:25;;3395:20;3413:1;3395:20;:::i;:::-;3390:25;;3450:1;3447;3443:9;3472:30;3490:11;3472:30;:::i;:::-;3461:41;;3651:1;3642:7;3638:15;3635:1;3632:22;3612:1;3605:9;3585:83;3562:139;;3681:18;;:::i;:::-;3562:139;3346:362;3298:410;;;;:::o;3714:180::-;3762:77;3759:1;3752:88;3859:4;3856:1;3849:15;3883:4;3880:1;3873:15;3900:185;3940:1;3957:20;3975:1;3957:20;:::i;:::-;3952:25;;3991:20;4009:1;3991:20;:::i;:::-;3986:25;;4030:1;4020:35;;4035:18;;:::i;:::-;4020:35;4077:1;4074;4070:9;4065:14;;3900:185;;;;:::o;4091:194::-;4131:4;4151:20;4169:1;4151:20;:::i;:::-;4146:25;;4185:20;4203:1;4185:20;:::i;:::-;4180:25;;4229:1;4226;4222:9;4214:17;;4253:1;4247:4;4244:11;4241:37;;;4258:18;;:::i;:::-;4241:37;4091:194;;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 4,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/A.sol:A",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "dynamicArrayBaseType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Array"
+                            },
+                            "label": "tokens",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_array(t_uint256)dyn_storage"
+                        },
+                        {
+                            "astId": 7,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/A.sol:A",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "dynamicArrayBaseType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Array"
+                            },
+                            "label": "rewards",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_array(t_uint256)dyn_storage"
+                        },
+                        {
+                            "astId": 10,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/A.sol:A",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "dynamicArrayBaseType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Array"
+                            },
+                            "label": "penalties",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_array(t_uint256)dyn_storage"
+                        },
+                        {
+                            "astId": 12,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/A.sol:A",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "limit",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 14,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/A.sol:A",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "price",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 16,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/A.sol:A",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "baseReward",
+                            "offset": 0,
+                            "slot": "5",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 18,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/A.sol:A",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "multiplier",
+                            "offset": 0,
+                            "slot": "6",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 20,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/A.sol:A",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "taxRate",
+                            "offset": 0,
+                            "slot": "7",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 22,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/A.sol:A",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "totalSupply",
+                            "offset": 0,
+                            "slot": "8",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_array(t_uint256)dyn_storage": {
+                            "base": "t_uint256",
+                            "encoding": "dynamic_array",
+                            "label": "uint256[]",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "A",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "A.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "conf/src/A.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    },
+    "Ao_00000000ce4604a0000000000000000000000003": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000003",
+                "allMethods": [
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "applyPenalties",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "penaltyFactor"
+                        ],
+                        "returns": [],
+                        "sighash": "8c25b4eb",
+                        "sourceBytes": {
+                            "begin": 2049,
+                            "size": 440
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "baseReward",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "76ad03bc",
+                        "sourceBytes": {
+                            "begin": 224,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "calculateRewards",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "3e50de30",
+                        "sourceBytes": {
+                            "begin": 1471,
+                            "size": 568
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "_limit",
+                            "_price",
+                            "_baseReward",
+                            "_multiplier",
+                            "_taxRate"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 480,
+                            "size": 286
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "distributeTokens",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "9ab1b484",
+                        "sourceBytes": {
+                            "begin": 1108,
+                            "size": 353
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getPenaltiesLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "efb420d0",
+                        "sourceBytes": {
+                            "begin": 4273,
+                            "size": 90
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getPenaltiesSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d7786f21",
+                        "sourceBytes": {
+                            "begin": 3918,
+                            "size": 170
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getRewardsLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d7da1dee",
+                        "sourceBytes": {
+                            "begin": 4182,
+                            "size": 86
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getRewardsSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8332a2ff",
+                        "sourceBytes": {
+                            "begin": 3749,
+                            "size": 164
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getTokensLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b0c26ecf",
+                        "sourceBytes": {
+                            "begin": 4093,
+                            "size": 84
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getTokensSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "112f7dff",
+                        "sourceBytes": {
+                            "begin": 3583,
+                            "size": 161
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "initializeArrays",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "size"
+                        ],
+                        "returns": [],
+                        "sighash": "1548b7bd",
+                        "sourceBytes": {
+                            "begin": 772,
+                            "size": 326
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "limit",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a4d66daf",
+                        "sourceBytes": {
+                            "begin": 172,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "multiplier",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1b3ed722",
+                        "sourceBytes": {
+                            "begin": 255,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "penalties",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "6352a8a6",
+                        "sourceBytes": {
+                            "begin": 135,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "price",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a035b1fe",
+                        "sourceBytes": {
+                            "begin": 198,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "processMatrix",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "rows",
+                            "cols"
+                        ],
+                        "returns": [],
+                        "sighash": "8a1e2dc7",
+                        "sourceBytes": {
+                            "begin": 3022,
+                            "size": 514
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "rewards",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "f301af42",
+                        "sourceBytes": {
+                            "begin": 105,
+                            "size": 24
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "taxRate",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "771a3a1d",
+                        "sourceBytes": {
+                            "begin": 286,
+                            "size": 22
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "tokens",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "4f64b2be",
+                        "sourceBytes": {
+                            "begin": 76,
+                            "size": 23
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 314,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "updateTokensConditional",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "applyBonus"
+                        ],
+                        "returns": [],
+                        "sighash": "7c342992",
+                        "sourceBytes": {
+                            "begin": 2499,
+                            "size": 513
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    }
+                ],
+                "bytecode": "608060405234801561000f575f80fd5b5060043610610135575f3560e01c80638332a2ff116100b6578063a4d66daf1161007a578063a4d66daf146102ef578063b0c26ecf1461030d578063d7786f211461032b578063d7da1dee14610349578063efb420d014610367578063f301af421461038557610135565b80638332a2ff146102715780638a1e2dc71461028f5780638c25b4eb146102ab5780639ab1b484146102c7578063a035b1fe146102d157610135565b80634f64b2be116100fd5780634f64b2be146101b95780636352a8a6146101e957806376ad03bc14610219578063771a3a1d146102375780637c3429921461025557610135565b8063112f7dff146101395780631548b7bd1461015757806318160ddd146101735780631b3ed722146101915780633e50de30146101af575b5f80fd5b6101416103b5565b60405161014e9190610d20565b60405180910390f35b610171600480360381019061016c9190610d67565b610424565b005b61017b6105c0565b6040516101889190610d20565b60405180910390f35b6101996105c6565b6040516101a69190610d20565b60405180910390f35b6101b76105cc565b005b6101d360048036038101906101ce9190610d67565b61077f565b6040516101e09190610d20565b60405180910390f35b61020360048036038101906101fe9190610d67565b61079e565b6040516102109190610d20565b60405180910390f35b6102216107be565b60405161022e9190610d20565b60405180910390f35b61023f6107c4565b60405161024c9190610d20565b60405180910390f35b61026f600480360381019061026a9190610dc7565b6107ca565b005b610279610888565b6040516102869190610d20565b60405180910390f35b6102a960048036038101906102a49190610df2565b6108f9565b005b6102c560048036038101906102c09190610d67565b6109ed565b005b6102cf610b06565b005b6102d9610be2565b6040516102e69190610d20565b60405180910390f35b6102f7610be8565b6040516103049190610d20565b60405180910390f35b610315610bee565b6040516103229190610d20565b60405180910390f35b610333610bf9565b6040516103409190610d20565b60405180910390f35b610351610c6a565b60405161035e9190610d20565b60405180910390f35b61036f610c76565b60405161037c9190610d20565b60405180910390f35b61039f600480360381019061039a9190610d67565b610c82565b6040516103ac9190610d20565b60405180910390f35b5f805f90505b5f80549050811015610420575f81815481106103da576103d9610e30565b5b905f5260205f200154826103ee9190610e8a565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000b5280806001019150506103bb565b5090565b8067ffffffffffffffff81111561043e5761043d610ebd565b5b60405190808252806020026020018201604052801561046c5781602001602082028036833780820191505090505b505f9080519060200190610481929190610ca2565b508067ffffffffffffffff81111561049c5761049b610ebd565b5b6040519080825280602002602001820160405280156104ca5781602001602082028036833780820191505090505b50600190805190602001906104e0929190610ca2565b508067ffffffffffffffff8111156104fb576104fa610ebd565b5b6040519080825280602002602001820160405280156105295781602001602082028036833780820191505090505b506002908051906020019061053f929190610ca2565b505f5b818110156105bc5760645f828154811061055f5761055e610e30565b5b905f5260205f200181905550600a6001828154811061058157610580610e30565b5b905f5260205f2001819055506005600282815481106105a3576105a2610e30565b5b905f5260205f2001819055508080600101915050610542565b5050565b60085481565b60065481565b5f6001805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000004525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000055260065460055402915060646008548161065c5761065b610eea565b5b0490505f5b8381101561074257826001828154811061067e5761067d610e30565b5b905f5260205f20015f8282546106949190610e8a565b9250508190555081600182815481106106b0576106af610e30565b5b905f5260205f20015f8282546106c69190610e8a565b925050819055506103e8600754600183815481106106e7576106e6610e30565b5b905f5260205f2001546106fa9190610f17565b6107049190610f58565b6001828154811061071857610717610e30565b5b905f5260205f20015f82825461072e9190610f88565b925050819055508080600101915050610661565b507f6d1c76d614228b523baa4dcd9539e2c713b54ff4ab3ff2d1627e7f6cd32be442836040516107729190610d20565b60405180910390a1505050565b5f818154811061078d575f80fd5b905f5260205f20015f915090505481565b600281815481106107ad575f80fd5b905f5260205f20015f915090505481565b60055481565b60075481565b5f80805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000008525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000095282156108305760026006546005540202905061083a565b6006546005540290505b5f5b8281101561088257815f828154811061085857610857610e30565b5b905f5260205f20015f82825461086e9190610e8a565b92505081905550808060010191505061083c565b50505050565b5f805f90505b6001805490508110156108f557600181815481106108af576108ae610e30565b5b905f5260205f200154826108c39190610e8a565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000c52808060010191505061088e565b5090565b5f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000a5260055460065460045460035401028161093957610938610eea565b5b0490505f5b838110156109e7575f5b838110156109d9575f81858461095e9190610f17565b6109689190610e8a565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000e525f805490508110156109cb57835f82815481106109ad576109ac610e30565b5b905f5260205f20015f8282546109c39190610e8a565b925050819055505b508080600101915050610948565b50808060010191505061093e565b50505050565b5f6002805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000006525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000075260016006540183600454600354020281610a5a57610a59610eea565b5b0490505f5b82811015610ac9576103e88260028381548110610a7f57610a7e610e30565b5b905f5260205f200154610a929190610f17565b610a9c9190610f58565b60028281548110610ab057610aaf610e30565b5b905f5260205f2001819055508080600101915050610a5f565b507f1bd825983047570327799156163a9794dfd3fc39f95bd32fbb8d70e06ea3096482604051610af99190610d20565b60405180910390a1505050565b5f80805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000002526004546003540290505f5b82811015610ba657815f8281548110610b7c57610b7b610e30565b5b905f5260205f20015f828254610b929190610e8a565b925050819055508080600101915050610b60565b507ff9f09f023fbfb7bdeb798aa50802e70859bc440481c704717e1030095c13e78282604051610bd69190610d20565b60405180910390a15050565b60045481565b60035481565b5f8080549050905090565b5f805f90505b600280549050811015610c665760028181548110610c2057610c1f610e30565b5b905f5260205f20015482610c349190610e8a565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000d528080600101915050610bff565b5090565b5f600180549050905090565b5f600280549050905090565b60018181548110610c91575f80fd5b905f5260205f20015f915090505481565b828054828255905f5260205f20908101928215610cdc579160200282015b82811115610cdb578251825591602001919060010190610cc0565b5b509050610ce99190610ced565b5090565b5b80821115610d04575f815f905550600101610cee565b5090565b5f819050919050565b610d1a81610d08565b82525050565b5f602082019050610d335f830184610d11565b92915050565b5f80fd5b610d4681610d08565b8114610d50575f80fd5b50565b5f81359050610d6181610d3d565b92915050565b5f60208284031215610d7c57610d7b610d39565b5b5f610d8984828501610d53565b91505092915050565b5f8115159050919050565b610da681610d92565b8114610db0575f80fd5b50565b5f81359050610dc181610d9d565b92915050565b5f60208284031215610ddc57610ddb610d39565b5b5f610de984828501610db3565b91505092915050565b5f8060408385031215610e0857610e07610d39565b5b5f610e1585828601610d53565b9250506020610e2685828601610d53565b9150509250929050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f610e9482610d08565b9150610e9f83610d08565b9250828201905080821115610eb757610eb6610e5d565b5b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f610f2182610d08565b9150610f2c83610d08565b9250828202610f3a81610d08565b91508282048414831517610f5157610f50610e5d565b5b5092915050565b5f610f6282610d08565b9150610f6d83610d08565b925082610f7d57610f7c610eea565b5b828204905092915050565b5f610f9282610d08565b9150610f9d83610d08565b9250828203905081811115610fb557610fb4610e5d565b5b9291505056fea2646970667358221220fdf6be18acfe723118a031f658b5fae39626728b39e1dbd7db985fc890c82b0564736f6c634300081a0033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.8.26",
+                "constructorBytecode": "608060405234801561000f575f80fd5b506040516111143803806111148339818101604052810190610031919061009f565b8460038190555083600481905550826005819055508160068190555080600781905550620f42406008819055505050505050610116565b5f80fd5b5f819050919050565b61007e8161006c565b8114610088575f80fd5b50565b5f8151905061009981610075565b92915050565b5f805f805f60a086880312156100b8576100b7610068565b5b5f6100c58882890161008b565b95505060206100d68882890161008b565b94505060406100e78882890161008b565b93505060606100f88882890161008b565b92505060806101098882890161008b565b9150509295509295909350565b610ff1806101235f395ff3fe608060405234801561000f575f80fd5b5060043610610135575f3560e01c80638332a2ff116100b6578063a4d66daf1161007a578063a4d66daf146102ef578063b0c26ecf1461030d578063d7786f211461032b578063d7da1dee14610349578063efb420d014610367578063f301af421461038557610135565b80638332a2ff146102715780638a1e2dc71461028f5780638c25b4eb146102ab5780639ab1b484146102c7578063a035b1fe146102d157610135565b80634f64b2be116100fd5780634f64b2be146101b95780636352a8a6146101e957806376ad03bc14610219578063771a3a1d146102375780637c3429921461025557610135565b8063112f7dff146101395780631548b7bd1461015757806318160ddd146101735780631b3ed722146101915780633e50de30146101af575b5f80fd5b6101416103b5565b60405161014e9190610d20565b60405180910390f35b610171600480360381019061016c9190610d67565b610424565b005b61017b6105c0565b6040516101889190610d20565b60405180910390f35b6101996105c6565b6040516101a69190610d20565b60405180910390f35b6101b76105cc565b005b6101d360048036038101906101ce9190610d67565b61077f565b6040516101e09190610d20565b60405180910390f35b61020360048036038101906101fe9190610d67565b61079e565b6040516102109190610d20565b60405180910390f35b6102216107be565b60405161022e9190610d20565b60405180910390f35b61023f6107c4565b60405161024c9190610d20565b60405180910390f35b61026f600480360381019061026a9190610dc7565b6107ca565b005b610279610888565b6040516102869190610d20565b60405180910390f35b6102a960048036038101906102a49190610df2565b6108f9565b005b6102c560048036038101906102c09190610d67565b6109ed565b005b6102cf610b06565b005b6102d9610be2565b6040516102e69190610d20565b60405180910390f35b6102f7610be8565b6040516103049190610d20565b60405180910390f35b610315610bee565b6040516103229190610d20565b60405180910390f35b610333610bf9565b6040516103409190610d20565b60405180910390f35b610351610c6a565b60405161035e9190610d20565b60405180910390f35b61036f610c76565b60405161037c9190610d20565b60405180910390f35b61039f600480360381019061039a9190610d67565b610c82565b6040516103ac9190610d20565b60405180910390f35b5f805f90505b5f80549050811015610420575f81815481106103da576103d9610e30565b5b905f5260205f200154826103ee9190610e8a565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000b5280806001019150506103bb565b5090565b8067ffffffffffffffff81111561043e5761043d610ebd565b5b60405190808252806020026020018201604052801561046c5781602001602082028036833780820191505090505b505f9080519060200190610481929190610ca2565b508067ffffffffffffffff81111561049c5761049b610ebd565b5b6040519080825280602002602001820160405280156104ca5781602001602082028036833780820191505090505b50600190805190602001906104e0929190610ca2565b508067ffffffffffffffff8111156104fb576104fa610ebd565b5b6040519080825280602002602001820160405280156105295781602001602082028036833780820191505090505b506002908051906020019061053f929190610ca2565b505f5b818110156105bc5760645f828154811061055f5761055e610e30565b5b905f5260205f200181905550600a6001828154811061058157610580610e30565b5b905f5260205f2001819055506005600282815481106105a3576105a2610e30565b5b905f5260205f2001819055508080600101915050610542565b5050565b60085481565b60065481565b5f6001805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000004525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000055260065460055402915060646008548161065c5761065b610eea565b5b0490505f5b8381101561074257826001828154811061067e5761067d610e30565b5b905f5260205f20015f8282546106949190610e8a565b9250508190555081600182815481106106b0576106af610e30565b5b905f5260205f20015f8282546106c69190610e8a565b925050819055506103e8600754600183815481106106e7576106e6610e30565b5b905f5260205f2001546106fa9190610f17565b6107049190610f58565b6001828154811061071857610717610e30565b5b905f5260205f20015f82825461072e9190610f88565b925050819055508080600101915050610661565b507f6d1c76d614228b523baa4dcd9539e2c713b54ff4ab3ff2d1627e7f6cd32be442836040516107729190610d20565b60405180910390a1505050565b5f818154811061078d575f80fd5b905f5260205f20015f915090505481565b600281815481106107ad575f80fd5b905f5260205f20015f915090505481565b60055481565b60075481565b5f80805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000008525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000095282156108305760026006546005540202905061083a565b6006546005540290505b5f5b8281101561088257815f828154811061085857610857610e30565b5b905f5260205f20015f82825461086e9190610e8a565b92505081905550808060010191505061083c565b50505050565b5f805f90505b6001805490508110156108f557600181815481106108af576108ae610e30565b5b905f5260205f200154826108c39190610e8a565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000c52808060010191505061088e565b5090565b5f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000a5260055460065460045460035401028161093957610938610eea565b5b0490505f5b838110156109e7575f5b838110156109d9575f81858461095e9190610f17565b6109689190610e8a565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000e525f805490508110156109cb57835f82815481106109ad576109ac610e30565b5b905f5260205f20015f8282546109c39190610e8a565b925050819055505b508080600101915050610948565b50808060010191505061093e565b50505050565b5f6002805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000006525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000075260016006540183600454600354020281610a5a57610a59610eea565b5b0490505f5b82811015610ac9576103e88260028381548110610a7f57610a7e610e30565b5b905f5260205f200154610a929190610f17565b610a9c9190610f58565b60028281548110610ab057610aaf610e30565b5b905f5260205f2001819055508080600101915050610a5f565b507f1bd825983047570327799156163a9794dfd3fc39f95bd32fbb8d70e06ea3096482604051610af99190610d20565b60405180910390a1505050565b5f80805490509050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001525f807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000002526004546003540290505f5b82811015610ba657815f8281548110610b7c57610b7b610e30565b5b905f5260205f20015f828254610b929190610e8a565b925050819055508080600101915050610b60565b507ff9f09f023fbfb7bdeb798aa50802e70859bc440481c704717e1030095c13e78282604051610bd69190610d20565b60405180910390a15050565b60045481565b60035481565b5f8080549050905090565b5f805f90505b600280549050811015610c665760028181548110610c2057610c1f610e30565b5b905f5260205f20015482610c349190610e8a565b9150817fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000d528080600101915050610bff565b5090565b5f600180549050905090565b5f600280549050905090565b60018181548110610c91575f80fd5b905f5260205f20015f915090505481565b828054828255905f5260205f20908101928215610cdc579160200282015b82811115610cdb578251825591602001919060010190610cc0565b5b509050610ce99190610ced565b5090565b5b80821115610d04575f815f905550600101610cee565b5090565b5f819050919050565b610d1a81610d08565b82525050565b5f602082019050610d335f830184610d11565b92915050565b5f80fd5b610d4681610d08565b8114610d50575f80fd5b50565b5f81359050610d6181610d3d565b92915050565b5f60208284031215610d7c57610d7b610d39565b5b5f610d8984828501610d53565b91505092915050565b5f8115159050919050565b610da681610d92565b8114610db0575f80fd5b50565b5f81359050610dc181610d9d565b92915050565b5f60208284031215610ddc57610ddb610d39565b5b5f610de984828501610db3565b91505092915050565b5f8060408385031215610e0857610e07610d39565b5b5f610e1585828601610d53565b9250506020610e2685828601610d53565b9150509250929050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f610e9482610d08565b9150610e9f83610d08565b9250828201905080821115610eb757610eb6610e5d565b5b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f610f2182610d08565b9150610f2c83610d08565b9250828202610f3a81610d08565b91508282048414831517610f5157610f50610e5d565b5b5092915050565b5f610f6282610d08565b9150610f6d83610d08565b925082610f7d57610f7c610eea565b5b828204905092915050565b5f610f9282610d08565b9150610f9d83610d08565b9250828203905081811115610fb557610fb4610e5d565b5b9291505056fea2646970667358221220fdf6be18acfe723118a031f658b5fae39626728b39e1dbd7db985fc890c82b0564736f6c634300081a0033",
+                "constructorSrcmap": "58:5817:0:-:0;;;480:286;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;602:6;594:5;:14;;;;626:6;618:5;:14;;;;655:11;642:10;:24;;;;689:11;676:10;:24;;;;720:8;710:7;:18;;;;752:7;738:11;:21;;;;480:286;;;;;58:5817;;88:117:1;197:1;194;187:12;334:77;371:7;400:5;389:16;;334:77;;;:::o;417:122::-;490:24;508:5;490:24;:::i;:::-;483:5;480:35;470:63;;529:1;526;519:12;470:63;417:122;:::o;545:143::-;602:5;633:6;627:13;618:22;;649:33;676:5;649:33;:::i;:::-;545:143;;;;:::o;694:977::-;800:6;808;816;824;832;881:3;869:9;860:7;856:23;852:33;849:120;;;888:79;;:::i;:::-;849:120;1008:1;1033:64;1089:7;1080:6;1069:9;1065:22;1033:64;:::i;:::-;1023:74;;979:128;1146:2;1172:64;1228:7;1219:6;1208:9;1204:22;1172:64;:::i;:::-;1162:74;;1117:129;1285:2;1311:64;1367:7;1358:6;1347:9;1343:22;1311:64;:::i;:::-;1301:74;;1256:129;1424:2;1450:64;1506:7;1497:6;1486:9;1482:22;1450:64;:::i;:::-;1440:74;;1395:129;1563:3;1590:64;1646:7;1637:6;1626:9;1622:22;1590:64;:::i;:::-;1580:74;;1534:130;694:977;;;;;;;;:::o;58:5817:0:-;;;;;;;",
+                "extensionContracts": [],
+                "file": "conf/src/Ao.sol",
+                "immutables": [],
+                "internalFunctions": {},
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "length",
+                        "sourceLoc": {
+                            "begin": "1155",
+                            "len": "30",
+                            "source": "0"
+                        }
+                    },
+                    "10": {
+                        "lhs": "incrementAmount",
+                        "sourceLoc": {
+                            "begin": "3129",
+                            "len": "23",
+                            "source": "0"
+                        }
+                    },
+                    "11": {
+                        "lhs": "sum",
+                        "sourceLoc": {
+                            "begin": "3711",
+                            "len": "16",
+                            "source": "0"
+                        }
+                    },
+                    "12": {
+                        "lhs": "sum",
+                        "sourceLoc": {
+                            "begin": "3879",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "13": {
+                        "lhs": "sum",
+                        "sourceLoc": {
+                            "begin": "4052",
+                            "len": "19",
+                            "source": "0"
+                        }
+                    },
+                    "14": {
+                        "lhs": "index",
+                        "sourceLoc": {
+                            "begin": "3360",
+                            "len": "28",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "amount",
+                        "sourceLoc": {
+                            "begin": "1258",
+                            "len": "14",
+                            "source": "0"
+                        }
+                    },
+                    "3": {
+                        "lhs": "length",
+                        "sourceLoc": {
+                            "begin": "1518",
+                            "len": "31",
+                            "source": "0"
+                        }
+                    },
+                    "4": {
+                        "lhs": "baseAmount",
+                        "sourceLoc": {
+                            "begin": "1605",
+                            "len": "18",
+                            "source": "0"
+                        }
+                    },
+                    "5": {
+                        "lhs": "supplyBonus",
+                        "sourceLoc": {
+                            "begin": "1633",
+                            "len": "19",
+                            "source": "0"
+                        }
+                    },
+                    "6": {
+                        "lhs": "length",
+                        "sourceLoc": {
+                            "begin": "2115",
+                            "len": "33",
+                            "source": "0"
+                        }
+                    },
+                    "7": {
+                        "lhs": "adjustment",
+                        "sourceLoc": {
+                            "begin": "2204",
+                            "len": "18",
+                            "source": "0"
+                        }
+                    },
+                    "8": {
+                        "lhs": "length",
+                        "sourceLoc": {
+                            "begin": "2568",
+                            "len": "30",
+                            "source": "0"
+                        }
+                    },
+                    "9": {
+                        "lhs": "amount",
+                        "sourceLoc": {
+                            "begin": "2608",
+                            "len": "14",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "_limit",
+                            "_price",
+                            "_baseReward",
+                            "_multiplier",
+                            "_taxRate"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 480,
+                            "size": 286
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "distributeTokens",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "9ab1b484",
+                        "sourceBytes": {
+                            "begin": 1108,
+                            "size": 353
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "updateTokensConditional",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "applyBonus"
+                        ],
+                        "returns": [],
+                        "sighash": "7c342992",
+                        "sourceBytes": {
+                            "begin": 2499,
+                            "size": 513
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "taxRate",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "771a3a1d",
+                        "sourceBytes": {
+                            "begin": 286,
+                            "size": 22
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getPenaltiesSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d7786f21",
+                        "sourceBytes": {
+                            "begin": 3918,
+                            "size": 170
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "multiplier",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1b3ed722",
+                        "sourceBytes": {
+                            "begin": 255,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "penalties",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "6352a8a6",
+                        "sourceBytes": {
+                            "begin": 135,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "limit",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a4d66daf",
+                        "sourceBytes": {
+                            "begin": 172,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "calculateRewards",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "3e50de30",
+                        "sourceBytes": {
+                            "begin": 1471,
+                            "size": 568
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "baseReward",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "76ad03bc",
+                        "sourceBytes": {
+                            "begin": 224,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "initializeArrays",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "size"
+                        ],
+                        "returns": [],
+                        "sighash": "1548b7bd",
+                        "sourceBytes": {
+                            "begin": 772,
+                            "size": 326
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "tokens",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "4f64b2be",
+                        "sourceBytes": {
+                            "begin": 76,
+                            "size": 23
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "rewards",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "f301af42",
+                        "sourceBytes": {
+                            "begin": 105,
+                            "size": 24
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "processMatrix",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "rows",
+                            "cols"
+                        ],
+                        "returns": [],
+                        "sighash": "8a1e2dc7",
+                        "sourceBytes": {
+                            "begin": 3022,
+                            "size": 514
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getTokensLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b0c26ecf",
+                        "sourceBytes": {
+                            "begin": 4093,
+                            "size": 84
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getPenaltiesLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "efb420d0",
+                        "sourceBytes": {
+                            "begin": 4273,
+                            "size": 90
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 314,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "applyPenalties",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [
+                            "penaltyFactor"
+                        ],
+                        "returns": [],
+                        "sighash": "8c25b4eb",
+                        "sourceBytes": {
+                            "begin": 2049,
+                            "size": 440
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getTokensSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "112f7dff",
+                        "sourceBytes": {
+                            "begin": 3583,
+                            "size": 161
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getRewardsLength",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d7da1dee",
+                        "sourceBytes": {
+                            "begin": 4182,
+                            "size": 86
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "price",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a035b1fe",
+                        "sourceBytes": {
+                            "begin": 198,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    },
+                    {
+                        "contractName": "Ao",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getRewardsSum",
+                        "notpayable": true,
+                        "originalFile": "conf/src/Ao.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8332a2ff",
+                        "sourceBytes": {
+                            "begin": 3749,
+                            "size": 164
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external"
+                    }
+                ],
+                "name": "Ao",
+                "original_file": "conf/src/Ao.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 58,
+                    "size": 4307
+                },
+                "srcmap": "58:5817:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4781:265;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;772:326;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;314:26;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;255:25;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1685:898;;;:::i;:::-;;76:23;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;135:26;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;224:25;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;286:22;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;3261:727;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;5051:268;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;3998:736;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;2593:658;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;1108:567;;;:::i;:::-;;198:20;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;172;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;5603:84;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;5324:274;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;5692:86;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;5783:90;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;105:24;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;4781:265;4828:11;4856:9;4868:1;4856:13;;4851:189;4875:6;:13;;;;4871:1;:17;4851:189;;;4916:6;4923:1;4916:9;;;;;;;;:::i;:::-;;;;;;;;;;4909:16;;;;;:::i;:::-;;;5025:3;4958:66;4951:78;4890:3;;;;;;;4851:189;;;;4781:265;:::o;772:326::-;854:4;840:19;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;831:6;:28;;;;;;;;;;;;:::i;:::-;;893:4;879:19;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;869:7;:29;;;;;;;;;;;;:::i;:::-;;934:4;920:19;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;908:9;:31;;;;;;;;;;;;:::i;:::-;;963:9;958:134;982:4;978:1;:8;958:134;;;1019:3;1007:6;1014:1;1007:9;;;;;;;;:::i;:::-;;;;;;;;;:15;;;;1049:2;1036:7;1044:1;1036:10;;;;;;;;:::i;:::-;;;;;;;;;:15;;;;1080:1;1065:9;1075:1;1065:12;;;;;;;;:::i;:::-;;;;;;;;;:16;;;;988:3;;;;;;;958:134;;;;772:326;:::o;314:26::-;;;;:::o;255:25::-;;;;:::o;1685:898::-;1732:14;1749:7;:14;;;;1732:31;;1863:6;1796:66;1789:81;1926:18;2044:10;1977:66;1970:85;2065:19;2184:11;2117:66;2110:86;2257:10;;2244;;:23;2231:36;;2309:3;2295:11;;:17;;;;;:::i;:::-;;;2281:31;;2350:9;2345:182;2369:6;2365:1;:10;2345:182;;;2410:10;2396:7;2404:1;2396:10;;;;;;;;:::i;:::-;;;;;;;;;;:24;;;;;;;:::i;:::-;;;;;;;;2448:11;2434:7;2442:1;2434:10;;;;;;;;:::i;:::-;;;;;;;;;;:25;;;;;;;:::i;:::-;;;;;;;;2512:4;2501:7;;2488;2496:1;2488:10;;;;;;;;:::i;:::-;;;;;;;;;;:20;;;;:::i;:::-;2487:29;;;;:::i;:::-;2473:7;2481:1;2473:10;;;;;;;;:::i;:::-;;;;;;;;;;:43;;;;;;;:::i;:::-;;;;;;;;2377:3;;;;;;;2345:182;;;;2550:26;2569:6;2550:26;;;;;;:::i;:::-;;;;;;;;1722:861;;;1685:898::o;76:23::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;135:26::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;224:25::-;;;;:::o;286:22::-;;;;:::o;3261:727::-;3330:14;3347:6;:13;;;;3330:30;;3460:6;3393:66;3386:81;3477:14;3591:6;3524:66;3517:81;3625:10;3621:258;;;3788:1;3775:10;;3762;;:23;:27;3753:36;;3621:258;;;3856:10;;3843;;:23;3834:32;;3621:258;3906:9;3901:81;3925:6;3921:1;:10;3901:81;;;3965:6;3952;3959:1;3952:9;;;;;;;;:::i;:::-;;;;;;;;;;:19;;;;;;;:::i;:::-;;;;;;;;3933:3;;;;;;;3901:81;;;;3320:668;;3261:727;:::o;5051:268::-;5099:11;5127:9;5139:1;5127:13;;5122:191;5146:7;:14;;;;5142:1;:18;5122:191;;;5188:7;5196:1;5188:10;;;;;;;;:::i;:::-;;;;;;;;;;5181:17;;;;;:::i;:::-;;;5298:3;5231:66;5224:78;5162:3;;;;;;;5122:191;;;;5051:268;:::o;3998:736::-;4105:23;4228:15;4161:66;4154:90;4315:10;;4302;;4293:5;;4285;;:13;4284:28;:41;;;;;:::i;:::-;;;4266:59;;4355:9;4350:378;4374:4;4370:1;:8;4350:378;;;4404:9;4399:319;4423:4;4419:1;:8;4399:319;;;4452:13;4479:1;4472:4;4468:1;:8;;;;:::i;:::-;:12;;;;:::i;:::-;4452:28;;4580:5;4513:66;4506:80;4616:6;:13;;;;4608:5;:21;4604:100;;;4670:15;4653:6;4660:5;4653:13;;;;;;;;:::i;:::-;;;;;;;;;;:32;;;;;;;:::i;:::-;;;;;;;;4604:100;4434:284;4429:3;;;;;;;4399:319;;;;4380:3;;;;;;;4350:378;;;;4058:676;3998:736;;:::o;2593:658::-;2659:14;2676:9;:16;;;;2659:33;;2792:6;2725:66;2718:81;2855:18;2973:10;2906:66;2899:85;3067:1;3054:10;;:14;3036:13;3028:5;;3020;;:13;:29;3019:50;;;;;:::i;:::-;;;3006:63;;3099:9;3094:111;3118:6;3114:1;:10;3094:111;;;3190:4;3176:10;3161:9;3171:1;3161:12;;;;;;;;:::i;:::-;;;;;;;;;;:25;;;;:::i;:::-;3160:34;;;;:::i;:::-;3145:9;3155:1;3145:12;;;;;;;;:::i;:::-;;;;;;;;;:49;;;;3126:3;;;;;;;3094:111;;;;3220:24;3237:6;3220:24;;;;;;:::i;:::-;;;;;;;;2649:602;;2593:658;:::o;1108:567::-;1155:14;1172:6;:13;;;;1155:30;;1285:6;1218:66;1211:81;1365:14;1479:6;1412:66;1405:81;1526:5;;1518;;:13;1509:22;;1549:9;1544:81;1568:6;1564:1;:10;1544:81;;;1608:6;1595;1602:1;1595:9;;;;;;;;:::i;:::-;;;;;;;;;;:19;;;;;;;:::i;:::-;;;;;;;;1576:3;;;;;;;1544:81;;;;1647:21;1661:6;1647:21;;;;;;:::i;:::-;;;;;;;;1145:530;;1108:567::o;198:20::-;;;;:::o;172:::-;;;;:::o;5603:84::-;5653:7;5671:6;:13;;;;5664:20;;5603:84;:::o;5324:274::-;5374:11;5402:9;5414:1;5402:13;;5397:195;5421:9;:16;;;;5417:1;:20;5397:195;;;5465:9;5475:1;5465:12;;;;;;;;:::i;:::-;;;;;;;;;;5458:19;;;;;:::i;:::-;;;5577:3;5510:66;5503:78;5439:3;;;;;;;5397:195;;;;5324:274;:::o;5692:86::-;5743:7;5761;:14;;;;5754:21;;5692:86;:::o;5783:90::-;5836:7;5854:9;:16;;;;5847:23;;5783:90;:::o;105:24::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;7:77:1:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o;523:117::-;632:1;629;622:12;769:122;842:24;860:5;842:24;:::i;:::-;835:5;832:35;822:63;;881:1;878;871:12;822:63;769:122;:::o;897:139::-;943:5;981:6;968:20;959:29;;997:33;1024:5;997:33;:::i;:::-;897:139;;;;:::o;1042:329::-;1101:6;1150:2;1138:9;1129:7;1125:23;1121:32;1118:119;;;1156:79;;:::i;:::-;1118:119;1276:1;1301:53;1346:7;1337:6;1326:9;1322:22;1301:53;:::i;:::-;1291:63;;1247:117;1042:329;;;;:::o;1377:90::-;1411:7;1454:5;1447:13;1440:21;1429:32;;1377:90;;;:::o;1473:116::-;1543:21;1558:5;1543:21;:::i;:::-;1536:5;1533:32;1523:60;;1579:1;1576;1569:12;1523:60;1473:116;:::o;1595:133::-;1638:5;1676:6;1663:20;1654:29;;1692:30;1716:5;1692:30;:::i;:::-;1595:133;;;;:::o;1734:323::-;1790:6;1839:2;1827:9;1818:7;1814:23;1810:32;1807:119;;;1845:79;;:::i;:::-;1807:119;1965:1;1990:50;2032:7;2023:6;2012:9;2008:22;1990:50;:::i;:::-;1980:60;;1936:114;1734:323;;;;:::o;2063:474::-;2131:6;2139;2188:2;2176:9;2167:7;2163:23;2159:32;2156:119;;;2194:79;;:::i;:::-;2156:119;2314:1;2339:53;2384:7;2375:6;2364:9;2360:22;2339:53;:::i;:::-;2329:63;;2285:117;2441:2;2467:53;2512:7;2503:6;2492:9;2488:22;2467:53;:::i;:::-;2457:63;;2412:118;2063:474;;;;;:::o;2543:180::-;2591:77;2588:1;2581:88;2688:4;2685:1;2678:15;2712:4;2709:1;2702:15;2729:180;2777:77;2774:1;2767:88;2874:4;2871:1;2864:15;2898:4;2895:1;2888:15;2915:191;2955:3;2974:20;2992:1;2974:20;:::i;:::-;2969:25;;3008:20;3026:1;3008:20;:::i;:::-;3003:25;;3051:1;3048;3044:9;3037:16;;3072:3;3069:1;3066:10;3063:36;;;3079:18;;:::i;:::-;3063:36;2915:191;;;;:::o;3112:180::-;3160:77;3157:1;3150:88;3257:4;3254:1;3247:15;3281:4;3278:1;3271:15;3298:180;3346:77;3343:1;3336:88;3443:4;3440:1;3433:15;3467:4;3464:1;3457:15;3484:410;3524:7;3547:20;3565:1;3547:20;:::i;:::-;3542:25;;3581:20;3599:1;3581:20;:::i;:::-;3576:25;;3636:1;3633;3629:9;3658:30;3676:11;3658:30;:::i;:::-;3647:41;;3837:1;3828:7;3824:15;3821:1;3818:22;3798:1;3791:9;3771:83;3748:139;;3867:18;;:::i;:::-;3748:139;3532:362;3484:410;;;;:::o;3900:185::-;3940:1;3957:20;3975:1;3957:20;:::i;:::-;3952:25;;3991:20;4009:1;3991:20;:::i;:::-;3986:25;;4030:1;4020:35;;4035:18;;:::i;:::-;4020:35;4077:1;4074;4070:9;4065:14;;3900:185;;;;:::o;4091:194::-;4131:4;4151:20;4169:1;4151:20;:::i;:::-;4146:25;;4185:20;4203:1;4185:20;:::i;:::-;4180:25;;4229:1;4226;4222:9;4214:17;;4253:1;4247:4;4244:11;4241:37;;;4258:18;;:::i;:::-;4241:37;4091:194;;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 4,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/Ao.sol:Ao",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "dynamicArrayBaseType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Array"
+                            },
+                            "label": "tokens",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_array(t_uint256)dyn_storage"
+                        },
+                        {
+                            "astId": 7,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/Ao.sol:Ao",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "dynamicArrayBaseType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Array"
+                            },
+                            "label": "rewards",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_array(t_uint256)dyn_storage"
+                        },
+                        {
+                            "astId": 10,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/Ao.sol:Ao",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "dynamicArrayBaseType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Array"
+                            },
+                            "label": "penalties",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_array(t_uint256)dyn_storage"
+                        },
+                        {
+                            "astId": 12,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/Ao.sol:Ao",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "limit",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 14,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/Ao.sol:Ao",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "price",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 16,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/Ao.sol:Ao",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "baseReward",
+                            "offset": 0,
+                            "slot": "5",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 18,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/Ao.sol:Ao",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "multiplier",
+                            "offset": 0,
+                            "slot": "6",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 20,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/Ao.sol:Ao",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "taxRate",
+                            "offset": 0,
+                            "slot": "7",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 22,
+                            "contract": "/home/manoel/projeto/GasOptimizationCatalog/certora/refactoring-loops-with-repeated-computations/conf/.certora_internal/25_11_18_11_50_16_443/.certora_sources/conf/src/Ao.sol:Ao",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "totalSupply",
+                            "offset": 0,
+                            "slot": "8",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_array(t_uint256)dyn_storage": {
+                            "base": "t_uint256",
+                            "encoding": "dynamic_array",
+                            "label": "uint256[]",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.1",
+        "primary_contract": "Ao",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000003",
+        "prototypeFor": [],
+        "sdc_name": "Ao.sol_1",
+        "sourceDir": ".post_autofinders.1",
+        "srclist": {
+            "0": "conf/src/Ao.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

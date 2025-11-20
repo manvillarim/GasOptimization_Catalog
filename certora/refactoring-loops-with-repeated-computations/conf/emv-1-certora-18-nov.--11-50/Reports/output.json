@@ -1,0 +1,59 @@
+{
+	"assertMessages": {},
+	"rules": {
+		"gasOptimizedCorrectnessOfApplyPenalties": {
+			"FAIL": [
+				"A.applyPenalties(uint256)-Ao.applyPenalties(uint256)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfCalculateRewards": {
+			"FAIL": [
+				"A.calculateRewards()-Ao.calculateRewards()"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfDistributeTokens": {
+			"FAIL": [
+				"A.distributeTokens()-Ao.distributeTokens()"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfInitializeArrays": {
+			"FAIL": [],
+			"SANITY_FAIL": [],
+			"SUCCESS": [
+				"A.initializeArrays(uint256)-Ao.initializeArrays(uint256)"
+			],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfProcessMatrix": {
+			"FAIL": [
+				"A.processMatrix(uint256,uint256)-Ao.processMatrix(uint256,uint256)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		},
+		"gasOptimizedCorrectnessOfUpdateTokensConditional": {
+			"FAIL": [
+				"A.updateTokensConditional(bool)-Ao.updateTokensConditional(bool)"
+			],
+			"SANITY_FAIL": [],
+			"SUCCESS": [],
+			"TIMEOUT": [],
+			"UNKNOWN": []
+		}
+	}
+}
