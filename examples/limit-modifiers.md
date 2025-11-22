@@ -1,10 +1,10 @@
-# 21. Limit number of modifiers
+# 20. Limit Number of Modifiers
 
-This transformation reduces the use of modifiers by consolidating their logic into functions or combining multiple modifiers into single ones. Each modifier adds computational overhead and increases the function call stack depth, so minimizing their use can lead to gas savings.
+This transformation reduces the number of modifiers by consolidating their logic into fewer modifiers or helper functions. Each modifier adds overhead to function calls by expanding the bytecode and increasing the call depth. Combining related checks or using internal validation functions can reduce this overhead while maintaining code security.
 
 ## Example
 
-### Multiple Modifiers
+### Original (Multiple Modifiers)
 ```solidity
 contract MultipleModifiers {
     address public owner;
@@ -38,12 +38,12 @@ contract MultipleModifiers {
         onlyAuthorized 
         validAddress(target) 
     {
-        // Function logic here
+        // Function logic
     }
 }
 ```
 
-### Optimized Limited Modifiers
+### Optimised (Consolidated Modifiers)
 ```solidity
 contract LimitedModifiers {
     address public owner;
@@ -56,14 +56,18 @@ contract LimitedModifiers {
         _;
     }
     
-    function validateAccess(address target) private view {
+    function validateAccess(address target) internal view {
         require(authorized[msg.sender], "Not authorized");
         require(target != address(0), "Invalid address");
     }
     
     function criticalFunction(address target) public onlyOwnerNotPaused {
         validateAccess(target);
-        // Function logic here
+        // Function logic
     }
 }
 ```
+
+## Gas Savings
+
+Consolidating modifiers reduces bytecode size and function call overhead by minimizing the depth of modifier expansion, while internal validation functions provide similar security guarantees with less bytecode duplication.

@@ -1,44 +1,47 @@
-# 15. Use immutable variables for constructor-set values
+# 14. Use Immutable Variables for Constructor-Set Values
 
-This transformation uses immutable variables for values that are set once in the constructor and never changed afterward. Immutable variables are stored in the contract's bytecode rather than storage, making them much cheaper to access than regular state variables.
+This transformation uses `immutable` variables for values that are set once in the constructor and never changed afterward. Immutable variables are stored directly in the contract's bytecode rather than in storage slots, eliminating expensive storage read operations (SLOAD) and making access significantly cheaper.
 
 ## Example
 
-### Regular State Variables Set in Constructor
+### Original (Regular State Variables)
 ```solidity
 contract RegularStateVars {
     address public owner;
     uint public creationTime;
-    string public contractName;
+    uint public maxSupply;
     
-    constructor(string memory _name) {
+    constructor(uint _maxSupply) {
         owner = msg.sender;
         creationTime = block.timestamp;
-        contractName = _name;
+        maxSupply = _maxSupply;
     }
     
-    function getContractInfo() public view returns(address, uint, string memory) {
-        return (owner, creationTime, contractName); // 3 storage reads
+    function getInfo() public view returns (address, uint, uint) {
+        return (owner, creationTime, maxSupply);  // 3 storage reads (SLOAD)
     }
 }
 ```
 
-### Optimized Immutable Variables
-
+### Optimised (Immutable Variables)
 ```solidity
 contract ImmutableStateVars {
     address public immutable OWNER;
     uint public immutable CREATION_TIME;
-    string public immutable CONTRACT_NAME;
+    uint public immutable MAX_SUPPLY;
     
-    constructor(string memory _name) {
+    constructor(uint _maxSupply) {
         OWNER = msg.sender;
         CREATION_TIME = block.timestamp;
-        CONTRACT_NAME = _name;
+        MAX_SUPPLY = _maxSupply;
     }
     
-    function getContractInfo() public view returns(address, uint, string memory) {
-        return (OWNER, CREATION_TIME, CONTRACT_NAME); // No storage reads
+    function getInfo() public view returns (address, uint, uint) {
+        return (OWNER, CREATION_TIME, MAX_SUPPLY);  // Direct bytecode access
     }
 }
 ```
+
+## Gas Savings
+
+Using `immutable` eliminates storage slot allocation and replaces expensive storage read operations with direct bytecode access, significantly reducing runtime gas costs for variables set once in the constructor.

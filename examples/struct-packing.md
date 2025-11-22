@@ -1,25 +1,37 @@
 # 5. Struct Packing
 
-This transformation focuses on how variables are laid out in storage. In Solidity, each storage slot is 32 bytes, and variables within a `struct` can be packed together if their combined size is ≤ 32 bytes. By arranging smaller-sized variables (like `uint8`, `uint16`, or `bool`) next to each other in an optimal order inside structs, you reduce the number of storage slots used. Since storage access is expensive in terms of gas, this optimization can yield significant savings.
+This transformation reorders struct member declarations to pack multiple smaller variables into single 256-bit storage slots. The EVM allocates storage in 32-byte slots, and struct members smaller than 256 bits can share a slot if declared consecutively. Proper ordering within structs minimizes storage slot usage, reducing gas costs for struct creation and access.
 
 ## Example
 
-### Unpacked Struct
-
+### Original (Unpacked Struct)
 ```solidity
-struct Data {
-    uint256 a;
-    bool b;
-    uint8 c;
+contract UnpackedStruct {
+    struct Data {
+        uint256 a;  // Slot 0 (256 bits)
+        bool b;     // Slot 1 (8 bits used, 248 bits wasted)
+        uint8 c;    // Slot 2 (8 bits used, 248 bits wasted)
+    }
+    // Total: 3 storage slots per Data instance
+    
+    Data public data;
 }
 ```
 
-### Packed Struct
-
+### Optimised (Packed Struct)
 ```solidity
-struct Data {
-    uint8 c;
-    bool b;
-    uint256 a;
+contract PackedStruct {
+    struct Data {
+        uint8 c;    // Slot 0 (8 bits)
+        bool b;     // Slot 0 (8 bits) - shares slot with 'c'
+        uint256 a;  // Slot 1 (256 bits)
+    }
+    // Total: 2 storage slots per Data instance
+    
+    Data public data;
 }
 ```
+
+## Gas Savings
+
+Packing struct members reduces the number of storage slots per struct instance, lowering gas costs for struct initialization and for functions that access multiple packed members (single SLOAD instead of multiple).

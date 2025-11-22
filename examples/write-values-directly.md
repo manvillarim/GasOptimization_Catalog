@@ -1,41 +1,35 @@
-# 18. Write values directly instead of calculating
+# 17. Write Values Directly Instead of Calculating
 
-This transformation replaces runtime calculations with pre-computed constant values. Instead of performing calculations during contract execution, values are computed at compile time and written directly into the code, saving gas on arithmetic operations.
+This transformation replaces compile-time calculable expressions with their pre-computed literal values. While Solidity's optimizer can handle many constant expressions, writing values directly eliminates any potential overhead and makes the code's intent clearer. This is particularly effective for complex expressions or when defining constants that will be used throughout the contract.
 
 ## Example
 
-### Runtime Calculations
+### Original (Runtime/Compile-time Calculations)
 ```solidity
 contract RuntimeCalc {
-    uint public constant SECONDS_IN_DAY = 24 * 60 * 60; // Calculated at runtime
-    uint public constant WEI_IN_ETHER = 10 ** 18;       // Calculated at runtime
+    uint public constant SECONDS_IN_DAY = 24 * 60 * 60;
+    uint public constant WEI_IN_ETHER = 10 ** 18;
+    uint public constant BASIS_POINTS = 100 * 100;
     
-    function getTimeConstants() public pure returns(uint, uint) {
-        uint hoursInWeek = 7 * 24;           // Runtime calculation
-        uint minutesInHour = 60;             // Could be optimized
-        return (hoursInWeek, minutesInHour);
-    }
-    
-    function calculateFee(uint amount) public pure returns(uint) {
-        return amount * 5 / 100; // Runtime division
+    function getWeekHours() public pure returns (uint) {
+        return 7 * 24;  // Expression evaluated
     }
 }
 ```
-### Optimized Pre-computed Values
 
+### Optimised (Pre-computed Values)
 ```solidity
 contract PrecomputedValues {
-    uint public constant SECONDS_IN_DAY = 86400;  // Pre-computed: 24 * 60 * 60
-    uint public constant WEI_IN_ETHER = 1000000000000000000; // Pre-computed: 10^18
+    uint public constant SECONDS_IN_DAY = 86400;      // Pre-computed
+    uint public constant WEI_IN_ETHER = 1000000000000000000;  // Pre-computed
+    uint public constant BASIS_POINTS = 10000;        // Pre-computed
     
-    function getTimeConstants() public pure returns(uint, uint) {
-        uint hoursInWeek = 168;  // Pre-computed: 7 * 24
-        uint minutesInHour = 60; // Direct value
-        return (hoursInWeek, minutesInHour);
-    }
-    
-    function calculateFee(uint amount) public pure returns(uint) {
-        return amount * 5 / 100; // Keep as is - simple operation
+    function getWeekHours() public pure returns (uint) {
+        return 168;  // Direct value
     }
 }
 ```
+
+## Gas Savings
+
+Writing pre-computed values directly eliminates any potential compilation or runtime overhead from evaluating expressions, ensuring the most efficient bytecode regardless of optimizer settings.

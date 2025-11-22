@@ -1,37 +1,33 @@
-# 25. Cache storage variables in loops
+# 23. Cache Storage Variables
 
-This transformation caches storage variables in local memory variables before loop execution. Since storage operations (SSTORE/SLOAD) are expensive, especially when performed repeatedly in loops, caching them in memory significantly reduces gas consumption.
+This transformation caches storage variables in local memory variables before use in loops or multiple operations. Storage operations (SLOAD/SSTORE) are significantly more expensive than memory operations (MLOAD/MSTORE), so reducing the number of storage accesses by caching values in memory variables reduces gas consumption.
 
 ## Example
 
-### Storage Access in Loop
+### Original (Repeated Storage Access)
 ```solidity
-contract StorageInLoop {
+contract UncachedStorage {
     uint public total;
     uint public count;
     uint[] public numbers;
     
     function processNumbers() public {
-        for(uint i = 0; i < numbers.length; i++) {
-            total += numbers[i];  // Storage write in every iteration
-            count++;             // Storage write in every iteration
-            
-            if(total > 1000) {
-                total = total / 2; // Additional storage operations
-            }
+        for (uint i = 0; i < numbers.length; i++) {
+            total += numbers[i];  // Storage read and write each iteration
+            count++;              // Storage read and write each iteration
         }
     }
     
-    function calculateAverage() public {
-        total = 0; // Storage write
-        for(uint i = 0; i < numbers.length; i++) {
-            total += numbers[i]; // Storage read and write each iteration
+    function updateTotal() public {
+        total = 0;                // Storage write
+        for (uint i = 0; i < numbers.length; i++) {
+            total += numbers[i];  // Storage read and write each iteration
         }
     }
 }
 ```
 
-### Optimized Cached Storage Variables
+### Optimised (Cached Storage Variables)
 ```solidity
 contract CachedStorage {
     uint public total;
@@ -43,13 +39,9 @@ contract CachedStorage {
         uint tempTotal = total;
         uint tempCount = count;
         
-        for(uint i = 0; i < numbers.length; i++) {
-            tempTotal += numbers[i]; // Memory operation
-            tempCount++;            // Memory operation
-            
-            if(tempTotal > 1000) {
-                tempTotal = tempTotal / 2; // Memory operation
-            }
+        for (uint i = 0; i < numbers.length; i++) {
+            tempTotal += numbers[i];  // Memory operations only
+            tempCount++;
         }
         
         // Write back to storage once
@@ -57,14 +49,18 @@ contract CachedStorage {
         count = tempCount;
     }
     
-    function calculateAverage() public {
-        uint tempTotal = 0; // Local variable
+    function updateTotal() public {
+        uint tempTotal = 0;  // Memory variable
         
-        for(uint i = 0; i < numbers.length; i++) {
-            tempTotal += numbers[i]; // Only memory operations in loop
+        for (uint i = 0; i < numbers.length; i++) {
+            tempTotal += numbers[i];  // Memory operations only
         }
         
-        total = tempTotal; // Single storage write
+        total = tempTotal;  // Single storage write
     }
 }
 ```
+
+## Gas Savings
+
+Caching storage variables reduces gas consumption by minimizing expensive storage operations and performing cheaper memory operations instead, writing to storage only when necessary.

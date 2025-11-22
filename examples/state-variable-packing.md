@@ -1,26 +1,29 @@
-# 7. State Variable Packing (SVP)
+# 6. State Variable Packing
 
-State Variable Packing (SVP) is a code pattern that aims to optimize the storage of state variables in smart contracts. Similar to Struct Packing (SP), SVP involves rearranging state variables to minimize the number of storage slots used in the Ethereum Virtual Machine (EVM). Since each storage slot on the EVM is 256 bits, grouping smaller data types efficiently can significantly reduce gas consumption by avoiding unused padding in storage.
+This transformation reorders state variable declarations to pack multiple smaller variables into single 256-bit storage slots. The EVM allocates storage in 32-byte (256-bit) slots, and variables smaller than 256 bits can share a slot if declared consecutively. Proper ordering minimizes the number of storage slots used, reducing both deployment and runtime gas costs.
 
 ## Example
 
-### Unpacked State Variables
-
+### Original (Unpacked State Variables)
 ```solidity
-contract Example {
-    uint128 a;
-    uint256 b;
-    uint128 c;
+contract UnpackedVariables {
+    uint128 a;  // Slot 0 (128 bits used, 128 bits wasted)
+    uint256 b;  // Slot 1 (256 bits used)
+    uint128 c;  // Slot 2 (128 bits used, 128 bits wasted)
+    // Total: 3 storage slots
 }
 ```
 
-### Packed State Variables
-
+### Optimised (Packed State Variables)
 ```solidity
-contract Example {
-    uint128 a;
-    uint128 c;
-    uint256 b;
+contract PackedVariables {
+    uint128 a;  // Slot 0 (128 bits)
+    uint128 c;  // Slot 0 (128 bits) - shares slot with 'a'
+    uint256 b;  // Slot 1 (256 bits)
+    // Total: 2 storage slots
 }
-
 ```
+
+## Gas Savings
+
+Packing state variables reduces the number of storage slots used, lowering gas costs for deployment (fewer SSTORE operations during construction) and for functions that access multiple packed variables simultaneously (single SLOAD instead of multiple).

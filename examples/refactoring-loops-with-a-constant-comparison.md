@@ -1,24 +1,41 @@
-# 4. Refactoring loops with a constant comparison
+# 3. Refactoring Loops with Constant Comparison
 
-This transformation targets comparison operations within loops that always evaluate to a constant value. For example, if a condition inside the loop is always true, it introduces unnecessary overhead. The optimization consists of removing such constant conditions, simplifying the loop and reducing gas consumption.
+This transformation removes redundant conditional checks within loops that always evaluate to the same constant value. When a condition is always true (or always false) due to the values involved, the check serves no purpose and only consumes gas. Eliminating these constant comparisons simplifies the loop and reduces gas consumption.
 
 ## Example
 
-### Constant Comparision
+### Original (Constant Comparison)
 ```solidity
-uint x = 1;
-for (uint i=0;i<length;i++) {
-    if(x + i > 0) {
-        total += tokens[i];
+contract ConstantComparison {
+    uint[] public tokens;
+    
+    function processTokens() public view returns (uint total) {
+        uint x = 1;
+        for (uint i = 0; i < tokens.length; i++) {
+            // Condition always true: x=1, i≥0, so x+i≥1>0
+            if (x + i > 0) {
+                total += tokens[i];
+            }
+        }
     }
 }
 ```
 
-### Optimized Loop
-
+### Optimised (Removed Constant Check)
 ```solidity
-uint x = 1;
-for (uint i=0;i<length;i++) {
-    total += tokens[i];
+contract OptimizedComparison {
+    uint[] public tokens;
+    
+    function processTokens() public view returns (uint total) {
+        uint x = 1;
+        for (uint i = 0; i < tokens.length; i++) {
+            // Redundant condition removed
+            total += tokens[i];
+        }
+    }
 }
 ```
+
+## Gas Savings
+
+Removing constant comparisons that always evaluate to the same value eliminates unnecessary conditional check operations in every loop iteration, reducing gas consumption without changing functionality.

@@ -1,78 +1,43 @@
-# 29. Use mappings instead of arrays for data lists
+# 27. Use Mappings Instead of Arrays for Data Lists
 
-This transformation replaces arrays with mappings when iteration is not required. Mappings are more gas-efficient for storage and retrieval operations, especially when dealing with large datasets or when you need to access elements by key rather than iterating through all elements.
+This transformation replaces dynamic arrays with mappings combined with a manual size counter. Mappings provide more efficient storage and retrieval operations compared to arrays, particularly for large datasets. For Solidity 0.8.0+, the `unchecked` block around the size increment is necessary to maintain behavioural equivalence with array `push()` operations regarding overflow behaviour.
 
 ## Example
 
-### Using Arrays (Less Efficient)
+### Original (Dynamic Array)
 ```solidity
 contract ArrayContract {
-    uint[] public numbers;
+    uint256[] public numbers;
     
-    function addNumber(uint _number) public {
-        numbers.push(_number);
+    function addNumber(uint256 number) public {
+        numbers.push(number);
     }
     
-    function getNumber(uint _index) public view returns(uint) {
-        require(_index < numbers.length, "Index out of bounds");
-        return numbers[_index];
-    }
-    
-    function updateNumber(uint _index, uint _newValue) public {
-        require(_index < numbers.length, "Index out of bounds");
-        numbers[_index] = _newValue;
-    }
-    
-    function removeNumber(uint _index) public {
-        require(_index < numbers.length, "Index out of bounds");
-        for(uint i = _index; i < numbers.length - 1; i++) {
-            numbers[i] = numbers[i + 1];
-        }
-        numbers.pop();
-    }
-    
-    function getTotalSum() public view returns(uint sum) {
-        for(uint i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
-        }
+    function getNumber(uint256 index) public view returns (uint256) {
+        require(index < size, "Index out of bounds");
+        return numbers[index];
     }
 }
 ```
 
-### Using Mappings (More Efficient)
+### Optimised (Mapping with Manual Size Tracking)
 ```solidity
 contract MappingContract {
-    mapping(uint => uint) public numbers;
-    uint public size;
+    mapping(uint256 => uint256) public numbers;
+    uint256 public size;
     
-    function addNumber(uint _number) public {
-        numbers[size] = _number;
-        size++;
+    function addNumber(uint256 number) public {
+        numbers[size] = number;
+        unchecked { size++; }  // Preserves overflow behaviour of push()
     }
     
-    function getNumber(uint _index) public view returns(uint) {
-        require(_index < size, "Index out of bounds");
-        return numbers[_index];
-    }
-    
-    function updateNumber(uint _index, uint _newValue) public {
-        require(_index < size, "Index out of bounds");
-        numbers[_index] = _newValue;
-    }
-    
-    function removeNumber(uint _index) public {
-        require(_index < size, "Index out of bounds");
-        for(uint i = _index; i < size - 1; i++) {
-            numbers[i] = numbers[i + 1];
-        }
-        delete numbers[size - 1];
-        size--;
-    }
-    
-    function getTotalSum() public view returns(uint sum) {
-        for(uint i = 0; i < size; i++) {
-            sum += numbers[i];
-        }
+    function getNumber(uint256 index) public view returns (uint256) {
+        require(index < size, "Index out of bounds");
+        return numbers[index];
     }
 }
 ```
+
+## Gas Savings
+
+Mappings eliminate the overhead of dynamic array operations while providing efficient key-based access. The `unchecked` block around `size++` is required in Solidity 0.8.0+ to maintain behavioural equivalence with array `push()`, which does not revert on overflow.

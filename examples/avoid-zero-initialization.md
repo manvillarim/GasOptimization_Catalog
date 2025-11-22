@@ -1,35 +1,39 @@
-# 10. Avoid explicit zero initialization
+# 9. Avoid Explicit Zero Initialization
 
-This transformation removes unnecessary explicit initialization of variables with zero values. In Solidity, variables are automatically initialized with their default zero values, making explicit initialization redundant and wasteful in terms of gas consumption.
+This transformation removes unnecessary explicit initialization of variables with zero values. In Solidity, variables are automatically initialized to their default values (0 for integers, false for booleans, address(0) for addresses), making explicit initialization redundant and wasteful in terms of gas.
 
 ## Example
 
-### Explicit Zero Initialization
+### Original (Explicit Zero Initialization)
 ```solidity
 contract ExplicitInit {
     uint public counter = 0;
     bool public flag = false;
     address public owner = address(0);
-    
-    function resetValues() public {
-        uint temp = 0;
-        bool status = false;
-        // Process with temp and status
+
+    function processArray(uint[] memory data) public pure returns (uint sum) {
+        for (uint i = 0; i < data.length; i++) {
+            sum += data[i];
+        }
     }
 }
 ```
-### Optimized Default Initialization
 
+### Optimised (Default Initialization)
 ```solidity
 contract OptimizedInit {
-    uint public counter; // Automatically initialized to 0
-    bool public flag; // Automatically initialized to false
-    address public owner; // Automatically initialized to address(0)
-    
-    function resetValues() public {
-        uint temp; // Automatically initialized to 0
-        bool status; // Automatically initialized to false
-        // Process with temp and status
+    uint public counter;        // Automatically 0
+    bool public flag;           // Automatically false
+    address public owner;       // Automatically address(0)
+
+    function processArray(uint[] memory data) public pure returns (uint sum) {
+        for (uint i; i < data.length; i++) {
+            sum += data[i];
+        }
     }
 }
 ```
+
+## Gas Savings
+
+Removing explicit zero initialization saves gas during deployment and variable declaration, as the EVM does not need to execute redundant assignment operations.

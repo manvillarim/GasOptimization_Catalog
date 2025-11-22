@@ -1,75 +1,101 @@
-# 27. Cache array length in loops
+# 25. Cache Array Length in Loops
 
-This transformation caches the array length in a local variable before loop execution. Accessing the length property of arrays incurs gas costs, and when done repeatedly in loop conditions, it can significantly increase gas consumption.
+This transformation caches the array length in a local variable before loop execution. Reading the `length` property of storage arrays costs gas (SLOAD operation), and when accessed repeatedly in loop conditions, it significantly increases gas consumption. Caching the length in memory reduces this to a single SLOAD plus cheaper MLOAD operations.
 
 ## Example
 
-### Array Length Access in Loop
+### Original (Uncached Array Length)
 ```solidity
-contract ArrayLengthInLoop {
+contract UncachedLength {
     uint[] public numbers;
-    address[] public users;
     
-    function processNumbers() public {
-        // Array length accessed in every iteration
-        for(uint i = 0; i < numbers.length; i++) {
+    function processArray() public {
+        // Array length read from storage on every iteration
+        for (uint i = 0; i < numbers.length; i++) {
             numbers[i] = numbers[i] * 2;
         }
     }
     
-    function findUser(address target) public view returns(bool found) {
-        // Array length accessed in every iteration check
-        for(uint i = 0; i < users.length; i++) {
-            if(users[i] == target) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    function processMultipleArrays() public {
-        // Multiple arrays with length access
-        for(uint i = 0; i < numbers.length && i < users.length; i++) {
-            // Process both arrays
+    function sumArray() public view returns (uint sum) {
+        // Length accessed repeatedly in condition check
+        for (uint i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
         }
     }
 }
 ```
 
-### Optimized Cached Array Length
+### Optimised (Cached Array Length)
 ```solidity
-contract CachedArrayLength {
+contract CachedLength {
     uint[] public numbers;
-    address[] public users;
     
-    function processNumbers() public {
-        // Cache array length once
-        uint length = numbers.length;
-        for(uint i = 0; i < length; i++) {
+    function processArray() public {
+        uint length = numbers.length; // Cache length once
+        for (uint i = 0; i < length; i++) {
             numbers[i] = numbers[i] * 2;
         }
     }
     
-    function findUser(address target) public view returns(bool found) {
-        // Cache array length once
-        uint length = users.length;
-        for(uint i = 0; i < length; i++) {
-            if(users[i] == target) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    function processMultipleArrays() public {
-        // Cache both array lengths
-        uint numbersLength = numbers.length;
-        uint usersLength = users.length;
-        uint minLength = numbersLength < usersLength ? numbersLength : usersLength;
-        
-        for(uint i = 0; i < minLength; i++) {
-            // Process both arrays
+    function sumArray() public view returns (uint sum) {
+        uint length = numbers.length; // Single SLOAD
+        for (uint i = 0; i < length; i++) {
+            sum += numbers[i];
         }
     }
 }
 ```
+
+## Gas Savings
+
+Caching array length reduces gas consumption by replacing repeated storage read operations with cheaper memory read operations.# 25. Cache Array Length in Loops
+
+This transformation caches the array length in a local variable before loop execution. Reading the `length` property of storage arrays costs gas (SLOAD operation), and when accessed repeatedly in loop conditions, it significantly increases gas consumption. Caching the length in memory reduces this to a single SLOAD plus cheaper MLOAD operations.
+
+## Example
+
+### Original (Uncached Array Length)
+```solidity
+contract UncachedLength {
+    uint[] public numbers;
+    
+    function processArray() public {
+        // Array length read from storage on every iteration
+        for (uint i = 0; i < numbers.length; i++) {
+            numbers[i] = numbers[i] * 2;
+        }
+    }
+    
+    function sumArray() public view returns (uint sum) {
+        // Length accessed repeatedly in condition check
+        for (uint i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+    }
+}
+```
+
+### Optimised (Cached Array Length)
+```solidity
+contract CachedLength {
+    uint[] public numbers;
+    
+    function processArray() public {
+        uint length = numbers.length; // Cache length once
+        for (uint i = 0; i < length; i++) {
+            numbers[i] = numbers[i] * 2;
+        }
+    }
+    
+    function sumArray() public view returns (uint sum) {
+        uint length = numbers.length; // Single SLOAD
+        for (uint i = 0; i < length; i++) {
+            sum += numbers[i];
+        }
+    }
+}
+```
+
+## Gas Savings
+
+Caching array length reduces gas consumption by replacing repeated storage read operations with cheaper memory read operations.

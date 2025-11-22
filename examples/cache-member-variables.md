@@ -1,68 +1,63 @@
-# 26. Cache array member variables
+# 24. Cache Array Member Variables
 
-This transformation caches frequently accessed array members in local variables within loops. When accessing the same array element multiple times, storing it in a local variable reduces the number of array access operations and associated gas costs.
+This transformation caches frequently accessed array elements in local variables within loops. When accessing the same array element multiple times, storing it in a local variable reduces the number of expensive array indexing operations, as each array access requires computing the storage slot location.
 
 ## Example
 
-### Repeated Array Member Access
-
+### Original (Repeated Array Access)
 ```solidity
 contract RepeatedArrayAccess {
     struct User {
         string name;
         uint balance;
         bool active;
-        uint[] transactions;
     }
     
     User[] public users;
     
     function processUsers() public {
-        for(uint i = 0; i < users.length; i++) {
-            // Multiple accesses to same array member
-            if(users[i].active && users[i].balance > 100) {
+        for (uint i = 0; i < users.length; i++) {
+            // Multiple accesses to users[i] - repeated offset calculations
+            if (users[i].active && users[i].balance > 100) {
                 users[i].balance = users[i].balance - 10;
                 
-                // More operations on same member
-                if(users[i].balance < 50) {
+                if (users[i].balance < 50) {
                     users[i].active = false;
                 }
-                
-                users[i].transactions.push(block.timestamp);
             }
         }
     }
 }
 ```
-### Optimized Cached Array Members
 
+### Optimised (Cached Array Members)
 ```solidity
 contract CachedArrayMembers {
     struct User {
         string name;
         uint balance;
         bool active;
-        uint[] transactions;
     }
     
     User[] public users;
     
     function processUsers() public {
-        for(uint i = 0; i < users.length; i++) {
-            // Cache array member in local variable
+        for (uint i = 0; i < users.length; i++) {
+            // Cache array element reference once
             User storage user = users[i];
             
-            if(user.active && user.balance > 100) {
+            if (user.active && user.balance > 100) {
                 user.balance = user.balance - 10;
                 
-                // Use cached reference
-                if(user.balance < 50) {
+                if (user.balance < 50) {
                     user.active = false;
                 }
-                
-                user.transactions.push(block.timestamp);
             }
         }
     }
 }
 ```
+
+## Gas Savings
+
+Caching array elements reduces gas consumption by computing the storage slot offset once instead of on every access to the same array element.

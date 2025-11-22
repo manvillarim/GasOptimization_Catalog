@@ -1,33 +1,21 @@
-# 22. Avoid nested loops
+# 21. Avoid Nested Loops
 
-This transformation eliminates nested loops by pre-computing complex operations off-chain or restructuring algorithms. Nested loops create exponential gas costs and should be avoided in smart contracts. Instead, computations should be done in external scripts and results passed as parameters.
+This transformation eliminates nested loops by restructuring algorithms or pre-computing results off-chain. Nested loops create quadratic time complexity, leading to prohibitively high gas costs.
 
 ## Example
 
-### Nested Loops Pattern
+### Original (with Nested Loops)
 ```solidity
 contract NestedLoops {
-    uint[] public arrayA;
-    uint[] public arrayB;
-    uint public result;
+    uint[] public items;
+    uint[] public prices;
     
-    function computeMatrix() public {
-        // Nested loops - very expensive!
-        uint sum = 0;
-        for(uint i = 0; i < arrayA.length; i++) {
-            for(uint j = 0; j < arrayB.length; j++) {
-                sum += arrayA[i] * arrayB[j];
-            }
-        }
-        result = sum;
-    }
-    
-    function findPairs() public view returns(uint count) {
-        // Another nested loop example
-        for(uint i = 0; i < arrayA.length; i++) {
-            for(uint j = 0; j < arrayB.length; j++) {
-                if(arrayA[i] == arrayB[j]) {
-                    count++;
+    // Nested loop - O(n²) complexity
+    function calculateTotalCost() public view returns (uint total) {
+        for (uint i = 0; i < items.length; i++) {
+            for (uint j = 0; j < prices.length; j++) {
+                if (items[i] == j) {
+                    total += prices[j];
                 }
             }
         }
@@ -35,34 +23,21 @@ contract NestedLoops {
 }
 ```
 
-### Optimized No Nested Loops
+### Optimised (without Nested Loops)
 ```solidity
 contract NoNestedLoops {
-    uint[] public arrayA;
-    uint[] public arrayB;
-    uint public result;
+    uint[] public items;
+    mapping(uint => uint) public prices;
     
-    // Pre-compute off-chain and pass result
-    function setPrecomputedResult(uint _result) public {
-        result = _result;
-    }
-    
-    // Use mapping for efficient lookups instead of nested loops
-    mapping(uint => bool) private setB;
-    
-    function initializeSetB() public {
-        for(uint i = 0; i < arrayB.length; i++) {
-            setB[arrayB[i]] = true;
-        }
-    }
-    
-    function findPairs() public view returns(uint count) {
-        // Single loop with O(1) lookup
-        for(uint i = 0; i < arrayA.length; i++) {
-            if(setB[arrayA[i]]) {
-                count++;
-            }
+    // Single loop with O(1) mapping lookup - O(n) complexity
+    function calculateTotalCost() public view returns (uint total) {
+        for (uint i = 0; i < items.length; i++) {
+            total += prices[items[i]];
         }
     }
 }
 ```
+
+## Gas Savings
+
+Replacing the inner loop with a mapping lookup reduces complexity from O(n²) to O(n), significantly reducing gas costs as array sizes grow.

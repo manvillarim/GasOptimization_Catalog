@@ -1,10 +1,10 @@
-# 13. Use appropriate function visibility
+# 12. Use Appropriate Function Visibility
 
-This transformation optimizes function visibility modifiers to reduce gas consumption. Using the most restrictive appropriate visibility (external vs public, internal vs private) can save gas by avoiding unnecessary overhead in function calls and reducing the contract's bytecode size.
+This transformation optimizes function visibility modifiers to reduce gas consumption. Using `external` instead of `public` for functions only called externally saves gas by avoiding unnecessary copying of calldata to memory. Using `internal` or `private` for functions only called within the contract eliminates the overhead of external function call encoding.
 
 ## Example
 
-### Suboptimal Function Visibility
+### Original (Suboptimal Visibility)
 ```solidity
 contract SuboptimalVisibility {
     uint private value;
@@ -14,37 +14,40 @@ contract SuboptimalVisibility {
         value = _value;
     }
     
-    // Public function used internally
-    function getValue() public view returns(uint) {
+    // Public function used only internally
+    function getValue() public view returns (uint) {
         return value;
     }
     
     function processValue() public {
-        uint current = getValue(); // Internal call to public function
-        setValue(current * 2);     // Internal call to public function
+        uint current = getValue();  // Unnecessary overhead
+        setValue(current * 2);      // Unnecessary overhead
     }
 }
 ```
-### Optimized Function Visibility
 
+### Optimised (Appropriate Visibility)
 ```solidity
 contract OptimizedVisibility {
     uint private value;
     
-    // External function for external calls only
+    // External for functions called only from outside
     function setValue(uint _value) external {
         value = _value;
     }
     
-    // Internal function for internal use
-    function getValue() internal view returns(uint) {
+    // Internal for functions used only within contract
+    function getValue() internal view returns (uint) {
         return value;
     }
     
-    // Public function that uses internal function
     function processValue() external {
-        uint current = getValue(); // Internal call
-        value = current * 2;       // Direct assignment
+        uint current = getValue();  // Efficient internal call
+        value = current * 2;
     }
 }
 ```
+
+## Gas Savings
+
+Using `external` instead of `public` avoids copying calldata parameters to memory. Using `internal` or `private` for helper functions eliminates the overhead of external function call encoding and decoding.
