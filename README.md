@@ -1,4 +1,4 @@
-# Ensuring Gas Optimization Correctness by Behavioral Equivalence
+# Ensuring Gas Optimisation Correctness by Behavioral Equivalence
 
 ## Authors
 
@@ -14,7 +14,7 @@ Alexandre Cabral Mota[0000-0003-4416-8123] - acm@cin.ufpe.br
 
 This repository contains the artifacts from the work "Ensuring Gas Optimization Correctness by Behavioral Equivalence". The results are organized in the Gas Optimisation Catalogue. Each catalogue entry consists of:
 
-1. **Definition**: Field with the definition of the transformation (via the generalization proposed in the article) or via example. The examples will be presented in generalization form in future work.
+1. **Definition**: Field with the definition of the transformation (via the generalization proposed in the paper) or via example. The examples will be presented in generalization form in future work.
 
 2. **CVL Specification**: Contains the link from the assembled specification to a specific example of the transformation. In cases where we identify outdated or incorrect rules, we have a link to before updating the transformation and another to after the update.
 
