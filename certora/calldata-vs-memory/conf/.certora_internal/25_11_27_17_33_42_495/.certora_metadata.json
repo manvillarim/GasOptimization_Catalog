@@ -1,0 +1,35 @@
+{
+    "CLI_package_name": "",
+    "CLI_version": "",
+    "branch": "main",
+    "certora_ci_client": null,
+    "conf": {
+        "files": [
+            "src/A.sol",
+            "src/Ao.sol"
+        ],
+        "msg": "Verification of effiecient loop incrementation",
+        "optimistic_loop": true,
+        "process": "emv",
+        "prover_version": "master",
+        "rule_sanity": "basic",
+        "send_only": true,
+        "server": "production",
+        "verify": "Ao:../specs/calldatamemory.spec"
+    },
+    "conf_path": "certora/calldata-vs-memory/conf/calldatamemory.conf",
+    "cwd_relative": "certora/calldata-vs-memory/conf",
+    "dirty": true,
+    "group_id": null,
+    "main_spec": "../specs/calldatamemory.spec",
+    "origin": "https://github.com/manvillarim/GasOptimization_Catalog.git",
+    "python_version": "3.14.0",
+    "raw_args": [
+        "/home/manoel/certora_builds/certoraRun.py",
+        "--prover_version",
+        "master",
+        "calldatamemory.conf"
+    ],
+    "revision": "b657e86f2b6f0c4bd7f9f9a060a0a13db6cf55a6",
+    "timestamp": "1764275622.477726"
+}
