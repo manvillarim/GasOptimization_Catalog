@@ -1,5 +1,5 @@
-# Refactoring loops with repeated computations Proof
+# Refactoring loops with repeated computations
 
-See Certora's result(Before updating the item to the Solidity semantics above 0.8) at https://prover.certora.com/output/480394/ba2183e7b2214488b1faa73d05523ac2?anonymousKey=1502e828a12816360c350199dff8fdabbc330910
+See Certora's result(original transformation) https://prover.certora.com/output/480394/ff85bbaa58e44c9c8fef109612fcc197?anonymousKey=d8c362d1309bde060797ec1174d1acf87db18120
 
-See Certora's result(After updating the item to the Solidity semantics above 0.8) at https://prover.certora.com/output/480394/f2b58772ce0e4365805dd09b0596f754?anonymousKey=725dc251d546f45fe72ad6c0dab26e454d0eafca
+See Certora's result(updated transformation) https://prover.certora.com/output/480394/c6610ed10e8f423c8de016ae01b34f63?anonymousKey=0a919f9290a00c87fe9c82a94aa3cfc282370ef1

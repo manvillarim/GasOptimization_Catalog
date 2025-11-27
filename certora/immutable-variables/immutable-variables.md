@@ -1,3 +1,3 @@
-#  Use immutable variables for constructor-set values Proof
+#  Use immutable variables for constructor-set values
 
 See Certora's result at https://prover.certora.com/output/480394/ed051f81d3af488580e18da36d305a8c?anonymousKey=4c19d73ef72949ee0cbd22bcc2604cb524f8f896

@@ -29,7 +29,10 @@ This repository contains the artifacts from the work "Ensuring Gas Optimization 
 
 ## Requirements
 
-All links for Certora verification (along with the corresponding specifications) can be accessed in the corresponding catalogue entry. To replicate the verification, navigate to the `certora` folder, then to the corresponding transformation subdirectory, and finally to its `conf` folder. Execute the command: `certoraRun --prover_version master <NAME_OF_CONF_FILE>.conf`. 
+1. Certora
+2. Foundry Framework
+
+All links for Certora verification (along with the corresponding specifications) can be accessed in the corresponding catalogue entry. To replicate the verification, navigate to the `certora` folder, then to the corresponding transformation subdirectory, and finally to its `conf` folder. Execute the command: `certoraRun.py --prover_version master <NAME_OF_CONF_FILE>.conf`. 
 
 To run gas benchmarking tests for the proposed rules, navigate to the `gas_check` directory and execute: `forge test --gas-report`.
 

@@ -1,3 +1,3 @@
-# Cache Array Length proof
+# Cache Array Length
 
 See Certora's result at https://prover.certora.com/output/480394/29015db8a2834316886065435bee09d8?anonymousKey=875610a621c06e6824dda8a4ea4ee16d4ab8bca7

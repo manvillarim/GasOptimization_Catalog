@@ -1,3 +1,3 @@
-# Avoid Nested Loops proof
+# Avoid Nested Loops
 
 See Certora's result at https://prover.certora.com/output/480394/8a76477ecae74143a7c810abb4e768ce?anonymousKey=fa671355a73f9ff275bc61a8c8c70c3cbb9c7e8f

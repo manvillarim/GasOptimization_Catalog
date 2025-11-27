@@ -1,3 +1,3 @@
-# Replace Require with customs errors Proof
+# Replace Require with customs errors
 
 See Certora's result at https://prover.certora.com/output/480394/3dac22bf736c487e9c058163b8bc7708?anonymousKey=79a2d064f58218d8ed2d00e8b7d25aa7de20ceeb

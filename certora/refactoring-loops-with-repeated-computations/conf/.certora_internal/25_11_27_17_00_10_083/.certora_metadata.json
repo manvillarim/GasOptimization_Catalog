@@ -1,0 +1,34 @@
+{
+    "CLI_package_name": "",
+    "CLI_version": "",
+    "branch": "main",
+    "certora_ci_client": null,
+    "conf": {
+        "files": [
+            "src/A.sol",
+            "src/Ao.sol"
+        ],
+        "optimistic_loop": true,
+        "process": "emv",
+        "prover_version": "master",
+        "rule_sanity": "basic",
+        "send_only": true,
+        "server": "production",
+        "verify": "Ao:../specs/loopscomputations.spec"
+    },
+    "conf_path": "certora/refactoring-loops-with-repeated-computations/conf/loopscomputations.conf",
+    "cwd_relative": "certora/refactoring-loops-with-repeated-computations/conf",
+    "dirty": true,
+    "group_id": null,
+    "main_spec": "../specs/loopscomputations.spec",
+    "origin": "https://github.com/manvillarim/GasOptimization_Catalog.git",
+    "python_version": "3.14.0",
+    "raw_args": [
+        "/home/manoel/certora_builds/certoraRun.py",
+        "--prover_version",
+        "master",
+        "loopscomputations.conf"
+    ],
+    "revision": "226c381f644055e3a455b7dc86c4fd8f756eca7d",
+    "timestamp": "1764273610.695882"
+}
