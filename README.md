@@ -27,6 +27,8 @@ This repository contains the artifacts from the work "Ensuring Gas Optimization 
 * `/gas_check`: Project to verify gas savings under the proposed rules.
 * `LICENSE.txt`: Licensing information.
 
+If you want to access the AAVE V3's Case Study Artifacts, [click here](https://github.com/manvillarim/AAVE-V3-Case-Study).
+
 ## Requirements
 
 1. Certora
