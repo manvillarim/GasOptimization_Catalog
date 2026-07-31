@@ -72,3 +72,4 @@ To run gas benchmarking tests for the proposed rules, navigate to the `gas_check
 | Use unchecked arithmetic for validated operations  | [definition](definition/solidity_transformações-28.pdf) | [Spec](certora/unchecked/unchecked.md) | Original |
 | Use Bytes instead of Strings  | [example](examples/string-bytes.md) | [Spec](certora/bytes-strings/bytes.md) | [source](https://ieeexplore.ieee.org/abstract/document/10429984) |
 | Make Constructors Payable | [definition](definition/solidity_transformações-30.pdf) | [Spec](certora/constructor/constructor.md) | Original |
+| Use named return variables | [definition](definition/solidity_transformações-31.pdf) | [Spec](certora/named-return-variables/named-return-variables.md) | Original (identified in the AAVE V3 case study) |

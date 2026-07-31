@@ -1,0 +1,37 @@
+{
+    "CLI_package_name": "",
+    "CLI_version": "",
+    "branch": "main",
+    "certora_ci_client": null,
+    "conf": {
+        "files": [
+            "src/A.sol",
+            "src/Ao.sol"
+        ],
+        "optimistic_loop": true,
+        "process": "emv",
+        "prover_version": "master",
+        "rule_sanity": "basic",
+        "send_only": true,
+        "server": "production",
+        "verify": "Ao:../specs/named-return-variables.spec",
+        "wait_for_results": "all"
+    },
+    "conf_path": "certora/named-return-variables/conf/named-return-variables.conf",
+    "cwd_relative": "certora/named-return-variables/conf",
+    "dirty": true,
+    "group_id": null,
+    "main_spec": "../specs/named-return-variables.spec",
+    "origin": "https://github.com/manvillarim/GasOptimization_Catalog.git",
+    "python_version": "3.14.6",
+    "raw_args": [
+        "/home/manoel/certora_builds/certoraRun.py",
+        "--prover_version",
+        "master",
+        "named-return-variables.conf",
+        "--wait_for_results",
+        "all"
+    ],
+    "revision": "8d3e0b9a55cdcb5b39ae9f87347b81f1d492c165",
+    "timestamp": "1784735602.683452"
+}

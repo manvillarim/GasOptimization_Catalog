@@ -65,6 +65,17 @@ definition couplingInv() returns bool =
         a.lastActivityTime[user] == ao.lastActivityTime[user] &&
         a.rewardPoints[user] == ao.rewardPoints[user] &&
         (a.isRegistered[user] => a.userIndex[user] == ao.userIndex[user])
+    )) &&
+
+    // The transaction history and the cleanup cursor are `public`, hence
+    // observable through their generated getters, and are precisely the state
+    // that the delete-based cleanup rewrites. Omitting them would leave the
+    // transformation unconstrained exactly where it acts.
+    a.oldestTransactionIndex == ao.oldestTransactionIndex &&
+    (forall uint256 i. (
+        a.transactionSenders[i] == ao.transactionSenders[i] &&
+        a.transactionAmounts[i] == ao.transactionAmounts[i] &&
+        a.transactionTimestamps[i] == ao.transactionTimestamps[i]
     ));
 
 function gasOptimizationCorrectness(method f, method g) {

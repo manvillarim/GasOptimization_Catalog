@@ -1,7 +1,44 @@
+# Compiler configuration for the gas benchmarks.
+#
+# solc is pinned and the EVM target is fixed so that a re-run reproduces the
+# published numbers exactly. The original configuration pinned neither, which
+# is why the numbers in the first submission drift with whatever solc the local
+# forge happens to resolve; see README.md, section "Reproducibility".
+#
+# 0.8.22 / shanghai are the values shipped with the AAVE V3 repository used in
+# the case study, so the catalogue benchmarks and the case-study measurements
+# are taken under the same compiler.
+
 [profile.default]
 src = "src"
 out = "out"
+test = "test"
 libs = ["lib"]
+solc = "0.8.22"
+evm_version = "shanghai"
+bytecode_hash = "none"
+# "Standard" in the paper: the optimiser enabled at its conventional 200 runs,
+# through the legacy (non-IR) code generator. This is the pipeline a contract
+# is compiled with by default in practice.
+optimizer = true
+optimizer_runs = 200
 
+[profile.viair]
+src = "src"
+out = "out-viair"
+test = "test"
+libs = ["lib"]
+solc = "0.8.22"
+evm_version = "shanghai"
+bytecode_hash = "none"
+# "Via-IR" in the paper: the same optimiser budget routed through the Yul IR
+# pipeline. Holding optimizer_runs fixed at 200 across the two profiles is what
+# makes any difference attributable to the code generator rather than to a
+# different optimisation budget.
+optimizer = true
+optimizer_runs = 200
+via_ir = true
 
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+[fuzz]
+runs = 1000
+max_test_rejects = 20000
