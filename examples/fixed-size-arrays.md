@@ -1,47 +1,60 @@
 # 8. Use Fixed-Size Arrays Instead of Dynamic Arrays
 
-This transformation replaces dynamic arrays with fixed-size arrays when the maximum size is known at compile time. Fixed-size arrays avoid the overhead of dynamic memory management and length tracking, resulting in more efficient storage layout and cheaper array access operations.
+This transformation replaces a dynamic array by a fixed-size array of a bound known at compile time, together with an explicit counter. A dynamic array keeps its length in a storage slot and computes the position of its elements from the hash of that slot; a fixed-size array is laid out at consecutive slots known statically, and `push` disappears together with the length update it performs.
 
 ## Example
 
 ### Original (Dynamic Array)
 ```solidity
-contract DynamicArrayContract {
-    uint[] public numbers;
-    
-    function addNumbers(uint count) public {
-        for (uint i = 0; i < count; i++) {
-            numbers.push(i);
-        }
+contract A {
+    uint256[] private items;
+
+    function add(uint256 value) external {
+        items.push(value);
     }
-    
-    function getNumber(uint index) public view returns (uint) {
-        return numbers[index];
+
+    function get(uint256 index) external view returns (uint256) {
+        require(index < items.length, "Index out of bounds");
+        return items[index];
+    }
+
+    function length() external view returns (uint256) {
+        return items.length;
     }
 }
 ```
 
 ### Optimised (Fixed-Size Array)
 ```solidity
-contract FixedArrayContract {
-    uint[100] public numbers;  // Fixed size known at compile time
-    uint public currentLength;
-    
-    function addNumbers(uint count) public {
-        require(currentLength + count <= 100, "Array overflow");
-        for (uint i = 0; i < count; i++) {
-            numbers[currentLength + i] = i;
-        }
-        currentLength += count;
+contract Ao {
+    uint256[100] private items;
+    uint256 private count;
+
+    function add(uint256 value) external {
+        require(count < 100, "Capacity exceeded");
+        items[count] = value;
+        count++;
     }
-    
-    function getNumber(uint index) public view returns (uint) {
-        require(index < currentLength, "Index out of bounds");
-        return numbers[index];
+
+    function get(uint256 index) external view returns (uint256) {
+        require(index < count, "Index out of bounds");
+        return items[index];
+    }
+
+    function length() external view returns (uint256) {
+        return count;
     }
 }
 ```
 
+## Applicability
+
+The bound must hold. The two contracts agree on every execution in which fewer than 100 elements are stored; on the hundred-and-first `add` the original grows and the rewrite reverts. The transformation therefore carries the condition that the number of elements is bounded by the chosen capacity, and that condition has to be established outside the contract, since it is not enforced by the original.
+
+The counter must also be reproduced faithfully. `count` is what `items.length` was, so it has to be updated wherever the original would have grown or shrunk the array, and `get` must compare against it rather than against the capacity, or reads of positions that were never written would return zero instead of reverting.
+
+The state layouts differ, so the coupling invariant relates `items` and `count` of the rewrite to the elements and the length of the original, and not slot to slot.
+
 ## Gas Savings
 
-Fixed-size arrays eliminate the storage overhead of tracking array length dynamically and avoid costly push operations, reducing gas consumption for both writes and reads when the maximum size is known beforehand.
+`add` no longer updates the length slot, and the position of every element is a static offset rather than the hash of the length slot. The saving is per operation and does not grow with the size of the array.

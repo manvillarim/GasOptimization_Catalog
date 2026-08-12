@@ -5,14 +5,15 @@ Correctness by Behavioural Equivalence*.
 
 ```
 src/                     contracts for the outdated-pattern benchmarks
-src/proposed/            contracts for the three rules proposed in the paper
+src/proposed/            contracts for the four rules proposed in the paper
 test/                    tests for the outdated-pattern benchmarks
-test/proposed/           tests for the three proposed rules
+test/proposed/           tests for the four proposed rules
 script/run_benchmark.sh  driver: repeated trials, both compiler profiles
 script/parse_gas_report.py
 script/aggregate.py
 results/raw.csv          every individual observation
 results/summary.csv      mean, standard deviation and saving per configuration
+results/bytecode_identity.csv  whether each pair compiles to identical runtime code
 ```
 
 ## Running
@@ -28,8 +29,10 @@ artifact: `results/` is regenerated from a clean build on every invocation.
 ## Measurement protocol
 
 **Two quantities, two instruments.** Deployment cost and runtime size come from
-`forge test --gas-report`, which reports the `CREATE` gas and the deployed code
-length per contract. Function cost comes from the per-test gas figure forge
+`forge test --gas-report`, which reports the `CREATE` gas and the creation
+(init) code length per contract. The size figure is the init code, not the
+runtime code: a rule that touches only the constructor shrinks the former while
+leaving the latter byte-identical. Function cost comes from the per-test gas figure forge
 prints for each test case. The two instruments answer different questions, and
 mixing them within a single column would make the numbers incomparable.
 
@@ -69,13 +72,16 @@ a per-occurrence effect from a one-off one:
 | Rule | Dimension varied | Points |
 |---|---|---|
 | Custom Errors | number of guarded statements | k = 1, 5, 20 |
-| Unchecked Arithmetic | loop trip count | N = 100, 1000, 5000 |
+| Unchecked Arithmetic | loop trip count x loop body | N = 100, 1000, 5000, each with an arithmetic and an `SLOAD` body |
 | Payable Constructor | constructor workload | minimal, simple, heavy |
+| Named Returns | width of the returned value | one word, three words, eight-field struct |
 
-The unchecked-arithmetic benchmark is additionally measured under two workloads
-at every N: `decrementLoop`, whose body is pure arithmetic, and `accumulate`,
-whose body is dominated by an `SLOAD`. The pair separates sensitivity to problem
-size from sensitivity to the surrounding call pattern.
+The unchecked-arithmetic benchmark varies the loop body as well as the trip
+count, giving six instances: an arithmetic body and an `SLOAD`-dominated body at
+each N. The trip count is a compile-time constant, so each instance is a
+contract pair of its own and carries its own deployment figures; an earlier
+version took it as a call argument, which left one pair serving all three sizes
+and no deployment figure attributable to an individual instance.
 
 The payable-constructor benchmark keeps an unchanged runtime surface across all
 six contracts, giving a control column that should show no effect; the residual

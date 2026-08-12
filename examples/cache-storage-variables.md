@@ -1,27 +1,20 @@
 # 23. Cache Storage Variables
 
-This transformation caches storage variables in local memory variables before use in loops or multiple operations. Storage operations (SLOAD/SSTORE) are significantly more expensive than memory operations (MLOAD/MSTORE), so reducing the number of storage accesses by caching values in memory variables reduces gas consumption.
+This transformation reads a storage variable into a local variable before a loop, performs the accumulation on the local, and writes the result back once. A storage read costs 2,100 gas cold and 100 gas warm, and a storage write costs at least 100 gas, whereas the local variable is held on the stack.
 
 ## Example
 
 ### Original (Repeated Storage Access)
 ```solidity
-contract UncachedStorage {
-    uint public total;
-    uint public count;
-    uint[] public numbers;
-    
+contract A {
+    uint256 public total;
+    uint256 public count;
+    uint256[] public numbers;
+
     function processNumbers() public {
-        for (uint i = 0; i < numbers.length; i++) {
-            total += numbers[i];  // Storage read and write each iteration
-            count++;              // Storage read and write each iteration
-        }
-    }
-    
-    function updateTotal() public {
-        total = 0;                // Storage write
-        for (uint i = 0; i < numbers.length; i++) {
-            total += numbers[i];  // Storage read and write each iteration
+        for (uint256 i = 0; i < numbers.length; i++) {
+            total += numbers[i];
+            count++;
         }
     }
 }
@@ -29,38 +22,32 @@ contract UncachedStorage {
 
 ### Optimised (Cached Storage Variables)
 ```solidity
-contract CachedStorage {
-    uint public total;
-    uint public count;
-    uint[] public numbers;
-    
+contract Ao {
+    uint256 public total;
+    uint256 public count;
+    uint256[] public numbers;
+
     function processNumbers() public {
-        // Cache storage variables in memory
-        uint tempTotal = total;
-        uint tempCount = count;
-        
-        for (uint i = 0; i < numbers.length; i++) {
-            tempTotal += numbers[i];  // Memory operations only
+        uint256 tempTotal = total;
+        uint256 tempCount = count;
+
+        for (uint256 i = 0; i < numbers.length; i++) {
+            tempTotal += numbers[i];
             tempCount++;
         }
-        
-        // Write back to storage once
+
         total = tempTotal;
         count = tempCount;
-    }
-    
-    function updateTotal() public {
-        uint tempTotal = 0;  // Memory variable
-        
-        for (uint i = 0; i < numbers.length; i++) {
-            tempTotal += numbers[i];  // Memory operations only
-        }
-        
-        total = tempTotal;  // Single storage write
     }
 }
 ```
 
+## Applicability
+
+Between the initial read and the write-back, nothing may observe or modify the cached variables. The loop body above touches only local state, so the condition holds. It fails as soon as the body performs an external call, since the callee may read `total` — obtaining the stale value — or reenter and write it, in which case the write-back would discard that update.
+
+The accumulation itself is unaffected: the additions occur in the same order on the same values, so an overflow occurs at the same iteration in both versions and both revert.
+
 ## Gas Savings
 
-Caching storage variables reduces gas consumption by minimizing expensive storage operations and performing cheaper memory operations instead, writing to storage only when necessary.
+The transformation replaces one storage read and one storage write per iteration, for each cached variable, by a single read before the loop and a single write after it. The saving grows linearly with the trip count.

@@ -2,39 +2,29 @@ using A as a;
 using Ao as ao;
 
 methods {
-    function a.balances(address) external returns (uint256) envfree;
-    function ao.balances(address) external returns (uint256) envfree;
-    function a.allowances(address,address) external returns (uint256) envfree;
-    function ao.allowances(address,address) external returns (uint256) envfree;
+    function a.maxSupply() external returns (uint256) envfree;
+    function ao.maxSupply() external returns (uint256) envfree;
+    function a.mintingFee() external returns (uint256) envfree;
+    function ao.mintingFee() external returns (uint256) envfree;
     function a.isPaused() external returns (bool) envfree;
     function ao.isPaused() external returns (bool) envfree;
-    function a.totalSupply() external returns (uint256) envfree;
-    function ao.TOTAL_SUPPLY() external returns (uint256) envfree;
-    function a.owner() external returns (address) envfree;
-    function ao.OWNER() external returns (address) envfree;
-    function a.mintingFee() external returns (uint256) envfree;
-    function ao.MINTING_FEE() external returns (uint256) envfree;
-    function a.maxTransactionAmount() external returns (uint256) envfree;
-    function ao.MAX_TRANSACTION_AMOUNT() external returns (uint256) envfree;
-    function a.decimals() external returns (uint8) envfree;
-    function ao.DECIMALS() external returns (uint8) envfree;
+    function a.checkLimits(uint256) external returns (bool) envfree;
+    function ao.checkLimits(uint256) external returns (bool) envfree;
+    function a.calculateFees(uint256) external returns (uint256) envfree;
+    function ao.calculateFees(uint256) external returns (uint256) envfree;
 }
 
 definition couplingInv() returns bool =
+    a.maxSupply() == ao.maxSupply() &&
+    a.mintingFee() == ao.mintingFee() &&
     a.isPaused() == ao.isPaused() &&
-    a.totalSupply() == ao.TOTAL_SUPPLY() &&
-    a.owner() == ao.OWNER() &&
-    a.mintingFee() == ao.MINTING_FEE() &&
-    a.maxTransactionAmount() == ao.MAX_TRANSACTION_AMOUNT() &&
-    a.decimals == ao.DECIMALS() &&
-    (forall address u. a.balances[u] == ao.balances[u]) &&
-    (forall address u. forall address j. a.allowances[u][j] == ao.allowances[u][j]);
+    (forall address u. a.balances[u] == ao.balances[u]);
 
 function gasOptimizationCorrectness(method f, method g) {
     env eA;
     env eAo;
     calldataarg args;
-    
+
     require eA == eAo && couplingInv();
 
     a.f@withrevert(eA, args);
@@ -48,49 +38,35 @@ function gasOptimizationCorrectness(method f, method g) {
 }
 
 rule gasOptimizedCorrectnessOfTransfer(method f, method g)
-filtered {
-    f -> f.selector == sig:a.transfer(address,uint256).selector,
-    g -> g.selector == sig:ao.transfer(address,uint256).selector
-} {
+    filtered {
+        f -> f.selector == sig:a.transfer(address, uint256).selector,
+        g -> g.selector == sig:ao.transfer(address, uint256).selector
+    } {
     gasOptimizationCorrectness(f, g);
 }
 
-rule gasOptimizedCorrectnessOfGetBasicInfo(method f, method g)
-filtered {
-    f -> f.selector == sig:a.getBasicInfo().selector,
-    g -> g.selector == sig:ao.getBasicInfo().selector
-} {
+rule gasOptimizedCorrectnessOfSetPaused(method f, method g)
+    filtered {
+        f -> f.selector == sig:a.setPaused(bool).selector,
+        g -> g.selector == sig:ao.setPaused(bool).selector
+    } {
     gasOptimizationCorrectness(f, g);
 }
 
-rule gasOptimizedCorrectnessOfGetSupplyInfo(method f, method g)
-filtered {
-    f -> f.selector == sig:a.getSupplyInfo().selector,
-    g -> g.selector == sig:ao.getSupplyInfo().selector
-} {
+rule gasOptimizedCorrectnessOfCredit(method f, method g)
+    filtered {
+        f -> f.selector == sig:a.credit(address, uint256).selector,
+        g -> g.selector == sig:ao.credit(address, uint256).selector
+    } {
     gasOptimizationCorrectness(f, g);
 }
 
-rule gasOptimizedCorrectnessOfGetOwnerAndFee(method f, method g)
-filtered {
-    f -> f.selector == sig:a.getOwnerAndFee().selector,
-    g -> g.selector == sig:ao.getOwnerAndFee().selector
-} {
-    gasOptimizationCorrectness(f, g);
+rule returnsOfCheckLimits(uint256 amount) {
+    require couplingInv();
+    assert a.checkLimits(amount) == ao.checkLimits(amount);
 }
 
-rule gasOptimizedCorrectnessOfCheckLimits(method f, method g)
-filtered {
-    f -> f.selector == sig:a.checkLimits(uint256).selector,
-    g -> g.selector == sig:ao.checkLimits(uint256).selector
-} {
-    gasOptimizationCorrectness(f, g);
-}
-
-rule gasOptimizedCorrectnessOfCalculateFees(method f, method g)
-filtered {
-    f -> f.selector == sig:a.calculateFees(uint256).selector,
-    g -> g.selector == sig:ao.calculateFees(uint256).selector
-} {
-    gasOptimizationCorrectness(f, g);
+rule returnsOfCalculateFees(uint256 amount) {
+    require couplingInv();
+    assert a.calculateFees(amount) == ao.calculateFees(amount);
 }

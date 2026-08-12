@@ -1,3 +1,3 @@
 # Struct Packing
 
-See Certora's result at https://prover.certora.com/output/480394/87e97f7470e44a3e94448fe743967562?anonymousKey=6f8efda99f5e12169af65f9e528bf12f3b8ab0c4
+See Certora's result at https://prover.certora.com/output/480394/44e87097cf664905b4457f6e2b89028c?anonymousKey=f9f65bbcb1b06334f4fe61a0b4bb2b6ef283b40a

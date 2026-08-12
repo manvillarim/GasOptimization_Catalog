@@ -2,28 +2,24 @@ using A as a;
 using Ao as ao;
 
 methods {
-    function a.resetAllValues() external;
-    function ao.resetAllValues() external;
+    function a.counter() external returns (uint256) envfree;
+    function ao.counter() external returns (uint256) envfree;
+    function a.flag() external returns (bool) envfree;
+    function ao.flag() external returns (bool) envfree;
+    function a.owner() external returns (address) envfree;
+    function ao.owner() external returns (address) envfree;
 }
 
-
 definition couplingInv() returns bool =
-    a.balance == ao.balance &&
-    a.userCount == ao.userCount &&
-    a.temperature == ao.temperature &&
-    a.isActive == ao.isActive &&
-    a.isPaused == ao.isPaused &&
-    a.owner == ao.owner &&
-    a.admin == ao.admin &&
-    a.dataHash == ao.dataHash &&
-    (forall address addr . a.balances[addr] == ao.balances[addr]);
-
+    a.counter() == ao.counter() &&
+    a.flag() == ao.flag() &&
+    a.owner() == ao.owner();
 
 function gasOptimizationCorrectness(method f, method g) {
     env eA;
     env eAo;
     calldataarg args;
-    
+
     require eA == eAo && couplingInv();
 
     a.f@withrevert(eA, args);
@@ -36,11 +32,26 @@ function gasOptimizationCorrectness(method f, method g) {
     assert couplingInv();
 }
 
-
-rule gasOptimizedCorrectnessOfResetAllValues(method f, method g)
+rule gasOptimizedCorrectnessOfSetOwner(method f, method g)
     filtered {
-        f -> f.selector == sig:a.resetAllValues().selector,
-        g -> g.selector == sig:ao.resetAllValues().selector
+        f -> f.selector == sig:a.setOwner(address).selector,
+        g -> g.selector == sig:ao.setOwner(address).selector
+    } {
+    gasOptimizationCorrectness(f, g);
+}
+
+rule gasOptimizedCorrectnessOfBump(method f, method g)
+    filtered {
+        f -> f.selector == sig:a.bump().selector,
+        g -> g.selector == sig:ao.bump().selector
+    } {
+    gasOptimizationCorrectness(f, g);
+}
+
+rule gasOptimizedCorrectnessOfProcessArray(method f, method g)
+    filtered {
+        f -> f.selector == sig:a.processArray(uint256[]).selector,
+        g -> g.selector == sig:ao.processArray(uint256[]).selector
     } {
     gasOptimizationCorrectness(f, g);
 }

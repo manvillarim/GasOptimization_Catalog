@@ -4,7 +4,20 @@ pragma solidity ^0.8.0;
 import "forge-std/Test.sol";
 
 import {CE_A_1, CE_Ao_1, CE_A_5, CE_Ao_5, CE_A_20, CE_Ao_20} from "../../src/proposed/CustomErrorsBench.sol";
-import {UA_A, UA_Ao} from "../../src/proposed/UncheckedBench.sol";
+import {
+    UA_A_Arith100,
+    UA_Ao_Arith100,
+    UA_A_Arith1000,
+    UA_Ao_Arith1000,
+    UA_A_Arith5000,
+    UA_Ao_Arith5000,
+    UA_A_Sload100,
+    UA_Ao_Sload100,
+    UA_A_Sload1000,
+    UA_Ao_Sload1000,
+    UA_A_Sload5000,
+    UA_Ao_Sload5000
+} from "../../src/proposed/UncheckedBench.sol";
 import {
     PC_A_Min,
     PC_Ao_Min,
@@ -86,83 +99,138 @@ contract CustomErrorsK20 is Test {
     }
 }
 
-contract UncheckedArithmetic is Test {
-    UA_A internal a;
-    UA_Ao internal ao;
-
-    uint256 constant N_SMALL = 100;
-    uint256 constant N_MEDIUM = 1000;
-    uint256 constant N_LARGE = 5000;
+contract UncheckedArith100 is Test {
+    UA_A_Arith100 internal a;
+    UA_Ao_Arith100 internal ao;
 
     function setUp() public {
-        a = new UA_A();
-        ao = new UA_Ao();
+        a = new UA_A_Arith100();
+        ao = new UA_Ao_Arith100();
     }
 
-    function test_Unchecked_N100_A_decrement() public {
-        a.decrementLoop(N_SMALL, N_SMALL);
+    function test_Unchecked_arith100_A_loop() public {
+        a.run(100);
     }
 
-    function test_Unchecked_N100_Ao_decrement() public {
-        ao.decrementLoop(N_SMALL, N_SMALL);
+    function test_Unchecked_arith100_Ao_loop() public {
+        ao.run(100);
+    }
+}
+
+contract UncheckedArith1000 is Test {
+    UA_A_Arith1000 internal a;
+    UA_Ao_Arith1000 internal ao;
+
+    function setUp() public {
+        a = new UA_A_Arith1000();
+        ao = new UA_Ao_Arith1000();
     }
 
-    function test_Unchecked_N1000_A_decrement() public {
-        a.decrementLoop(N_MEDIUM, N_MEDIUM);
+    function test_Unchecked_arith1000_A_loop() public {
+        a.run(1000);
     }
 
-    function test_Unchecked_N1000_Ao_decrement() public {
-        ao.decrementLoop(N_MEDIUM, N_MEDIUM);
+    function test_Unchecked_arith1000_Ao_loop() public {
+        ao.run(1000);
+    }
+}
+
+contract UncheckedArith5000 is Test {
+    UA_A_Arith5000 internal a;
+    UA_Ao_Arith5000 internal ao;
+
+    function setUp() public {
+        a = new UA_A_Arith5000();
+        ao = new UA_Ao_Arith5000();
     }
 
-    function test_Unchecked_N5000_A_decrement() public {
-        a.decrementLoop(N_LARGE, N_LARGE);
+    function test_Unchecked_arith5000_A_loop() public {
+        a.run(5000);
     }
 
-    function test_Unchecked_N5000_Ao_decrement() public {
-        ao.decrementLoop(N_LARGE, N_LARGE);
+    function test_Unchecked_arith5000_Ao_loop() public {
+        ao.run(5000);
+    }
+}
+
+// The seeding of the N slots is excluded from the metered region: those SSTOREs
+// cost orders of magnitude more than the arithmetic under study and would drive
+// any reported saving towards zero.
+contract UncheckedSload100 is Test {
+    UA_A_Sload100 internal a;
+    UA_Ao_Sload100 internal ao;
+
+    function setUp() public {
+        a = new UA_A_Sload100();
+        ao = new UA_Ao_Sload100();
     }
 
-    function test_Unchecked_N100_A_accumulate() public {
+    function test_Unchecked_sload100_A_loop() public {
         vm.pauseGasMetering();
-        a.seed(N_SMALL);
+        a.seed();
         vm.resumeGasMetering();
-        a.accumulate(N_SMALL);
+        a.run();
     }
 
-    function test_Unchecked_N100_Ao_accumulate() public {
+    function test_Unchecked_sload100_Ao_loop() public {
         vm.pauseGasMetering();
-        ao.seed(N_SMALL);
+        ao.seed();
         vm.resumeGasMetering();
-        ao.accumulate(N_SMALL);
+        ao.run();
+    }
+}
+
+// The seeding of the N slots is excluded from the metered region: those SSTOREs
+// cost orders of magnitude more than the arithmetic under study and would drive
+// any reported saving towards zero.
+contract UncheckedSload1000 is Test {
+    UA_A_Sload1000 internal a;
+    UA_Ao_Sload1000 internal ao;
+
+    function setUp() public {
+        a = new UA_A_Sload1000();
+        ao = new UA_Ao_Sload1000();
     }
 
-    function test_Unchecked_N1000_A_accumulate() public {
+    function test_Unchecked_sload1000_A_loop() public {
         vm.pauseGasMetering();
-        a.seed(N_MEDIUM);
+        a.seed();
         vm.resumeGasMetering();
-        a.accumulate(N_MEDIUM);
+        a.run();
     }
 
-    function test_Unchecked_N1000_Ao_accumulate() public {
+    function test_Unchecked_sload1000_Ao_loop() public {
         vm.pauseGasMetering();
-        ao.seed(N_MEDIUM);
+        ao.seed();
         vm.resumeGasMetering();
-        ao.accumulate(N_MEDIUM);
+        ao.run();
+    }
+}
+
+// The seeding of the N slots is excluded from the metered region: those SSTOREs
+// cost orders of magnitude more than the arithmetic under study and would drive
+// any reported saving towards zero.
+contract UncheckedSload5000 is Test {
+    UA_A_Sload5000 internal a;
+    UA_Ao_Sload5000 internal ao;
+
+    function setUp() public {
+        a = new UA_A_Sload5000();
+        ao = new UA_Ao_Sload5000();
     }
 
-    function test_Unchecked_N5000_A_accumulate() public {
+    function test_Unchecked_sload5000_A_loop() public {
         vm.pauseGasMetering();
-        a.seed(N_LARGE);
+        a.seed();
         vm.resumeGasMetering();
-        a.accumulate(N_LARGE);
+        a.run();
     }
 
-    function test_Unchecked_N5000_Ao_accumulate() public {
+    function test_Unchecked_sload5000_Ao_loop() public {
         vm.pauseGasMetering();
-        ao.seed(N_LARGE);
+        ao.seed();
         vm.resumeGasMetering();
-        ao.accumulate(N_LARGE);
+        ao.run();
     }
 }
 

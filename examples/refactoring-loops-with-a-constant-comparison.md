@@ -1,18 +1,17 @@
-# 3. Refactoring Loops with Constant Comparison
+# 3. Refactoring Loops with a Constant Comparison
 
-This transformation removes redundant conditional checks within loops that always evaluate to the same constant value. When a condition is always true (or always false) due to the values involved, the check serves no purpose and only consumes gas. Eliminating these constant comparisons simplifies the loop and reduces gas consumption.
+This transformation removes a conditional inside a loop whose value is the same on every iteration. The check consumes gas at each pass and decides nothing.
 
 ## Example
 
 ### Original (Constant Comparison)
 ```solidity
-contract ConstantComparison {
-    uint[] public tokens;
-    
-    function processTokens() public view returns (uint total) {
-        uint x = 1;
-        for (uint i = 0; i < tokens.length; i++) {
-            // Condition always true: x=1, i≥0, so x+i≥1>0
+contract A {
+    uint256[] public tokens;
+
+    function processTokens() public view returns (uint256 total) {
+        uint256 x = 1;
+        for (uint256 i = 0; i < tokens.length; i++) {
             if (x + i > 0) {
                 total += tokens[i];
             }
@@ -21,21 +20,25 @@ contract ConstantComparison {
 }
 ```
 
-### Optimised (Removed Constant Check)
+### Optimised (Comparison Removed)
 ```solidity
-contract OptimizedComparison {
-    uint[] public tokens;
-    
-    function processTokens() public view returns (uint total) {
-        uint x = 1;
-        for (uint i = 0; i < tokens.length; i++) {
-            // Redundant condition removed
+contract Ao {
+    uint256[] public tokens;
+
+    function processTokens() public view returns (uint256 total) {
+        for (uint256 i = 0; i < tokens.length; i++) {
             total += tokens[i];
         }
     }
 }
 ```
 
+## Applicability
+
+The condition has to be constant over the whole range the loop covers, and this has to be established from the code rather than from the values the contract happens to hold. Here `x` is `1` and `i` is non-negative, so `x + i > 0` holds at every iteration, and `x` is a local that nothing in the body assigns.
+
+Removing the condition also removes the evaluation of its operands, which is only sound when that evaluation cannot itself fail. `x + i` is checked arithmetic and would panic on overflow; it cannot overflow here because `i` is bounded by the length of the array, but a guard containing a division, an array access or a call must be examined before it is dropped.
+
 ## Gas Savings
 
-Removing constant comparisons that always evaluate to the same value eliminates unnecessary conditional check operations in every loop iteration, reducing gas consumption without changing functionality.
+The comparison and its operand evaluation disappear from every iteration, so the saving is proportional to the trip count.

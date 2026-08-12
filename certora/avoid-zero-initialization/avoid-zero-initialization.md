@@ -1,3 +1,3 @@
 # Avoid Zero Initialization
 
-See Certora's result at https://prover.certora.com/output/480394/80430f112e464b4a91e1def68a5df756?anonymousKey=1627aeefab9d92cbe4efcb7642eba483b7b14b7e
+See Certora's result at https://prover.certora.com/output/480394/050cb369df664846aaf583d40300e2a1?anonymousKey=d74658adf973f583147f7e259b1fc7d7eb14ba4d

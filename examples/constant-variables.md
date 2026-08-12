@@ -1,43 +1,55 @@
 # 13. Use Constant Variables for Unchanging Values
 
-This transformation declares unchanging values as `constant` variables. Constant variables are replaced with their literal values at compile time and are not stored in contract storage, eliminating expensive storage read operations (SLOAD) when accessing these values.
+This transformation declares as `constant` a state variable that is never assigned after its initialisation. A `constant` occupies no storage slot: the compiler substitutes its value at every use, so the reads become push operations instead of SLOADs, and the constructor no longer writes the slot.
 
 ## Example
 
 ### Original (Regular State Variables)
 ```solidity
-contract RegularVariables {
-    uint public maxSupply = 1000000;
-    string public tokenName = "MyToken";
-    address public owner = 0x1234567890123456789012345678901234567890;
-    
-    function checkMaxSupply() public view returns (uint) {
-        return maxSupply;  // Storage read operation (SLOAD)
+contract A {
+    uint256 public maxSupply = 1000000;
+    uint256 public mintingFee = 0.001 ether;
+    bool public isPaused;
+
+    function checkLimits(uint256 amount) public view returns (bool) {
+        return amount <= maxSupply && !isPaused;
     }
-    
-    function getTokenInfo() public view returns (string memory, uint) {
-        return (tokenName, maxSupply);  // Multiple storage reads
+
+    function calculateFees(uint256 amount) public view returns (uint256) {
+        if (amount > maxSupply) {
+            return mintingFee * 2;
+        }
+        return mintingFee;
     }
 }
 ```
 
 ### Optimised (Constant Variables)
 ```solidity
-contract ConstantVariables {
-    uint public constant MAX_SUPPLY = 1000000;
-    string public constant TOKEN_NAME = "MyToken";
-    address public constant OWNER = 0x1234567890123456789012345678901234567890;
-    
-    function checkMaxSupply() public pure returns (uint) {
-        return MAX_SUPPLY;  // Direct value, no storage access
+contract Ao {
+    uint256 public constant maxSupply = 1000000;
+    uint256 public constant mintingFee = 0.001 ether;
+    bool public isPaused;
+
+    function checkLimits(uint256 amount) public view returns (bool) {
+        return amount <= maxSupply && !isPaused;
     }
-    
-    function getTokenInfo() public pure returns (string memory, uint) {
-        return (TOKEN_NAME, MAX_SUPPLY);  // No storage reads
+
+    function calculateFees(uint256 amount) public pure returns (uint256) {
+        if (amount > maxSupply) {
+            return mintingFee * 2;
+        }
+        return mintingFee;
     }
 }
 ```
 
+## Applicability
+
+The names are kept as they are. Renaming `maxSupply` to `MAX_SUPPLY` to follow the usual convention for constants would rename the automatic getter as well, changing its selector, and a caller of the original contract would no longer reach it. The transformation must leave every public name untouched.
+
+Two further points do not break the correspondence. A function that no longer reads storage may be declared `pure` instead of `view`; the selector is unchanged and both remain callable through `STATICCALL`. And removing a slot from the layout shifts the slots of the variables declared after it, which is invisible from outside but does mean that a coupling invariant must relate the two contracts field by field, and that the rule cannot be applied to a contract behind a proxy whose layout is already deployed.
+
 ## Gas Savings
 
-Using `constant` eliminates storage slot allocation and replaces storage read operations with direct value access, significantly reducing both deployment and runtime gas costs.
+Each read of the value becomes a push of a literal instead of an SLOAD, and the constructor no longer pays the write that initialised the slot. The runtime saving is proportional to how often the value is read.

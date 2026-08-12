@@ -43,3 +43,18 @@ rule gasOptimizedCorrectnessOfCalculateSumOfProducts(method f, method g)
     } {
     gasOptimizationCorrectness(f, g);
 }
+rule gasOptimizedCorrectnessOfPush1(method f, method g)
+    filtered {
+        f -> f.selector == sig:a.push1(uint64).selector,
+        g -> g.selector == sig:ao.push1(uint64).selector
+    } {
+    gasOptimizationCorrectness(f, g);
+}
+
+rule gasOptimizedCorrectnessOfPush2(method f, method g)
+    filtered {
+        f -> f.selector == sig:a.push2(uint64).selector,
+        g -> g.selector == sig:ao.push2(uint64).selector
+    } {
+    gasOptimizationCorrectness(f, g);
+}

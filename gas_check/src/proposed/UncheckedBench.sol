@@ -3,81 +3,56 @@ pragma solidity ^0.8.0;
 
 // Benchmark for Rule 28 (Use `unchecked` arithmetic for validated operations).
 //
-// WHY A LOOP PARAMETERISED BY N. The saving of this rule is one elided
-// overflow check per arithmetic operation, so it is expected to be linear in
-// the number of executed operations and essentially absent from deployment
-// cost beyond the removed check code. Measuring a single fixed workload cannot
-// tell a per-operation saving from a one-off one. N in {100, 1000, 5000}
-// mirrors the sweep already used for the loop-refactoring pattern, so the two
-// results are directly comparable.
+// WHY ONE CONTRACT PAIR PER INSTANCE. The saving of this rule is one elided
+// overflow check per executed arithmetic operation, so it is expected to be
+// linear in the number of iterations. An earlier version of this benchmark
+// took the trip count as an argument of the call, which meant a single pair of
+// contracts served all three sizes and no deployment figure could be attributed
+// to an individual instance. Fixing the trip count as a compile-time constant
+// gives every instance its own pair, measured on the same footing as the other
+// three rules of the paper: one deployment cost, one deployment size and one
+// execution cost each.
 //
-// WHY THE GUARD IS HOISTED OUT OF THE LOOP. `unchecked` is only sound here
-// because `start >= iterations` is established before the loop, which makes
-// every decrement in the body non-negative by construction. Keeping the
-// validation outside the measured body is also what makes the two versions
-// differ in exactly one respect: the presence of the redundant per-iteration
-// check.
+// WHY TWO LOOP BODIES. `Arith` performs pure arithmetic; `Sload` reads a
+// storage slot per iteration. The pair separates sensitivity to the size of the
+// problem from sensitivity to what else the loop does: the elided check is a
+// fixed number of gas units per iteration, so it is a large share of an
+// arithmetic body and a small share of one that pays for an SLOAD.
 //
-// WHY EACH SEEDED SLOT HOLDS 1. With `n <= 5000` enforced and every slot equal
-// to one, the accumulator is bounded by 5000 and the elided overflow check is
-// unreachable by construction, so the two versions are equivalent on every
-// input rather than only on the inputs exercised here.
+// WHY THE GUARD IS HOISTED OUT OF THE LOOP. `unchecked` is sound in `Arith`
+// only because `start >= N` is established before the loop, which makes every
+// decrement non-negative by construction. Keeping that validation outside the
+// measured body is also what makes the two versions of a pair differ in exactly
+// one respect: the presence of the redundant per-iteration check.
 //
-// WHY SETUP IS SEPARATED FROM MEASUREMENT. The array-populating variant below
-// writes N storage slots before the measured call. Those SSTOREs cost orders
-// of magnitude more than the arithmetic under study, and in the original
-// benchmark they were inside the metered region, which diluted the reported
-// saving towards zero. The tests pause gas metering around `seed` and resume
-// immediately before the measured call.
+// WHY EACH SEEDED SLOT HOLDS 1. In `Sload` the accumulator is bounded by N,
+// itself at most 5000, so the elided overflow check is unreachable by
+// construction and the two versions are equivalent on every state rather than
+// only on the states exercised here.
 
-contract UA_A {
-    mapping(uint256 => uint256) public slots;
+contract UA_A_Arith100 {
     uint256 public sink;
 
-    function seed(uint256 n) external {
-        for (uint256 i = 0; i < n; i++) {
-            slots[i] = 1;
-        }
-    }
-
-    function decrementLoop(uint256 start, uint256 iterations) external returns (uint256) {
-        require(start >= iterations, "start must be >= iterations");
+    function run(uint256 start) external returns (uint256) {
+        require(start >= 100, "start must be >= iterations");
 
         uint256 counter = start;
-        for (uint256 i = 0; i < iterations; i++) {
+        for (uint256 i = 0; i < 100; i++) {
             counter -= 1;
         }
         sink = counter;
         return counter;
     }
-
-    function accumulate(uint256 n) external returns (uint256) {
-        require(n <= 5000, "n out of range");
-
-        uint256 total;
-        for (uint256 i = 0; i < n; i++) {
-            total += slots[i];
-        }
-        sink = total;
-        return total;
-    }
 }
 
-contract UA_Ao {
-    mapping(uint256 => uint256) public slots;
+contract UA_Ao_Arith100 {
     uint256 public sink;
 
-    function seed(uint256 n) external {
-        for (uint256 i = 0; i < n; i++) {
-            slots[i] = 1;
-        }
-    }
-
-    function decrementLoop(uint256 start, uint256 iterations) external returns (uint256) {
-        require(start >= iterations, "start must be >= iterations");
+    function run(uint256 start) external returns (uint256) {
+        require(start >= 100, "start must be >= iterations");
 
         uint256 counter = start;
-        for (uint256 i = 0; i < iterations; i++) {
+        for (uint256 i = 0; i < 100; i++) {
             unchecked {
                 counter -= 1;
             }
@@ -85,12 +60,189 @@ contract UA_Ao {
         sink = counter;
         return counter;
     }
+}
 
-    function accumulate(uint256 n) external returns (uint256) {
-        require(n <= 5000, "n out of range");
+contract UA_A_Arith1000 {
+    uint256 public sink;
 
+    function run(uint256 start) external returns (uint256) {
+        require(start >= 1000, "start must be >= iterations");
+
+        uint256 counter = start;
+        for (uint256 i = 0; i < 1000; i++) {
+            counter -= 1;
+        }
+        sink = counter;
+        return counter;
+    }
+}
+
+contract UA_Ao_Arith1000 {
+    uint256 public sink;
+
+    function run(uint256 start) external returns (uint256) {
+        require(start >= 1000, "start must be >= iterations");
+
+        uint256 counter = start;
+        for (uint256 i = 0; i < 1000; i++) {
+            unchecked {
+                counter -= 1;
+            }
+        }
+        sink = counter;
+        return counter;
+    }
+}
+
+contract UA_A_Arith5000 {
+    uint256 public sink;
+
+    function run(uint256 start) external returns (uint256) {
+        require(start >= 5000, "start must be >= iterations");
+
+        uint256 counter = start;
+        for (uint256 i = 0; i < 5000; i++) {
+            counter -= 1;
+        }
+        sink = counter;
+        return counter;
+    }
+}
+
+contract UA_Ao_Arith5000 {
+    uint256 public sink;
+
+    function run(uint256 start) external returns (uint256) {
+        require(start >= 5000, "start must be >= iterations");
+
+        uint256 counter = start;
+        for (uint256 i = 0; i < 5000; i++) {
+            unchecked {
+                counter -= 1;
+            }
+        }
+        sink = counter;
+        return counter;
+    }
+}
+
+contract UA_A_Sload100 {
+    mapping(uint256 => uint256) public slots;
+    uint256 public sink;
+
+    function seed() external {
+        for (uint256 i = 0; i < 100; i++) {
+            slots[i] = 1;
+        }
+    }
+
+    function run() external returns (uint256) {
         uint256 total;
-        for (uint256 i = 0; i < n; i++) {
+        for (uint256 i = 0; i < 100; i++) {
+            total += slots[i];
+        }
+        sink = total;
+        return total;
+    }
+}
+
+contract UA_Ao_Sload100 {
+    mapping(uint256 => uint256) public slots;
+    uint256 public sink;
+
+    function seed() external {
+        for (uint256 i = 0; i < 100; i++) {
+            slots[i] = 1;
+        }
+    }
+
+    function run() external returns (uint256) {
+        uint256 total;
+        for (uint256 i = 0; i < 100; i++) {
+            unchecked {
+                total += slots[i];
+            }
+        }
+        sink = total;
+        return total;
+    }
+}
+
+contract UA_A_Sload1000 {
+    mapping(uint256 => uint256) public slots;
+    uint256 public sink;
+
+    function seed() external {
+        for (uint256 i = 0; i < 1000; i++) {
+            slots[i] = 1;
+        }
+    }
+
+    function run() external returns (uint256) {
+        uint256 total;
+        for (uint256 i = 0; i < 1000; i++) {
+            total += slots[i];
+        }
+        sink = total;
+        return total;
+    }
+}
+
+contract UA_Ao_Sload1000 {
+    mapping(uint256 => uint256) public slots;
+    uint256 public sink;
+
+    function seed() external {
+        for (uint256 i = 0; i < 1000; i++) {
+            slots[i] = 1;
+        }
+    }
+
+    function run() external returns (uint256) {
+        uint256 total;
+        for (uint256 i = 0; i < 1000; i++) {
+            unchecked {
+                total += slots[i];
+            }
+        }
+        sink = total;
+        return total;
+    }
+}
+
+contract UA_A_Sload5000 {
+    mapping(uint256 => uint256) public slots;
+    uint256 public sink;
+
+    function seed() external {
+        for (uint256 i = 0; i < 5000; i++) {
+            slots[i] = 1;
+        }
+    }
+
+    function run() external returns (uint256) {
+        uint256 total;
+        for (uint256 i = 0; i < 5000; i++) {
+            total += slots[i];
+        }
+        sink = total;
+        return total;
+    }
+}
+
+contract UA_Ao_Sload5000 {
+    mapping(uint256 => uint256) public slots;
+    uint256 public sink;
+
+    function seed() external {
+        for (uint256 i = 0; i < 5000; i++) {
+            slots[i] = 1;
+        }
+    }
+
+    function run() external returns (uint256) {
+        uint256 total;
+        for (uint256 i = 0; i < 5000; i++) {
             unchecked {
                 total += slots[i];
             }

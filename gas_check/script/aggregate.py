@@ -24,14 +24,30 @@ CONTRACTS = {
     "CE_Ao_5": ("Custom Errors", "k=5", "Ao"),
     "CE_A_20": ("Custom Errors", "k=20", "A"),
     "CE_Ao_20": ("Custom Errors", "k=20", "Ao"),
-    "UA_A": ("Unchecked Arithmetic", "all", "A"),
-    "UA_Ao": ("Unchecked Arithmetic", "all", "Ao"),
+    "UA_A_Arith100": ("Unchecked Arithmetic", "arith100", "A"),
+    "UA_Ao_Arith100": ("Unchecked Arithmetic", "arith100", "Ao"),
+    "UA_A_Arith1000": ("Unchecked Arithmetic", "arith1000", "A"),
+    "UA_Ao_Arith1000": ("Unchecked Arithmetic", "arith1000", "Ao"),
+    "UA_A_Arith5000": ("Unchecked Arithmetic", "arith5000", "A"),
+    "UA_Ao_Arith5000": ("Unchecked Arithmetic", "arith5000", "Ao"),
+    "UA_A_Sload100": ("Unchecked Arithmetic", "sload100", "A"),
+    "UA_Ao_Sload100": ("Unchecked Arithmetic", "sload100", "Ao"),
+    "UA_A_Sload1000": ("Unchecked Arithmetic", "sload1000", "A"),
+    "UA_Ao_Sload1000": ("Unchecked Arithmetic", "sload1000", "Ao"),
+    "UA_A_Sload5000": ("Unchecked Arithmetic", "sload5000", "A"),
+    "UA_Ao_Sload5000": ("Unchecked Arithmetic", "sload5000", "Ao"),
     "PC_A_Min": ("Payable Constructor", "minimal", "A"),
     "PC_Ao_Min": ("Payable Constructor", "minimal", "Ao"),
     "PC_A_Simple": ("Payable Constructor", "simple", "A"),
     "PC_Ao_Simple": ("Payable Constructor", "simple", "Ao"),
     "PC_A_Heavy": ("Payable Constructor", "heavy", "A"),
     "PC_Ao_Heavy": ("Payable Constructor", "heavy", "Ao"),
+    "NR_A_One": ("Named Returns", "one", "A"),
+    "NR_Ao_One": ("Named Returns", "one", "Ao"),
+    "NR_A_Three": ("Named Returns", "three", "A"),
+    "NR_Ao_Three": ("Named Returns", "three", "Ao"),
+    "NR_A_Struct": ("Named Returns", "struct", "A"),
+    "NR_Ao_Struct": ("Named Returns", "struct", "Ao"),
 }
 
 
@@ -44,6 +60,8 @@ def classify_test(name):
         return "Unchecked Arithmetic", parts[2], parts[3], parts[4]
     if parts[1] == "PayableCtor":
         return "Payable Constructor", parts[2], parts[3], parts[4]
+    if parts[1] == "NamedReturn":
+        return "Named Returns", parts[2], parts[3], parts[4]
     return None
 
 

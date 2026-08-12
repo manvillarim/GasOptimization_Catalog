@@ -2,99 +2,33 @@
 pragma solidity ^0.8.20;
 
 contract Ao {
+    struct Order {
+        uint128 quantity;
+        uint128 price;
+        uint256 amount;
+    }
 
-    struct UserData {
-        address wallet;       // 20 bytes
-        uint8 tier;           // 1 byte
-        bool isActive;        // 1 byte
-        // Total slot 0: 22 bytes (10 bytes livres)
-        
-        // Slot 1: uint256 (32 bytes)
-        uint256 balance;      // 32 bytes
+    mapping(uint256 => Order) private orders;
+    uint256 public orderCount;
+
+    function createOrder(uint128 quantity, uint256 amount, uint128 price) external returns (uint256) {
+        uint256 id = orderCount;
+        orders[id] = Order(quantity, price, amount);
+        orderCount++;
+        return id;
     }
-    
-    mapping(uint256 => UserData) public users;
-    uint256 public userCount;
-    
-    event UserCreated(uint256 indexed userId, address wallet);
-    event UserUpdated(uint256 indexed userId);
-    
-    function createUser(
-        address _wallet,
-        uint256 _initialBalance,
-        uint8 _tier
-    ) external returns (uint256) {
-        uint256 userId = userCount++;
-        
-        users[userId] = UserData({
-            wallet: _wallet,
-            tier: _tier,
-            isActive: true,
-            balance: _initialBalance
-        });
-        
-        emit UserCreated(userId, _wallet);
-        return userId;
+
+    function updateAmount(uint256 id, uint256 amount) external {
+        orders[id].amount = amount;
     }
-    
-    function updateUser(
-        uint256 _userId,
-        uint256 _newBalance,
-        bool _isActive,
-        uint8 _tier
-    ) external {
-        require(_userId < userCount, "User does not exist");
-        
-        UserData storage user = users[_userId];
-        user.balance = _newBalance;
-        user.isActive = _isActive;
-        user.tier = _tier;
-        
-        emit UserUpdated(_userId);
+
+    function updateNarrow(uint256 id, uint128 quantity, uint128 price) external {
+        orders[id].quantity = quantity;
+        orders[id].price = price;
     }
-    
-    function getUserData(uint256 _userId) 
-        external 
-        view 
-        returns (
-            uint256 balance,
-            bool isActive,
-            uint8 tier,
-            address wallet
-        ) 
-    {
-        require(_userId < userCount, "User does not exist");
-        UserData memory user = users[_userId];
-        return (user.balance, user.isActive, user.tier, user.wallet);
-    }
-    
-    function deactivateUser(uint256 _userId) external {
-        require(_userId < userCount, "User does not exist");
-        users[_userId].isActive = false;
-    }
-    
-    function updateBalance(uint256 _userId, uint256 _newBalance) external {
-        require(_userId < userCount, "User does not exist");
-        users[_userId].balance = _newBalance;
-    }
-    
-    function updateTier(uint256 _userId, uint8 _newTier) external {
-        require(_userId < userCount, "User does not exist");
-        users[_userId].tier = _newTier;
-    }
-    
-    function getTotalInfo(uint256 _userId) 
-        external 
-        view 
-        returns (uint256 combinedInfo) 
-    {
-        require(_userId < userCount, "User does not exist");
-        UserData memory user = users[_userId];
-        
-        combinedInfo = user.balance + uint256(user.tier);
-        if (user.isActive) {
-            combinedInfo += 1000000;
-        }
-        return combinedInfo;
+
+    function getOrder(uint256 id) external view returns (uint128, uint256, uint128) {
+        Order storage o = orders[id];
+        return (o.quantity, o.amount, o.price);
     }
 }

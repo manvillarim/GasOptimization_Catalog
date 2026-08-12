@@ -1,47 +1,55 @@
 # 14. Use Immutable Variables for Constructor-Set Values
 
-This transformation uses `immutable` variables for values that are set once in the constructor and never changed afterward. Immutable variables are stored directly in the contract's bytecode rather than in storage slots, eliminating expensive storage read operations (SLOAD) and making access significantly cheaper.
+This transformation declares as `immutable` a state variable that is assigned in the constructor and never afterwards. An `immutable` occupies no storage slot: its value is written into the runtime code at construction, so every read becomes a push of a literal rather than an SLOAD.
 
 ## Example
 
 ### Original (Regular State Variables)
 ```solidity
-contract RegularStateVars {
+contract A {
     address public owner;
-    uint public creationTime;
-    uint public maxSupply;
-    
-    constructor(uint _maxSupply) {
+    uint256 public creationTime;
+    uint256 public maxSupply;
+
+    constructor(uint256 _maxSupply) {
         owner = msg.sender;
         creationTime = block.timestamp;
         maxSupply = _maxSupply;
     }
-    
-    function getInfo() public view returns (address, uint, uint) {
-        return (owner, creationTime, maxSupply);  // 3 storage reads (SLOAD)
+
+    function getInfo() external view returns (address, uint256, uint256) {
+        return (owner, creationTime, maxSupply);
     }
 }
 ```
 
 ### Optimised (Immutable Variables)
 ```solidity
-contract ImmutableStateVars {
-    address public immutable OWNER;
-    uint public immutable CREATION_TIME;
-    uint public immutable MAX_SUPPLY;
-    
-    constructor(uint _maxSupply) {
-        OWNER = msg.sender;
-        CREATION_TIME = block.timestamp;
-        MAX_SUPPLY = _maxSupply;
+contract Ao {
+    address public immutable owner;
+    uint256 public immutable creationTime;
+    uint256 public immutable maxSupply;
+
+    constructor(uint256 _maxSupply) {
+        owner = msg.sender;
+        creationTime = block.timestamp;
+        maxSupply = _maxSupply;
     }
-    
-    function getInfo() public view returns (address, uint, uint) {
-        return (OWNER, CREATION_TIME, MAX_SUPPLY);  // Direct bytecode access
+
+    function getInfo() external view returns (address, uint256, uint256) {
+        return (owner, creationTime, maxSupply);
     }
 }
 ```
 
+## Applicability
+
+The names are kept. Renaming `owner` to `OWNER` to follow the convention for constants would rename its automatic getter and change the selector, which a caller of the original contract would notice.
+
+An `immutable` may be assigned only once and only in the constructor, and it cannot be read there. A constructor that reads back a value it has just stored has to be restructured to use the local value instead, and any function that writes the variable after deployment puts the transformation out of scope.
+
+The variables leave the storage layout, which is invisible from outside but shifts the slots of whatever was declared after them. As with `constant`, this rules out applying the transformation to an implementation behind a proxy whose storage is already in use.
+
 ## Gas Savings
 
-Using `immutable` eliminates storage slot allocation and replaces expensive storage read operations with direct bytecode access, significantly reducing runtime gas costs for variables set once in the constructor.
+Every read of the value becomes a push instead of an SLOAD, and the constructor no longer pays the storage writes. Against this, the value is embedded at each use site, so the runtime code grows with the number of reads.

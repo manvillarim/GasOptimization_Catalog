@@ -11,7 +11,7 @@ would silently pollute any aggregate computed over the file.
 import re
 import sys
 
-PREFIXES = ("CE_", "UA_", "PC_")
+PREFIXES = ("CE_", "UA_", "PC_", "NR_")
 
 
 def main() -> None:

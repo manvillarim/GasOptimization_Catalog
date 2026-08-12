@@ -1,44 +1,46 @@
 # 16. Use Short-Circuiting for Conditional Expressions
 
-This transformation leverages Solidity's short-circuit evaluation for logical operators (`&&` and `||`). The evaluation stops as soon as the result is determined: for `&&`, if the first operand is false, the second is not evaluated; for `||`, if the first is true, the second is skipped. By placing cheaper or more likely conditions first, expensive operations can be avoided when unnecessary.
+This transformation orders the operands of `&&` and `||` so that the cheap one is evaluated first. Solidity short-circuits both operators: for `&&` the second operand is not evaluated when the first is false, and for `||` it is not evaluated when the first is true. Writing the condition that decides the result most often, and costs least, on the left avoids the other.
 
 ## Example
 
-### Original (No Short-Circuit Optimization)
+### Original (Expensive Operand Evaluated First)
 ```solidity
-contract NoShortCircuit {
-    mapping(address => uint) public balances;
-    
-    function expensiveCheck(address user) private view returns (bool) {
-        // Expensive operation
+contract A {
+    mapping(address => uint256) private balances;
+
+    function hasBalance(address user) private view returns (bool) {
         return balances[user] > 1000;
     }
-    
+
     function validateUser(address user) public view returns (bool) {
-        bool hasBalance = expensiveCheck(user);  // Always executed
-        bool validAddress = user != address(0);
-        return validAddress && hasBalance;
+        bool funded = hasBalance(user);
+        return user != address(0) && funded;
     }
 }
 ```
 
-### Optimised (Short-Circuit Aware)
+### Optimised (Cheap Operand First)
 ```solidity
-contract WithShortCircuit {
-    mapping(address => uint) public balances;
-    
-    function expensiveCheck(address user) private view returns (bool) {
-        // Expensive operation
+contract Ao {
+    mapping(address => uint256) private balances;
+
+    function hasBalance(address user) private view returns (bool) {
         return balances[user] > 1000;
     }
-    
+
     function validateUser(address user) public view returns (bool) {
-        // Cheap check first: expensiveCheck skipped if user == address(0)
-        return user != address(0) && expensiveCheck(user);
+        return user != address(0) && hasBalance(user);
     }
 }
 ```
+
+## Applicability
+
+The operand that may now be skipped must be free of side effects and must not revert. `hasBalance` only reads a mapping, so skipping it changes nothing beyond the gas. An operand that writes state, emits an event, calls out, or can revert — a division whose divisor may be zero, for instance — is not interchangeable: the original evaluates it on every call and the rewrite does not, and the two contracts then differ on the inputs that make the first operand false.
+
+Reordering the operands of the same expression carries the same condition, and additionally requires the two conditions to be independent, so that neither is what makes the other well defined.
 
 ## Gas Savings
 
-Ordering conditions to take advantage of short-circuit evaluation reduces gas consumption by preventing unnecessary execution of expensive operations when earlier conditions already determine the final result.
+The saving is the cost of the operand avoided, weighted by how often the first operand decides the result. It is largest when the skipped operand reads storage or calls another contract.

@@ -2,36 +2,26 @@ using A as a;
 using Ao as ao;
 
 methods {
-    function a.balances(address) external returns (uint256) envfree;
-    function ao.balances(address) external returns (uint256) envfree;
-    function a.allowances(address, address) external returns (uint256) envfree;
-    function ao.allowances(address, address) external returns (uint256) envfree;
-    function a.isPaused() external returns (bool) envfree;
-    function ao.isPaused() external returns (bool) envfree;
-    function a.totalSupply() external returns (uint256) envfree;
-    function ao.TOTAL_SUPPLY() external returns (uint256) envfree;
-    function a.owner() external returns (address) envfree;
-    function ao.OWNER() external returns (address) envfree;
-    function a.mintingFee() external returns (uint96) envfree;
-    function ao.MINTING_FEE() external returns (uint96) envfree;
-    function a.maxTransactionAmount() external returns (uint96) envfree;
-    function ao.MAX_TRANSACTION_AMOUNT() external returns (uint96) envfree;
+    function a.quantity() external returns (uint128) envfree;
+    function ao.quantity() external returns (uint128) envfree;
+    function a.price() external returns (uint128) envfree;
+    function ao.price() external returns (uint128) envfree;
+    function a.total() external returns (uint256) envfree;
+    function ao.total() external returns (uint256) envfree;
+    function a.sumNarrow() external returns (uint256) envfree;
+    function ao.sumNarrow() external returns (uint256) envfree;
 }
 
-definition couplingInv() returns bool = 
-a.isPaused() == ao.isPaused() && 
-a.totalSupply() == ao.TOTAL_SUPPLY() && 
-a.owner() == ao.OWNER() &&
-a.mintingFee() == ao.MINTING_FEE() && 
-a.maxTransactionAmount() == ao.MAX_TRANSACTION_AMOUNT() &&
-(forall address k. a.balances[k] == ao.balances[k]) &&
-(forall address u. forall address v. a.allowances[u][v] == ao.allowances[u][v]);
+definition couplingInv() returns bool =
+    a.quantity() == ao.quantity() &&
+    a.price() == ao.price() &&
+    a.total() == ao.total();
 
 function gasOptimizationCorrectness(method f, method g) {
     env eA;
     env eAo;
     calldataarg args;
-    
+
     require eA == eAo && couplingInv();
 
     a.f@withrevert(eA, args);
@@ -44,34 +34,23 @@ function gasOptimizationCorrectness(method f, method g) {
     assert couplingInv();
 }
 
-
-rule gasOptimizedCorrectnessOfTransfer(method f, method g)
-filtered { f -> f.selector == sig:a.transfer(address, uint256).selector, g -> g.selector == sig:ao.transfer(address, uint256).selector } {
+rule gasOptimizedCorrectnessOfUpdate(method f, method g)
+    filtered {
+        f -> f.selector == sig:a.update(uint128, uint128).selector,
+        g -> g.selector == sig:ao.update(uint128, uint128).selector
+    } {
     gasOptimizationCorrectness(f, g);
 }
 
-rule gasOptimizedCorrectnessOfGetBasicInfo(method f, method g)
-filtered { f -> f.selector == sig:a.getBasicInfo().selector, g -> g.selector == sig:ao.getBasicInfo().selector } {
+rule gasOptimizedCorrectnessOfSetTotal(method f, method g)
+    filtered {
+        f -> f.selector == sig:a.setTotal(uint256).selector,
+        g -> g.selector == sig:ao.setTotal(uint256).selector
+    } {
     gasOptimizationCorrectness(f, g);
 }
 
-rule gasOptimizedCorrectnessOfGetSupplyInfo(method f, method g)
-filtered { f -> f.selector == sig:a.getSupplyInfo().selector, g -> g.selector == sig:ao.getSupplyInfo().selector } {
-    gasOptimizationCorrectness(f, g);
+rule returnsOfSumNarrow() {
+    require couplingInv();
+    assert a.sumNarrow() == ao.sumNarrow();
 }
-
-rule gasOptimizedCorrectnessOfGetOwnerAndFee(method f, method g)
-filtered { f -> f.selector == sig:a.getOwnerAndFee().selector, g -> g.selector == sig:ao.getOwnerAndFee().selector } {
-    gasOptimizationCorrectness(f, g);
-}
-
-rule gasOptimizedCorrectnessOfCheckLimits(method f, method g)
-filtered { f -> f.selector == sig:a.checkLimits(uint256).selector, g -> g.selector == sig:ao.checkLimits(uint256).selector } {
-    gasOptimizationCorrectness(f, g);
-}
-
-rule gasOptimizedCorrectnessOfCalculateFees(method f, method g)
-filtered { f -> f.selector == sig:a.calculateFees(uint256).selector, g -> g.selector == sig:ao.calculateFees(uint256).selector } {
-    gasOptimizationCorrectness(f, g);
-}
-
