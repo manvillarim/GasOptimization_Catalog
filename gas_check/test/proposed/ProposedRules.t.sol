@@ -27,23 +27,10 @@ import {
     PC_Ao_Heavy
 } from "../../src/proposed/PayableCtorBench.sol";
 
-// MEASUREMENT PROTOCOL
-//
-// Deployment cost and deployment size are read from `forge test --gas-report`,
-// which reports the CREATE gas and the runtime code length per contract. This
-// is the same instrument used for every other gas figure in the paper, so the
-// numbers are directly comparable.
-//
-// Function cost is read from the per-test gas figure that forge prints for each
-// test case, with `vm.pauseGasMetering` wrapping everything that is not the
-// operation under study. Each measured test therefore contains exactly one
-// metered call. This is the protocol already used for the loop-refactoring
-// benchmark; the original proposed-rules benchmark did not use it, which is one
-// of the defects this reconstruction corrects.
-//
-// One measured call per test also means the test name identifies the datum
-// unambiguously, which is what the CSV extraction in `script/run_benchmark.sh`
-// relies on.
+// Deployment cost and size are read from `forge test --gas-report`; function
+// cost is read from the per-test gas figure. Each test makes exactly one
+// metered call, and its name identifies the datum for the extraction in
+// `script/run_benchmark.sh`.
 
 contract CustomErrorsK1 is Test {
     CE_A_1 internal a;
@@ -153,9 +140,7 @@ contract UncheckedArith5000 is Test {
     }
 }
 
-// The seeding of the N slots is excluded from the metered region: those SSTOREs
-// cost orders of magnitude more than the arithmetic under study and would drive
-// any reported saving towards zero.
+// Seeding the N slots is kept out of the metered region.
 contract UncheckedSload100 is Test {
     UA_A_Sload100 internal a;
     UA_Ao_Sload100 internal ao;
@@ -180,9 +165,7 @@ contract UncheckedSload100 is Test {
     }
 }
 
-// The seeding of the N slots is excluded from the metered region: those SSTOREs
-// cost orders of magnitude more than the arithmetic under study and would drive
-// any reported saving towards zero.
+// Seeding the N slots is kept out of the metered region.
 contract UncheckedSload1000 is Test {
     UA_A_Sload1000 internal a;
     UA_Ao_Sload1000 internal ao;
@@ -207,9 +190,7 @@ contract UncheckedSload1000 is Test {
     }
 }
 
-// The seeding of the N slots is excluded from the metered region: those SSTOREs
-// cost orders of magnitude more than the arithmetic under study and would drive
-// any reported saving towards zero.
+// Seeding the N slots is kept out of the metered region.
 contract UncheckedSload5000 is Test {
     UA_A_Sload5000 internal a;
     UA_Ao_Sload5000 internal ao;
@@ -238,10 +219,7 @@ contract PayableCtorMinimal is Test {
     PC_A_Min internal a;
     PC_Ao_Min internal ao;
 
-    // The two instances are also deployed in setUp and then called once, so
-    // that the gas report emits a deployment-cost and runtime-size row for
-    // each. A contract that is only constructed inside a test body never
-    // receives a call and is therefore absent from the report.
+    // Deployed here and called once so the gas report emits a row for each.
     function setUp() public {
         a = new PC_A_Min();
         ao = new PC_Ao_Min();

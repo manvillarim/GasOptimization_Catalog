@@ -1,17 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// Benchmark for Rule 31 (Named Return Variables).
-//
-// WHY THREE RETURN WIDTHS. The rule removes the copy between a local and the
-// return slot, so the saving is expected to grow with how much is copied and to
-// be near zero for a single word. Measuring one width could not distinguish "the
-// rule saves a constant" from "the rule saves per returned word". The three
-// instances return one word, three words, and a memory struct of eight fields.
-//
-// WHY THE BODIES ARE OTHERWISE IDENTICAL. Each pair differs only in whether the
-// returned values are declared in the signature. Nothing else changes, so any
-// measured difference is attributable to the rewrite.
+// Benchmark for Rule 31 (Named Return Variables), instantiated at three return
+// widths: one word, three words and a memory struct of eight fields. Each pair
+// differs only in whether the returned values are declared in the signature.
 
 struct Wide {
     uint256 a;

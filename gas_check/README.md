@@ -1,107 +1,123 @@
 # Gas benchmarks
 
-Foundry project backing the gas figures reported in *Ensuring Gas Optimisation
-Correctness by Behavioural Equivalence*.
+Foundry project that produces the gas figures reported in *Ensuring Gas
+Optimisation Correctness by Behavioural Equivalence*.
+
+## Layout
 
 ```
-src/                     contracts for the outdated-pattern benchmarks
-src/proposed/            contracts for the four rules proposed in the paper
-test/                    tests for the outdated-pattern benchmarks
-test/proposed/           tests for the four proposed rules
-script/run_benchmark.sh  driver: repeated trials, both compiler profiles
-script/parse_gas_report.py
-script/aggregate.py
-results/raw.csv          every individual observation
-results/summary.csv      mean, standard deviation and saving per configuration
-results/bytecode_identity.csv  whether each pair compiles to identical runtime code
+src/                         contracts for the outdated-pattern benchmarks
+src/proposed/                contracts for the four proposed rules
+test/                        tests for the outdated-pattern benchmarks
+test/proposed/               tests for the four proposed rules
+script/run_benchmark.sh      benchmark driver
+script/parse_gas_report.py   reads deployment cost and size from the gas report
+script/aggregate.py          computes mean, standard deviation and saving
+script/bytecode_identity.py  compares the deployed bytecode of each pair
+results/                     generated output
 ```
+
+## Requirements
+
+* Foundry (tested with forge 1.7.1)
+* Python 3, standard library only
+* solc 0.8.22, fetched automatically by forge on the first build
 
 ## Running
 
+From this directory:
+
 ```shell
-bash script/run_benchmark.sh 10     # 10 trials per configuration, both profiles
+bash script/run_benchmark.sh 10
 ```
 
-The driver writes `results/raw.csv` (one row per observation) and
-`results/summary.csv` (aggregates). Nothing in the paper is read from a cached
-artifact: `results/` is regenerated from a clean build on every invocation.
+The argument is the number of trials per configuration and defaults to 10. Each
+profile is rebuilt from scratch before its trials, so no figure is read from a
+cached artifact. The run overwrites three files:
+
+| File | Contents |
+|---|---|
+| `results/raw.csv` | one row per observation: `profile,trial,kind,name,metric,value` |
+| `results/summary.csv` | one row per `(profile, metric, pattern, size, workload)`, with `original_mean`, `original_sd`, `optimised_mean`, `optimised_sd`, `saving_pct` |
+| `results/bytecode_identity.csv` | one row per pair and profile, with `original_bytes`, `optimised_bytes`, `identical` |
+
+`metric` is `deploy_cost`, `deploy_size` or `fn_gas`. `saving_pct` is
+`100 * (optimised_mean - original_mean) / original_mean`, so a negative value is
+a saving.
+
+`summary.csv` and `bytecode_identity.csv` are byte-identical across runs. The
+rows of `raw.csv` carry the same observations but not in the same order, because
+forge does not fix the order in which it runs the test contracts; sort the file
+before diffing it against a previous run.
+
+To read the raw gas report for one profile:
+
+```shell
+FOUNDRY_PROFILE=default forge test --gas-report --match-path 'test/proposed/*'
+FOUNDRY_PROFILE=viair   forge test --gas-report --match-path 'test/proposed/*'
+```
+
+To measure a single instance:
+
+```shell
+FOUNDRY_PROFILE=viair forge test --match-test test_Unchecked_arith5000 -vv
+```
+
+Test names follow `test_<rule>_<size>_<version>_<workload>`, where `<version>`
+is `A` for the original contract and `Ao` for the optimised one. `aggregate.py`
+pairs observations by this name, so renaming a test changes the aggregation.
+
+## Compiler profiles
+
+`foundry.toml` defines two profiles that differ in one setting:
+
+| Column in the paper | `FOUNDRY_PROFILE` | solc | evm_version | optimiser | runs | codegen |
+|---|---|---|---|---|---|---|
+| Standard | `default` | 0.8.22 | shanghai | on | 200 | legacy |
+| Via-IR | `viair` | 0.8.22 | shanghai | on | 200 | Yul IR |
+
+`solc` and `evm_version` are pinned so that a re-run reproduces the same
+numbers. The profiles write to `out/` and `out-viair/`, so neither can serve the
+other a stale artifact. Holding `optimizer_runs` at 200 in both makes any
+difference between the two columns attributable to the code generator.
 
 ## Measurement protocol
 
-**Two quantities, two instruments.** Deployment cost and runtime size come from
-`forge test --gas-report`, which reports the `CREATE` gas and the creation
-(init) code length per contract. The size figure is the init code, not the
-runtime code: a rule that touches only the constructor shrinks the former while
-leaving the latter byte-identical. Function cost comes from the per-test gas figure forge
-prints for each test case. The two instruments answer different questions, and
-mixing them within a single column would make the numbers incomparable.
+Deployment cost and deployment size come from `forge test --gas-report`. The
+size reported there is the length of the creation (init) code, not of the
+runtime code, so a rule that touches only the constructor still shows up in that
+column.
 
-**One metered call per test.** Every test that reports a function cost contains
-exactly one call to the operation under study; anything else the test needs is
-wrapped in `vm.pauseGasMetering` / `vm.resumeGasMetering`. This matters most for
-the unchecked-arithmetic benchmark, whose `accumulate` workload writes N storage
-slots before the measured call: at N = 5000 those `SSTORE`s cost roughly two
-orders of magnitude more than the arithmetic under study, so leaving them inside
-the metered region drives any reported saving towards zero.
+Function cost comes from the per-test gas figure forge prints for each test
+case. Every test that reports a function cost makes exactly one metered call;
+setup work such as seeding storage slots is wrapped in `vm.pauseGasMetering` and
+`vm.resumeGasMetering`.
 
-**Compiler configurations.** `foundry.toml` defines two profiles that differ in
-exactly one setting:
+Each configuration is measured over N trials and every observation is kept in
+`results/raw.csv`. EVM execution is deterministic and forge replays each test
+from a fresh state, so `original_sd` and `optimised_sd` are expected to be
+`0.0000`. A non-zero value in those columns indicates a fault in the harness.
 
-| Profile in the paper | `FOUNDRY_PROFILE` | solc | optimiser | runs | codegen |
-|---|---|---|---|---|---|
-| Standard | `default` | 0.8.22 | on | 200 | legacy |
-| Via-IR | `viair` | 0.8.22 | on | 200 | Yul IR |
+`results/bytecode_identity.csv` records whether the two contracts of a pair
+compile to identical deployed bytecode. A pair that does cannot differ at
+runtime, and `forge test --gas-report` collapses it into a single entry, which
+is why some deployment rows are absent from `summary.csv`.
 
-`solc` and `evm_version` are pinned so the numbers are reproducible, and the two
-profiles write to different `out` directories so neither can serve the other a
-stale artifact. Holding `optimizer_runs` fixed at 200 across both profiles is
-what makes any difference between the columns attributable to the code
-generator rather than to a different optimisation budget.
+## Instance sizes
 
-**Repeated trials.** Each configuration is measured over N trials (10 by
-default) and every observation is kept in `results/raw.csv`. The EVM is
-deterministic and forge replays each test from a fresh state, so the expected
-standard deviation is zero; `summary.csv` carries the standard deviation
-explicitly so that this can be checked rather than assumed. A non-zero value in
-that column would indicate a defect in the harness, not measurement noise.
+Each rule is measured at three points along the dimension its saving depends on:
 
-**Instance sizes.** Each proposed rule is measured at three points along the
-dimension its saving is expected to depend on, so that a reader can distinguish
-a per-occurrence effect from a one-off one:
-
-| Rule | Dimension varied | Points |
+| Rule | Dimension varied | Instances |
 |---|---|---|
 | Custom Errors | number of guarded statements | k = 1, 5, 20 |
-| Unchecked Arithmetic | loop trip count x loop body | N = 100, 1000, 5000, each with an arithmetic and an `SLOAD` body |
-| Payable Constructor | constructor workload | minimal, simple, heavy |
+| Unchecked Arithmetic | loop trip count and loop body | N = 100, 1000, 5000, with an arithmetic body and an `SLOAD` body at each N |
+| Payable Constructor | constructor workload | minimal, simple, heavy (64 storage slots) |
 | Named Returns | width of the returned value | one word, three words, eight-field struct |
 
-The unchecked-arithmetic benchmark varies the loop body as well as the trip
-count, giving six instances: an arithmetic body and an `SLOAD`-dominated body at
-each N. The trip count is a compile-time constant, so each instance is a
-contract pair of its own and carries its own deployment figures; an earlier
-version took it as a call argument, which left one pair serving all three sizes
-and no deployment figure attributable to an individual instance.
+The trip count of the unchecked-arithmetic benchmark is a compile-time
+constant, so each of its six instances is a contract pair of its own and carries
+its own deployment figures.
 
-The payable-constructor benchmark keeps an unchanged runtime surface across all
-six contracts, giving a control column that should show no effect; the residual
-it does show bounds the resolution of the function-cost measurement.
-
-## Reproducibility
-
-The configuration used for the first submission pinned neither `solc` nor
-`evm_version`, so the compiler in use was whatever the local `forge` resolved
-for `pragma ^0.8.0`. Re-running that configuration against the *original*
-benchmark sources reproduces every published deployment-cost and deployment-size
-saving to within 0.62 percentage points, and reproduces the average-function
-saving for five of the six rows. The sixth does not reproduce: unchecked
-arithmetic under Via-IR was published at -1.42 %, while solc 0.8.20, 0.8.22,
-0.8.26 and 0.8.31 give -0.97 %, -0.77 %, -0.67 % and -0.67 % respectively. That
-column is unusually sensitive to the compiler version, and the absence of a
-compiler pin in the original configuration is the reason the published value
-cannot be recovered. Pinning the compiler removes this class of drift.
-
-The "Standard" column of that table was described in the first submission as
-using no optimisation. Reproduction shows it corresponds to the optimiser
-enabled at 200 runs through the legacy code generator; the profile above is
-named and documented accordingly.
+The six payable-constructor contracts expose the same runtime surface, so the
+function-gas rows for that rule act as a control and are expected to show no
+difference.

@@ -1,26 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// Benchmark for Rule 30 (Make Constructors Payable).
-//
-// WHY THREE CONSTRUCTOR COMPLEXITIES. The rule removes a single `CALLVALUE`
-// check emitted at the head of the creation code, so the absolute saving is a
-// constant of a few dozen gas and the *relative* saving must shrink as the
-// constructor does more work. The original single-instance measurement
-// reported "<1%" without evidence that the figure was stable; instantiating a
-// minimal, a moderate and a heavy constructor tests exactly that, and lets the
-// paper state whether the marginal benefit is constant in absolute terms
-// (expected) or in relative terms (not expected).
-//
-// WHY THE HEAVY VARIANT WRITES A LOOP OF SLOTS. Storage writes dominate any
-// realistic constructor, so a loop of SSTOREs is the cheapest faithful way to
-// grow constructor cost by orders of magnitude without changing anything else
-// about the contract's shape or its runtime surface.
-//
-// WHY THE RUNTIME SURFACE IS IDENTICAL ACROSS ALL SIX CONTRACTS. The rule
-// touches creation code only. Keeping the same three getters everywhere makes
-// the average-function column a control: it must show a 0.00% difference, and
-// any deviation would indicate a measurement fault rather than a real effect.
+// Benchmark for Rule 30 (Make Constructors Payable), instantiated at three
+// constructor workloads: minimal, simple and a loop of SSTOREs. The rule
+// touches creation code only, so all six contracts keep the same runtime
+// surface and the average-function column acts as a control.
 
 contract PC_A_Min {
     uint256 public value;

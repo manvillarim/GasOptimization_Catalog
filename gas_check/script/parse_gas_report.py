@@ -1,11 +1,11 @@
-"""Extract per-contract deployment cost and runtime size from a gas report.
+"""Extract per-contract deployment cost and size from a gas report.
 
-Reads a `forge test --gas-report` transcript on stdin and emits CSV rows in the
-schema used by run_benchmark.sh: profile,trial,kind,name,metric,value.
+Reads a `forge test --gas-report` transcript on stdin and emits rows in the
+schema used by run_benchmark.sh: profile,trial,kind,name,metric,value. Only the
+benchmark contracts are emitted; test contracts and forge-std helpers are
+skipped.
 
-Only the benchmark contracts are emitted. Test contracts and forge-std helpers
-carry no deployment figure that belongs in the results, and including them
-would silently pollute any aggregate computed over the file.
+Usage:  forge test --gas-report | python3 script/parse_gas_report.py PROFILE TRIAL
 """
 
 import re
@@ -18,7 +18,7 @@ def main() -> None:
     profile, trial = sys.argv[1], sys.argv[2]
     text = sys.stdin.read()
 
-    # Each contract's report opens with a header line naming it, and the first
+    # Each report opens with a header line naming the contract; the first
     # numeric row that follows holds (deployment cost, deployment size).
     for block in re.split(r"\n(?=╭)", text):
         header = re.search(r"\|\s*\S+?:(\w+) Contract", block)

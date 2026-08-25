@@ -1,11 +1,11 @@
-"""Record, per benchmark pair and per compiler profile, whether the original and
-the optimised contract compile to identical deployed bytecode.
+"""Record whether the two contracts of each pair compile to identical bytecode.
 
-A pair that compiles identically cannot differ at runtime, so any non-zero
-figure the harness reports for it measures the harness rather than the rule.
-`forge test --gas-report` also collapses such a pair into a single entry, which
-is why some deployment rows are absent from summary.csv; this file records the
-reason explicitly instead of leaving the absence to be inferred.
+Compares the deployed bytecode of the original and the optimised contract of
+every pair, under both compiler profiles. `forge test --gas-report` collapses an
+identical pair into a single entry, which is why some deployment rows are absent
+from summary.csv.
+
+Usage:  python3 script/bytecode_identity.py results/bytecode_identity.csv
 """
 
 import csv

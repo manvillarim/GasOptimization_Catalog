@@ -1,14 +1,11 @@
-"""Aggregate raw benchmark observations into mean, standard deviation and savings.
+"""Aggregate raw benchmark observations into means, standard deviations and savings.
 
-Consumes the raw.csv written by run_benchmark.sh and produces summary.csv with
-one row per (profile, metric, pattern, size), carrying the original and the
-optimised measurement, the standard deviation of each across trials, and the
-relative saving.
+Reads the raw.csv written by run_benchmark.sh and writes summary.csv with one
+row per (profile, metric, pattern, size, workload), carrying the original and
+the optimised measurement, the standard deviation of each across trials, and
+the relative saving.
 
-The standard deviation is carried into the output even when it is zero. A zero
-here is a result -- it says the measurement is exact rather than sampled -- and
-dropping the column would hide the very property the reviewer asked us to
-establish.
+Usage:  python3 script/aggregate.py results/raw.csv results/summary.csv
 """
 
 import csv
@@ -16,7 +13,7 @@ import statistics
 import sys
 from collections import defaultdict
 
-# (pattern, size) keyed by the contract or test name produced by the benchmark.
+# (pattern, size, version) keyed by benchmark contract name.
 CONTRACTS = {
     "CE_A_1": ("Custom Errors", "k=1", "A"),
     "CE_Ao_1": ("Custom Errors", "k=1", "Ao"),

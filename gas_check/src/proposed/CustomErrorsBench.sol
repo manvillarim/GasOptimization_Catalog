@@ -1,26 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// Benchmark for Rule 1 (Replace `require` with Custom Errors).
-//
-// WHY THREE SIZES. The saving of this rule comes from removing revert *string
-// literals* from the deployed bytecode, so it is expected to scale with the
-// number of guarded statements rather than with the size of the contract. The
-// original single-instance measurement could not distinguish "the rule saves
-// ~20% of deployment cost" from "this particular contract happened to be 20%
-// revert strings". Instantiating the same contract shape at 1, 5 and 20 guards
-// separates the two: a rule whose benefit is proportional to the guard count
-// will show a saving that grows with k, while the per-guard saving stays flat.
-//
-// WHY THE GUARD BODIES ARE IDENTICAL ACROSS SIZES. Every guard tests the same
-// predicate and writes the same slot, so the only quantity that varies between
-// the k = 1, 5 and 20 instances is the number of revert sites. Any other
-// difference in the measured gas would confound the size effect.
-//
-// WHY THE STRINGS ARE 32-BYTE-BOUNDED. Revert strings longer than 32 bytes
-// occupy an extra word both in the constructor payload and in the revert path.
-// All strings here are kept below that boundary so that the reported saving is
-// a lower bound rather than an artefact of one unusually long message.
+// Benchmark for Rule 1 (Replace `require` with Custom Errors), instantiated
+// at 1, 5 and 20 guarded statements. Every guard tests the same predicate and
+// writes the same slot, so the number of revert sites is the only quantity
+// that varies. All revert strings are shorter than 32 bytes.
 
 contract CE_A_1 {
     uint256 public value;
