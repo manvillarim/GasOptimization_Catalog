@@ -74,9 +74,9 @@
 Solidity command, $\mathit{parameters}$ is a list of identifiers, and
 $[\ldots]$ denotes Solidity constructs;
 
-\noindent \textbf{provided} $v$ is assigned on every execution path of $P$ that
-reaches the end of the body, and $P$ contains no \texttt{return} statement other
-than the final one.
+\noindent \textbf{provided} $v$ does not occur in $\mathit{parameters}$ nor as a
+declaration inside $P$; and every \texttt{return} statement occurring in $P$
+carries an explicit expression.
 
 \caption{Use named return variables.}
 \label{rule:named-returns}
