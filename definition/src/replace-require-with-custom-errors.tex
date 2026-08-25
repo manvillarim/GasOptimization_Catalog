@@ -1,0 +1,66 @@
+% Source for definition/solidity_transformações-1.pdf
+% The rule exactly as it appears in Section 4 of the article.
+\documentclass[11pt]{article}
+\input{preamble}
+\setcounter{refactoring}{1}
+
+\begin{document}
+
+\begin{refactoring}[H]
+\begin{footnotesize}
+\caption{Replace \texttt{require} with Custom Error.}
+\label{rule:require}
+\begin{tabular}{lll}
+   \framebox[0.45\textwidth]{
+      \begin{scriptsize}
+      \begin{tabular}{l}
+         $[\ldots]$\\
+         \texttt{contract} $\langle A\rangle$ \texttt{\{}\\
+         \hspace{0.5cm} $[\ldots]$\\
+         \hspace{0.5cm} \texttt{function} $\langle f\rangle$\texttt{(}$\langle\mathit{parameters}\rangle$\texttt{)} $[\ldots]$ \texttt{\{}\\
+         \hspace{1cm} $[\ldots]$\\
+         \hspace{1cm} \texttt{require(}$\mathit{\langle B\rangle, \langle M\rangle}$\texttt{)} \\
+         \hspace{1cm} $[\ldots]$\\
+         $\hspace{0.5cm} \texttt{\}}$\\
+         $\hspace{0.5cm} [\ldots]$\\
+         $\texttt{\}}$\\
+         $[\ldots]$\\
+         \\[4.5ex]
+      \end{tabular}
+      \end{scriptsize}
+   }
+
+   & $=$&
+
+   \framebox[0.45\textwidth]{
+      \begin{scriptsize}
+      \begin{tabular}{l}
+         $[\ldots]$\\
+         \texttt{contract} $\langle A\rangle$ \texttt{\{}\\
+         \hspace{0.5cm} $[\ldots]$\\
+         \hspace{0.5cm} \texttt{error} $\mathit{\langle E\rangle}$\texttt{();}\\
+         \hspace{0.5cm} \texttt{function} $\langle f\rangle$\texttt{(}$\langle\mathit{parameters}\rangle$\texttt{)} $[\ldots]$ \texttt{\{}\\
+         \hspace{1cm} $[\ldots]$\\
+         \hspace{1cm} \texttt{if (!}$\mathit{\langle B\rangle}$\texttt{) \{} \\
+         \hspace{1.5cm} \texttt{revert} $\langle E\rangle$\texttt{();}\\
+         \hspace{1cm} \texttt{\}}\\
+         \hspace{1cm} $[\ldots]$\\
+         $\hspace{0.5cm} \texttt{\}}$\\
+         $\hspace{0.5cm} [\ldots]$\\
+         $\texttt{\}}$\\
+         $[\ldots]$
+      \end{tabular}
+      \end{scriptsize}
+   }
+\end{tabular}
+\justifying
+
+\mbox{}\\
+
+\noindent \textbf{where} $A$, $f$ and $E$ are identifiers, $B$ is a Boolean expression, $M$ is a string stating an error message, $\mathit{parameters}$ is a list of identifiers, and $[\ldots]$ denotes Solidity constructs;
+
+\noindent \textbf{provided} $E$ occurs only where explicitly shown; and no client of $A$ branches on the content of the error data of a revert raised by $\langle f\rangle$.
+\end{footnotesize}
+\end{refactoring}
+
+\end{document}

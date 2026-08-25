@@ -1,0 +1,69 @@
+% Source for definition/solidity_transformações-18.pdf
+% The rule exactly as it appears in Section 2 of the article.
+\documentclass[11pt]{article}
+\input{preamble}
+\setcounter{refactoring}{0}
+
+\begin{document}
+
+\begin{refactoring}[H]
+\begin{footnotesize}
+\caption{Single Line Swap.}
+\label{rule:swap}
+\begin{tabular}{lll}
+   \framebox[0.45\textwidth]{
+      \begin{scriptsize}
+      \begin{tabular}{l}
+         $[\ldots]$\\
+         \texttt{contract} $\langle A\rangle$ \texttt{\{}\\
+         \hspace{0.5cm} $[\ldots]$\\
+         \hspace{0.5cm} \texttt{function} $\langle f\rangle$\texttt{(}$\langle\mathit{parameters}\rangle$\texttt{)} $[\ldots]$ \texttt{\{}\\
+         \hspace{1cm} $[\ldots]$\\
+         \hspace{1cm} $\langle \mathit{tmp}\rangle$ \texttt{=} $\langle\mathit{varA}\rangle$\\
+         \hspace{1cm} $\langle P\rangle$\\
+         \hspace{1cm} $\langle\mathit{varA}\rangle$ \texttt{=} $\langle\mathit{varB}\rangle$\\
+         \hspace{1cm} $\langle Q\rangle$\\
+         \hspace{1cm} $\langle\mathit{varB}\rangle$ \texttt{=} $\langle\mathit{tmp}\rangle$\\
+         \hspace{1cm} $[\ldots]$\\
+         $\hspace{0.5cm} \texttt{\}}$\\
+         $\hspace{0.5cm} [\ldots]$\\
+         $\texttt{\}}$\\
+         $[\ldots]$\\
+      \end{tabular}
+      \end{scriptsize}
+   }
+
+   & $=$&
+
+   \framebox[0.45\textwidth]{
+      \begin{scriptsize}
+      \begin{tabular}{l}
+         $[\ldots]$\\
+         \texttt{contract} $\langle A\rangle$ \texttt{\{}\\
+         \hspace{0.5cm} $[\ldots]$\\
+         \hspace{0.5cm} \texttt{function} $\langle f\rangle$\texttt{(}$\langle\mathit{parameters}\rangle$\texttt{)} $[\ldots]$ \texttt{\{}\\
+         \hspace{1cm} $[\ldots]$\\
+         \hspace{1cm} \texttt{(}$\langle\mathit{varA}\rangle$, $\langle\mathit{varB}\rangle$\texttt{)} \texttt{=} \texttt{(}$\langle\mathit{varB}\rangle$, $\langle\mathit{varA}\rangle$\texttt{)}\\
+         \hspace{1cm} $\langle P\rangle$\\
+         \hspace{1cm} $\langle Q\rangle$\\
+         \hspace{1cm} $[\ldots]$\\
+         $\hspace{0.5cm} \texttt{\}}$\\
+         $\hspace{0.5cm} [\ldots]$\\
+         $\texttt{\}}$\\
+         $[\ldots]$
+         \\[5.5ex]
+      \end{tabular}
+      \end{scriptsize}
+   }
+\end{tabular}
+\justifying
+
+\mbox{}\\
+
+\noindent \textbf{where} $A$, $f$, $\mathit{tmp}$, $\mathit{varA}$ and $\mathit{varB}$ are identifiers, $\mathit{parameters}$ is a list of identifiers, $P$ and $Q$ are Solidity commands, and $[\ldots]$ denote Solidity constructs;
+
+\noindent \textbf{provided} $\mathit{tmp}$, $\mathit{varA}$ and $\mathit{varB}$ do not occur in $P$ or in $Q$.
+\end{footnotesize}
+\end{refactoring}
+
+\end{document}

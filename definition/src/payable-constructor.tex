@@ -1,0 +1,58 @@
+% Source for definition/solidity_transformações-30.pdf
+% The rule exactly as it appears in Section 4 of the article.
+\documentclass[11pt]{article}
+\input{preamble}
+\setcounter{refactoring}{3}
+
+\begin{document}
+
+\begin{refactoring}[H]
+\begin{footnotesize}
+\caption{Make Constructor \texttt{payable}.}
+\label{rule:payable-constructor}
+\begin{tabular}{lll}
+   \framebox[0.45\textwidth]{
+      \begin{scriptsize}
+      \begin{tabular}{l}
+         $[\ldots]$\\
+         \texttt{contract} $\langle A\rangle$ \texttt{\{}\\
+         \hspace{0.5cm} $[\ldots]$\\
+         \hspace{0.5cm} \texttt{constructor(}$\langle\mathit{parameters}\rangle$\texttt{)} $[\ldots]$ \texttt{\{}\\
+         \hspace{1cm} $\langle P\rangle$\\
+         \hspace{0.5cm} \texttt{\}}\\
+         \hspace{0.5cm} $[\ldots]$\\
+         $\texttt{\}}$\\
+         $[\ldots]$\\
+      \end{tabular}
+      \end{scriptsize}
+   }
+
+   & $=$&
+
+\framebox[0.45\textwidth]{
+   \begin{scriptsize}
+   \begin{tabular}{l}
+      $[\ldots]$\\
+      \texttt{contract} $\langle A\rangle$ \texttt{\{}\\
+      \hspace{0.5cm} $[\ldots]$\\
+      \hspace{0.5cm} \texttt{constructor(}$\langle\mathit{parameters}\rangle$\texttt{)} \texttt{payable} $[\ldots]$ \texttt{\{}\\
+      \hspace{1cm} $\langle P\rangle$\\
+      \hspace{0.5cm} \texttt{\}}\\
+      \hspace{0.5cm} $[\ldots]$\\
+      \texttt{\}}\\
+      $[\ldots]$\\
+   \end{tabular}
+   \end{scriptsize}
+}
+\end{tabular}
+\justifying
+
+\mbox{}\\[1ex]
+
+\noindent \textbf{where} $A$ is an identifier, $P$ is a Solidity command, $\mathit{parameters}$ is a list of identifiers, and $[\ldots]$ denotes Solidity constructs;
+
+\noindent \textbf{provided} no deployment of $A$ attaches Ether; that is, the amount of Ether sent on every creation of \texttt{new }$A$ is zero and the transaction that deploys $A$ also carries zero call value.
+\end{footnotesize}
+\end{refactoring}
+
+\end{document}

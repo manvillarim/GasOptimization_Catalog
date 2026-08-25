@@ -1,36 +1,17 @@
 % Source for definition/solidity_transformações-31.pdf
-%
-% The rule generalisation exactly as it appears in Section 4 of the article,
-% extracted into a standalone document so the catalogue entry carries a
-% compiled definition rather than an example. Preamble mirrors the article's:
-% same float environment, same name ("Rule"), same numbering scheme.
+% The rule exactly as it appears in Section 4 of the article.
 \documentclass[11pt]{article}
-
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{float}
-\usepackage{multirow}
-\usepackage{color}
-\usepackage[table,xcdraw]{xcolor}
-\usepackage[margin=2.5cm]{geometry}
-
-\newfloat{refactoring}{thp}{lorefact}[section]
-\floatplacement{refactoring}{thp}
-\floatname{refactoring}{Rule}
-
-\setcounter{section}{0}
-\setcounter{refactoring}{30}
-
-\pagestyle{empty}
+\input{preamble}
+\setcounter{refactoring}{4}
 
 \begin{document}
 
 \begin{refactoring}[H]
 \begin{footnotesize}
+\caption{Use named return variables.}
+\label{rule:named-returns}
 \begin{tabular}{lll}
-   \framebox[0.47\textwidth]{
+   \framebox[0.45\textwidth]{
       \begin{scriptsize}
       \begin{tabular}{l}
          $[\ldots]$\\
@@ -38,9 +19,9 @@
          \hspace{0.5cm} $[\ldots]$\\
          \hspace{0.5cm} \texttt{function} $\langle f\rangle$\texttt{(}$\langle\mathit{parameters}\rangle$\texttt{)} $[\ldots]$\\
          \hspace{1cm} \texttt{returns (}$\langle T\rangle$\texttt{)} \texttt{\{}\\
-         \hspace{1.5cm} $\langle T\rangle$ $\langle v\rangle$\texttt{;}\\
-         \hspace{1.5cm} $\langle P\rangle$\\
-         \hspace{1.5cm} \texttt{return} $\langle v\rangle$\texttt{;}\\
+         \hspace{1cm} $\langle T\rangle$ $\langle v\rangle$\texttt{;}\\
+         \hspace{1cm} $\langle P\rangle$\\
+         \hspace{1cm} \texttt{return} $\langle v\rangle$\texttt{;}\\
          \hspace{0.5cm} \texttt{\}}\\
          \hspace{0.5cm} $[\ldots]$\\
          \texttt{\}}\\
@@ -51,7 +32,7 @@
 
    & $=$&
 
-\framebox[0.5\textwidth]{
+\framebox[0.45\textwidth]{
    \begin{scriptsize}
    \begin{tabular}{l}
       $[\ldots]$\\
@@ -59,7 +40,7 @@
       \hspace{0.5cm} $[\ldots]$\\
       \hspace{0.5cm} \texttt{function} $\langle f\rangle$\texttt{(}$\langle\mathit{parameters}\rangle$\texttt{)} $[\ldots]$\\
       \hspace{1cm} \texttt{returns (}$\langle T\rangle$ $\langle v\rangle$\texttt{)} \texttt{\{}\\
-      \hspace{1.5cm} $\langle P\rangle$\\
+      \hspace{1cm} $\langle P\rangle$\\
       \hspace{0.5cm} \texttt{\}}\\
       \hspace{0.5cm} $[\ldots]$\\
       \texttt{\}}\\
@@ -69,17 +50,13 @@
    \end{scriptsize}
 }
 \end{tabular}
+\justifying
 
-\noindent \textbf{where} $f$ and $v$ are identifiers, $T$ is a type, $P$ is a
-Solidity command, $\mathit{parameters}$ is a list of identifiers, and
-$[\ldots]$ denotes Solidity constructs;
+\mbox{}\\
 
-\noindent \textbf{provided} $v$ does not occur in $\mathit{parameters}$ nor as a
-declaration inside $P$; and every \texttt{return} statement occurring in $P$
-carries an explicit expression.
+\noindent \textbf{where} $A$, $f$ and $v$ are identifiers, $T$ is a type, $P$ is a Solidity command, $\mathit{parameters}$ is a list of identifiers, and $[\ldots]$ denotes Solidity constructs;
 
-\caption{Use named return variables.}
-\label{rule:named-returns}
+\noindent \textbf{provided} $v$ does not occur in $\langle\mathit{parameters}\rangle$ nor as a declaration inside $P$; and every \texttt{return} statement occurring in $P$ carries an explicit expression.
 \end{footnotesize}
 \end{refactoring}
 

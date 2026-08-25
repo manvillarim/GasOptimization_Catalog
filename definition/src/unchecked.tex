@@ -1,0 +1,69 @@
+% Source for definition/solidity_transformações-28.pdf
+% The rule exactly as it appears in Section 4 of the article.
+\documentclass[11pt]{article}
+\input{preamble}
+\setcounter{refactoring}{2}
+
+\begin{document}
+
+\begin{refactoring}[H]
+\begin{footnotesize}
+\caption{Use \texttt{unchecked\{\}} for validated operations.}
+\label{rule:unchecked}
+\begin{tabular}{lll}
+   \framebox[0.45\textwidth]{
+      \begin{scriptsize}
+      \begin{tabular}{l}
+         $[\ldots]$\\
+         \texttt{contract} $\langle A\rangle$ \texttt{\{}\\
+         \hspace{0.5cm} $[\ldots]$\\
+         \hspace{0.5cm} \texttt{function} $\langle f\rangle$\texttt{(}$\langle\mathit{parameters}\rangle$\texttt{)} $[\ldots]$ \texttt{\{}\\
+         \hspace{1cm} $[\ldots]$\\
+         \hspace{1cm} \texttt{require(}$\mathit{\langle B\rangle}$\texttt{);} \\
+         \hspace{1cm} $\langle P\rangle$\\
+         \hspace{1cm} $\langle C \rangle$\texttt{;}\\
+         \hspace{1cm} $[\ldots]$\\
+         $\hspace{0.5cm} \texttt{\}}$\\
+         $\hspace{0.5cm} [\ldots]$\\
+         $\texttt{\}}$\\
+         $[\ldots]$\\
+         \\[2.5ex]
+      \end{tabular}
+      \end{scriptsize}
+   }
+
+   & $=$&
+
+   \framebox[0.45\textwidth]{
+      \begin{scriptsize}
+      \begin{tabular}{l}
+         $[\ldots]$\\
+         \texttt{contract} $\langle A\rangle$ \texttt{\{}\\
+         \hspace{0.5cm} $[\ldots]$\\
+         \hspace{0.5cm} \texttt{function} $\langle f\rangle$\texttt{(}$\langle\mathit{parameters}\rangle$\texttt{)} $[\ldots]$ \texttt{\{}\\
+         \hspace{1cm} $[\ldots]$\\
+         \hspace{1cm} \texttt{require(}$\mathit{\langle B\rangle}$\texttt{);}\\
+         \hspace{1cm} $\langle P\rangle$\\
+         \hspace{1cm} \texttt{unchecked \{}\\
+         \hspace{1.5cm} $\langle C \rangle$\texttt{;}\\
+         \hspace{1cm} \texttt{\}}\\
+         \hspace{1cm} $[\ldots]$\\
+         $\hspace{0.5cm} \texttt{\}}$\\
+         $\hspace{0.5cm} [\ldots]$\\
+         $\texttt{\}}$\\
+         $[\ldots]$
+      \end{tabular}
+      \end{scriptsize}
+   }
+\end{tabular}
+\justifying
+
+\mbox{}\\
+
+\noindent \textbf{where} $A$ and $f$ are identifiers, $B$ is a Boolean expression, $P$ is a Solidity command, $C$ is a statement involving an arithmetic expression, $\mathit{parameters}$ is a list of identifiers, and $[\ldots]$ denotes Solidity constructs;
+
+\noindent \textbf{provided} condition $B$ verifies that $C$ will neither overflow nor underflow; $P$ does not change any free variable that appears in~$B$.
+\end{footnotesize}
+\end{refactoring}
+
+\end{document}

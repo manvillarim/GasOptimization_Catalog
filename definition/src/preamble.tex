@@ -1,0 +1,23 @@
+% Shared preamble for the standalone rule definitions.
+%
+% Mirrors the article's refactoring float: same float environment, same style
+% ("ruled", so the caption is typeset as a header above the box), same name
+% ("Rule") and the same section-relative numbering scheme.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{color}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+
+\floatstyle{ruled}
+\newfloat{refactoring}{thp}{lorefact}[section]
+\floatplacement{refactoring}{thp}
+\floatname{refactoring}{Rule}
+
+\setcounter{section}{0}
+\pagestyle{empty}
